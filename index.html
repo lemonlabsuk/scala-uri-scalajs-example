@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>scala-uri scala-js example</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>scala-uri &amp; scala-js</h1>
+        <input id="url-input" class="form-control" style="height:75px; font-size:25px;" oninput="urlTextTyped()" type="text" value="http://try-changing-me.com/type?here=true" />
+      </div>
+
+      <ul class="list-group">
+        <li id="scheme-lg" class="list-group-item">
+          <h4 class="list-group-item-heading">Scheme</h4>
+          <p class="list-group-item-text"></p>
+        </li>
+
+        <li id="host-lg" class="list-group-item">
+          <h4 class="list-group-item-heading">Host</h4>
+          <p class="list-group-item-text"></p>
+        </li>
+
+        <li id="path-lg" class="list-group-item">
+          <h4 class="list-group-item-heading">Path</h4>
+          <p class="list-group-item-text"></p>
+        </li>
+
+        <li id="query-string-lg" class="list-group-item">
+          <h4 class="list-group-item-heading">Query String</h4>
+          <p class="list-group-item-text">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </p>
+        </li>
+
+        <li id="fragment-lg" class="list-group-item">
+          <h4 class="list-group-item-heading">Fragment</h4>
+          <p class="list-group-item-text"></p>
+        </li>
+
+        <li id="error-lg" class="list-group-item">
+          <h4 class="list-group-item-heading">Error</h4>
+          <p class="list-group-item-text" style="color:red;"></p>
+        </li>
+
+      </ul>
+    </div>
+
+    <script type="text/javascript" src="scala-uri-scala-js-example.js"></script>
+  </body>
+</html>
