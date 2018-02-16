@@ -5,7 +5,7 @@ scalaVersion := "2.12.2"
 
 libraryDependencies ++=
   "org.scala-js" %%% "scalajs-dom" % "0.9.1" ::
-  "io.lemonlabs" %%% "scala-uri" % "0.5.0" :: Nil
+  "io.lemonlabs" %%% "scala-uri" % "0.5.6" :: Nil
 
 scalaJSUseMainModuleInitializer := true
 
