@@ -1,12 +1,10 @@
 package io.lemonlabs
 
-import org.scalajs.dom
-import dom.{document, html}
-import com.netaporter.uri.Uri
+import io.lemonlabs.uri.{Uri, Url, Urn}
+import org.scalajs.dom._
 
-import scala.collection.Seq
 import scala.scalajs.js.annotation.JSExportTopLevel
-import scala.util.Try
+import scala.util.{Failure, Success, Try}
 
 object Main {
   def main(args: Array[String]): Unit = {
@@ -15,17 +13,53 @@ object Main {
 
   @JSExportTopLevel("urlTextTyped")
   def urlTextTyped(): Unit = {
+    document.querySelectorAll(".list-group-item").setAttribute("style", "display: none;")
+
     val url = Try(Uri.parse(document.getElementById("url-input").asInstanceOf[html.Input].value))
-    val success = url.toOption
-    writeListGroupText("scheme-lg", success.flatMap(_.scheme).getOrElse(""))
-    writeListGroupText("host-lg", success.flatMap(_.host).getOrElse(""))
-    writeListGroupText("path-lg", success.map(_.path).getOrElse(""))
-    writeQueryStringTable("query-string-lg", success.map(_.query.params).getOrElse(Nil))
-    writeListGroupText("fragment-lg", success.flatMap(_.fragment).getOrElse(""))
-    writeListGroupText("error-lg", url.failed.map(_.getMessage).getOrElse(""))
+    url match {
+      case Success(url: Url) => writeUrl(url)
+      case Success(urn: Urn) => writeUrn(urn)
+      case Failure(e)        => writeException(e)
+    }
   }
 
-  def writeQueryStringTable(id: String, params: Seq[(String, Option[String])]): Unit = {
+  def writeUri(uri: Uri): Unit = {
+    writeListGroupText("type-lg", uri.getClass.getSimpleName)
+    uri.schemeOption.foreach(scheme => writeListGroupText("scheme-lg", scheme))
+
+    if(uri.path.toString.nonEmpty) {
+      writeListGroupText("path-lg", uri.path.toString)
+    }
+  }
+
+  def writeUrn(urn: Urn): Unit = {
+    writeUri(urn)
+
+    writeListGroupText("nid-lg", urn.nid)
+    writeListGroupText("nss-lg", urn.nss)
+  }
+
+  def writeUrl(url: Url): Unit = {
+    writeUri(url)
+
+    url.hostOption.foreach { host =>
+      writeListGroupText("host-lg", host.toString)
+      writeListGroupText("host-type-lg", host.getClass.getSimpleName)
+    }
+
+    if(url.query.nonEmpty) {
+      writeQueryStringTable("query-string-lg", url.query.params)
+    }
+
+    url.fragment.foreach(fragment => writeListGroupText("fragment-lg", fragment))
+  }
+
+  def writeException(ex: Throwable): Unit = {
+    writeListGroupText("error-lg", ex.getMessage)
+  }
+
+  def writeQueryStringTable(id: String, params: Vector[(String, Option[String])]): Unit = {
+    document.getElementById(id).setAttribute("style", "display: block;")
     val tableBody = document.querySelector(s"#$id .list-group-item-text tbody")
     tableBody.innerHTML = ""
     params.foreach { case (name, value) =>
@@ -41,7 +75,19 @@ object Main {
   }
 
   def writeListGroupText(id: String, text: String): Unit = {
-    val lgText = document.querySelector(s"#$id .list-group-item-text")
-    lgText.innerHTML = text
+    document.getElementById(id).setAttribute("style", "display: block;")
+    document.querySelector(s"#$id .list-group-item-text").innerHTML = text
+  }
+
+  implicit class EnchancedDomList(list: NodeList) {
+
+    def setAttribute(name: String, value: String): Unit =
+      foreach(_.asInstanceOf[Element].setAttribute(name, value))
+
+    def foreach(f: Node => Unit): Unit = {
+      (0 until list.length).foreach { i =>
+        f(list(i))
+      }
+    }
   }
 }

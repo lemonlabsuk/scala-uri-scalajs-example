@@ -1,23 +1,26 @@
 enablePlugins(ScalaJSPlugin)
 
 name := "scala-uri scala-js example"
-scalaVersion := "2.12.2"
+scalaVersion := "2.12.4"
+
+resolvers += "Sonatype OSS Releases" at "https://oss.sonatype.org/content/repositories/releases"
 
 libraryDependencies ++=
-  "org.scala-js" %%% "scalajs-dom" % "0.9.1" ::
-  "io.lemonlabs" %%% "scala-uri" % "0.5.6" :: Nil
+  "org.scala-js" %%% "scalajs-dom" % "0.9.4" ::
+  "io.lemonlabs" %%% "scala-uri" % "1.0.0-rc1" :: Nil
 
 scalaJSUseMainModuleInitializer := true
 
-lazy val compileJsTask = taskKey[Unit]("Copy index.html")
+lazy val compileJs = taskKey[Unit]("Compile the project")
+lazy val copyIndex = taskKey[Unit]("Copy index.html")
 
-compileJsTask := {
+copyIndex := {
   val from = target.value / "scala-2.12" / "scala-uri-scala-js-example-fastopt.js"
   val to = baseDirectory.value / "scala-uri-scala-js-example.js"
   IO.copyFile(from, to)
 }
 
-fastOptJS in Compile := {
-  compileJsTask.value
-  (fastOptJS in Compile).value
-}
+compileJs := Def.sequential(
+  fastOptJS in Compile,
+  copyIndex
+).value
