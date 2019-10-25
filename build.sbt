@@ -7,7 +7,7 @@ resolvers += "Sonatype OSS Releases" at "https://oss.sonatype.org/content/reposi
 
 libraryDependencies ++=
   "org.scala-js" %%% "scalajs-dom" % "0.9.4" ::
-  "io.lemonlabs" %%% "scala-uri" % "1.0.0-rc1" :: Nil
+  "io.lemonlabs" %%% "scala-uri" % "1.4.7" :: Nil
 
 scalaJSUseMainModuleInitializer := true
 

@@ -27,7 +27,7 @@ object Main {
     writeListGroupText("type-lg", uri.getClass.getSimpleName)
     uri.schemeOption.foreach(scheme => writeListGroupText("scheme-lg", scheme))
 
-    if(uri.path.toString.nonEmpty) {
+    if(uri.path.nonEmpty) {
       writeListGroupText("path-lg", uri.path.toString)
     }
   }
