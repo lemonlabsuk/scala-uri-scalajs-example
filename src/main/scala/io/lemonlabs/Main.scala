@@ -42,6 +42,14 @@ object Main {
   def writeUrl(url: Url): Unit = {
     writeUri(url)
 
+    url.publicSuffix.foreach { publicSuffix =>
+      writeListGroupText("public-suffix-lg", publicSuffix)
+    }
+
+    url.subdomain.foreach { subdomain =>
+      writeListGroupText("subdomain-lg", subdomain)
+    }
+
     url.hostOption.foreach { host =>
       writeListGroupText("host-lg", host.toString)
       writeListGroupText("host-type-lg", host.getClass.getSimpleName)
