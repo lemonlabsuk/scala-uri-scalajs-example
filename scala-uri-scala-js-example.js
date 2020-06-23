@@ -4,7 +4,7 @@ let urlTextTyped;
 const $linkingInfo = Object.freeze({
   "assumingES6": true,
   "productionMode": false,
-  "linkerVersion": "1.0.1",
+  "linkerVersion": "1.1.0",
   "fileLevelThis": this
 });
 const $imul = Math.imul;
@@ -184,7 +184,7 @@ function $dp_hashCode__I(instance) {
       } else if ((instance instanceof $Char)) {
         return $f_jl_Character__hashCode__I(instance)
       } else {
-        return $systemIdentityHashCode(instance)
+        return $c_O.prototype.hashCode__I.call(instance)
       }
     }
   }
@@ -967,10 +967,8 @@ class $c_Lio_lemonlabs_Main$ extends $c_O {
     $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().getElementById(id).setAttribute("style", "display: block;");
     const tableBody = $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().querySelector((("#" + id) + " .list-group-item-text tbody"));
     tableBody.innerHTML = "";
-    const it = params.iterator__sc_Iterator();
-    while (it.hasNext__Z()) {
-      const arg1 = it.next__O();
-      const x0$1 = $as_T2(arg1);
+    params.foreach__F1__V(new $c_sjsr_AnonFunction1(((this$1, tableBody$1) => ((x0$1$2) => {
+      const x0$1 = $as_T2(x0$1$2);
       if ((x0$1 !== null)) {
         const name = $as_T(x0$1._1__O());
         const value = $as_s_Option(x0$1._2__O());
@@ -981,11 +979,11 @@ class $c_Lio_lemonlabs_Main$ extends $c_O {
         valueElem.innerHTML = $as_T((value.isEmpty__Z() ? "" : value.get__O()));
         rowElem.appendChild(nameElem);
         rowElem.appendChild(valueElem);
-        tableBody.appendChild(rowElem)
+        return tableBody$1.appendChild(rowElem)
       } else {
         throw new $c_s_MatchError(x0$1)
       }
-    }
+    }))(this, tableBody)))
   };
   writeListGroupText__T__T__V(id, text) {
     $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().getElementById(id).setAttribute("style", "display: block;");
@@ -1066,7 +1064,7 @@ const $p_Lio_lemonlabs_uri_inet_PublicSuffixes$__publicSuffixes0__sci_Set = (fun
 });
 const $p_Lio_lemonlabs_uri_inet_PublicSuffixes$__publicSuffixes1__sci_Set = (function($thiz) {
   const this$4 = $m_s_Predef$().s_Predef$__f_Set;
-  const array = ["org.pe", "com.pe", "net.pe", "pf", "com.pf", "org.pf", "edu.pf", "*.pg", "ph", "com.ph", "net.ph", "org.ph", "gov.ph", "edu.ph", "ngo.ph", "mil.ph", "i.ph", "pk", "com.pk", "net.pk", "edu.pk", "org.pk", "fam.pk", "biz.pk", "web.pk", "gov.pk", "gob.pk", "gok.pk", "gon.pk", "gop.pk", "gos.pk", "info.pk", "pl", "com.pl", "net.pl", "org.pl", "aid.pl", "agro.pl", "atm.pl", "auto.pl", "biz.pl", "edu.pl", "gmina.pl", "gsm.pl", "info.pl", "mail.pl", "miasta.pl", "media.pl", "mil.pl", "nieruchomosci.pl", "nom.pl", "pc.pl", "powiat.pl", "priv.pl", "realestate.pl", "rel.pl", "sex.pl", "shop.pl", "sklep.pl", "sos.pl", "szkola.pl", "targi.pl", "tm.pl", "tourism.pl", "travel.pl", "turystyka.pl", "gov.pl", "ap.gov.pl", "ic.gov.pl", "is.gov.pl", "us.gov.pl", "kmpsp.gov.pl", "kppsp.gov.pl", "kwpsp.gov.pl", "psp.gov.pl", "wskr.gov.pl", "kwp.gov.pl", "mw.gov.pl", "ug.gov.pl", "um.gov.pl", "umig.gov.pl", "ugim.gov.pl", "upow.gov.pl", "uw.gov.pl", "starostwo.gov.pl", "pa.gov.pl", "po.gov.pl", "psse.gov.pl", "pup.gov.pl", "rzgw.gov.pl", "sa.gov.pl", "so.gov.pl", "sr.gov.pl", "wsa.gov.pl", "sko.gov.pl", "uzs.gov.pl", "wiih.gov.pl", "winb.gov.pl", "pinb.gov.pl", "wios.gov.pl", "witd.gov.pl", "wzmiuw.gov.pl", "piw.gov.pl", "wiw.gov.pl", "griw.gov.pl", "wif.gov.pl", "oum.gov.pl", "sdn.gov.pl", "zp.gov.pl", "uppo.gov.pl", "mup.gov.pl", "wuoz.gov.pl", "konsulat.gov.pl", "oirm.gov.pl", "augustow.pl", "babia-gora.pl", "bedzin.pl", "beskidy.pl", "bialowieza.pl", "bialystok.pl", "bielawa.pl", "bieszczady.pl", "boleslawiec.pl", "bydgoszcz.pl", "bytom.pl", "cieszyn.pl", "czeladz.pl", "czest.pl", "dlugoleka.pl", "elblag.pl", "elk.pl", "glogow.pl", "gniezno.pl", "gorlice.pl", "grajewo.pl", "ilawa.pl", "jaworzno.pl", "jelenia-gora.pl", "jgora.pl", "kalisz.pl", "kazimierz-dolny.pl", "karpacz.pl", "kartuzy.pl", "kaszuby.pl", "katowice.pl", "kepno.pl", "ketrzyn.pl", "klodzko.pl", "kobierzyce.pl", "kolobrzeg.pl", "konin.pl", "konskowola.pl", "kutno.pl", "lapy.pl", "lebork.pl", "legnica.pl", "lezajsk.pl", "limanowa.pl", "lomza.pl", "lowicz.pl", "lubin.pl", "lukow.pl", "malbork.pl", "malopolska.pl", "mazowsze.pl", "mazury.pl", "mielec.pl", "mielno.pl", "mragowo.pl", "naklo.pl", "nowaruda.pl", "nysa.pl", "olawa.pl", "olecko.pl", "olkusz.pl", "olsztyn.pl", "opoczno.pl", "opole.pl", "ostroda.pl", "ostroleka.pl", "ostrowiec.pl", "ostrowwlkp.pl", "pila.pl", "pisz.pl", "podhale.pl", "podlasie.pl", "polkowice.pl", "pomorze.pl", "pomorskie.pl", "prochowice.pl", "pruszkow.pl", "przeworsk.pl", "pulawy.pl", "radom.pl", "rawa-maz.pl", "rybnik.pl", "rzeszow.pl", "sanok.pl", "sejny.pl", "slask.pl", "slupsk.pl", "sosnowiec.pl", "stalowa-wola.pl", "skoczow.pl", "starachowice.pl", "stargard.pl", "suwalki.pl", "swidnica.pl", "swiebodzin.pl", "swinoujscie.pl", "szczecin.pl", "szczytno.pl", "tarnobrzeg.pl", "tgory.pl", "turek.pl", "tychy.pl", "ustka.pl", "walbrzych.pl", "warmia.pl", "warszawa.pl", "waw.pl", "wegrow.pl", "wielun.pl", "wlocl.pl", "wloclawek.pl", "wodzislaw.pl", "wolomin.pl", "wroclaw.pl", "zachpomor.pl", "zagan.pl", "zarow.pl", "zgora.pl", "zgorzelec.pl", "pm", "pn", "gov.pn", "co.pn", "org.pn", "edu.pn", "net.pn", "post", "pr", "com.pr", "net.pr", "org.pr", "gov.pr", "edu.pr", "isla.pr", "pro.pr", "biz.pr", "info.pr", "name.pr", "est.pr", "prof.pr", "ac.pr", "pro", "aaa.pro", "aca.pro", "acct.pro", "avocat.pro", "bar.pro", "cpa.pro", "eng.pro", "jur.pro", "law.pro", "med.pro", "recht.pro", "ps", "edu.ps", "gov.ps", "sec.ps", "plo.ps", "com.ps", "org.ps", "net.ps", "pt", "net.pt", "gov.pt", "org.pt", "edu.pt", "int.pt", "publ.pt", "com.pt", "nome.pt", "pw", "co.pw", "ne.pw", "or.pw", "ed.pw", "go.pw", "belau.pw", "py", "com.py", "coop.py", "edu.py", "gov.py", "mil.py", "net.py", "org.py", "qa", "com.qa", "edu.qa", "gov.qa", "mil.qa", "name.qa", "net.qa", "org.qa", "sch.qa", "re", "asso.re", "com.re", "nom.re", "ro", "arts.ro", "com.ro", "firm.ro", "info.ro", "nom.ro", "nt.ro", "org.ro", "rec.ro", "store.ro", "tm.ro", "www.ro", "rs", "ac.rs", "co.rs", "edu.rs", "gov.rs", "in.rs", "org.rs", "ru", "rw", "ac.rw", "co.rw", "coop.rw", "gov.rw", "mil.rw", "net.rw", "org.rw", "sa", "com.sa", "net.sa", "org.sa", "gov.sa", "med.sa", "pub.sa", "edu.sa", "sch.sa", "sb", "com.sb", "edu.sb", "gov.sb", "net.sb", "org.sb", "sc", "com.sc", "gov.sc", "net.sc", "org.sc", "edu.sc", "sd", "com.sd", "net.sd", "org.sd", "edu.sd", "med.sd", "tv.sd", "gov.sd", "info.sd", "se", "a.se", "ac.se", "b.se", "bd.se", "brand.se", "c.se", "d.se", "e.se", "f.se", "fh.se", "fhsk.se", "fhv.se", "g.se", "h.se", "i.se", "k.se", "komforb.se", "kommunalforbund.se", "komvux.se", "l.se", "lanbib.se", "m.se", "n.se", "naturbruksgymn.se", "o.se", "org.se", "p.se", "parti.se", "pp.se", "press.se", "r.se", "s.se", "t.se", "tm.se", "u.se", "w.se", "x.se", "y.se", "z.se", "sg", "com.sg", "net.sg", "org.sg", "gov.sg", "edu.sg", "per.sg", "sh", "com.sh", "net.sh", "gov.sh", "org.sh", "mil.sh", "si", "sj", "sk", "sl", "com.sl", "net.sl", "edu.sl", "gov.sl", "org.sl", "sm", "sn", "art.sn", "com.sn", "edu.sn", "gouv.sn", "org.sn", "perso.sn", "univ.sn", "so", "com.so", "edu.so", "gov.so", "me.so", "net.so", "org.so", "sr", "ss", "biz.ss", "com.ss", "edu.ss", "gov.ss", "net.ss", "org.ss", "st", "co.st", "com.st", "consulado.st", "edu.st", "embaixada.st", "gov.st", "mil.st", "net.st", "org.st", "principe.st", "saotome.st", "store.st", "su", "sv", "com.sv", "edu.sv", "gob.sv", "org.sv", "red.sv", "sx", "gov.sx", "sy", "edu.sy", "gov.sy", "net.sy", "mil.sy", "com.sy", "org.sy", "sz", "co.sz", "ac.sz", "org.sz", "tc", "td", "tel", "tf", "tg", "th", "ac.th", "co.th", "go.th", "in.th", "mi.th", "net.th", "or.th", "tj", "ac.tj", "biz.tj", "co.tj", "com.tj", "edu.tj", "go.tj", "gov.tj", "int.tj", "mil.tj", "name.tj", "net.tj", "nic.tj", "org.tj", "test.tj", "web.tj", "tk", "tl", "gov.tl", "tm", "com.tm", "co.tm", "org.tm", "net.tm", "nom.tm", "gov.tm", "mil.tm", "edu.tm", "tn", "com.tn", "ens.tn", "fin.tn", "gov.tn", "ind.tn", "intl.tn", "nat.tn", "net.tn", "org.tn", "info.tn", "perso.tn", "tourism.tn", "edunet.tn", "rnrt.tn", "rns.tn", "rnu.tn", "mincom.tn", "agrinet.tn", "defense.tn", "turen.tn", "to", "com.to", "gov.to", "net.to", "org.to", "edu.to", "mil.to", "tr", "av.tr", "bbs.tr", "bel.tr", "biz.tr", "com.tr", "dr.tr", "edu.tr", "gen.tr", "gov.tr", "info.tr", "mil.tr", "k12.tr", "kep.tr", "name.tr", "net.tr", "org.tr", "pol.tr", "tel.tr", "tsk.tr", "tv.tr", "web.tr", "nc.tr", "gov.nc.tr", "tt", "co.tt", "com.tt", "org.tt", "net.tt", "biz.tt", "info.tt", "pro.tt", "int.tt", "coop.tt", "jobs.tt", "mobi.tt", "travel.tt", "museum.tt", "aero.tt", "name.tt", "gov.tt", "edu.tt", "tv", "tw", "edu.tw", "gov.tw", "mil.tw", "com.tw", "net.tw", "org.tw", "idv.tw", "game.tw", "ebiz.tw", "club.tw", "\u7db2\u8def.tw", "\u7d44\u7e54.tw", "\u5546\u696d.tw", "tz", "ac.tz", "co.tz", "go.tz", "hotel.tz", "info.tz", "me.tz", "mil.tz", "mobi.tz", "ne.tz", "or.tz", "sc.tz", "tv.tz", "ua", "com.ua", "edu.ua", "gov.ua", "in.ua", "net.ua", "org.ua", "cherkassy.ua", "cherkasy.ua", "chernigov.ua", "chernihiv.ua", "chernivtsi.ua", "chernovtsy.ua", "ck.ua", "cn.ua", "cr.ua", "crimea.ua", "cv.ua", "dn.ua", "dnepropetrovsk.ua", "dnipropetrovsk.ua", "dominic.ua", "donetsk.ua", "dp.ua", "if.ua", "ivano-frankivsk.ua", "kh.ua", "kharkiv.ua", "kharkov.ua", "kherson.ua", "khmelnitskiy.ua", "khmelnytskyi.ua", "kiev.ua", "kirovograd.ua", "km.ua", "kr.ua", "krym.ua", "ks.ua", "kv.ua", "kyiv.ua", "lg.ua", "lt.ua", "lugansk.ua", "lutsk.ua", "lv.ua", "lviv.ua", "mk.ua", "mykolaiv.ua", "nikolaev.ua", "od.ua", "odesa.ua", "odessa.ua", "pl.ua", "poltava.ua", "rivne.ua", "rovno.ua", "rv.ua", "sb.ua", "sebastopol.ua", "sevastopol.ua", "sm.ua", "sumy.ua", "te.ua", "ternopil.ua", "uz.ua", "uzhgorod.ua", "vinnica.ua", "vinnytsia.ua", "vn.ua", "volyn.ua", "yalta.ua", "zaporizhzhe.ua", "zaporizhzhia.ua", "zhitomir.ua", "zhytomyr.ua", "zp.ua", "zt.ua", "ug", "co.ug", "or.ug", "ac.ug", "sc.ug", "go.ug", "ne.ug", "com.ug", "org.ug", "uk", "ac.uk", "co.uk", "gov.uk", "ltd.uk", "me.uk", "net.uk", "nhs.uk", "org.uk", "plc.uk", "police.uk", "*.sch.uk", "us", "dni.us", "fed.us", "isa.us", "kids.us", "nsn.us", "ak.us", "al.us", "ar.us", "as.us", "az.us", "ca.us", "co.us", "ct.us", "dc.us", "de.us", "fl.us", "ga.us", "gu.us", "hi.us", "ia.us", "id.us", "il.us", "in.us", "ks.us", "ky.us", "la.us", "ma.us", "md.us", "me.us", "mi.us", "mn.us", "mo.us", "ms.us", "mt.us", "nc.us", "nd.us", "ne.us", "nh.us", "nj.us", "nm.us", "nv.us", "ny.us", "oh.us", "ok.us", "or.us", "pa.us", "pr.us", "ri.us", "sc.us", "sd.us", "tn.us", "tx.us", "ut.us", "vi.us", "vt.us", "va.us", "wa.us", "wi.us", "wv.us", "wy.us", "k12.ak.us", "k12.al.us", "k12.ar.us", "k12.as.us", "k12.az.us", "k12.ca.us", "k12.co.us", "k12.ct.us", "k12.dc.us", "k12.de.us", "k12.fl.us", "k12.ga.us", "k12.gu.us", "k12.ia.us", "k12.id.us", "k12.il.us", "k12.in.us", "k12.ks.us", "k12.ky.us", "k12.la.us", "k12.ma.us", "k12.md.us", "k12.me.us", "k12.mi.us", "k12.mn.us", "k12.mo.us", "k12.ms.us", "k12.mt.us", "k12.nc.us", "k12.ne.us", "k12.nh.us", "k12.nj.us", "k12.nm.us", "k12.nv.us", "k12.ny.us", "k12.oh.us", "k12.ok.us", "k12.or.us", "k12.pa.us", "k12.pr.us", "k12.sc.us", "k12.tn.us", "k12.tx.us", "k12.ut.us", "k12.vi.us", "k12.vt.us", "k12.va.us", "k12.wa.us", "k12.wi.us", "k12.wy.us", "cc.ak.us", "cc.al.us", "cc.ar.us", "cc.as.us", "cc.az.us", "cc.ca.us", "cc.co.us", "cc.ct.us", "cc.dc.us", "cc.de.us", "cc.fl.us", "cc.ga.us", "cc.gu.us", "cc.hi.us", "cc.ia.us", "cc.id.us", "cc.il.us", "cc.in.us", "cc.ks.us", "cc.ky.us", "cc.la.us", "cc.ma.us", "cc.md.us", "cc.me.us", "cc.mi.us", "cc.mn.us", "cc.mo.us", "cc.ms.us", "cc.mt.us", "cc.nc.us", "cc.nd.us", "cc.ne.us", "cc.nh.us", "cc.nj.us", "cc.nm.us", "cc.nv.us", "cc.ny.us", "cc.oh.us", "cc.ok.us", "cc.or.us", "cc.pa.us", "cc.pr.us", "cc.ri.us", "cc.sc.us", "cc.sd.us", "cc.tn.us", "cc.tx.us", "cc.ut.us", "cc.vi.us", "cc.vt.us", "cc.va.us", "cc.wa.us", "cc.wi.us", "cc.wv.us", "cc.wy.us", "lib.ak.us", "lib.al.us", "lib.ar.us", "lib.as.us", "lib.az.us", "lib.ca.us", "lib.co.us", "lib.ct.us", "lib.dc.us", "lib.fl.us", "lib.ga.us", "lib.gu.us", "lib.hi.us", "lib.ia.us", "lib.id.us", "lib.il.us", "lib.in.us", "lib.ks.us", "lib.ky.us", "lib.la.us", "lib.ma.us", "lib.md.us", "lib.me.us", "lib.mi.us", "lib.mn.us", "lib.mo.us", "lib.ms.us", "lib.mt.us", "lib.nc.us", "lib.nd.us", "lib.ne.us", "lib.nh.us", "lib.nj.us", "lib.nm.us", "lib.nv.us", "lib.ny.us", "lib.oh.us", "lib.ok.us", "lib.or.us", "lib.pa.us", "lib.pr.us", "lib.ri.us", "lib.sc.us", "lib.sd.us", "lib.tn.us", "lib.tx.us", "lib.ut.us", "lib.vi.us", "lib.vt.us", "lib.va.us", "lib.wa.us", "lib.wi.us", "lib.wy.us", "pvt.k12.ma.us", "chtr.k12.ma.us", "paroch.k12.ma.us", "ann-arbor.mi.us", "cog.mi.us", "dst.mi.us", "eaton.mi.us", "gen.mi.us", "mus.mi.us", "tec.mi.us", "washtenaw.mi.us", "uy", "com.uy", "edu.uy", "gub.uy", "mil.uy", "net.uy", "org.uy", "uz", "co.uz", "com.uz", "net.uz", "org.uz", "va", "vc", "com.vc", "net.vc", "org.vc", "gov.vc", "mil.vc", "edu.vc", "ve", "arts.ve", "co.ve", "com.ve", "e12.ve", "edu.ve", "firm.ve", "gob.ve", "gov.ve", "info.ve", "int.ve", "mil.ve", "net.ve", "org.ve", "rec.ve", "store.ve", "tec.ve", "web.ve", "vg", "vi", "co.vi", "com.vi", "k12.vi", "net.vi", "org.vi", "vn", "com.vn", "net.vn", "org.vn", "edu.vn", "gov.vn", "int.vn", "ac.vn", "biz.vn", "info.vn", "name.vn", "pro.vn", "health.vn", "vu", "com.vu", "edu.vu", "net.vu", "org.vu", "wf", "ws", "com.ws", "net.ws", "org.ws", "gov.ws", "edu.ws", "yt", "\u0627\u0645\u0627\u0631\u0627\u062a", "\u0570\u0561\u0575", "\u09ac\u09be\u0982\u09b2\u09be", "\u0431\u0433", "\u0431\u0435\u043b", "\u4e2d\u56fd", "\u4e2d\u570b", "\u0627\u0644\u062c\u0632\u0627\u0626\u0631", "\u0645\u0635\u0631", "\u0435\u044e", "\u03b5\u03c5", "\u0645\u0648\u0631\u064a\u062a\u0627\u0646\u064a\u0627", "\u10d2\u10d4", "\u03b5\u03bb", "\u9999\u6e2f", "\u516c\u53f8.\u9999\u6e2f", "\u6559\u80b2.\u9999\u6e2f", "\u653f\u5e9c.\u9999\u6e2f", "\u500b\u4eba.\u9999\u6e2f", "\u7db2\u7d61.\u9999\u6e2f", "\u7d44\u7e54.\u9999\u6e2f", "\u0cad\u0cbe\u0cb0\u0ca4", "\u0b2d\u0b3e\u0b30\u0b24", "\u09ad\u09be\u09f0\u09a4", "\u092d\u093e\u0930\u0924\u092e\u094d", "\u092d\u093e\u0930\u094b\u0924", "\u0680\u0627\u0631\u062a", "\u0d2d\u0d3e\u0d30\u0d24\u0d02", "\u092d\u093e\u0930\u0924", "\u0628\u0627\u0631\u062a", "\u0628\u06be\u0627\u0631\u062a", "\u0c2d\u0c3e\u0c30\u0c24\u0c4d", "\u0aad\u0abe\u0ab0\u0aa4", "\u0a2d\u0a3e\u0a30\u0a24", "\u09ad\u09be\u09b0\u09a4", "\u0b87\u0ba8\u0bcd\u0ba4\u0bbf\u0baf\u0bbe", "\u0627\u06cc\u0631\u0627\u0646", "\u0627\u064a\u0631\u0627\u0646", "\u0639\u0631\u0627\u0642", "\u0627\u0644\u0627\u0631\u062f\u0646", "\ud55c\uad6d", "\u049b\u0430\u0437", "\u0dbd\u0d82\u0d9a\u0dcf", "\u0b87\u0bb2\u0b99\u0bcd\u0b95\u0bc8", "\u0627\u0644\u0645\u063a\u0631\u0628", "\u043c\u043a\u0434", "\u043c\u043e\u043d", "\u6fb3\u9580", "\u6fb3\u95e8", "\u0645\u0644\u064a\u0633\u064a\u0627", "\u0639\u0645\u0627\u0646", "\u067e\u0627\u06a9\u0633\u062a\u0627\u0646", "\u067e\u0627\u0643\u0633\u062a\u0627\u0646", "\u0641\u0644\u0633\u0637\u064a\u0646", "\u0441\u0440\u0431", "\u043f\u0440.\u0441\u0440\u0431", "\u043e\u0440\u0433.\u0441\u0440\u0431", "\u043e\u0431\u0440.\u0441\u0440\u0431", "\u043e\u0434.\u0441\u0440\u0431", "\u0443\u043f\u0440.\u0441\u0440\u0431", "\u0430\u043a.\u0441\u0440\u0431", "\u0440\u0444", "\u0642\u0637\u0631", "\u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0629", "\u0627\u0644\u0633\u0639\u0648\u062f\u06cc\u0629", "\u0627\u0644\u0633\u0639\u0648\u062f\u06cc\u06c3", "\u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0647", "\u0633\u0648\u062f\u0627\u0646", "\u65b0\u52a0\u5761", "\u0b9a\u0bbf\u0b99\u0bcd\u0b95\u0baa\u0bcd\u0baa\u0bc2\u0bb0\u0bcd", "\u0633\u0648\u0631\u064a\u0629", "\u0633\u0648\u0631\u064a\u0627", "\u0e44\u0e17\u0e22", "\u0e28\u0e36\u0e01\u0e29\u0e32.\u0e44\u0e17\u0e22", "\u0e18\u0e38\u0e23\u0e01\u0e34\u0e08.\u0e44\u0e17\u0e22", "\u0e23\u0e31\u0e10\u0e1a\u0e32\u0e25.\u0e44\u0e17\u0e22", "\u0e17\u0e2b\u0e32\u0e23.\u0e44\u0e17\u0e22", "\u0e40\u0e19\u0e47\u0e15.\u0e44\u0e17\u0e22", "\u0e2d\u0e07\u0e04\u0e4c\u0e01\u0e23.\u0e44\u0e17\u0e22", "\u062a\u0648\u0646\u0633", "\u53f0\u7063", "\u53f0\u6e7e", "\u81fa\u7063", "\u0443\u043a\u0440", "\u0627\u0644\u064a\u0645\u0646", "xxx", "*.ye", "ac.za", "agric.za", "alt.za", "co.za", "edu.za", "gov.za", "grondar.za", "law.za", "mil.za", "net.za", "ngo.za", "nic.za", "nis.za", "nom.za", "org.za", "school.za", "tm.za", "web.za", "zm", "ac.zm", "biz.zm", "co.zm", "com.zm", "edu.zm", "gov.zm", "info.zm", "mil.zm", "net.zm", "org.zm", "sch.zm", "zw", "ac.zw", "co.zw", "gov.zw", "mil.zw", "org.zw", "aaa", "aarp", "abarth", "abb", "abbott", "abbvie", "abc", "able", "abogado", "abudhabi", "academy", "accenture", "accountant", "accountants", "aco", "actor", "adac", "ads", "adult", "aeg", "aetna", "afamilycompany", "afl", "africa", "agakhan", "agency", "aig", "aigo", "airbus", "airforce", "airtel", "akdn", "alfaromeo", "alibaba", "alipay", "allfinanz", "allstate", "ally", "alsace", "alstom", "amazon", "americanexpress", "americanfamily", "amex", "amfam", "amica", "amsterdam", "analytics", "android", "anquan", "anz", "aol", "apartments", "app", "apple", "aquarelle", "arab", "aramco", "archi", "army", "art", "arte", "asda", "associates", "athleta", "attorney", "auction", "audi", "audible", "audio", "auspost", "author", "auto", "autos", "avianca", "aws", "axa", "azure", "baby", "baidu", "banamex", "bananarepublic", "band", "bank", "bar", "barcelona", "barclaycard", "barclays", "barefoot", "bargains", "baseball", "basketball", "bauhaus", "bayern", "bbc", "bbt", "bbva", "bcg", "bcn", "beats", "beauty", "beer", "bentley", "berlin", "best", "bestbuy", "bet", "bharti", "bible", "bid", "bike", "bing", "bingo", "bio", "black", "blackfriday", "blockbuster", "blog", "bloomberg", "blue", "bms", "bmw", "bnpparibas", "boats", "boehringer", "bofa", "bom", "bond", "boo", "book", "booking", "bosch", "bostik", "boston", "bot", "boutique", "box", "bradesco", "bridgestone", "broadway", "broker", "brother", "brussels", "budapest", "bugatti", "build", "builders", "business", "buy", "buzz", "bzh", "cab", "cafe", "cal", "call", "calvinklein", "cam", "camera", "camp", "cancerresearch", "canon", "capetown", "capital", "capitalone", "car", "caravan", "cards", "care", "career", "careers", "cars", "casa", "case", "caseih", "cash", "casino", "catering", "catholic", "cba", "cbn", "cbre", "cbs", "ceb", "center", "ceo", "cern", "cfa", "cfd", "chanel", "channel", "charity", "chase", "chat", "cheap", "chintai", "christmas", "chrome", "church", "cipriani", "circle", "cisco", "citadel", "citi", "citic", "city", "cityeats", "claims", "cleaning", "click", "clinic", "clinique", "clothing", "cloud", "club", "clubmed", "coach", "codes", "coffee", "college", "cologne", "comcast", "commbank", "community", "company", "compare", "computer", "comsec", "condos", "construction", "consulting", "contact", "contractors", "cooking", "cookingchannel", "cool", "corsica", "country", "coupon", "coupons", "courses", "cpa", "credit", "creditcard", "creditunion", "cricket", "crown", "crs", "cruise", "cruises", "csc", "cuisinella", "cymru", "cyou", "dabur", "dad", "dance", "data", "date", "dating", "datsun", "day", "dclk", "dds", "deal", "dealer", "deals", "degree", "delivery", "dell", "deloitte", "delta", "democrat", "dental", "dentist", "desi", "design", "dev", "dhl", "diamonds", "diet", "digital", "direct", "directory", "discount", "discover", "dish", "diy", "dnp", "docs", "doctor", "dog", "domains", "dot", "download", "drive", "dtv", "dubai", "duck", "dunlop", "dupont", "durban", "dvag", "dvr", "earth", "eat", "eco", "edeka", "education", "email", "emerck", "energy", "engineer", "engineering", "enterprises", "epson", "equipment", "ericsson", "erni", "esq", "estate", "esurance", "etisalat", "eurovision", "eus", "events", "exchange", "expert", "exposed", "express", "extraspace", "fage", "fail", "fairwinds", "faith", "family", "fan", "fans", "farm", "farmers", "fashion", "fast", "fedex", "feedback", "ferrari", "ferrero", "fiat", "fidelity", "fido", "film", "final", "finance", "financial", "fire", "firestone", "firmdale", "fish", "fishing", "fit", "fitness", "flickr", "flights", "flir", "florist", "flowers", "fly", "foo", "food", "foodnetwork", "football", "ford", "forex", "forsale", "forum", "foundation", "fox", "free", "fresenius", "frl", "frogans", "frontdoor", "frontier", "ftr", "fujitsu", "fujixerox", "fun", "fund", "furniture", "futbol", "fyi", "gal", "gallery", "gallo", "gallup", "game", "games", "gap", "garden", "gay", "gbiz", "gdn", "gea", "gent", "genting", "george", "ggee", "gift", "gifts", "gives", "giving", "glade", "glass", "gle", "global", "globo", "gmail", "gmbh", "gmo", "gmx", "godaddy", "gold", "goldpoint", "golf", "goo", "goodyear", "goog", "google", "gop", "got", "grainger", "graphics", "gratis", "green", "gripe", "grocery", "group", "guardian", "gucci", "guge", "guide", "guitars", "guru", "hair", "hamburg", "hangout", "haus", "hbo", "hdfc", "hdfcbank", "health", "healthcare", "help", "helsinki", "here", "hermes", "hgtv", "hiphop", "hisamitsu", "hitachi", "hiv", "hkt", "hockey", "holdings", "holiday", "homedepot", "homegoods", "homes", "homesense", "honda", "horse", "hospital", "host", "hosting", "hot", "hoteles", "hotels", "hotmail", "house", "how", "hsbc", "hughes", "hyatt", "hyundai", "ibm", "icbc", "ice", "icu", "ieee", "ifm", "ikano", "imamat", "imdb", "immo", "immobilien", "inc", "industries", "infiniti", "ing", "ink", "institute", "insurance", "insure", "intel", "international", "intuit", "investments", "ipiranga", "irish", "ismaili", "ist", "istanbul", "itau", "itv", "iveco", "jaguar", "java", "jcb", "jcp", "jeep", "jetzt", "jewelry", "jio", "jll", "jmp", "jnj", "joburg", "jot", "joy", "jpmorgan", "jprs", "juegos", "juniper", "kaufen", "kddi", "kerryhotels", "kerrylogistics", "kerryproperties", "kfh", "kia", "kim", "kinder", "kindle", "kitchen", "kiwi", "koeln", "komatsu", "kosher", "kpmg", "kpn", "krd", "kred", "kuokgroup", "kyoto", "lacaixa", "lamborghini", "lamer", "lancaster", "lancia", "land", "landrover", "lanxess", "lasalle", "lat", "latino", "latrobe", "law", "lawyer", "lds", "lease", "leclerc", "lefrak", "legal", "lego", "lexus", "lgbt", "lidl", "life", "lifeinsurance", "lifestyle", "lighting", "like", "lilly", "limited", "limo", "lincoln", "linde", "link", "lipsy", "live", "living", "lixil", "llc", "llp", "loan", "loans", "locker", "locus", "loft", "lol", "london", "lotte", "lotto", "love", "lpl", "lplfinancial", "ltd", "ltda", "lundbeck", "lupin", "luxe", "luxury", "macys", "madrid", "maif", "maison", "makeup", "man", "management", "mango", "map", "market", "marketing", "markets", "marriott", "marshalls", "maserati", "mattel", "mba", "mckinsey", "med", "media", "meet", "melbourne", "meme", "memorial", "men", "menu", "merckmsd", "metlife", "miami", "microsoft", "mini", "mint", "mit", "mitsubishi", "mlb", "mls", "mma", "mobile", "moda", "moe", "moi", "mom", "monash", "money", "monster", "mormon", "mortgage", "moscow", "moto", "motorcycles", "mov", "movie", "msd", "mtn", "mtr", "mutual", "nab", "nagoya", "nationwide", "natura", "navy", "nba", "nec", "netbank", "netflix", "network", "neustar", "new", "newholland", "news", "next", "nextdirect", "nexus", "nfl", "ngo", "nhk", "nico", "nike", "nikon", "ninja", "nissan", "nissay", "nokia", "northwesternmutual", "norton", "now", "nowruz", "nowtv", "nra", "nrw", "ntt", "nyc", "obi", "observer", "off", "office", "okinawa", "olayan", "olayangroup", "oldnavy", "ollo", "omega", "one", "ong", "onl", "online", "onyourside", "ooo", "open", "oracle", "orange", "organic", "origins", "osaka", "otsuka", "ott", "ovh", "page", "panasonic", "paris", "pars", "partners", "parts", "party", "passagens", "pay", "pccw", "pet", "pfizer", "pharmacy", "phd", "philips", "phone", "photo", "photography", "photos", "physio", "pics", "pictet", "pictures", "pid", "pin", "ping", "pink", "pioneer", "pizza", "place", "play", "playstation", "plumbing", "plus", "pnc", "pohl", "poker", "politie", "porn", "pramerica", "praxi", "press", "prime", "prod", "productions", "prof", "progressive", "promo", "properties", "property", "protection", "pru", "prudential", "pub", "pwc", "qpon", "quebec", "quest", "qvc", "racing", "radio", "raid", "read", "realestate", "realtor", "realty", "recipes", "red", "redstone", "redumbrella", "rehab", "reise", "reisen", "reit", "reliance", "ren", "rent", "rentals", "repair", "report", "republican", "rest", "restaurant", "review", "reviews", "rexroth", "rich", "richardli", "ricoh", "rightathome", "ril", "rio", "rip", "rmit", "rocher", "rocks", "rodeo", "rogers", "room", "rsvp", "rugby", "ruhr", "run", "rwe", "ryukyu", "saarland", "safe", "safety", "sakura", "sale", "salon", "samsclub", "samsung", "sandvik", "sandvikcoromant", "sanofi", "sap", "sarl", "sas", "save", "saxo", "sbi", "sbs", "sca", "scb", "schaeffler", "schmidt", "scholarships", "school", "schule", "schwarz", "science", "scjohnson", "scor", "scot", "search", "seat", "secure", "security", "seek", "select", "sener", "services", "ses", "seven", "sew", "sex", "sexy", "sfr", "shangrila", "sharp", "shaw", "shell", "shia", "shiksha", "shoes", "shop", "shopping", "shouji", "show", "showtime", "shriram", "silk", "sina", "singles", "site", "ski", "skin", "sky", "skype", "sling", "smart", "smile", "sncf", "soccer", "social", "softbank", "software", "sohu", "solar", "solutions", "song", "sony", "soy", "spa", "space", "sport", "spot", "spreadbetting", "srl", "stada", "staples", "star", "statebank", "statefarm", "stc", "stcgroup", "stockholm", "storage", "store", "stream", "studio", "study", "style", "sucks", "supplies", "supply", "support", "surf", "surgery", "suzuki", "swatch", "swiftcover", "swiss", "sydney", "symantec", "systems", "tab", "taipei", "talk", "taobao", "target", "tatamotors", "tatar", "tattoo", "tax", "taxi", "tci", "tdk", "team", "tech", "technology", "temasek", "tennis", "teva", "thd", "theater", "theatre", "tiaa", "tickets", "tienda", "tiffany", "tips", "tires", "tirol", "tjmaxx", "tjx", "tkmaxx", "tmall", "today", "tokyo", "tools", "top", "toray", "toshiba", "total", "tours", "town", "toyota", "toys", "trade", "trading", "training", "travel", "travelchannel", "travelers", "travelersinsurance", "trust", "trv", "tube", "tui", "tunes", "tushu", "tvs", "ubank", "ubs", "unicom", "university", "uno", "uol", "ups", "vacations", "vana", "vanguard", "vegas", "ventures", "verisign", "versicherung", "vet", "viajes", "video", "vig", "viking", "villas", "vin", "vip", "virgin", "visa", "vision", "viva", "vivo", "vlaanderen", "vodka", "volkswagen", "volvo", "vote", "voting", "voto", "voyage", "vuelos", "wales", "walmart", "walter", "wang", "wanggou", "watch", "watches", "weather", "weatherchannel", "webcam", "weber", "website", "wed", "wedding", "weibo", "weir", "whoswho", "wien", "wiki", "williamhill", "win", "windows", "wine", "winners", "wme", "wolterskluwer", "woodside", "work", "works", "world", "wow", "wtc", "wtf", "xbox", "xerox", "xfinity", "xihuan", "xin", "\u0915\u0949\u092e", "\u30bb\u30fc\u30eb", "\u4f5b\u5c71", "\u6148\u5584", "\u96c6\u56e2", "\u5728\u7ebf", "\u5927\u4f17\u6c7d\u8f66", "\u70b9\u770b", "\u0e04\u0e2d\u0e21", "\u516b\u5366", "\u0645\u0648\u0642\u0639", "\u516c\u76ca", "\u516c\u53f8", "\u9999\u683c\u91cc\u62c9", "\u7f51\u7ad9", "\u79fb\u52a8", "\u6211\u7231\u4f60", "\u043c\u043e\u0441\u043a\u0432\u0430", "\u043a\u0430\u0442\u043e\u043b\u0438\u043a", "\u043e\u043d\u043b\u0430\u0439\u043d", "\u0441\u0430\u0439\u0442", "\u8054\u901a", "\u05e7\u05d5\u05dd", "\u65f6\u5c1a", "\u5fae\u535a", "\u6de1\u9a6c\u9521", "\u30d5\u30a1\u30c3\u30b7\u30e7\u30f3", "\u043e\u0440\u0433", "\u0928\u0947\u091f", "\u30b9\u30c8\u30a2", "\u30a2\u30de\u30be\u30f3", "\uc0bc\uc131", "\u5546\u6807", "\u5546\u5e97", "\u5546\u57ce", "\u0434\u0435\u0442\u0438", "\u30dd\u30a4\u30f3\u30c8", "\u65b0\u95fb", "\u5bb6\u96fb", "\u0643\u0648\u0645", "\u4e2d\u6587\u7f51", "\u4e2d\u4fe1", "\u5a31\u4e50", "\u8c37\u6b4c", "\u96fb\u8a0a\u76c8\u79d1", "\u8d2d\u7269", "\u30af\u30e9\u30a6\u30c9", "\u901a\u8ca9", "\u7f51\u5e97", "\u0938\u0902\u0917\u0920\u0928", "\u9910\u5385", "\u7f51\u7edc", "\u043a\u043e\u043c", "\u4e9a\u9a6c\u900a", "\u8bfa\u57fa\u4e9a", "\u98df\u54c1", "\u98de\u5229\u6d66", "\u624b\u8868", "\u624b\u673a", "\u0627\u0631\u0627\u0645\u0643\u0648", "\u0627\u0644\u0639\u0644\u064a\u0627\u0646", "\u0627\u062a\u0635\u0627\u0644\u0627\u062a", "\u0628\u0627\u0632\u0627\u0631", "\u0627\u0628\u0648\u0638\u0628\u064a", "\u0643\u0627\u062b\u0648\u0644\u064a\u0643", "\u0647\u0645\u0631\u0627\u0647", "\ub2f7\ucef4", "\u653f\u5e9c", "\u0634\u0628\u0643\u0629", "\u0628\u064a\u062a\u0643", "\u0639\u0631\u0628", "\u673a\u6784", "\u7ec4\u7ec7\u673a\u6784", "\u5065\u5eb7", "\u62db\u8058", "\u0440\u0443\u0441", "\u73e0\u5b9d", "\u5927\u62ff", "\u307f\u3093\u306a", "\u30b0\u30fc\u30b0\u30eb", "\u4e16\u754c", "\u66f8\u7c4d", "\u7f51\u5740", "\ub2f7\ub137", "\u30b3\u30e0", "\u5929\u4e3b\u6559", "\u6e38\u620f", "verm\u00f6gensberater", "verm\u00f6gensberatung", "\u4f01\u4e1a", "\u4fe1\u606f", "\u5609\u91cc\u5927\u9152\u5e97", "\u5609\u91cc", "\u5e7f\u4e1c", "\u653f\u52a1", "xyz", "yachts", "yahoo", "yamaxun", "yandex", "yodobashi", "yoga", "yokohama", "you", "youtube", "yun", "zappos", "zara", "zero", "zip", "zone", "zuerich", "cc.ua", "inf.ua", "ltd.ua", "adobeaemcloud.com", "adobeaemcloud.net", "*.dev.adobeaemcloud.com", "beep.pl", "barsy.ca", "*.compute.estate", "*.alces.network", "altervista.org", "alwaysdata.net", "cloudfront.net", "*.compute.amazonaws.com", "*.compute-1.amazonaws.com", "*.compute.amazonaws.com.cn", "us-east-1.amazonaws.com", "cn-north-1.eb.amazonaws.com.cn", "cn-northwest-1.eb.amazonaws.com.cn", "elasticbeanstalk.com", "ap-northeast-1.elasticbeanstalk.com", "ap-northeast-2.elasticbeanstalk.com", "ap-northeast-3.elasticbeanstalk.com", "ap-south-1.elasticbeanstalk.com", "ap-southeast-1.elasticbeanstalk.com", "ap-southeast-2.elasticbeanstalk.com", "ca-central-1.elasticbeanstalk.com", "eu-central-1.elasticbeanstalk.com", "eu-west-1.elasticbeanstalk.com", "eu-west-2.elasticbeanstalk.com", "eu-west-3.elasticbeanstalk.com", "sa-east-1.elasticbeanstalk.com", "us-east-1.elasticbeanstalk.com", "us-east-2.elasticbeanstalk.com", "us-gov-west-1.elasticbeanstalk.com", "us-west-1.elasticbeanstalk.com", "us-west-2.elasticbeanstalk.com", "*.elb.amazonaws.com", "*.elb.amazonaws.com.cn", "s3.amazonaws.com", "s3-ap-northeast-1.amazonaws.com", "s3-ap-northeast-2.amazonaws.com", "s3-ap-south-1.amazonaws.com", "s3-ap-southeast-1.amazonaws.com", "s3-ap-southeast-2.amazonaws.com", "s3-ca-central-1.amazonaws.com", "s3-eu-central-1.amazonaws.com", "s3-eu-west-1.amazonaws.com", "s3-eu-west-2.amazonaws.com", "s3-eu-west-3.amazonaws.com", "s3-external-1.amazonaws.com", "s3-fips-us-gov-west-1.amazonaws.com", "s3-sa-east-1.amazonaws.com", "s3-us-gov-west-1.amazonaws.com", "s3-us-east-2.amazonaws.com", "s3-us-west-1.amazonaws.com", "s3-us-west-2.amazonaws.com", "s3.ap-northeast-2.amazonaws.com", "s3.ap-south-1.amazonaws.com", "s3.cn-north-1.amazonaws.com.cn", "s3.ca-central-1.amazonaws.com", "s3.eu-central-1.amazonaws.com", "s3.eu-west-2.amazonaws.com", "s3.eu-west-3.amazonaws.com", "s3.us-east-2.amazonaws.com", "s3.dualstack.ap-northeast-1.amazonaws.com", "s3.dualstack.ap-northeast-2.amazonaws.com", "s3.dualstack.ap-south-1.amazonaws.com", "s3.dualstack.ap-southeast-1.amazonaws.com", "s3.dualstack.ap-southeast-2.amazonaws.com", "s3.dualstack.ca-central-1.amazonaws.com", "s3.dualstack.eu-central-1.amazonaws.com", "s3.dualstack.eu-west-1.amazonaws.com", "s3.dualstack.eu-west-2.amazonaws.com", "s3.dualstack.eu-west-3.amazonaws.com", "s3.dualstack.sa-east-1.amazonaws.com", "s3.dualstack.us-east-1.amazonaws.com", "s3.dualstack.us-east-2.amazonaws.com", "s3-website-us-east-1.amazonaws.com", "s3-website-us-west-1.amazonaws.com", "s3-website-us-west-2.amazonaws.com", "s3-website-ap-northeast-1.amazonaws.com", "s3-website-ap-southeast-1.amazonaws.com", "s3-website-ap-southeast-2.amazonaws.com", "s3-website-eu-west-1.amazonaws.com", "s3-website-sa-east-1.amazonaws.com", "s3-website.ap-northeast-2.amazonaws.com", "s3-website.ap-south-1.amazonaws.com", "s3-website.ca-central-1.amazonaws.com", "s3-website.eu-central-1.amazonaws.com", "s3-website.eu-west-2.amazonaws.com", "s3-website.eu-west-3.amazonaws.com", "s3-website.us-east-2.amazonaws.com", "amsw.nl", "t3l3p0rt.net", "tele.amune.org", "apigee.io", "on-aptible.com", "user.aseinet.ne.jp", "gv.vc", "d.gv.vc", "user.party.eus", "pimienta.org", "poivron.org", "potager.org", "sweetpepper.org", "myasustor.com", "myfritz.net", "*.awdev.ca", "*.advisor.ws", "b-data.io", "backplaneapp.io", "balena-devices.com", "app.banzaicloud.io", "betainabox.com", "bnr.la", "blackbaudcdn.net", "boomla.net", "boxfuse.io", "square7.ch", "bplaced.com", "bplaced.de", "square7.de", "bplaced.net", "square7.net", "browsersafetymark.io", "uk0.bigv.io", "dh.bytemark.co.uk", "vm.bytemark.co.uk", "mycd.eu", "carrd.co", "crd.co", "uwu.ai", "ae.org", "ar.com", "br.com", "cn.com", "com.de", "com.se", "de.com", "eu.com", "gb.com", "gb.net", "hu.com", "hu.net", "jp.net", "jpn.com", "kr.com", "mex.com", "no.com", "qc.com", "ru.com", "sa.com", "se.net", "uk.com", "uk.net", "us.com", "uy.com", "za.bz", "za.com", "africa.com", "gr.com", "in.net", "us.org", "co.com", "c.la", "certmgr.org", "xenapponazure.com", "discourse.group", "discourse.team", "virtueeldomein.nl", "cleverapps.io", "*.lcl.dev", "*.stg.dev", "clic2000.net", "c66.me", "cloud66.ws", "cloud66.zone", "jdevcloud.com", "wpdevcloud.com", "cloudaccess.host", "freesite.host", "cloudaccess.net", "cloudcontrolled.com", "cloudcontrolapp.com", "cloudera.site", "trycloudflare.com", "workers.dev", "wnext.app", "co.ca", "*.otap.co", "co.cz", "c.cdn77.org", "cdn77-ssl.net", "r.cdn77.net", "rsc.cdn77.org", "ssl.origin.cdn77-secure.org", "cloudns.asia", "cloudns.biz", "cloudns.club", "cloudns.cc", "cloudns.eu", "cloudns.in", "cloudns.info", "cloudns.org", "cloudns.pro", "cloudns.pw", "cloudns.us", "cloudeity.net", "cnpy.gdn", "co.nl", "co.no", "webhosting.be", "hosting-cluster.nl", "ac.ru", "edu.ru", "gov.ru", "int.ru", "mil.ru", "test.ru", "dyn.cosidns.de", "dynamisches-dns.de", "dnsupdater.de", "internet-dns.de", "l-o-g-i-n.de", "dynamic-dns.info", "feste-ip.net", "knx-server.net", "static-access.net", "realm.cz", "*.cryptonomic.net", "cupcake.is", "curv.dev", "*.customer-oci.com", "*.oci.customer-oci.com", "*.ocp.customer-oci.com", "*.ocs.customer-oci.com", "cyon.link", "cyon.site", "daplie.me", "localhost.daplie.me", "dattolocal.com", "dattorelay.com", "dattoweb.com", "mydatto.com", "dattolocal.net", "mydatto.net", "biz.dk", "co.dk", "firm.dk", "reg.dk", "store.dk", "dyndns.dappnode.io", "*.dapps.earth", "*.bzz.dapps.earth", "builtwithdark.com", "edgestack.me", "debian.net", "dedyn.io", "dnshome.de", "online.th", "shop.th", "drayddns.com", "dreamhosters.com", "mydrobo.com", "drud.io", "drud.us", "duckdns.org", "dy.fi", "tunk.org", "dyndns-at-home.com", "dyndns-at-work.com", "dyndns-blog.com", "dyndns-free.com", "dyndns-home.com", "dyndns-ip.com", "dyndns-mail.com", "dyndns-office.com", "dyndns-pics.com", "dyndns-remote.com", "dyndns-server.com", "dyndns-web.com", "dyndns-wiki.com", "dyndns-work.com", "dyndns.biz", "dyndns.info", "dyndns.org", "dyndns.tv", "at-band-camp.net", "ath.cx", "barrel-of-knowledge.info", "barrell-of-knowledge.info", "better-than.tv", "blogdns.com", "blogdns.net", "blogdns.org", "blogsite.org", "boldlygoingnowhere.org", "broke-it.net", "buyshouses.net", "cechire.com", "dnsalias.com", "dnsalias.net", "dnsalias.org", "dnsdojo.com", "dnsdojo.net", "dnsdojo.org", "does-it.net", "doesntexist.com", "doesntexist.org", "dontexist.com", "dontexist.net", "dontexist.org", "doomdns.com", "doomdns.org", "dvrdns.org", "dyn-o-saur.com", "dynalias.com", "dynalias.net", "dynalias.org", "dynathome.net", "dyndns.ws", "endofinternet.net", "endofinternet.org", "endoftheinternet.org", "est-a-la-maison.com", "est-a-la-masion.com", "est-le-patron.com", "est-mon-blogueur.com", "for-better.biz", "for-more.biz", "for-our.info", "for-some.biz", "for-the.biz", "forgot.her.name", "forgot.his.name", "from-ak.com", "from-al.com", "from-ar.com", "from-az.net", "from-ca.com", "from-co.net", "from-ct.com", "from-dc.com", "from-de.com", "from-fl.com", "from-ga.com", "from-hi.com", "from-ia.com", "from-id.com", "from-il.com", "from-in.com", "from-ks.com", "from-ky.com", "from-la.net", "from-ma.com", "from-md.com", "from-me.org", "from-mi.com", "from-mn.com", "from-mo.com", "from-ms.com", "from-mt.com", "from-nc.com", "from-nd.com", "from-ne.com", "from-nh.com", "from-nj.com", "from-nm.com", "from-nv.com", "from-ny.net", "from-oh.com", "from-ok.com", "from-or.com", "from-pa.com", "from-pr.com", "from-ri.com", "from-sc.com", "from-sd.com", "from-tn.com", "from-tx.com", "from-ut.com", "from-va.com", "from-vt.com", "from-wa.com", "from-wi.com", "from-wv.com", "from-wy.com", "ftpaccess.cc", "fuettertdasnetz.de", "game-host.org", "game-server.cc", "getmyip.com", "gets-it.net", "go.dyndns.org", "gotdns.com", "gotdns.org", "groks-the.info", "groks-this.info", "ham-radio-op.net", "here-for-more.info", "hobby-site.com", "hobby-site.org", "home.dyndns.org", "homedns.org", "homeftp.net", "homeftp.org", "homeip.net", "homelinux.com", "homelinux.net", "homelinux.org", "homeunix.com", "homeunix.net", "homeunix.org", "iamallama.com", "in-the-band.net", "is-a-anarchist.com", "is-a-blogger.com", "is-a-bookkeeper.com", "is-a-bruinsfan.org", "is-a-bulls-fan.com", "is-a-candidate.org", "is-a-caterer.com", "is-a-celticsfan.org", "is-a-chef.com", "is-a-chef.net", "is-a-chef.org", "is-a-conservative.com", "is-a-cpa.com", "is-a-cubicle-slave.com", "is-a-democrat.com", "is-a-designer.com", "is-a-doctor.com", "is-a-financialadvisor.com", "is-a-geek.com", "is-a-geek.net", "is-a-geek.org", "is-a-green.com", "is-a-guru.com", "is-a-hard-worker.com", "is-a-hunter.com", "is-a-knight.org", "is-a-landscaper.com", "is-a-lawyer.com", "is-a-liberal.com", "is-a-libertarian.com", "is-a-linux-user.org", "is-a-llama.com", "is-a-musician.com", "is-a-nascarfan.com", "is-a-nurse.com", "is-a-painter.com", "is-a-patsfan.org", "is-a-personaltrainer.com", "is-a-photographer.com", "is-a-player.com", "is-a-republican.com", "is-a-rockstar.com", "is-a-socialist.com", "is-a-soxfan.org", "is-a-student.com", "is-a-teacher.com", "is-a-techie.com", "is-a-therapist.com", "is-an-accountant.com", "is-an-actor.com", "is-an-actress.com", "is-an-anarchist.com", "is-an-artist.com", "is-an-engineer.com", "is-an-entertainer.com", "is-by.us", "is-certified.com", "is-found.org", "is-gone.com", "is-into-anime.com", "is-into-cars.com", "is-into-cartoons.com", "is-into-games.com", "is-leet.com", "is-lost.org", "is-not-certified.com", "is-saved.org", "is-slick.com", "is-uberleet.com", "is-very-bad.org", "is-very-evil.org", "is-very-good.org", "is-very-nice.org", "is-very-sweet.org", "is-with-theband.com", "isa-geek.com", "isa-geek.net", "isa-geek.org", "isa-hockeynut.com", "issmarterthanyou.com", "isteingeek.de", "istmein.de", "kicks-ass.net", "kicks-ass.org", "knowsitall.info", "land-4-sale.us", "lebtimnetz.de", "leitungsen.de", "likes-pie.com", "likescandy.com", "merseine.nu", "mine.nu", "misconfused.org", "mypets.ws", "myphotos.cc", "neat-url.com", "office-on-the.net", "on-the-web.tv", "podzone.net", "podzone.org", "readmyblog.org", "saves-the-whales.com", "scrapper-site.net", "scrapping.cc", "selfip.biz", "selfip.com", "selfip.info", "selfip.net", "selfip.org", "sells-for-less.com", "sells-for-u.com", "sells-it.net", "sellsyourhome.org", "servebbs.com", "servebbs.net", "servebbs.org", "serveftp.net", "serveftp.org", "servegame.org", "shacknet.nu", "simple-url.com", "space-to-rent.com", "stuff-4-sale.org", "stuff-4-sale.us", "teaches-yoga.com", "thruhere.net", "traeumtgerade.de", "webhop.biz", "webhop.info", "webhop.net", "webhop.org", "worse-than.tv", "writesthisblog.com", "ddnss.de", "dyn.ddnss.de", "dyndns.ddnss.de", "dyndns1.de", "dyn-ip24.de", "home-webserver.de", "dyn.home-webserver.de", "myhome-server.de", "ddnss.org", "definima.net", "definima.io", "bci.dnstrace.pro", "ddnsfree.com", "ddnsgeek.com", "giize.com", "gleeze.com", "kozow.com", "loseyourip.com", "ooguy.com", "theworkpc.com", "casacam.net", "dynu.net", "accesscam.org", "camdvr.org", "freeddns.org", "mywire.org", "webredirect.org", "myddns.rocks", "blogsite.xyz", "dynv6.net", "e4.cz", "en-root.fr", "mytuleap.com", "onred.one", "staging.onred.one", "enonic.io", "customer.enonic.io", "eu.org", "al.eu.org", "asso.eu.org", "at.eu.org", "au.eu.org", "be.eu.org", "bg.eu.org", "ca.eu.org", "cd.eu.org", "ch.eu.org", "cn.eu.org", "cy.eu.org", "cz.eu.org", "de.eu.org", "dk.eu.org", "edu.eu.org", "ee.eu.org", "es.eu.org", "fi.eu.org", "fr.eu.org", "gr.eu.org", "hr.eu.org", "hu.eu.org", "ie.eu.org", "il.eu.org", "in.eu.org", "int.eu.org", "is.eu.org", "it.eu.org", "jp.eu.org", "kr.eu.org", "lt.eu.org", "lu.eu.org", "lv.eu.org", "mc.eu.org", "me.eu.org", "mk.eu.org", "mt.eu.org", "my.eu.org", "net.eu.org", "ng.eu.org", "nl.eu.org", "no.eu.org", "nz.eu.org", "paris.eu.org", "pl.eu.org", "pt.eu.org", "q-a.eu.org", "ro.eu.org", "ru.eu.org", "se.eu.org", "si.eu.org", "sk.eu.org", "tr.eu.org", "uk.eu.org", "us.eu.org", "eu-1.evennode.com", "eu-2.evennode.com", "eu-3.evennode.com", "eu-4.evennode.com", "us-1.evennode.com", "us-2.evennode.com", "us-3.evennode.com", "us-4.evennode.com", "twmail.cc", "twmail.net", "twmail.org", "mymailer.com.tw", "url.tw", "onfabrica.com", "apps.fbsbx.com", "ru.net", "adygeya.ru", "bashkiria.ru", "bir.ru", "cbg.ru", "com.ru", "dagestan.ru", "grozny.ru", "kalmykia.ru", "kustanai.ru", "marine.ru", "mordovia.ru", "msk.ru", "mytis.ru", "nalchik.ru", "nov.ru", "pyatigorsk.ru", "spb.ru", "vladikavkaz.ru", "vladimir.ru", "abkhazia.su", "adygeya.su", "aktyubinsk.su", "arkhangelsk.su", "armenia.su", "ashgabad.su", "azerbaijan.su", "balashov.su", "bashkiria.su", "bryansk.su", "bukhara.su", "chimkent.su", "dagestan.su", "east-kazakhstan.su", "exnet.su", "georgia.su", "grozny.su", "ivanovo.su", "jambyl.su", "kalmykia.su", "kaluga.su", "karacol.su", "karaganda.su", "karelia.su", "khakassia.su", "krasnodar.su", "kurgan.su", "kustanai.su", "lenug.su", "mangyshlak.su", "mordovia.su", "msk.su", "murmansk.su", "nalchik.su", "navoi.su", "north-kazakhstan.su", "nov.su", "obninsk.su", "penza.su", "pokrovsk.su", "sochi.su", "spb.su", "tashkent.su", "termez.su", "togliatti.su", "troitsk.su", "tselinograd.su", "tula.su", "tuva.su", "vladikavkaz.su", "vladimir.su", "vologda.su", "channelsdvr.net", "u.channelsdvr.net", "fastly-terrarium.com", "fastlylb.net", "map.fastlylb.net", "freetls.fastly.net", "map.fastly.net", "a.prod.fastly.net", "global.prod.fastly.net", "a.ssl.fastly.net", "b.ssl.fastly.net", "global.ssl.fastly.net", "fastpanel.direct", "fastvps-server.com", "myfast.space", "myfast.host", "fastvps.site", "fastvps.host", "fhapp.xyz", "fedorainfracloud.org", "fedorapeople.org", "cloud.fedoraproject.org", "app.os.fedoraproject.org", "app.os.stg.fedoraproject.org", "conn.uk", "copro.uk", "couk.me", "ukco.me", "mydobiss.com", "filegear.me", "filegear-au.me", "filegear-de.me", "filegear-gb.me", "filegear-ie.me", "filegear-jp.me", "filegear-sg.me", "firebaseapp.com", "flynnhosting.net", "0e.vc", "freebox-os.com", "freeboxos.com", "fbx-os.fr", "fbxos.fr", "freebox-os.fr", "freeboxos.fr", "freedesktop.org", "*.futurecms.at", "*.ex.futurecms.at", "*.in.futurecms.at", "futurehosting.at", "futuremailing.at", "*.ex.ortsinfo.at", "*.kunden.ortsinfo.at", "*.statics.cloud", "service.gov.uk", "gehirn.ne.jp", "usercontent.jp", "gentapps.com", "lab.ms", "github.io", "githubusercontent.com", "gitlab.io", "glitch.me", "lolipop.io", "cloudapps.digital", "london.cloudapps.digital", "homeoffice.gov.uk", "ro.im", "shop.ro", "goip.de", "run.app", "a.run.app", "web.app", "*.0emm.com", "appspot.com", "*.r.appspot.com", "blogspot.ae", "blogspot.al", "blogspot.am", "blogspot.ba", "blogspot.be", "blogspot.bg", "blogspot.bj", "blogspot.ca", "blogspot.cf", "blogspot.ch", "blogspot.cl", "blogspot.co.at", "blogspot.co.id", "blogspot.co.il", "blogspot.co.ke", "blogspot.co.nz", "blogspot.co.uk", "blogspot.co.za", "blogspot.com", "blogspot.com.ar", "blogspot.com.au", "blogspot.com.br", "blogspot.com.by", "blogspot.com.co", "blogspot.com.cy", "blogspot.com.ee", "blogspot.com.eg", "blogspot.com.es", "blogspot.com.mt", "blogspot.com.ng", "blogspot.com.tr", "blogspot.com.uy", "blogspot.cv", "blogspot.cz", "blogspot.de", "blogspot.dk", "blogspot.fi", "blogspot.fr", "blogspot.gr", "blogspot.hk", "blogspot.hr", "blogspot.hu", "blogspot.ie", "blogspot.in", "blogspot.is", "blogspot.it", "blogspot.jp", "blogspot.kr", "blogspot.li", "blogspot.lt", "blogspot.lu", "blogspot.md", "blogspot.mk", "blogspot.mr", "blogspot.mx", "blogspot.my", "blogspot.nl", "blogspot.no", "blogspot.pe", "blogspot.pt", "blogspot.qa", "blogspot.re", "blogspot.ro", "blogspot.rs", "blogspot.ru", "blogspot.se", "blogspot.sg", "blogspot.si", "blogspot.sk", "blogspot.sn", "blogspot.td", "blogspot.tw", "blogspot.ug", "blogspot.vn", "cloudfunctions.net", "cloud.goog", "codespot.com", "googleapis.com", "googlecode.com", "pagespeedmobilizer.com", "publishproxy.com", "withgoogle.com", "withyoutube.com", "graphox.us", "awsmppl.com", "fin.ci", "free.hr", "caa.li", "ua.rs", "conf.se", "hs.zone", "hs.run", "hashbang.sh", "hasura.app", "hasura-app.io", "hepforge.org", "herokuapp.com", "herokussl.com", "myravendb.com", "ravendb.community", "ravendb.me", "development.run", "ravendb.run", "bpl.biz", "orx.biz", "ng.city", "biz.gl", "ng.ink", "col.ng", "firm.ng", "gen.ng", "ltd.ng", "ngo.ng", "ng.school", "sch.so", "h\u00e4kkinen.fi", "*.moonscale.io", "moonscale.net", "iki.fi", "dyn-berlin.de", "in-berlin.de", "in-brb.de", "in-butter.de", "in-dsl.de", "in-dsl.net", "in-dsl.org", "in-vpn.de", "in-vpn.net", "in-vpn.org", "biz.at", "info.at", "info.cx", "ac.leg.br", "al.leg.br", "am.leg.br", "ap.leg.br", "ba.leg.br", "ce.leg.br", "df.leg.br", "es.leg.br", "go.leg.br", "ma.leg.br", "mg.leg.br", "ms.leg.br", "mt.leg.br", "pa.leg.br", "pb.leg.br", "pe.leg.br", "pi.leg.br", "pr.leg.br", "rj.leg.br", "rn.leg.br", "ro.leg.br", "rr.leg.br", "rs.leg.br", "sc.leg.br", "se.leg.br", "sp.leg.br", "to.leg.br", "pixolino.com", "ipifony.net", "mein-iserv.de", "schulserver.de", "test-iserv.de", "iserv.dev", "iobb.net", "myjino.ru", "*.hosting.myjino.ru", "*.landing.myjino.ru", "*.spectrum.myjino.ru", "*.vps.myjino.ru", "*.triton.zone", "*.cns.joyent.com", "js.org", "kaas.gg", "khplay.nl", "keymachine.de", "kinghost.net", "uni5.net", "knightpoint.systems", "oya.to", "co.krd", "edu.krd", "git-repos.de", "lcube-server.de", "svn-repos.de", "leadpages.co", "lpages.co", "lpusercontent.com", "lelux.site", "co.business", "co.education", "co.events", "co.financial", "co.network", "co.place", "co.technology", "app.lmpm.com", "linkitools.space", "linkyard.cloud", "linkyard-cloud.ch", "members.linode.com", "nodebalancer.linode.com", "we.bs", "loginline.app", "loginline.dev", "loginline.io", "loginline.services", "loginline.site", "krasnik.pl", "leczna.pl", "lubartow.pl", "lublin.pl", "poniatowa.pl", "swidnik.pl", "uklugs.org", "glug.org.uk", "lug.org.uk", "lugs.org.uk", "barsy.bg", "barsy.co.uk", "barsyonline.co.uk", "barsycenter.com", "barsyonline.com", "barsy.club", "barsy.de", "barsy.eu", "barsy.in", "barsy.info", "barsy.io", "barsy.me", "barsy.menu", "barsy.mobi", "barsy.net", "barsy.online", "barsy.org", "barsy.pro", "barsy.pub", "barsy.shop", "barsy.site", "barsy.support", "barsy.uk", "*.magentosite.cloud", "mayfirst.info", "mayfirst.org", "hb.cldmail.ru", "miniserver.com", "memset.net", "cloud.metacentrum.cz", "custom.metacentrum.cz", "flt.cloud.muni.cz", "usr.cloud.muni.cz", "meteorapp.com", "eu.meteorapp.com", "co.pl", "*.azurecontainer.io", "azurewebsites.net", "azure-mobile.net", "cloudapp.net", "mozilla-iot.org", "bmoattachments.org", "net.ru", "org.ru", "pp.ru", "ui.nabu.casa", "pony.club", "of.fashion", "on.fashion", "of.football", "in.london", "of.london", "for.men", "and.mom", "for.mom", "for.one", "for.sale", "of.work", "to.work", "nctu.me", "bitballoon.com", "netlify.app", "netlify.com", "4u.com", "ngrok.io", "nh-serv.co.uk", "nfshost.com", "dnsking.ch", "mypi.co", "n4t.co", "001www.com", "ddnslive.com", "myiphost.com", "forumz.info", "16-b.it", "32-b.it", "64-b.it", "soundcast.me", "tcp4.me", "dnsup.net", "hicam.net", "now-dns.net", "ownip.net", "vpndns.net", "dynserv.org", "now-dns.org", "x443.pw", "now-dns.top", "ntdll.top", "freeddns.us", "crafting.xyz", "zapto.xyz", "nsupdate.info", "nerdpol.ovh", "blogsyte.com", "brasilia.me", "cable-modem.org", "ciscofreak.com", "collegefan.org", "couchpotatofries.org", "damnserver.com", "ddns.me", "ditchyourip.com", "dnsfor.me", "dnsiskinky.com", "dvrcam.info", "dynns.com", "eating-organic.net", "fantasyleague.cc", "geekgalaxy.com", "golffan.us", "health-carereform.com", "homesecuritymac.com", "homesecuritypc.com", "hopto.me", "ilovecollege.info", "loginto.me", "mlbfan.org", "mmafan.biz", "myactivedirectory.com", "mydissent.net", "myeffect.net", "mymediapc.net", "mypsx.net", "mysecuritycamera.com", "mysecuritycamera.net", "mysecuritycamera.org", "net-freaks.com", "nflfan.org", "nhlfan.net", "no-ip.ca", "no-ip.co.uk", "no-ip.net", "noip.us", "onthewifi.com", "pgafan.net", "point2this.com", "pointto.us", "privatizehealthinsurance.net", "quicksytes.com", "read-books.org", "securitytactics.com", "serveexchange.com", "servehumour.com", "servep2p.com", "servesarcasm.com", "stufftoread.com", "ufcfan.org", "unusualperson.com", "workisboring.com", "3utilities.com", "bounceme.net", "ddns.net", "ddnsking.com", "gotdns.ch", "hopto.org", "myftp.biz", "myftp.org", "myvnc.com", "no-ip.biz", "no-ip.info", "no-ip.org", "noip.me", "redirectme.net", "servebeer.com", "serveblog.net", "servecounterstrike.com", "serveftp.com", "servegame.com", "servehalflife.com", "servehttp.com", "serveirc.com", "serveminecraft.net", "servemp3.com", "servepics.com", "servequake.com", "sytes.net", "webhop.me", "zapto.org", "stage.nodeart.io", "nodum.co", "nodum.io", "pcloud.host", "nyc.mn", "nom.ae", "nom.af", "nom.ai", "nom.al", "nym.by", "nom.bz", "nym.bz", "nom.cl", "nym.ec", "nom.gd", "nom.ge", "nom.gl", "nym.gr", "nom.gt", "nym.gy", "nym.hk", "nom.hn", "nym.ie", "nom.im", "nom.ke", "nym.kz", "nym.la", "nym.lc", "nom.li", "nym.li", "nym.lt", "nym.lu", "nom.lv", "nym.me", "nom.mk", "nym.mn", "nym.mx", "nom.nu", "nym.nz", "nym.pe", "nym.pt", "nom.pw", "nom.qa", "nym.ro", "nom.rs", "nom.si", "nym.sk", "nom.st", "nym.su", "nym.sx", "nom.tj", "nym.tw", "nom.ug", "nom.uy", "nom.vc", "nom.vg", "static.observableusercontent.com", "cya.gg", "cloudycluster.net", "nid.io", "opencraft.hosting", "operaunite.com", "skygearapp.com", "outsystemscloud.com", "ownprovider.com", "own.pm", "ox.rs", "oy.lc", "pgfog.com", "pagefrontapp.com", "art.pl", "gliwice.pl", "krakow.pl", "poznan.pl", "wroc.pl", "zakopane.pl", "pantheonsite.io", "gotpantheon.com", "mypep.link", "perspecta.cloud", "on-web.fr", "*.platform.sh", "*.platformsh.site", "platter-app.com", "platter-app.dev", "platterp.us", "dyn53.io", "co.bn", "xen.prgmr.com", "priv.at", "prvcy.page", "*.dweb.link", "protonet.io", "chirurgiens-dentistes-en-france.fr", "byen.site", "pubtls.org", "qualifioapp.com", "qbuser.com", "instantcloud.cn", "ras.ru", "qa2.com", "qcx.io", "*.sys.qcx.io", "dev-myqnapcloud.com", "alpha-myqnapcloud.com", "myqnapcloud.com", "*.quipelements.com", "vapor.cloud", "vaporcloud.io", "rackmaze.com", "rackmaze.net", "*.on-k3s.io", "*.on-rancher.cloud", "*.on-rio.io", "readthedocs.io", "rhcloud.com", "app.render.com", "onrender.com", "repl.co", "repl.run", "resindevice.io", "devices.resinstaging.io", "hzc.io", "wellbeingzone.eu", "ptplus.fit", "wellbeingzone.co.uk", "git-pages.rit.edu", "sandcats.io", "logoip.de", "logoip.com", "schokokeks.net", "gov.scot", "scrysec.com", "firewall-gateway.com", "firewall-gateway.de", "my-gateway.de", "my-router.de", "spdns.de", "spdns.eu", "firewall-gateway.net", "my-firewall.org", "myfirewall.org", "spdns.org", "senseering.net", "biz.ua", "co.ua", "pp.ua", "shiftedit.io", "myshopblocks.com", "shopitsite.com", "shopware.store", "mo-siemens.io", "1kapp.com", "appchizi.com", "applinzi.com", "sinaapp.com", "vipsinaapp.com", "siteleaf.net", "bounty-full.com", "alpha.bounty-full.com", "beta.bounty-full.com", "stackhero-network.com", "static.land", "dev.static.land", "sites.static.land", "playstation-cloud.com", "apps.lair.io", "*.stolos.io", "spacekit.io", "customer.speedpartner.de", "api.stdlib.com", "storj.farm", "utwente.io", "soc.srcf.net", "user.srcf.net", "temp-dns.com", "applicationcloud.io", "scapp.io", "*.s5y.io", "*.sensiosite.cloud", "syncloud.it", "diskstation.me", "dscloud.biz", "dscloud.me", "dscloud.mobi", "dsmynas.com", "dsmynas.net", "dsmynas.org", "familyds.com", "familyds.net", "familyds.org", "i234.me", "myds.me", "synology.me", "vpnplus.to", "direct.quickconnect.to", "taifun-dns.de", "gda.pl", "gdansk.pl", "gdynia.pl", "med.pl", "sopot.pl", "edugit.org", "telebit.app", "telebit.io", "*.telebit.xyz", "gwiddle.co.uk", "thingdustdata.com", "cust.dev.thingdust.io", "cust.disrec.thingdust.io", "cust.prod.thingdust.io", "cust.testing.thingdust.io", "arvo.network", "azimuth.network", "bloxcms.com", "townnews-staging.com", "12hp.at", "2ix.at", "4lima.at", "lima-city.at", "12hp.ch", "2ix.ch", "4lima.ch", "lima-city.ch", "trafficplex.cloud", "de.cool", "12hp.de", "2ix.de", "4lima.de", "lima-city.de", "1337.pictures", "clan.rip", "lima-city.rocks", "webspace.rocks", "lima.zone", "*.transurl.be", "*.transurl.eu", "*.transurl.nl", "tuxfamily.org", "dd-dns.de", "diskstation.eu", "diskstation.org", "dray-dns.de", "draydns.de", "dyn-vpn.de", "dynvpn.de", "mein-vigor.de", "my-vigor.de", "my-wan.de", "syno-ds.de", "synology-diskstation.de", "synology-ds.de", "uber.space", "*.uberspace.de", "hk.com", "hk.org", "ltd.hk", "inc.hk", "virtualuser.de", "virtual-user.de", "urown.cloud", "dnsupdate.info", "lib.de.us", "2038.io", "router.management", "v-info.info", "voorloper.cloud", "v.ua", "wafflecell.com", "*.webhare.dev", "wedeploy.io", "wedeploy.me", "wedeploy.sh", "remotewd.com", "wmflabs.org", "toolforge.org", "wmcloud.org", "panel.gg", "daemon.panel.gg", "myforum.community", "community-pro.de", "diskussionsbereich.de", "community-pro.net", "meinforum.net", "half.host", "xnbay.com", "u2.xnbay.com", "u2-local.xnbay.com", "cistron.nl", "demon.nl", "xs4all.space", "yandexcloud.net", "storage.yandexcloud.net", "website.yandexcloud.net", "official.academy", "yolasite.com", "ybo.faith", "yombo.me", "homelink.one", "ybo.party", "ybo.review", "ybo.science", "ybo.trade", "nohost.me", "noho.st", "za.net", "za.org", "now.sh", "bss.design", "basicserver.io", "virtualserver.io", "enterprisecloud.nu", "mintere.site"];
+  const array = ["org.pe", "com.pe", "net.pe", "pf", "com.pf", "org.pf", "edu.pf", "*.pg", "ph", "com.ph", "net.ph", "org.ph", "gov.ph", "edu.ph", "ngo.ph", "mil.ph", "i.ph", "pk", "com.pk", "net.pk", "edu.pk", "org.pk", "fam.pk", "biz.pk", "web.pk", "gov.pk", "gob.pk", "gok.pk", "gon.pk", "gop.pk", "gos.pk", "info.pk", "pl", "com.pl", "net.pl", "org.pl", "aid.pl", "agro.pl", "atm.pl", "auto.pl", "biz.pl", "edu.pl", "gmina.pl", "gsm.pl", "info.pl", "mail.pl", "miasta.pl", "media.pl", "mil.pl", "nieruchomosci.pl", "nom.pl", "pc.pl", "powiat.pl", "priv.pl", "realestate.pl", "rel.pl", "sex.pl", "shop.pl", "sklep.pl", "sos.pl", "szkola.pl", "targi.pl", "tm.pl", "tourism.pl", "travel.pl", "turystyka.pl", "gov.pl", "ap.gov.pl", "ic.gov.pl", "is.gov.pl", "us.gov.pl", "kmpsp.gov.pl", "kppsp.gov.pl", "kwpsp.gov.pl", "psp.gov.pl", "wskr.gov.pl", "kwp.gov.pl", "mw.gov.pl", "ug.gov.pl", "um.gov.pl", "umig.gov.pl", "ugim.gov.pl", "upow.gov.pl", "uw.gov.pl", "starostwo.gov.pl", "pa.gov.pl", "po.gov.pl", "psse.gov.pl", "pup.gov.pl", "rzgw.gov.pl", "sa.gov.pl", "so.gov.pl", "sr.gov.pl", "wsa.gov.pl", "sko.gov.pl", "uzs.gov.pl", "wiih.gov.pl", "winb.gov.pl", "pinb.gov.pl", "wios.gov.pl", "witd.gov.pl", "wzmiuw.gov.pl", "piw.gov.pl", "wiw.gov.pl", "griw.gov.pl", "wif.gov.pl", "oum.gov.pl", "sdn.gov.pl", "zp.gov.pl", "uppo.gov.pl", "mup.gov.pl", "wuoz.gov.pl", "konsulat.gov.pl", "oirm.gov.pl", "augustow.pl", "babia-gora.pl", "bedzin.pl", "beskidy.pl", "bialowieza.pl", "bialystok.pl", "bielawa.pl", "bieszczady.pl", "boleslawiec.pl", "bydgoszcz.pl", "bytom.pl", "cieszyn.pl", "czeladz.pl", "czest.pl", "dlugoleka.pl", "elblag.pl", "elk.pl", "glogow.pl", "gniezno.pl", "gorlice.pl", "grajewo.pl", "ilawa.pl", "jaworzno.pl", "jelenia-gora.pl", "jgora.pl", "kalisz.pl", "kazimierz-dolny.pl", "karpacz.pl", "kartuzy.pl", "kaszuby.pl", "katowice.pl", "kepno.pl", "ketrzyn.pl", "klodzko.pl", "kobierzyce.pl", "kolobrzeg.pl", "konin.pl", "konskowola.pl", "kutno.pl", "lapy.pl", "lebork.pl", "legnica.pl", "lezajsk.pl", "limanowa.pl", "lomza.pl", "lowicz.pl", "lubin.pl", "lukow.pl", "malbork.pl", "malopolska.pl", "mazowsze.pl", "mazury.pl", "mielec.pl", "mielno.pl", "mragowo.pl", "naklo.pl", "nowaruda.pl", "nysa.pl", "olawa.pl", "olecko.pl", "olkusz.pl", "olsztyn.pl", "opoczno.pl", "opole.pl", "ostroda.pl", "ostroleka.pl", "ostrowiec.pl", "ostrowwlkp.pl", "pila.pl", "pisz.pl", "podhale.pl", "podlasie.pl", "polkowice.pl", "pomorze.pl", "pomorskie.pl", "prochowice.pl", "pruszkow.pl", "przeworsk.pl", "pulawy.pl", "radom.pl", "rawa-maz.pl", "rybnik.pl", "rzeszow.pl", "sanok.pl", "sejny.pl", "slask.pl", "slupsk.pl", "sosnowiec.pl", "stalowa-wola.pl", "skoczow.pl", "starachowice.pl", "stargard.pl", "suwalki.pl", "swidnica.pl", "swiebodzin.pl", "swinoujscie.pl", "szczecin.pl", "szczytno.pl", "tarnobrzeg.pl", "tgory.pl", "turek.pl", "tychy.pl", "ustka.pl", "walbrzych.pl", "warmia.pl", "warszawa.pl", "waw.pl", "wegrow.pl", "wielun.pl", "wlocl.pl", "wloclawek.pl", "wodzislaw.pl", "wolomin.pl", "wroclaw.pl", "zachpomor.pl", "zagan.pl", "zarow.pl", "zgora.pl", "zgorzelec.pl", "pm", "pn", "gov.pn", "co.pn", "org.pn", "edu.pn", "net.pn", "post", "pr", "com.pr", "net.pr", "org.pr", "gov.pr", "edu.pr", "isla.pr", "pro.pr", "biz.pr", "info.pr", "name.pr", "est.pr", "prof.pr", "ac.pr", "pro", "aaa.pro", "aca.pro", "acct.pro", "avocat.pro", "bar.pro", "cpa.pro", "eng.pro", "jur.pro", "law.pro", "med.pro", "recht.pro", "ps", "edu.ps", "gov.ps", "sec.ps", "plo.ps", "com.ps", "org.ps", "net.ps", "pt", "net.pt", "gov.pt", "org.pt", "edu.pt", "int.pt", "publ.pt", "com.pt", "nome.pt", "pw", "co.pw", "ne.pw", "or.pw", "ed.pw", "go.pw", "belau.pw", "py", "com.py", "coop.py", "edu.py", "gov.py", "mil.py", "net.py", "org.py", "qa", "com.qa", "edu.qa", "gov.qa", "mil.qa", "name.qa", "net.qa", "org.qa", "sch.qa", "re", "asso.re", "com.re", "nom.re", "ro", "arts.ro", "com.ro", "firm.ro", "info.ro", "nom.ro", "nt.ro", "org.ro", "rec.ro", "store.ro", "tm.ro", "www.ro", "rs", "ac.rs", "co.rs", "edu.rs", "gov.rs", "in.rs", "org.rs", "ru", "rw", "ac.rw", "co.rw", "coop.rw", "gov.rw", "mil.rw", "net.rw", "org.rw", "sa", "com.sa", "net.sa", "org.sa", "gov.sa", "med.sa", "pub.sa", "edu.sa", "sch.sa", "sb", "com.sb", "edu.sb", "gov.sb", "net.sb", "org.sb", "sc", "com.sc", "gov.sc", "net.sc", "org.sc", "edu.sc", "sd", "com.sd", "net.sd", "org.sd", "edu.sd", "med.sd", "tv.sd", "gov.sd", "info.sd", "se", "a.se", "ac.se", "b.se", "bd.se", "brand.se", "c.se", "d.se", "e.se", "f.se", "fh.se", "fhsk.se", "fhv.se", "g.se", "h.se", "i.se", "k.se", "komforb.se", "kommunalforbund.se", "komvux.se", "l.se", "lanbib.se", "m.se", "n.se", "naturbruksgymn.se", "o.se", "org.se", "p.se", "parti.se", "pp.se", "press.se", "r.se", "s.se", "t.se", "tm.se", "u.se", "w.se", "x.se", "y.se", "z.se", "sg", "com.sg", "net.sg", "org.sg", "gov.sg", "edu.sg", "per.sg", "sh", "com.sh", "net.sh", "gov.sh", "org.sh", "mil.sh", "si", "sj", "sk", "sl", "com.sl", "net.sl", "edu.sl", "gov.sl", "org.sl", "sm", "sn", "art.sn", "com.sn", "edu.sn", "gouv.sn", "org.sn", "perso.sn", "univ.sn", "so", "com.so", "edu.so", "gov.so", "me.so", "net.so", "org.so", "sr", "ss", "biz.ss", "com.ss", "edu.ss", "gov.ss", "net.ss", "org.ss", "st", "co.st", "com.st", "consulado.st", "edu.st", "embaixada.st", "gov.st", "mil.st", "net.st", "org.st", "principe.st", "saotome.st", "store.st", "su", "sv", "com.sv", "edu.sv", "gob.sv", "org.sv", "red.sv", "sx", "gov.sx", "sy", "edu.sy", "gov.sy", "net.sy", "mil.sy", "com.sy", "org.sy", "sz", "co.sz", "ac.sz", "org.sz", "tc", "td", "tel", "tf", "tg", "th", "ac.th", "co.th", "go.th", "in.th", "mi.th", "net.th", "or.th", "tj", "ac.tj", "biz.tj", "co.tj", "com.tj", "edu.tj", "go.tj", "gov.tj", "int.tj", "mil.tj", "name.tj", "net.tj", "nic.tj", "org.tj", "test.tj", "web.tj", "tk", "tl", "gov.tl", "tm", "com.tm", "co.tm", "org.tm", "net.tm", "nom.tm", "gov.tm", "mil.tm", "edu.tm", "tn", "com.tn", "ens.tn", "fin.tn", "gov.tn", "ind.tn", "intl.tn", "nat.tn", "net.tn", "org.tn", "info.tn", "perso.tn", "tourism.tn", "edunet.tn", "rnrt.tn", "rns.tn", "rnu.tn", "mincom.tn", "agrinet.tn", "defense.tn", "turen.tn", "to", "com.to", "gov.to", "net.to", "org.to", "edu.to", "mil.to", "tr", "av.tr", "bbs.tr", "bel.tr", "biz.tr", "com.tr", "dr.tr", "edu.tr", "gen.tr", "gov.tr", "info.tr", "mil.tr", "k12.tr", "kep.tr", "name.tr", "net.tr", "org.tr", "pol.tr", "tel.tr", "tsk.tr", "tv.tr", "web.tr", "nc.tr", "gov.nc.tr", "tt", "co.tt", "com.tt", "org.tt", "net.tt", "biz.tt", "info.tt", "pro.tt", "int.tt", "coop.tt", "jobs.tt", "mobi.tt", "travel.tt", "museum.tt", "aero.tt", "name.tt", "gov.tt", "edu.tt", "tv", "tw", "edu.tw", "gov.tw", "mil.tw", "com.tw", "net.tw", "org.tw", "idv.tw", "game.tw", "ebiz.tw", "club.tw", "\u7db2\u8def.tw", "\u7d44\u7e54.tw", "\u5546\u696d.tw", "tz", "ac.tz", "co.tz", "go.tz", "hotel.tz", "info.tz", "me.tz", "mil.tz", "mobi.tz", "ne.tz", "or.tz", "sc.tz", "tv.tz", "ua", "com.ua", "edu.ua", "gov.ua", "in.ua", "net.ua", "org.ua", "cherkassy.ua", "cherkasy.ua", "chernigov.ua", "chernihiv.ua", "chernivtsi.ua", "chernovtsy.ua", "ck.ua", "cn.ua", "cr.ua", "crimea.ua", "cv.ua", "dn.ua", "dnepropetrovsk.ua", "dnipropetrovsk.ua", "donetsk.ua", "dp.ua", "if.ua", "ivano-frankivsk.ua", "kh.ua", "kharkiv.ua", "kharkov.ua", "kherson.ua", "khmelnitskiy.ua", "khmelnytskyi.ua", "kiev.ua", "kirovograd.ua", "km.ua", "kr.ua", "krym.ua", "ks.ua", "kv.ua", "kyiv.ua", "lg.ua", "lt.ua", "lugansk.ua", "lutsk.ua", "lv.ua", "lviv.ua", "mk.ua", "mykolaiv.ua", "nikolaev.ua", "od.ua", "odesa.ua", "odessa.ua", "pl.ua", "poltava.ua", "rivne.ua", "rovno.ua", "rv.ua", "sb.ua", "sebastopol.ua", "sevastopol.ua", "sm.ua", "sumy.ua", "te.ua", "ternopil.ua", "uz.ua", "uzhgorod.ua", "vinnica.ua", "vinnytsia.ua", "vn.ua", "volyn.ua", "yalta.ua", "zaporizhzhe.ua", "zaporizhzhia.ua", "zhitomir.ua", "zhytomyr.ua", "zp.ua", "zt.ua", "ug", "co.ug", "or.ug", "ac.ug", "sc.ug", "go.ug", "ne.ug", "com.ug", "org.ug", "uk", "ac.uk", "co.uk", "gov.uk", "ltd.uk", "me.uk", "net.uk", "nhs.uk", "org.uk", "plc.uk", "police.uk", "*.sch.uk", "us", "dni.us", "fed.us", "isa.us", "kids.us", "nsn.us", "ak.us", "al.us", "ar.us", "as.us", "az.us", "ca.us", "co.us", "ct.us", "dc.us", "de.us", "fl.us", "ga.us", "gu.us", "hi.us", "ia.us", "id.us", "il.us", "in.us", "ks.us", "ky.us", "la.us", "ma.us", "md.us", "me.us", "mi.us", "mn.us", "mo.us", "ms.us", "mt.us", "nc.us", "nd.us", "ne.us", "nh.us", "nj.us", "nm.us", "nv.us", "ny.us", "oh.us", "ok.us", "or.us", "pa.us", "pr.us", "ri.us", "sc.us", "sd.us", "tn.us", "tx.us", "ut.us", "vi.us", "vt.us", "va.us", "wa.us", "wi.us", "wv.us", "wy.us", "k12.ak.us", "k12.al.us", "k12.ar.us", "k12.as.us", "k12.az.us", "k12.ca.us", "k12.co.us", "k12.ct.us", "k12.dc.us", "k12.de.us", "k12.fl.us", "k12.ga.us", "k12.gu.us", "k12.ia.us", "k12.id.us", "k12.il.us", "k12.in.us", "k12.ks.us", "k12.ky.us", "k12.la.us", "k12.ma.us", "k12.md.us", "k12.me.us", "k12.mi.us", "k12.mn.us", "k12.mo.us", "k12.ms.us", "k12.mt.us", "k12.nc.us", "k12.ne.us", "k12.nh.us", "k12.nj.us", "k12.nm.us", "k12.nv.us", "k12.ny.us", "k12.oh.us", "k12.ok.us", "k12.or.us", "k12.pa.us", "k12.pr.us", "k12.sc.us", "k12.tn.us", "k12.tx.us", "k12.ut.us", "k12.vi.us", "k12.vt.us", "k12.va.us", "k12.wa.us", "k12.wi.us", "k12.wy.us", "cc.ak.us", "cc.al.us", "cc.ar.us", "cc.as.us", "cc.az.us", "cc.ca.us", "cc.co.us", "cc.ct.us", "cc.dc.us", "cc.de.us", "cc.fl.us", "cc.ga.us", "cc.gu.us", "cc.hi.us", "cc.ia.us", "cc.id.us", "cc.il.us", "cc.in.us", "cc.ks.us", "cc.ky.us", "cc.la.us", "cc.ma.us", "cc.md.us", "cc.me.us", "cc.mi.us", "cc.mn.us", "cc.mo.us", "cc.ms.us", "cc.mt.us", "cc.nc.us", "cc.nd.us", "cc.ne.us", "cc.nh.us", "cc.nj.us", "cc.nm.us", "cc.nv.us", "cc.ny.us", "cc.oh.us", "cc.ok.us", "cc.or.us", "cc.pa.us", "cc.pr.us", "cc.ri.us", "cc.sc.us", "cc.sd.us", "cc.tn.us", "cc.tx.us", "cc.ut.us", "cc.vi.us", "cc.vt.us", "cc.va.us", "cc.wa.us", "cc.wi.us", "cc.wv.us", "cc.wy.us", "lib.ak.us", "lib.al.us", "lib.ar.us", "lib.as.us", "lib.az.us", "lib.ca.us", "lib.co.us", "lib.ct.us", "lib.dc.us", "lib.fl.us", "lib.ga.us", "lib.gu.us", "lib.hi.us", "lib.ia.us", "lib.id.us", "lib.il.us", "lib.in.us", "lib.ks.us", "lib.ky.us", "lib.la.us", "lib.ma.us", "lib.md.us", "lib.me.us", "lib.mi.us", "lib.mn.us", "lib.mo.us", "lib.ms.us", "lib.mt.us", "lib.nc.us", "lib.nd.us", "lib.ne.us", "lib.nh.us", "lib.nj.us", "lib.nm.us", "lib.nv.us", "lib.ny.us", "lib.oh.us", "lib.ok.us", "lib.or.us", "lib.pa.us", "lib.pr.us", "lib.ri.us", "lib.sc.us", "lib.sd.us", "lib.tn.us", "lib.tx.us", "lib.ut.us", "lib.vi.us", "lib.vt.us", "lib.va.us", "lib.wa.us", "lib.wi.us", "lib.wy.us", "pvt.k12.ma.us", "chtr.k12.ma.us", "paroch.k12.ma.us", "ann-arbor.mi.us", "cog.mi.us", "dst.mi.us", "eaton.mi.us", "gen.mi.us", "mus.mi.us", "tec.mi.us", "washtenaw.mi.us", "uy", "com.uy", "edu.uy", "gub.uy", "mil.uy", "net.uy", "org.uy", "uz", "co.uz", "com.uz", "net.uz", "org.uz", "va", "vc", "com.vc", "net.vc", "org.vc", "gov.vc", "mil.vc", "edu.vc", "ve", "arts.ve", "co.ve", "com.ve", "e12.ve", "edu.ve", "firm.ve", "gob.ve", "gov.ve", "info.ve", "int.ve", "mil.ve", "net.ve", "org.ve", "rec.ve", "store.ve", "tec.ve", "web.ve", "vg", "vi", "co.vi", "com.vi", "k12.vi", "net.vi", "org.vi", "vn", "com.vn", "net.vn", "org.vn", "edu.vn", "gov.vn", "int.vn", "ac.vn", "biz.vn", "info.vn", "name.vn", "pro.vn", "health.vn", "vu", "com.vu", "edu.vu", "net.vu", "org.vu", "wf", "ws", "com.ws", "net.ws", "org.ws", "gov.ws", "edu.ws", "yt", "\u0627\u0645\u0627\u0631\u0627\u062a", "\u0570\u0561\u0575", "\u09ac\u09be\u0982\u09b2\u09be", "\u0431\u0433", "\u0431\u0435\u043b", "\u4e2d\u56fd", "\u4e2d\u570b", "\u0627\u0644\u062c\u0632\u0627\u0626\u0631", "\u0645\u0635\u0631", "\u0435\u044e", "\u03b5\u03c5", "\u0645\u0648\u0631\u064a\u062a\u0627\u0646\u064a\u0627", "\u10d2\u10d4", "\u03b5\u03bb", "\u9999\u6e2f", "\u516c\u53f8.\u9999\u6e2f", "\u6559\u80b2.\u9999\u6e2f", "\u653f\u5e9c.\u9999\u6e2f", "\u500b\u4eba.\u9999\u6e2f", "\u7db2\u7d61.\u9999\u6e2f", "\u7d44\u7e54.\u9999\u6e2f", "\u0cad\u0cbe\u0cb0\u0ca4", "\u0b2d\u0b3e\u0b30\u0b24", "\u09ad\u09be\u09f0\u09a4", "\u092d\u093e\u0930\u0924\u092e\u094d", "\u092d\u093e\u0930\u094b\u0924", "\u0680\u0627\u0631\u062a", "\u0d2d\u0d3e\u0d30\u0d24\u0d02", "\u092d\u093e\u0930\u0924", "\u0628\u0627\u0631\u062a", "\u0628\u06be\u0627\u0631\u062a", "\u0c2d\u0c3e\u0c30\u0c24\u0c4d", "\u0aad\u0abe\u0ab0\u0aa4", "\u0a2d\u0a3e\u0a30\u0a24", "\u09ad\u09be\u09b0\u09a4", "\u0b87\u0ba8\u0bcd\u0ba4\u0bbf\u0baf\u0bbe", "\u0627\u06cc\u0631\u0627\u0646", "\u0627\u064a\u0631\u0627\u0646", "\u0639\u0631\u0627\u0642", "\u0627\u0644\u0627\u0631\u062f\u0646", "\ud55c\uad6d", "\u049b\u0430\u0437", "\u0dbd\u0d82\u0d9a\u0dcf", "\u0b87\u0bb2\u0b99\u0bcd\u0b95\u0bc8", "\u0627\u0644\u0645\u063a\u0631\u0628", "\u043c\u043a\u0434", "\u043c\u043e\u043d", "\u6fb3\u9580", "\u6fb3\u95e8", "\u0645\u0644\u064a\u0633\u064a\u0627", "\u0639\u0645\u0627\u0646", "\u067e\u0627\u06a9\u0633\u062a\u0627\u0646", "\u067e\u0627\u0643\u0633\u062a\u0627\u0646", "\u0641\u0644\u0633\u0637\u064a\u0646", "\u0441\u0440\u0431", "\u043f\u0440.\u0441\u0440\u0431", "\u043e\u0440\u0433.\u0441\u0440\u0431", "\u043e\u0431\u0440.\u0441\u0440\u0431", "\u043e\u0434.\u0441\u0440\u0431", "\u0443\u043f\u0440.\u0441\u0440\u0431", "\u0430\u043a.\u0441\u0440\u0431", "\u0440\u0444", "\u0642\u0637\u0631", "\u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0629", "\u0627\u0644\u0633\u0639\u0648\u062f\u06cc\u0629", "\u0627\u0644\u0633\u0639\u0648\u062f\u06cc\u06c3", "\u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0647", "\u0633\u0648\u062f\u0627\u0646", "\u65b0\u52a0\u5761", "\u0b9a\u0bbf\u0b99\u0bcd\u0b95\u0baa\u0bcd\u0baa\u0bc2\u0bb0\u0bcd", "\u0633\u0648\u0631\u064a\u0629", "\u0633\u0648\u0631\u064a\u0627", "\u0e44\u0e17\u0e22", "\u0e28\u0e36\u0e01\u0e29\u0e32.\u0e44\u0e17\u0e22", "\u0e18\u0e38\u0e23\u0e01\u0e34\u0e08.\u0e44\u0e17\u0e22", "\u0e23\u0e31\u0e10\u0e1a\u0e32\u0e25.\u0e44\u0e17\u0e22", "\u0e17\u0e2b\u0e32\u0e23.\u0e44\u0e17\u0e22", "\u0e40\u0e19\u0e47\u0e15.\u0e44\u0e17\u0e22", "\u0e2d\u0e07\u0e04\u0e4c\u0e01\u0e23.\u0e44\u0e17\u0e22", "\u062a\u0648\u0646\u0633", "\u53f0\u7063", "\u53f0\u6e7e", "\u81fa\u7063", "\u0443\u043a\u0440", "\u0627\u0644\u064a\u0645\u0646", "xxx", "*.ye", "ac.za", "agric.za", "alt.za", "co.za", "edu.za", "gov.za", "grondar.za", "law.za", "mil.za", "net.za", "ngo.za", "nic.za", "nis.za", "nom.za", "org.za", "school.za", "tm.za", "web.za", "zm", "ac.zm", "biz.zm", "co.zm", "com.zm", "edu.zm", "gov.zm", "info.zm", "mil.zm", "net.zm", "org.zm", "sch.zm", "zw", "ac.zw", "co.zw", "gov.zw", "mil.zw", "org.zw", "aaa", "aarp", "abarth", "abb", "abbott", "abbvie", "abc", "able", "abogado", "abudhabi", "academy", "accenture", "accountant", "accountants", "aco", "actor", "adac", "ads", "adult", "aeg", "aetna", "afamilycompany", "afl", "africa", "agakhan", "agency", "aig", "aigo", "airbus", "airforce", "airtel", "akdn", "alfaromeo", "alibaba", "alipay", "allfinanz", "allstate", "ally", "alsace", "alstom", "amazon", "americanexpress", "americanfamily", "amex", "amfam", "amica", "amsterdam", "analytics", "android", "anquan", "anz", "aol", "apartments", "app", "apple", "aquarelle", "arab", "aramco", "archi", "army", "art", "arte", "asda", "associates", "athleta", "attorney", "auction", "audi", "audible", "audio", "auspost", "author", "auto", "autos", "avianca", "aws", "axa", "azure", "baby", "baidu", "banamex", "bananarepublic", "band", "bank", "bar", "barcelona", "barclaycard", "barclays", "barefoot", "bargains", "baseball", "basketball", "bauhaus", "bayern", "bbc", "bbt", "bbva", "bcg", "bcn", "beats", "beauty", "beer", "bentley", "berlin", "best", "bestbuy", "bet", "bharti", "bible", "bid", "bike", "bing", "bingo", "bio", "black", "blackfriday", "blockbuster", "blog", "bloomberg", "blue", "bms", "bmw", "bnpparibas", "boats", "boehringer", "bofa", "bom", "bond", "boo", "book", "booking", "bosch", "bostik", "boston", "bot", "boutique", "box", "bradesco", "bridgestone", "broadway", "broker", "brother", "brussels", "budapest", "bugatti", "build", "builders", "business", "buy", "buzz", "bzh", "cab", "cafe", "cal", "call", "calvinklein", "cam", "camera", "camp", "cancerresearch", "canon", "capetown", "capital", "capitalone", "car", "caravan", "cards", "care", "career", "careers", "cars", "casa", "case", "caseih", "cash", "casino", "catering", "catholic", "cba", "cbn", "cbre", "cbs", "ceb", "center", "ceo", "cern", "cfa", "cfd", "chanel", "channel", "charity", "chase", "chat", "cheap", "chintai", "christmas", "chrome", "church", "cipriani", "circle", "cisco", "citadel", "citi", "citic", "city", "cityeats", "claims", "cleaning", "click", "clinic", "clinique", "clothing", "cloud", "club", "clubmed", "coach", "codes", "coffee", "college", "cologne", "comcast", "commbank", "community", "company", "compare", "computer", "comsec", "condos", "construction", "consulting", "contact", "contractors", "cooking", "cookingchannel", "cool", "corsica", "country", "coupon", "coupons", "courses", "cpa", "credit", "creditcard", "creditunion", "cricket", "crown", "crs", "cruise", "cruises", "csc", "cuisinella", "cymru", "cyou", "dabur", "dad", "dance", "data", "date", "dating", "datsun", "day", "dclk", "dds", "deal", "dealer", "deals", "degree", "delivery", "dell", "deloitte", "delta", "democrat", "dental", "dentist", "desi", "design", "dev", "dhl", "diamonds", "diet", "digital", "direct", "directory", "discount", "discover", "dish", "diy", "dnp", "docs", "doctor", "dog", "domains", "dot", "download", "drive", "dtv", "dubai", "duck", "dunlop", "dupont", "durban", "dvag", "dvr", "earth", "eat", "eco", "edeka", "education", "email", "emerck", "energy", "engineer", "engineering", "enterprises", "epson", "equipment", "ericsson", "erni", "esq", "estate", "etisalat", "eurovision", "eus", "events", "exchange", "expert", "exposed", "express", "extraspace", "fage", "fail", "fairwinds", "faith", "family", "fan", "fans", "farm", "farmers", "fashion", "fast", "fedex", "feedback", "ferrari", "ferrero", "fiat", "fidelity", "fido", "film", "final", "finance", "financial", "fire", "firestone", "firmdale", "fish", "fishing", "fit", "fitness", "flickr", "flights", "flir", "florist", "flowers", "fly", "foo", "food", "foodnetwork", "football", "ford", "forex", "forsale", "forum", "foundation", "fox", "free", "fresenius", "frl", "frogans", "frontdoor", "frontier", "ftr", "fujitsu", "fujixerox", "fun", "fund", "furniture", "futbol", "fyi", "gal", "gallery", "gallo", "gallup", "game", "games", "gap", "garden", "gay", "gbiz", "gdn", "gea", "gent", "genting", "george", "ggee", "gift", "gifts", "gives", "giving", "glade", "glass", "gle", "global", "globo", "gmail", "gmbh", "gmo", "gmx", "godaddy", "gold", "goldpoint", "golf", "goo", "goodyear", "goog", "google", "gop", "got", "grainger", "graphics", "gratis", "green", "gripe", "grocery", "group", "guardian", "gucci", "guge", "guide", "guitars", "guru", "hair", "hamburg", "hangout", "haus", "hbo", "hdfc", "hdfcbank", "health", "healthcare", "help", "helsinki", "here", "hermes", "hgtv", "hiphop", "hisamitsu", "hitachi", "hiv", "hkt", "hockey", "holdings", "holiday", "homedepot", "homegoods", "homes", "homesense", "honda", "horse", "hospital", "host", "hosting", "hot", "hoteles", "hotels", "hotmail", "house", "how", "hsbc", "hughes", "hyatt", "hyundai", "ibm", "icbc", "ice", "icu", "ieee", "ifm", "ikano", "imamat", "imdb", "immo", "immobilien", "inc", "industries", "infiniti", "ing", "ink", "institute", "insurance", "insure", "intel", "international", "intuit", "investments", "ipiranga", "irish", "ismaili", "ist", "istanbul", "itau", "itv", "iveco", "jaguar", "java", "jcb", "jcp", "jeep", "jetzt", "jewelry", "jio", "jll", "jmp", "jnj", "joburg", "jot", "joy", "jpmorgan", "jprs", "juegos", "juniper", "kaufen", "kddi", "kerryhotels", "kerrylogistics", "kerryproperties", "kfh", "kia", "kim", "kinder", "kindle", "kitchen", "kiwi", "koeln", "komatsu", "kosher", "kpmg", "kpn", "krd", "kred", "kuokgroup", "kyoto", "lacaixa", "lamborghini", "lamer", "lancaster", "lancia", "land", "landrover", "lanxess", "lasalle", "lat", "latino", "latrobe", "law", "lawyer", "lds", "lease", "leclerc", "lefrak", "legal", "lego", "lexus", "lgbt", "lidl", "life", "lifeinsurance", "lifestyle", "lighting", "like", "lilly", "limited", "limo", "lincoln", "linde", "link", "lipsy", "live", "living", "lixil", "llc", "llp", "loan", "loans", "locker", "locus", "loft", "lol", "london", "lotte", "lotto", "love", "lpl", "lplfinancial", "ltd", "ltda", "lundbeck", "lupin", "luxe", "luxury", "macys", "madrid", "maif", "maison", "makeup", "man", "management", "mango", "map", "market", "marketing", "markets", "marriott", "marshalls", "maserati", "mattel", "mba", "mckinsey", "med", "media", "meet", "melbourne", "meme", "memorial", "men", "menu", "merckmsd", "metlife", "miami", "microsoft", "mini", "mint", "mit", "mitsubishi", "mlb", "mls", "mma", "mobile", "moda", "moe", "moi", "mom", "monash", "money", "monster", "mormon", "mortgage", "moscow", "moto", "motorcycles", "mov", "movie", "msd", "mtn", "mtr", "mutual", "nab", "nagoya", "nationwide", "natura", "navy", "nba", "nec", "netbank", "netflix", "network", "neustar", "new", "newholland", "news", "next", "nextdirect", "nexus", "nfl", "ngo", "nhk", "nico", "nike", "nikon", "ninja", "nissan", "nissay", "nokia", "northwesternmutual", "norton", "now", "nowruz", "nowtv", "nra", "nrw", "ntt", "nyc", "obi", "observer", "off", "office", "okinawa", "olayan", "olayangroup", "oldnavy", "ollo", "omega", "one", "ong", "onl", "online", "onyourside", "ooo", "open", "oracle", "orange", "organic", "origins", "osaka", "otsuka", "ott", "ovh", "page", "panasonic", "paris", "pars", "partners", "parts", "party", "passagens", "pay", "pccw", "pet", "pfizer", "pharmacy", "phd", "philips", "phone", "photo", "photography", "photos", "physio", "pics", "pictet", "pictures", "pid", "pin", "ping", "pink", "pioneer", "pizza", "place", "play", "playstation", "plumbing", "plus", "pnc", "pohl", "poker", "politie", "porn", "pramerica", "praxi", "press", "prime", "prod", "productions", "prof", "progressive", "promo", "properties", "property", "protection", "pru", "prudential", "pub", "pwc", "qpon", "quebec", "quest", "qvc", "racing", "radio", "raid", "read", "realestate", "realtor", "realty", "recipes", "red", "redstone", "redumbrella", "rehab", "reise", "reisen", "reit", "reliance", "ren", "rent", "rentals", "repair", "report", "republican", "rest", "restaurant", "review", "reviews", "rexroth", "rich", "richardli", "ricoh", "rightathome", "ril", "rio", "rip", "rmit", "rocher", "rocks", "rodeo", "rogers", "room", "rsvp", "rugby", "ruhr", "run", "rwe", "ryukyu", "saarland", "safe", "safety", "sakura", "sale", "salon", "samsclub", "samsung", "sandvik", "sandvikcoromant", "sanofi", "sap", "sarl", "sas", "save", "saxo", "sbi", "sbs", "sca", "scb", "schaeffler", "schmidt", "scholarships", "school", "schule", "schwarz", "science", "scjohnson", "scot", "search", "seat", "secure", "security", "seek", "select", "sener", "services", "ses", "seven", "sew", "sex", "sexy", "sfr", "shangrila", "sharp", "shaw", "shell", "shia", "shiksha", "shoes", "shop", "shopping", "shouji", "show", "showtime", "shriram", "silk", "sina", "singles", "site", "ski", "skin", "sky", "skype", "sling", "smart", "smile", "sncf", "soccer", "social", "softbank", "software", "sohu", "solar", "solutions", "song", "sony", "soy", "spa", "space", "sport", "spot", "spreadbetting", "srl", "stada", "staples", "star", "statebank", "statefarm", "stc", "stcgroup", "stockholm", "storage", "store", "stream", "studio", "study", "style", "sucks", "supplies", "supply", "support", "surf", "surgery", "suzuki", "swatch", "swiftcover", "swiss", "sydney", "symantec", "systems", "tab", "taipei", "talk", "taobao", "target", "tatamotors", "tatar", "tattoo", "tax", "taxi", "tci", "tdk", "team", "tech", "technology", "temasek", "tennis", "teva", "thd", "theater", "theatre", "tiaa", "tickets", "tienda", "tiffany", "tips", "tires", "tirol", "tjmaxx", "tjx", "tkmaxx", "tmall", "today", "tokyo", "tools", "top", "toray", "toshiba", "total", "tours", "town", "toyota", "toys", "trade", "trading", "training", "travel", "travelchannel", "travelers", "travelersinsurance", "trust", "trv", "tube", "tui", "tunes", "tushu", "tvs", "ubank", "ubs", "unicom", "university", "uno", "uol", "ups", "vacations", "vana", "vanguard", "vegas", "ventures", "verisign", "versicherung", "vet", "viajes", "video", "vig", "viking", "villas", "vin", "vip", "virgin", "visa", "vision", "viva", "vivo", "vlaanderen", "vodka", "volkswagen", "volvo", "vote", "voting", "voto", "voyage", "vuelos", "wales", "walmart", "walter", "wang", "wanggou", "watch", "watches", "weather", "weatherchannel", "webcam", "weber", "website", "wed", "wedding", "weibo", "weir", "whoswho", "wien", "wiki", "williamhill", "win", "windows", "wine", "winners", "wme", "wolterskluwer", "woodside", "work", "works", "world", "wow", "wtc", "wtf", "xbox", "xerox", "xfinity", "xihuan", "xin", "\u0915\u0949\u092e", "\u30bb\u30fc\u30eb", "\u4f5b\u5c71", "\u6148\u5584", "\u96c6\u56e2", "\u5728\u7ebf", "\u5927\u4f17\u6c7d\u8f66", "\u70b9\u770b", "\u0e04\u0e2d\u0e21", "\u516b\u5366", "\u0645\u0648\u0642\u0639", "\u516c\u76ca", "\u516c\u53f8", "\u9999\u683c\u91cc\u62c9", "\u7f51\u7ad9", "\u79fb\u52a8", "\u6211\u7231\u4f60", "\u043c\u043e\u0441\u043a\u0432\u0430", "\u043a\u0430\u0442\u043e\u043b\u0438\u043a", "\u043e\u043d\u043b\u0430\u0439\u043d", "\u0441\u0430\u0439\u0442", "\u8054\u901a", "\u05e7\u05d5\u05dd", "\u65f6\u5c1a", "\u5fae\u535a", "\u6de1\u9a6c\u9521", "\u30d5\u30a1\u30c3\u30b7\u30e7\u30f3", "\u043e\u0440\u0433", "\u0928\u0947\u091f", "\u30b9\u30c8\u30a2", "\u30a2\u30de\u30be\u30f3", "\uc0bc\uc131", "\u5546\u6807", "\u5546\u5e97", "\u5546\u57ce", "\u0434\u0435\u0442\u0438", "\u30dd\u30a4\u30f3\u30c8", "\u65b0\u95fb", "\u5bb6\u96fb", "\u0643\u0648\u0645", "\u4e2d\u6587\u7f51", "\u4e2d\u4fe1", "\u5a31\u4e50", "\u8c37\u6b4c", "\u96fb\u8a0a\u76c8\u79d1", "\u8d2d\u7269", "\u30af\u30e9\u30a6\u30c9", "\u901a\u8ca9", "\u7f51\u5e97", "\u0938\u0902\u0917\u0920\u0928", "\u9910\u5385", "\u7f51\u7edc", "\u043a\u043e\u043c", "\u4e9a\u9a6c\u900a", "\u8bfa\u57fa\u4e9a", "\u98df\u54c1", "\u98de\u5229\u6d66", "\u624b\u8868", "\u624b\u673a", "\u0627\u0631\u0627\u0645\u0643\u0648", "\u0627\u0644\u0639\u0644\u064a\u0627\u0646", "\u0627\u062a\u0635\u0627\u0644\u0627\u062a", "\u0628\u0627\u0632\u0627\u0631", "\u0627\u0628\u0648\u0638\u0628\u064a", "\u0643\u0627\u062b\u0648\u0644\u064a\u0643", "\u0647\u0645\u0631\u0627\u0647", "\ub2f7\ucef4", "\u653f\u5e9c", "\u0634\u0628\u0643\u0629", "\u0628\u064a\u062a\u0643", "\u0639\u0631\u0628", "\u673a\u6784", "\u7ec4\u7ec7\u673a\u6784", "\u5065\u5eb7", "\u62db\u8058", "\u0440\u0443\u0441", "\u73e0\u5b9d", "\u5927\u62ff", "\u307f\u3093\u306a", "\u30b0\u30fc\u30b0\u30eb", "\u4e16\u754c", "\u66f8\u7c4d", "\u7f51\u5740", "\ub2f7\ub137", "\u30b3\u30e0", "\u5929\u4e3b\u6559", "\u6e38\u620f", "verm\u00f6gensberater", "verm\u00f6gensberatung", "\u4f01\u4e1a", "\u4fe1\u606f", "\u5609\u91cc\u5927\u9152\u5e97", "\u5609\u91cc", "\u5e7f\u4e1c", "\u653f\u52a1", "xyz", "yachts", "yahoo", "yamaxun", "yandex", "yodobashi", "yoga", "yokohama", "you", "youtube", "yun", "zappos", "zara", "zero", "zip", "zone", "zuerich", "cc.ua", "inf.ua", "ltd.ua", "611.to", "adobeaemcloud.com", "adobeaemcloud.net", "*.dev.adobeaemcloud.com", "beep.pl", "barsy.ca", "*.compute.estate", "*.alces.network", "kasserver.com", "altervista.org", "alwaysdata.net", "cloudfront.net", "*.compute.amazonaws.com", "*.compute-1.amazonaws.com", "*.compute.amazonaws.com.cn", "us-east-1.amazonaws.com", "cn-north-1.eb.amazonaws.com.cn", "cn-northwest-1.eb.amazonaws.com.cn", "elasticbeanstalk.com", "ap-northeast-1.elasticbeanstalk.com", "ap-northeast-2.elasticbeanstalk.com", "ap-northeast-3.elasticbeanstalk.com", "ap-south-1.elasticbeanstalk.com", "ap-southeast-1.elasticbeanstalk.com", "ap-southeast-2.elasticbeanstalk.com", "ca-central-1.elasticbeanstalk.com", "eu-central-1.elasticbeanstalk.com", "eu-west-1.elasticbeanstalk.com", "eu-west-2.elasticbeanstalk.com", "eu-west-3.elasticbeanstalk.com", "sa-east-1.elasticbeanstalk.com", "us-east-1.elasticbeanstalk.com", "us-east-2.elasticbeanstalk.com", "us-gov-west-1.elasticbeanstalk.com", "us-west-1.elasticbeanstalk.com", "us-west-2.elasticbeanstalk.com", "*.elb.amazonaws.com", "*.elb.amazonaws.com.cn", "s3.amazonaws.com", "s3-ap-northeast-1.amazonaws.com", "s3-ap-northeast-2.amazonaws.com", "s3-ap-south-1.amazonaws.com", "s3-ap-southeast-1.amazonaws.com", "s3-ap-southeast-2.amazonaws.com", "s3-ca-central-1.amazonaws.com", "s3-eu-central-1.amazonaws.com", "s3-eu-west-1.amazonaws.com", "s3-eu-west-2.amazonaws.com", "s3-eu-west-3.amazonaws.com", "s3-external-1.amazonaws.com", "s3-fips-us-gov-west-1.amazonaws.com", "s3-sa-east-1.amazonaws.com", "s3-us-gov-west-1.amazonaws.com", "s3-us-east-2.amazonaws.com", "s3-us-west-1.amazonaws.com", "s3-us-west-2.amazonaws.com", "s3.ap-northeast-2.amazonaws.com", "s3.ap-south-1.amazonaws.com", "s3.cn-north-1.amazonaws.com.cn", "s3.ca-central-1.amazonaws.com", "s3.eu-central-1.amazonaws.com", "s3.eu-west-2.amazonaws.com", "s3.eu-west-3.amazonaws.com", "s3.us-east-2.amazonaws.com", "s3.dualstack.ap-northeast-1.amazonaws.com", "s3.dualstack.ap-northeast-2.amazonaws.com", "s3.dualstack.ap-south-1.amazonaws.com", "s3.dualstack.ap-southeast-1.amazonaws.com", "s3.dualstack.ap-southeast-2.amazonaws.com", "s3.dualstack.ca-central-1.amazonaws.com", "s3.dualstack.eu-central-1.amazonaws.com", "s3.dualstack.eu-west-1.amazonaws.com", "s3.dualstack.eu-west-2.amazonaws.com", "s3.dualstack.eu-west-3.amazonaws.com", "s3.dualstack.sa-east-1.amazonaws.com", "s3.dualstack.us-east-1.amazonaws.com", "s3.dualstack.us-east-2.amazonaws.com", "s3-website-us-east-1.amazonaws.com", "s3-website-us-west-1.amazonaws.com", "s3-website-us-west-2.amazonaws.com", "s3-website-ap-northeast-1.amazonaws.com", "s3-website-ap-southeast-1.amazonaws.com", "s3-website-ap-southeast-2.amazonaws.com", "s3-website-eu-west-1.amazonaws.com", "s3-website-sa-east-1.amazonaws.com", "s3-website.ap-northeast-2.amazonaws.com", "s3-website.ap-south-1.amazonaws.com", "s3-website.ca-central-1.amazonaws.com", "s3-website.eu-central-1.amazonaws.com", "s3-website.eu-west-2.amazonaws.com", "s3-website.eu-west-3.amazonaws.com", "s3-website.us-east-2.amazonaws.com", "amsw.nl", "t3l3p0rt.net", "tele.amune.org", "apigee.io", "on-aptible.com", "user.aseinet.ne.jp", "gv.vc", "d.gv.vc", "user.party.eus", "pimienta.org", "poivron.org", "potager.org", "sweetpepper.org", "myasustor.com", "myfritz.net", "*.awdev.ca", "*.advisor.ws", "b-data.io", "backplaneapp.io", "balena-devices.com", "*.banzai.cloud", "app.banzaicloud.io", "*.backyards.banzaicloud.io", "betainabox.com", "bnr.la", "blackbaudcdn.net", "boomla.net", "boxfuse.io", "square7.ch", "bplaced.com", "bplaced.de", "square7.de", "bplaced.net", "square7.net", "browsersafetymark.io", "uk0.bigv.io", "dh.bytemark.co.uk", "vm.bytemark.co.uk", "mycd.eu", "carrd.co", "crd.co", "uwu.ai", "ae.org", "ar.com", "br.com", "cn.com", "com.de", "com.se", "de.com", "eu.com", "gb.com", "gb.net", "hu.com", "hu.net", "jp.net", "jpn.com", "kr.com", "mex.com", "no.com", "qc.com", "ru.com", "sa.com", "se.net", "uk.com", "uk.net", "us.com", "uy.com", "za.bz", "za.com", "africa.com", "gr.com", "in.net", "us.org", "co.com", "c.la", "certmgr.org", "xenapponazure.com", "discourse.group", "discourse.team", "virtueeldomein.nl", "cleverapps.io", "*.lcl.dev", "*.stg.dev", "clic2000.net", "c66.me", "cloud66.ws", "cloud66.zone", "jdevcloud.com", "wpdevcloud.com", "cloudaccess.host", "freesite.host", "cloudaccess.net", "cloudcontrolled.com", "cloudcontrolapp.com", "cloudera.site", "trycloudflare.com", "workers.dev", "wnext.app", "co.ca", "*.otap.co", "co.cz", "c.cdn77.org", "cdn77-ssl.net", "r.cdn77.net", "rsc.cdn77.org", "ssl.origin.cdn77-secure.org", "cloudns.asia", "cloudns.biz", "cloudns.club", "cloudns.cc", "cloudns.eu", "cloudns.in", "cloudns.info", "cloudns.org", "cloudns.pro", "cloudns.pw", "cloudns.us", "cloudeity.net", "cnpy.gdn", "co.nl", "co.no", "webhosting.be", "hosting-cluster.nl", "ac.ru", "edu.ru", "gov.ru", "int.ru", "mil.ru", "test.ru", "dyn.cosidns.de", "dynamisches-dns.de", "dnsupdater.de", "internet-dns.de", "l-o-g-i-n.de", "dynamic-dns.info", "feste-ip.net", "knx-server.net", "static-access.net", "realm.cz", "*.cryptonomic.net", "cupcake.is", "curv.dev", "*.customer-oci.com", "*.oci.customer-oci.com", "*.ocp.customer-oci.com", "*.ocs.customer-oci.com", "cyon.link", "cyon.site", "daplie.me", "localhost.daplie.me", "dattolocal.com", "dattorelay.com", "dattoweb.com", "mydatto.com", "dattolocal.net", "mydatto.net", "biz.dk", "co.dk", "firm.dk", "reg.dk", "store.dk", "dyndns.dappnode.io", "*.dapps.earth", "*.bzz.dapps.earth", "builtwithdark.com", "edgestack.me", "debian.net", "dedyn.io", "dnshome.de", "online.th", "shop.th", "drayddns.com", "dreamhosters.com", "mydrobo.com", "drud.io", "drud.us", "duckdns.org", "bitbridge.net", "dy.fi", "tunk.org", "dyndns-at-home.com", "dyndns-at-work.com", "dyndns-blog.com", "dyndns-free.com", "dyndns-home.com", "dyndns-ip.com", "dyndns-mail.com", "dyndns-office.com", "dyndns-pics.com", "dyndns-remote.com", "dyndns-server.com", "dyndns-web.com", "dyndns-wiki.com", "dyndns-work.com", "dyndns.biz", "dyndns.info", "dyndns.org", "dyndns.tv", "at-band-camp.net", "ath.cx", "barrel-of-knowledge.info", "barrell-of-knowledge.info", "better-than.tv", "blogdns.com", "blogdns.net", "blogdns.org", "blogsite.org", "boldlygoingnowhere.org", "broke-it.net", "buyshouses.net", "cechire.com", "dnsalias.com", "dnsalias.net", "dnsalias.org", "dnsdojo.com", "dnsdojo.net", "dnsdojo.org", "does-it.net", "doesntexist.com", "doesntexist.org", "dontexist.com", "dontexist.net", "dontexist.org", "doomdns.com", "doomdns.org", "dvrdns.org", "dyn-o-saur.com", "dynalias.com", "dynalias.net", "dynalias.org", "dynathome.net", "dyndns.ws", "endofinternet.net", "endofinternet.org", "endoftheinternet.org", "est-a-la-maison.com", "est-a-la-masion.com", "est-le-patron.com", "est-mon-blogueur.com", "for-better.biz", "for-more.biz", "for-our.info", "for-some.biz", "for-the.biz", "forgot.her.name", "forgot.his.name", "from-ak.com", "from-al.com", "from-ar.com", "from-az.net", "from-ca.com", "from-co.net", "from-ct.com", "from-dc.com", "from-de.com", "from-fl.com", "from-ga.com", "from-hi.com", "from-ia.com", "from-id.com", "from-il.com", "from-in.com", "from-ks.com", "from-ky.com", "from-la.net", "from-ma.com", "from-md.com", "from-me.org", "from-mi.com", "from-mn.com", "from-mo.com", "from-ms.com", "from-mt.com", "from-nc.com", "from-nd.com", "from-ne.com", "from-nh.com", "from-nj.com", "from-nm.com", "from-nv.com", "from-ny.net", "from-oh.com", "from-ok.com", "from-or.com", "from-pa.com", "from-pr.com", "from-ri.com", "from-sc.com", "from-sd.com", "from-tn.com", "from-tx.com", "from-ut.com", "from-va.com", "from-vt.com", "from-wa.com", "from-wi.com", "from-wv.com", "from-wy.com", "ftpaccess.cc", "fuettertdasnetz.de", "game-host.org", "game-server.cc", "getmyip.com", "gets-it.net", "go.dyndns.org", "gotdns.com", "gotdns.org", "groks-the.info", "groks-this.info", "ham-radio-op.net", "here-for-more.info", "hobby-site.com", "hobby-site.org", "home.dyndns.org", "homedns.org", "homeftp.net", "homeftp.org", "homeip.net", "homelinux.com", "homelinux.net", "homelinux.org", "homeunix.com", "homeunix.net", "homeunix.org", "iamallama.com", "in-the-band.net", "is-a-anarchist.com", "is-a-blogger.com", "is-a-bookkeeper.com", "is-a-bruinsfan.org", "is-a-bulls-fan.com", "is-a-candidate.org", "is-a-caterer.com", "is-a-celticsfan.org", "is-a-chef.com", "is-a-chef.net", "is-a-chef.org", "is-a-conservative.com", "is-a-cpa.com", "is-a-cubicle-slave.com", "is-a-democrat.com", "is-a-designer.com", "is-a-doctor.com", "is-a-financialadvisor.com", "is-a-geek.com", "is-a-geek.net", "is-a-geek.org", "is-a-green.com", "is-a-guru.com", "is-a-hard-worker.com", "is-a-hunter.com", "is-a-knight.org", "is-a-landscaper.com", "is-a-lawyer.com", "is-a-liberal.com", "is-a-libertarian.com", "is-a-linux-user.org", "is-a-llama.com", "is-a-musician.com", "is-a-nascarfan.com", "is-a-nurse.com", "is-a-painter.com", "is-a-patsfan.org", "is-a-personaltrainer.com", "is-a-photographer.com", "is-a-player.com", "is-a-republican.com", "is-a-rockstar.com", "is-a-socialist.com", "is-a-soxfan.org", "is-a-student.com", "is-a-teacher.com", "is-a-techie.com", "is-a-therapist.com", "is-an-accountant.com", "is-an-actor.com", "is-an-actress.com", "is-an-anarchist.com", "is-an-artist.com", "is-an-engineer.com", "is-an-entertainer.com", "is-by.us", "is-certified.com", "is-found.org", "is-gone.com", "is-into-anime.com", "is-into-cars.com", "is-into-cartoons.com", "is-into-games.com", "is-leet.com", "is-lost.org", "is-not-certified.com", "is-saved.org", "is-slick.com", "is-uberleet.com", "is-very-bad.org", "is-very-evil.org", "is-very-good.org", "is-very-nice.org", "is-very-sweet.org", "is-with-theband.com", "isa-geek.com", "isa-geek.net", "isa-geek.org", "isa-hockeynut.com", "issmarterthanyou.com", "isteingeek.de", "istmein.de", "kicks-ass.net", "kicks-ass.org", "knowsitall.info", "land-4-sale.us", "lebtimnetz.de", "leitungsen.de", "likes-pie.com", "likescandy.com", "merseine.nu", "mine.nu", "misconfused.org", "mypets.ws", "myphotos.cc", "neat-url.com", "office-on-the.net", "on-the-web.tv", "podzone.net", "podzone.org", "readmyblog.org", "saves-the-whales.com", "scrapper-site.net", "scrapping.cc", "selfip.biz", "selfip.com", "selfip.info", "selfip.net", "selfip.org", "sells-for-less.com", "sells-for-u.com", "sells-it.net", "sellsyourhome.org", "servebbs.com", "servebbs.net", "servebbs.org", "serveftp.net", "serveftp.org", "servegame.org", "shacknet.nu", "simple-url.com", "space-to-rent.com", "stuff-4-sale.org", "stuff-4-sale.us", "teaches-yoga.com", "thruhere.net", "traeumtgerade.de", "webhop.biz", "webhop.info", "webhop.net", "webhop.org", "worse-than.tv", "writesthisblog.com", "ddnss.de", "dyn.ddnss.de", "dyndns.ddnss.de", "dyndns1.de", "dyn-ip24.de", "home-webserver.de", "dyn.home-webserver.de", "myhome-server.de", "ddnss.org", "definima.net", "definima.io", "bci.dnstrace.pro", "ddnsfree.com", "ddnsgeek.com", "giize.com", "gleeze.com", "kozow.com", "loseyourip.com", "ooguy.com", "theworkpc.com", "casacam.net", "dynu.net", "accesscam.org", "camdvr.org", "freeddns.org", "mywire.org", "webredirect.org", "myddns.rocks", "blogsite.xyz", "dynv6.net", "e4.cz", "en-root.fr", "mytuleap.com", "onred.one", "staging.onred.one", "enonic.io", "customer.enonic.io", "eu.org", "al.eu.org", "asso.eu.org", "at.eu.org", "au.eu.org", "be.eu.org", "bg.eu.org", "ca.eu.org", "cd.eu.org", "ch.eu.org", "cn.eu.org", "cy.eu.org", "cz.eu.org", "de.eu.org", "dk.eu.org", "edu.eu.org", "ee.eu.org", "es.eu.org", "fi.eu.org", "fr.eu.org", "gr.eu.org", "hr.eu.org", "hu.eu.org", "ie.eu.org", "il.eu.org", "in.eu.org", "int.eu.org", "is.eu.org", "it.eu.org", "jp.eu.org", "kr.eu.org", "lt.eu.org", "lu.eu.org", "lv.eu.org", "mc.eu.org", "me.eu.org", "mk.eu.org", "mt.eu.org", "my.eu.org", "net.eu.org", "ng.eu.org", "nl.eu.org", "no.eu.org", "nz.eu.org", "paris.eu.org", "pl.eu.org", "pt.eu.org", "q-a.eu.org", "ro.eu.org", "ru.eu.org", "se.eu.org", "si.eu.org", "sk.eu.org", "tr.eu.org", "uk.eu.org", "us.eu.org", "eu-1.evennode.com", "eu-2.evennode.com", "eu-3.evennode.com", "eu-4.evennode.com", "us-1.evennode.com", "us-2.evennode.com", "us-3.evennode.com", "us-4.evennode.com", "twmail.cc", "twmail.net", "twmail.org", "mymailer.com.tw", "url.tw", "onfabrica.com", "apps.fbsbx.com", "ru.net", "adygeya.ru", "bashkiria.ru", "bir.ru", "cbg.ru", "com.ru", "dagestan.ru", "grozny.ru", "kalmykia.ru", "kustanai.ru", "marine.ru", "mordovia.ru", "msk.ru", "mytis.ru", "nalchik.ru", "nov.ru", "pyatigorsk.ru", "spb.ru", "vladikavkaz.ru", "vladimir.ru", "abkhazia.su", "adygeya.su", "aktyubinsk.su", "arkhangelsk.su", "armenia.su", "ashgabad.su", "azerbaijan.su", "balashov.su", "bashkiria.su", "bryansk.su", "bukhara.su", "chimkent.su", "dagestan.su", "east-kazakhstan.su", "exnet.su", "georgia.su", "grozny.su", "ivanovo.su", "jambyl.su", "kalmykia.su", "kaluga.su", "karacol.su", "karaganda.su", "karelia.su", "khakassia.su", "krasnodar.su", "kurgan.su", "kustanai.su", "lenug.su", "mangyshlak.su", "mordovia.su", "msk.su", "murmansk.su", "nalchik.su", "navoi.su", "north-kazakhstan.su", "nov.su", "obninsk.su", "penza.su", "pokrovsk.su", "sochi.su", "spb.su", "tashkent.su", "termez.su", "togliatti.su", "troitsk.su", "tselinograd.su", "tula.su", "tuva.su", "vladikavkaz.su", "vladimir.su", "vologda.su", "channelsdvr.net", "u.channelsdvr.net", "fastly-terrarium.com", "fastlylb.net", "map.fastlylb.net", "freetls.fastly.net", "map.fastly.net", "a.prod.fastly.net", "global.prod.fastly.net", "a.ssl.fastly.net", "b.ssl.fastly.net", "global.ssl.fastly.net", "fastvps-server.com", "fastvps.host", "myfast.host", "fastvps.site", "myfast.space", "fhapp.xyz", "fedorainfracloud.org", "fedorapeople.org", "cloud.fedoraproject.org", "app.os.fedoraproject.org", "app.os.stg.fedoraproject.org", "conn.uk", "copro.uk", "couk.me", "ukco.me", "mydobiss.com", "filegear.me", "filegear-au.me", "filegear-de.me", "filegear-gb.me", "filegear-ie.me", "filegear-jp.me", "filegear-sg.me", "firebaseapp.com", "fly.dev", "edgeapp.net", "shw.io", "flynnhosting.net", "0e.vc", "freebox-os.com", "freeboxos.com", "fbx-os.fr", "fbxos.fr", "freebox-os.fr", "freeboxos.fr", "freedesktop.org", "wien.funkfeuer.at", "*.futurecms.at", "*.ex.futurecms.at", "*.in.futurecms.at", "futurehosting.at", "futuremailing.at", "*.ex.ortsinfo.at", "*.kunden.ortsinfo.at", "*.statics.cloud", "service.gov.uk", "gehirn.ne.jp", "usercontent.jp", "gentapps.com", "gentlentapis.com", "lab.ms", "github.io", "githubusercontent.com", "gitlab.io", "gitpage.si", "glitch.me", "lolipop.io", "cloudapps.digital", "london.cloudapps.digital", "homeoffice.gov.uk", "ro.im", "shop.ro", "goip.de", "run.app", "a.run.app", "web.app", "*.0emm.com", "appspot.com", "*.r.appspot.com", "blogspot.ae", "blogspot.al", "blogspot.am", "blogspot.ba", "blogspot.be", "blogspot.bg", "blogspot.bj", "blogspot.ca", "blogspot.cf", "blogspot.ch", "blogspot.cl", "blogspot.co.at", "blogspot.co.id", "blogspot.co.il", "blogspot.co.ke", "blogspot.co.nz", "blogspot.co.uk", "blogspot.co.za", "blogspot.com", "blogspot.com.ar", "blogspot.com.au", "blogspot.com.br", "blogspot.com.by", "blogspot.com.co", "blogspot.com.cy", "blogspot.com.ee", "blogspot.com.eg", "blogspot.com.es", "blogspot.com.mt", "blogspot.com.ng", "blogspot.com.tr", "blogspot.com.uy", "blogspot.cv", "blogspot.cz", "blogspot.de", "blogspot.dk", "blogspot.fi", "blogspot.fr", "blogspot.gr", "blogspot.hk", "blogspot.hr", "blogspot.hu", "blogspot.ie", "blogspot.in", "blogspot.is", "blogspot.it", "blogspot.jp", "blogspot.kr", "blogspot.li", "blogspot.lt", "blogspot.lu", "blogspot.md", "blogspot.mk", "blogspot.mr", "blogspot.mx", "blogspot.my", "blogspot.nl", "blogspot.no", "blogspot.pe", "blogspot.pt", "blogspot.qa", "blogspot.re", "blogspot.ro", "blogspot.rs", "blogspot.ru", "blogspot.se", "blogspot.sg", "blogspot.si", "blogspot.sk", "blogspot.sn", "blogspot.td", "blogspot.tw", "blogspot.ug", "blogspot.vn", "cloudfunctions.net", "cloud.goog", "codespot.com", "googleapis.com", "googlecode.com", "pagespeedmobilizer.com", "publishproxy.com", "withgoogle.com", "withyoutube.com", "graphox.us", "awsmppl.com", "fin.ci", "free.hr", "caa.li", "ua.rs", "conf.se", "hs.zone", "hs.run", "hashbang.sh", "hasura.app", "hasura-app.io", "hepforge.org", "herokuapp.com", "herokussl.com", "myravendb.com", "ravendb.community", "ravendb.me", "development.run", "ravendb.run", "bpl.biz", "orx.biz", "ng.city", "biz.gl", "ng.ink", "col.ng", "firm.ng", "gen.ng", "ltd.ng", "ngo.ng", "ng.school", "sch.so", "hostyhosting.io", "h\u00e4kkinen.fi", "*.moonscale.io", "moonscale.net", "iki.fi", "dyn-berlin.de", "in-berlin.de", "in-brb.de", "in-butter.de", "in-dsl.de", "in-dsl.net", "in-dsl.org", "in-vpn.de", "in-vpn.net", "in-vpn.org", "biz.at", "info.at", "info.cx", "ac.leg.br", "al.leg.br", "am.leg.br", "ap.leg.br", "ba.leg.br", "ce.leg.br", "df.leg.br", "es.leg.br", "go.leg.br", "ma.leg.br", "mg.leg.br", "ms.leg.br", "mt.leg.br", "pa.leg.br", "pb.leg.br", "pe.leg.br", "pi.leg.br", "pr.leg.br", "rj.leg.br", "rn.leg.br", "ro.leg.br", "rr.leg.br", "rs.leg.br", "sc.leg.br", "se.leg.br", "sp.leg.br", "to.leg.br", "pixolino.com", "ipifony.net", "mein-iserv.de", "schulserver.de", "test-iserv.de", "iserv.dev", "iobb.net", "hidora.com", "demo.jelastic.com", "j.scaleforce.com.cy", "mircloud.host", "jls-sto1.elastx.net", "j.layershift.co.uk", "myjino.ru", "*.hosting.myjino.ru", "*.landing.myjino.ru", "*.spectrum.myjino.ru", "*.vps.myjino.ru", "*.triton.zone", "*.cns.joyent.com", "js.org", "kaas.gg", "khplay.nl", "keymachine.de", "kinghost.net", "uni5.net", "knightpoint.systems", "oya.to", "co.krd", "edu.krd", "git-repos.de", "lcube-server.de", "svn-repos.de", "leadpages.co", "lpages.co", "lpusercontent.com", "lelux.site", "co.business", "co.education", "co.events", "co.financial", "co.network", "co.place", "co.technology", "app.lmpm.com", "linkitools.space", "linkyard.cloud", "linkyard-cloud.ch", "members.linode.com", "*.nodebalancer.linode.com", "*.linodeobjects.com", "we.bs", "loginline.app", "loginline.dev", "loginline.io", "loginline.services", "loginline.site", "krasnik.pl", "leczna.pl", "lubartow.pl", "lublin.pl", "poniatowa.pl", "swidnik.pl", "uklugs.org", "glug.org.uk", "lug.org.uk", "lugs.org.uk", "barsy.bg", "barsy.co.uk", "barsyonline.co.uk", "barsycenter.com", "barsyonline.com", "barsy.club", "barsy.de", "barsy.eu", "barsy.in", "barsy.info", "barsy.io", "barsy.me", "barsy.menu", "barsy.mobi", "barsy.net", "barsy.online", "barsy.org", "barsy.pro", "barsy.pub", "barsy.shop", "barsy.site", "barsy.support", "barsy.uk", "*.magentosite.cloud", "mayfirst.info", "mayfirst.org", "hb.cldmail.ru", "miniserver.com", "memset.net", "cloud.metacentrum.cz", "custom.metacentrum.cz", "flt.cloud.muni.cz", "usr.cloud.muni.cz", "meteorapp.com", "eu.meteorapp.com", "co.pl", "*.azurecontainer.io", "azurewebsites.net", "azure-mobile.net", "cloudapp.net", "mozilla-iot.org", "bmoattachments.org", "net.ru", "org.ru", "pp.ru", "ui.nabu.casa", "pony.club", "of.fashion", "on.fashion", "of.football", "in.london", "of.london", "for.men", "and.mom", "for.mom", "for.one", "for.sale", "of.work", "to.work", "nctu.me", "netlify.app", "4u.com", "ngrok.io", "nh-serv.co.uk", "nfshost.com", "dnsking.ch", "mypi.co", "n4t.co", "001www.com", "ddnslive.com", "myiphost.com", "forumz.info", "16-b.it", "32-b.it", "64-b.it", "soundcast.me", "tcp4.me", "dnsup.net", "hicam.net", "now-dns.net", "ownip.net", "vpndns.net", "dynserv.org", "now-dns.org", "x443.pw", "now-dns.top", "ntdll.top", "freeddns.us", "crafting.xyz", "zapto.xyz", "nsupdate.info", "nerdpol.ovh", "blogsyte.com", "brasilia.me", "cable-modem.org", "ciscofreak.com", "collegefan.org", "couchpotatofries.org", "damnserver.com", "ddns.me", "ditchyourip.com", "dnsfor.me", "dnsiskinky.com", "dvrcam.info", "dynns.com", "eating-organic.net", "fantasyleague.cc", "geekgalaxy.com", "golffan.us", "health-carereform.com", "homesecuritymac.com", "homesecuritypc.com", "hopto.me", "ilovecollege.info", "loginto.me", "mlbfan.org", "mmafan.biz", "myactivedirectory.com", "mydissent.net", "myeffect.net", "mymediapc.net", "mypsx.net", "mysecuritycamera.com", "mysecuritycamera.net", "mysecuritycamera.org", "net-freaks.com", "nflfan.org", "nhlfan.net", "no-ip.ca", "no-ip.co.uk", "no-ip.net", "noip.us", "onthewifi.com", "pgafan.net", "point2this.com", "pointto.us", "privatizehealthinsurance.net", "quicksytes.com", "read-books.org", "securitytactics.com", "serveexchange.com", "servehumour.com", "servep2p.com", "servesarcasm.com", "stufftoread.com", "ufcfan.org", "unusualperson.com", "workisboring.com", "3utilities.com", "bounceme.net", "ddns.net", "ddnsking.com", "gotdns.ch", "hopto.org", "myftp.biz", "myftp.org", "myvnc.com", "no-ip.biz", "no-ip.info", "no-ip.org", "noip.me", "redirectme.net", "servebeer.com", "serveblog.net", "servecounterstrike.com", "serveftp.com", "servegame.com", "servehalflife.com", "servehttp.com", "serveirc.com", "serveminecraft.net", "servemp3.com", "servepics.com", "servequake.com", "sytes.net", "webhop.me", "zapto.org", "stage.nodeart.io", "nodum.co", "nodum.io", "pcloud.host", "nyc.mn", "nom.ae", "nom.af", "nom.ai", "nom.al", "nym.by", "nom.bz", "nym.bz", "nom.cl", "nym.ec", "nom.gd", "nom.ge", "nom.gl", "nym.gr", "nom.gt", "nym.gy", "nym.hk", "nom.hn", "nym.ie", "nom.im", "nom.ke", "nym.kz", "nym.la", "nym.lc", "nom.li", "nym.li", "nym.lt", "nym.lu", "nom.lv", "nym.me", "nom.mk", "nym.mn", "nym.mx", "nom.nu", "nym.nz", "nym.pe", "nym.pt", "nom.pw", "nom.qa", "nym.ro", "nom.rs", "nom.si", "nym.sk", "nom.st", "nym.su", "nym.sx", "nom.tj", "nym.tw", "nom.ug", "nom.uy", "nom.vc", "nom.vg", "static.observableusercontent.com", "cya.gg", "cloudycluster.net", "nid.io", "opencraft.hosting", "operaunite.com", "skygearapp.com", "outsystemscloud.com", "ownprovider.com", "own.pm", "*.owo.codes", "ox.rs", "oy.lc", "pgfog.com", "pagefrontapp.com", "pagexl.com", "art.pl", "gliwice.pl", "krakow.pl", "poznan.pl", "wroc.pl", "zakopane.pl", "pantheonsite.io", "gotpantheon.com", "mypep.link", "perspecta.cloud", "on-web.fr", "*.platform.sh", "*.platformsh.site", "platter-app.com", "platter-app.dev", "platterp.us", "pdns.page", "plesk.page", "pleskns.com", "dyn53.io", "co.bn", "xen.prgmr.com", "priv.at", "prvcy.page", "*.dweb.link", "protonet.io", "chirurgiens-dentistes-en-france.fr", "byen.site", "pubtls.org", "qualifioapp.com", "qbuser.com", "instantcloud.cn", "ras.ru", "qa2.com", "qcx.io", "*.sys.qcx.io", "dev-myqnapcloud.com", "alpha-myqnapcloud.com", "myqnapcloud.com", "*.quipelements.com", "vapor.cloud", "vaporcloud.io", "rackmaze.com", "rackmaze.net", "g.vbrplsbx.io", "*.on-k3s.io", "*.on-rancher.cloud", "*.on-rio.io", "readthedocs.io", "rhcloud.com", "app.render.com", "onrender.com", "repl.co", "repl.run", "resindevice.io", "devices.resinstaging.io", "hzc.io", "wellbeingzone.eu", "ptplus.fit", "wellbeingzone.co.uk", "git-pages.rit.edu", "sandcats.io", "logoip.de", "logoip.com", "schokokeks.net", "gov.scot", "scrysec.com", "firewall-gateway.com", "firewall-gateway.de", "my-gateway.de", "my-router.de", "spdns.de", "spdns.eu", "firewall-gateway.net", "my-firewall.org", "myfirewall.org", "spdns.org", "seidat.net", "senseering.net", "biz.ua", "co.ua", "pp.ua", "shiftedit.io", "myshopblocks.com", "shopitsite.com", "shopware.store", "mo-siemens.io", "1kapp.com", "appchizi.com", "applinzi.com", "sinaapp.com", "vipsinaapp.com", "siteleaf.net", "bounty-full.com", "alpha.bounty-full.com", "beta.bounty-full.com", "stackhero-network.com", "static.land", "dev.static.land", "sites.static.land", "playstation-cloud.com", "apps.lair.io", "*.stolos.io", "spacekit.io", "customer.speedpartner.de", "api.stdlib.com", "storj.farm", "utwente.io", "soc.srcf.net", "user.srcf.net", "temp-dns.com", "applicationcloud.io", "scapp.io", "*.s5y.io", "*.sensiosite.cloud", "syncloud.it", "diskstation.me", "dscloud.biz", "dscloud.me", "dscloud.mobi", "dsmynas.com", "dsmynas.net", "dsmynas.org", "familyds.com", "familyds.net", "familyds.org", "i234.me", "myds.me", "synology.me", "vpnplus.to", "direct.quickconnect.to", "taifun-dns.de", "gda.pl", "gdansk.pl", "gdynia.pl", "med.pl", "sopot.pl", "edugit.org", "telebit.app", "telebit.io", "*.telebit.xyz", "gwiddle.co.uk", "thingdustdata.com", "cust.dev.thingdust.io", "cust.disrec.thingdust.io", "cust.prod.thingdust.io", "cust.testing.thingdust.io", "arvo.network", "azimuth.network", "bloxcms.com", "townnews-staging.com", "12hp.at", "2ix.at", "4lima.at", "lima-city.at", "12hp.ch", "2ix.ch", "4lima.ch", "lima-city.ch", "trafficplex.cloud", "de.cool", "12hp.de", "2ix.de", "4lima.de", "lima-city.de", "1337.pictures", "clan.rip", "lima-city.rocks", "webspace.rocks", "lima.zone", "*.transurl.be", "*.transurl.eu", "*.transurl.nl", "tuxfamily.org", "dd-dns.de", "diskstation.eu", "diskstation.org", "dray-dns.de", "draydns.de", "dyn-vpn.de", "dynvpn.de", "mein-vigor.de", "my-vigor.de", "my-wan.de", "syno-ds.de", "synology-diskstation.de", "synology-ds.de", "uber.space", "*.uberspace.de", "hk.com", "hk.org", "ltd.hk", "inc.hk", "virtualuser.de", "virtual-user.de", "urown.cloud", "dnsupdate.info", "lib.de.us", "2038.io", "vercel.app", "vercel.dev", "now.sh", "router.management", "v-info.info", "voorloper.cloud", "neko.am", "nyaa.am", "be.ax", "cat.ax", "es.ax", "eu.ax", "gg.ax", "mc.ax", "us.ax", "xy.ax", "nl.ci", "xx.gl", "app.gp", "blog.gt", "de.gt", "to.gt", "be.gy", "cc.hn", "blog.kg", "io.kg", "jp.kg", "tv.kg", "uk.kg", "us.kg", "de.ls", "at.md", "de.md", "jp.md", "to.md", "uwu.nu", "indie.porn", "vxl.sh", "ch.tc", "me.tc", "we.tc", "nyan.to", "at.vg", "blog.vu", "dev.vu", "me.vu", "v.ua", "wafflecell.com", "*.webhare.dev", "wedeploy.io", "wedeploy.me", "wedeploy.sh", "remotewd.com", "wmflabs.org", "toolforge.org", "wmcloud.org", "panel.gg", "daemon.panel.gg", "myforum.community", "community-pro.de", "diskussionsbereich.de", "community-pro.net", "meinforum.net", "half.host", "xnbay.com", "u2.xnbay.com", "u2-local.xnbay.com", "cistron.nl", "demon.nl", "xs4all.space", "yandexcloud.net", "storage.yandexcloud.net", "website.yandexcloud.net", "official.academy", "yolasite.com", "ybo.faith", "yombo.me", "homelink.one", "ybo.party", "ybo.review", "ybo.science", "ybo.trade", "nohost.me", "noho.st", "za.net", "za.org", "bss.design", "basicserver.io", "virtualserver.io", "enterprisecloud.nu", "mintere.site"];
   const elems = new $c_sjsr_WrappedVarArgs(array);
   return this$4.from__sc_IterableOnce__sci_Set(elems)
 });
@@ -4075,22 +4073,6 @@ class $c_ju_Arrays$ extends $c_O {
       i = ((1 + i) | 0)
     }
   };
-  fill__AO__I__I__O__V(a, fromIndex, toIndex, value) {
-    if ((fromIndex > toIndex)) {
-      throw $ct_jl_IllegalArgumentException__T__(new $c_jl_IllegalArgumentException(), (((("fromIndex(" + fromIndex) + ") > toIndex(") + toIndex) + ")"))
-    };
-    if ((fromIndex < 0)) {
-      a.get(fromIndex)
-    };
-    if ((toIndex > 0)) {
-      a.get((((-1) + toIndex) | 0))
-    };
-    let i = fromIndex;
-    while ((i !== toIndex)) {
-      a.set(i, value);
-      i = ((1 + i) | 0)
-    }
-  };
   copyOf__AO__I__AO(original, newLength) {
     const tagT = $m_s_reflect_ClassTag$().apply__jl_Class__s_reflect_ClassTag($objectGetClass(original).getComponentType__jl_Class());
     if ((newLength < 0)) {
@@ -5866,18 +5848,6 @@ class $c_sc_ArrayOps$ extends $c_O {
   toIndexedSeq$extension__O__sci_IndexedSeq(this$) {
     return $m_sci_ArraySeq$().unsafeWrapArray__O__sci_ArraySeq($m_s_Array$().copyOf__O__I__O(this$, $m_sr_ScalaRunTime$().array_length__O__I(this$)))
   };
-  copyToArray$extension__O__O__I__I__I(this$, xs, start, len) {
-    const srcLen = $m_sr_ScalaRunTime$().array_length__O__I(this$);
-    const destLen = $m_sr_ScalaRunTime$().array_length__O__I(xs);
-    const x = ((len < srcLen) ? len : srcLen);
-    const y = ((destLen - start) | 0);
-    const x$1 = ((x < y) ? x : y);
-    const copied = ((x$1 > 0) ? x$1 : 0);
-    if ((copied > 0)) {
-      $m_s_Array$().copy__O__I__O__I__I__V(this$, 0, xs, start, copied)
-    };
-    return copied
-  };
 }
 const $d_sc_ArrayOps$ = new $TypeData().initClass({
   sc_ArrayOps$: 0
@@ -5959,19 +5929,6 @@ const $f_sc_IterableOnceOps__foldLeft__O__F2__O = (function($thiz, z, op) {
 });
 const $f_sc_IterableOnceOps__isEmpty__Z = (function($thiz) {
   return (!$as_sc_IterableOnce($thiz).iterator__sc_Iterator().hasNext__Z())
-});
-const $f_sc_IterableOnceOps__size__I = (function($thiz) {
-  if (($as_sc_IterableOnce($thiz).knownSize__I() >= 0)) {
-    return $as_sc_IterableOnce($thiz).knownSize__I()
-  } else {
-    const it = $as_sc_IterableOnce($thiz).iterator__sc_Iterator();
-    let len = 0;
-    while (it.hasNext__Z()) {
-      len = ((1 + len) | 0);
-      it.next__O()
-    };
-    return len
-  }
 });
 const $f_sc_IterableOnceOps__copyToArray__O__I__I = (function($thiz, xs, start) {
   const xsLen = $m_sr_ScalaRunTime$().array_length__O__I(xs);
@@ -6366,27 +6323,6 @@ const $d_sci_LazyList$LazyBuilder$DeferredState = new $TypeData().initClass({
   O: 1
 });
 $c_sci_LazyList$LazyBuilder$DeferredState.prototype.$classData = $d_sci_LazyList$LazyBuilder$DeferredState;
-class $c_sci_MapKeyValueTupleHashIterator$$anon$1 extends $c_O {
-  constructor(outer) {
-    super();
-    this.sci_MapKeyValueTupleHashIterator$$anon$1__f_$outer = null;
-    if ((outer === null)) {
-      throw $m_sjsr_package$().unwrapJavaScriptException__jl_Throwable__O(null)
-    } else {
-      this.sci_MapKeyValueTupleHashIterator$$anon$1__f_$outer = outer
-    }
-  };
-  hashCode__I() {
-    return this.sci_MapKeyValueTupleHashIterator$$anon$1__f_$outer.sci_MapKeyValueTupleHashIterator__f_scala$collection$immutable$MapKeyValueTupleHashIterator$$hash
-  };
-}
-const $d_sci_MapKeyValueTupleHashIterator$$anon$1 = new $TypeData().initClass({
-  sci_MapKeyValueTupleHashIterator$$anon$1: 0
-}, false, "scala.collection.immutable.MapKeyValueTupleHashIterator$$anon$1", {
-  sci_MapKeyValueTupleHashIterator$$anon$1: 1,
-  O: 1
-});
-$c_sci_MapKeyValueTupleHashIterator$$anon$1.prototype.$classData = $d_sci_MapKeyValueTupleHashIterator$$anon$1;
 class $c_sci_MapNode$ extends $c_O {
   constructor() {
     super();
@@ -6507,551 +6443,578 @@ function $m_sci_SetNode$() {
   };
   return $n_sci_SetNode$
 }
-const $f_sci_VectorPointer__preClean__I__V = (function($thiz, depth) {
-  $thiz.depth_$eq__I__V(depth);
-  const x1 = (((-1) + depth) | 0);
-  switch (x1) {
-    case 0: {
-      $thiz.display1_$eq__AAO__V(null);
-      $thiz.display2_$eq__AAAO__V(null);
-      $thiz.display3_$eq__AAAAO__V(null);
-      $thiz.display4_$eq__AAAAAO__V(null);
-      $thiz.display5_$eq__AAAAAAO__V(null);
-      break
-    }
-    case 1: {
-      $thiz.display2_$eq__AAAO__V(null);
-      $thiz.display3_$eq__AAAAO__V(null);
-      $thiz.display4_$eq__AAAAAO__V(null);
-      $thiz.display5_$eq__AAAAAAO__V(null);
-      break
-    }
-    case 2: {
-      $thiz.display3_$eq__AAAAO__V(null);
-      $thiz.display4_$eq__AAAAAO__V(null);
-      $thiz.display5_$eq__AAAAAAO__V(null);
-      break
-    }
-    case 3: {
-      $thiz.display4_$eq__AAAAAO__V(null);
-      $thiz.display5_$eq__AAAAAAO__V(null);
-      break
-    }
-    case 4: {
-      $thiz.display5_$eq__AAAAAAO__V(null);
-      break
-    }
-    case 5: {
-      break
-    }
-    default: {
-      throw new $c_s_MatchError(x1)
-    }
-  }
-});
-const $f_sci_VectorPointer__initFrom__sci_VectorPointer__I__V = (function($thiz, that, depth) {
-  $thiz.depth_$eq__I__V(depth);
-  const x1 = (((-1) + depth) | 0);
-  switch (x1) {
-    case (-1): {
-      break
-    }
-    case 0: {
-      $thiz.display0_$eq__AO__V(that.display0__AO());
-      break
-    }
-    case 1: {
-      $thiz.display1_$eq__AAO__V(that.display1__AAO());
-      $thiz.display0_$eq__AO__V(that.display0__AO());
-      break
-    }
-    case 2: {
-      $thiz.display2_$eq__AAAO__V(that.display2__AAAO());
-      $thiz.display1_$eq__AAO__V(that.display1__AAO());
-      $thiz.display0_$eq__AO__V(that.display0__AO());
-      break
-    }
-    case 3: {
-      $thiz.display3_$eq__AAAAO__V(that.display3__AAAAO());
-      $thiz.display2_$eq__AAAO__V(that.display2__AAAO());
-      $thiz.display1_$eq__AAO__V(that.display1__AAO());
-      $thiz.display0_$eq__AO__V(that.display0__AO());
-      break
-    }
-    case 4: {
-      $thiz.display4_$eq__AAAAAO__V(that.display4__AAAAAO());
-      $thiz.display3_$eq__AAAAO__V(that.display3__AAAAO());
-      $thiz.display2_$eq__AAAO__V(that.display2__AAAO());
-      $thiz.display1_$eq__AAO__V(that.display1__AAO());
-      $thiz.display0_$eq__AO__V(that.display0__AO());
-      break
-    }
-    case 5: {
-      $thiz.display5_$eq__AAAAAAO__V(that.display5__AAAAAAO());
-      $thiz.display4_$eq__AAAAAO__V(that.display4__AAAAAO());
-      $thiz.display3_$eq__AAAAO__V(that.display3__AAAAO());
-      $thiz.display2_$eq__AAAO__V(that.display2__AAAO());
-      $thiz.display1_$eq__AAO__V(that.display1__AAO());
-      $thiz.display0_$eq__AO__V(that.display0__AO());
-      break
-    }
-    default: {
-      throw new $c_s_MatchError(x1)
-    }
-  }
-});
-const $f_sci_VectorPointer__gotoPos__I__I__V = (function($thiz, index, xor) {
-  if ((xor >= 32)) {
-    if ((xor < 1024)) {
-      $thiz.display0_$eq__AO__V($thiz.display1__AAO().get((31 & ((index >>> 5) | 0))))
-    } else if ((xor < 32768)) {
-      $thiz.display1_$eq__AAO__V($thiz.display2__AAAO().get((31 & ((index >>> 10) | 0))));
-      $thiz.display0_$eq__AO__V($thiz.display1__AAO().get((31 & ((index >>> 5) | 0))))
-    } else if ((xor < 1048576)) {
-      $thiz.display2_$eq__AAAO__V($thiz.display3__AAAAO().get((31 & ((index >>> 15) | 0))));
-      $thiz.display1_$eq__AAO__V($thiz.display2__AAAO().get((31 & ((index >>> 10) | 0))));
-      $thiz.display0_$eq__AO__V($thiz.display1__AAO().get((31 & ((index >>> 5) | 0))))
-    } else if ((xor < 33554432)) {
-      $thiz.display3_$eq__AAAAO__V($thiz.display4__AAAAAO().get((31 & ((index >>> 20) | 0))));
-      $thiz.display2_$eq__AAAO__V($thiz.display3__AAAAO().get((31 & ((index >>> 15) | 0))));
-      $thiz.display1_$eq__AAO__V($thiz.display2__AAAO().get((31 & ((index >>> 10) | 0))));
-      $thiz.display0_$eq__AO__V($thiz.display1__AAO().get((31 & ((index >>> 5) | 0))))
-    } else if ((xor < 1073741824)) {
-      $thiz.display4_$eq__AAAAAO__V($thiz.display5__AAAAAAO().get((31 & ((index >>> 25) | 0))));
-      $thiz.display3_$eq__AAAAO__V($thiz.display4__AAAAAO().get((31 & ((index >>> 20) | 0))));
-      $thiz.display2_$eq__AAAO__V($thiz.display3__AAAAO().get((31 & ((index >>> 15) | 0))));
-      $thiz.display1_$eq__AAO__V($thiz.display2__AAAO().get((31 & ((index >>> 10) | 0))));
-      $thiz.display0_$eq__AO__V($thiz.display1__AAO().get((31 & ((index >>> 5) | 0))))
+const $p_sci_VectorSliceBuilder__addSlice__I__AO__I__I__V = (function($thiz, n, a, lo, hi) {
+  while (true) {
+    if ((n === 1)) {
+      const a$1 = a;
+      const start = lo;
+      const end = hi;
+      $p_sci_VectorSliceBuilder__add__I__AO__V($thiz, 1, (((start === 0) && (end === a$1.u.length)) ? a$1 : $m_ju_Arrays$().copyOfRange__AO__I__I__AO(a$1, start, end)))
     } else {
-      throw $ct_jl_IllegalArgumentException__(new $c_jl_IllegalArgumentException())
-    }
+      const bitsN = $imul(5, (((-1) + n) | 0));
+      const widthN = (1 << bitsN);
+      const loN = ((lo >>> bitsN) | 0);
+      const hiN = ((hi >>> bitsN) | 0);
+      const loRest = (lo & (((-1) + widthN) | 0));
+      const hiRest = (hi & (((-1) + widthN) | 0));
+      if ((loRest === 0)) {
+        if ((hiRest === 0)) {
+          const $$x1 = n;
+          const a$2 = a;
+          $p_sci_VectorSliceBuilder__add__I__AO__V($thiz, $$x1, (((loN === 0) && (hiN === a$2.u.length)) ? a$2 : $m_ju_Arrays$().copyOfRange__AO__I__I__AO(a$2, loN, hiN)))
+        } else {
+          if ((hiN > loN)) {
+            const $$x2 = n;
+            const a$3 = a;
+            $p_sci_VectorSliceBuilder__add__I__AO__V($thiz, $$x2, (((loN === 0) && (hiN === a$3.u.length)) ? a$3 : $m_ju_Arrays$().copyOfRange__AO__I__I__AO(a$3, loN, hiN)))
+          };
+          const temp$n = (((-1) + n) | 0);
+          const temp$a = $asArrayOf_O(a.get(hiN), 1);
+          n = temp$n;
+          a = temp$a;
+          lo = 0;
+          hi = hiRest;
+          continue
+        }
+      } else if ((hiN === loN)) {
+        const temp$n$2 = (((-1) + n) | 0);
+        const temp$a$2 = $asArrayOf_O(a.get(loN), 1);
+        n = temp$n$2;
+        a = temp$a$2;
+        lo = loRest;
+        hi = hiRest;
+        continue
+      } else {
+        $p_sci_VectorSliceBuilder__addSlice__I__AO__I__I__V($thiz, (((-1) + n) | 0), $asArrayOf_O(a.get(loN), 1), loRest, widthN);
+        if ((hiRest === 0)) {
+          if ((hiN > ((1 + loN) | 0))) {
+            const $$x3 = n;
+            const a$4 = a;
+            const start$1 = ((1 + loN) | 0);
+            $p_sci_VectorSliceBuilder__add__I__AO__V($thiz, $$x3, (((start$1 === 0) && (hiN === a$4.u.length)) ? a$4 : $m_ju_Arrays$().copyOfRange__AO__I__I__AO(a$4, start$1, hiN)))
+          }
+        } else {
+          if ((hiN > ((1 + loN) | 0))) {
+            const $$x4 = n;
+            const a$5 = a;
+            const start$2 = ((1 + loN) | 0);
+            $p_sci_VectorSliceBuilder__add__I__AO__V($thiz, $$x4, (((start$2 === 0) && (hiN === a$5.u.length)) ? a$5 : $m_ju_Arrays$().copyOfRange__AO__I__I__AO(a$5, start$2, hiN)))
+          };
+          const temp$n$3 = (((-1) + n) | 0);
+          const temp$a$3 = $asArrayOf_O(a.get(hiN), 1);
+          n = temp$n$3;
+          a = temp$a$3;
+          lo = 0;
+          hi = hiRest;
+          continue
+        }
+      }
+    };
+    break
   }
 });
-const $f_sci_VectorPointer__gotoNextBlockStart__I__I__V = (function($thiz, index, xor) {
-  if ((xor < 1024)) {
-    $thiz.display0_$eq__AO__V($thiz.display1__AAO().get((31 & ((index >>> 5) | 0))))
-  } else if ((xor < 32768)) {
-    $thiz.display1_$eq__AAO__V($thiz.display2__AAAO().get((31 & ((index >>> 10) | 0))));
-    $thiz.display0_$eq__AO__V($thiz.display1__AAO().get(0))
-  } else if ((xor < 1048576)) {
-    $thiz.display2_$eq__AAAO__V($thiz.display3__AAAAO().get((31 & ((index >>> 15) | 0))));
-    $thiz.display1_$eq__AAO__V($thiz.display2__AAAO().get(0));
-    $thiz.display0_$eq__AO__V($thiz.display1__AAO().get(0))
-  } else if ((xor < 33554432)) {
-    $thiz.display3_$eq__AAAAO__V($thiz.display4__AAAAAO().get((31 & ((index >>> 20) | 0))));
-    $thiz.display2_$eq__AAAO__V($thiz.display3__AAAAO().get(0));
-    $thiz.display1_$eq__AAO__V($thiz.display2__AAAO().get(0));
-    $thiz.display0_$eq__AO__V($thiz.display1__AAO().get(0))
-  } else if ((xor < 1073741824)) {
-    $thiz.display4_$eq__AAAAAO__V($thiz.display5__AAAAAAO().get((31 & ((index >>> 25) | 0))));
-    $thiz.display3_$eq__AAAAO__V($thiz.display4__AAAAAO().get(0));
-    $thiz.display2_$eq__AAAO__V($thiz.display3__AAAAO().get(0));
-    $thiz.display1_$eq__AAO__V($thiz.display2__AAAO().get(0));
-    $thiz.display0_$eq__AO__V($thiz.display1__AAO().get(0))
+const $p_sci_VectorSliceBuilder__add__I__AO__V = (function($thiz, n, a) {
+  let idx;
+  if ((n <= $thiz.sci_VectorSliceBuilder__f_maxDim)) {
+    idx = ((11 - n) | 0)
   } else {
-    throw $ct_jl_IllegalArgumentException__(new $c_jl_IllegalArgumentException())
-  }
-});
-const $f_sci_VectorPointer__gotoNewBlockStart__I__I__V = (function($thiz, index, depth) {
-  if ((depth > 5)) {
-    $thiz.display4_$eq__AAAAAO__V($thiz.display5__AAAAAAO().get((31 & ((index >>> 25) | 0))))
+    $thiz.sci_VectorSliceBuilder__f_maxDim = n;
+    idx = (((-1) + n) | 0)
   };
-  if ((depth > 4)) {
-    $thiz.display3_$eq__AAAAO__V($thiz.display4__AAAAAO().get((31 & ((index >>> 20) | 0))))
-  };
-  if ((depth > 3)) {
-    $thiz.display2_$eq__AAAO__V($thiz.display3__AAAAO().get((31 & ((index >>> 15) | 0))))
-  };
-  if ((depth > 2)) {
-    $thiz.display1_$eq__AAO__V($thiz.display2__AAAO().get((31 & ((index >>> 10) | 0))))
-  };
-  if ((depth > 1)) {
-    $thiz.display0_$eq__AO__V($thiz.display1__AAO().get((31 & ((index >>> 5) | 0))))
-  }
+  $thiz.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.set(idx, a)
 });
-const $f_sci_VectorPointer__gotoNextBlockStartWritable__I__I__V = (function($thiz, index, xor) {
-  if ((xor < 1024)) {
-    if (($thiz.depth__I() === 1)) {
-      $thiz.display1_$eq__AAO__V($newArrayObject($d_O.getArrayOf().getArrayOf(), [32]));
-      $thiz.display1__AAO().set(0, $thiz.display0__AO());
-      $thiz.depth_$eq__I__V(((1 + $thiz.depth__I()) | 0))
-    };
-    $thiz.display0_$eq__AO__V($newArrayObject($d_O.getArrayOf(), [32]));
-    $thiz.display1__AAO().set((31 & ((index >>> 5) | 0)), $thiz.display0__AO())
-  } else if ((xor < 32768)) {
-    if (($thiz.depth__I() === 2)) {
-      $thiz.display2_$eq__AAAO__V($newArrayObject($d_O.getArrayOf().getArrayOf().getArrayOf(), [32]));
-      $thiz.display2__AAAO().set(0, $thiz.display1__AAO());
-      $thiz.depth_$eq__I__V(((1 + $thiz.depth__I()) | 0))
-    };
-    $thiz.display0_$eq__AO__V($newArrayObject($d_O.getArrayOf(), [32]));
-    $thiz.display1_$eq__AAO__V($newArrayObject($d_O.getArrayOf().getArrayOf(), [32]));
-    $thiz.display1__AAO().set((31 & ((index >>> 5) | 0)), $thiz.display0__AO());
-    $thiz.display2__AAAO().set((31 & ((index >>> 10) | 0)), $thiz.display1__AAO())
-  } else if ((xor < 1048576)) {
-    if (($thiz.depth__I() === 3)) {
-      $thiz.display3_$eq__AAAAO__V($newArrayObject($d_O.getArrayOf().getArrayOf().getArrayOf().getArrayOf(), [32]));
-      $thiz.display3__AAAAO().set(0, $thiz.display2__AAAO());
-      $thiz.depth_$eq__I__V(((1 + $thiz.depth__I()) | 0))
-    };
-    $thiz.display0_$eq__AO__V($newArrayObject($d_O.getArrayOf(), [32]));
-    $thiz.display1_$eq__AAO__V($newArrayObject($d_O.getArrayOf().getArrayOf(), [32]));
-    $thiz.display2_$eq__AAAO__V($newArrayObject($d_O.getArrayOf().getArrayOf().getArrayOf(), [32]));
-    $thiz.display1__AAO().set((31 & ((index >>> 5) | 0)), $thiz.display0__AO());
-    $thiz.display2__AAAO().set((31 & ((index >>> 10) | 0)), $thiz.display1__AAO());
-    $thiz.display3__AAAAO().set((31 & ((index >>> 15) | 0)), $thiz.display2__AAAO())
-  } else if ((xor < 33554432)) {
-    if (($thiz.depth__I() === 4)) {
-      $thiz.display4_$eq__AAAAAO__V($newArrayObject($d_O.getArrayOf().getArrayOf().getArrayOf().getArrayOf().getArrayOf(), [32]));
-      $thiz.display4__AAAAAO().set(0, $thiz.display3__AAAAO());
-      $thiz.depth_$eq__I__V(((1 + $thiz.depth__I()) | 0))
-    };
-    $thiz.display0_$eq__AO__V($newArrayObject($d_O.getArrayOf(), [32]));
-    $thiz.display1_$eq__AAO__V($newArrayObject($d_O.getArrayOf().getArrayOf(), [32]));
-    $thiz.display2_$eq__AAAO__V($newArrayObject($d_O.getArrayOf().getArrayOf().getArrayOf(), [32]));
-    $thiz.display3_$eq__AAAAO__V($newArrayObject($d_O.getArrayOf().getArrayOf().getArrayOf().getArrayOf(), [32]));
-    $thiz.display1__AAO().set((31 & ((index >>> 5) | 0)), $thiz.display0__AO());
-    $thiz.display2__AAAO().set((31 & ((index >>> 10) | 0)), $thiz.display1__AAO());
-    $thiz.display3__AAAAO().set((31 & ((index >>> 15) | 0)), $thiz.display2__AAAO());
-    $thiz.display4__AAAAAO().set((31 & ((index >>> 20) | 0)), $thiz.display3__AAAAO())
-  } else if ((xor < 1073741824)) {
-    if (($thiz.depth__I() === 5)) {
-      $thiz.display5_$eq__AAAAAAO__V($newArrayObject($d_O.getArrayOf().getArrayOf().getArrayOf().getArrayOf().getArrayOf().getArrayOf(), [32]));
-      $thiz.display5__AAAAAAO().set(0, $thiz.display4__AAAAAO());
-      $thiz.depth_$eq__I__V(((1 + $thiz.depth__I()) | 0))
-    };
-    $thiz.display0_$eq__AO__V($newArrayObject($d_O.getArrayOf(), [32]));
-    $thiz.display1_$eq__AAO__V($newArrayObject($d_O.getArrayOf().getArrayOf(), [32]));
-    $thiz.display2_$eq__AAAO__V($newArrayObject($d_O.getArrayOf().getArrayOf().getArrayOf(), [32]));
-    $thiz.display3_$eq__AAAAO__V($newArrayObject($d_O.getArrayOf().getArrayOf().getArrayOf().getArrayOf(), [32]));
-    $thiz.display4_$eq__AAAAAO__V($newArrayObject($d_O.getArrayOf().getArrayOf().getArrayOf().getArrayOf().getArrayOf(), [32]));
-    $thiz.display1__AAO().set((31 & ((index >>> 5) | 0)), $thiz.display0__AO());
-    $thiz.display2__AAAO().set((31 & ((index >>> 10) | 0)), $thiz.display1__AAO());
-    $thiz.display3__AAAAO().set((31 & ((index >>> 15) | 0)), $thiz.display2__AAAO());
-    $thiz.display4__AAAAAO().set((31 & ((index >>> 20) | 0)), $thiz.display3__AAAAO());
-    $thiz.display5__AAAAAAO().set((31 & ((index >>> 25) | 0)), $thiz.display4__AAAAAO())
-  } else {
-    throw $ct_jl_IllegalArgumentException__(new $c_jl_IllegalArgumentException())
-  }
-});
-const $f_sci_VectorPointer__nullSlotAndCopy__AAO__I__AO = (function($thiz, array, index) {
-  const x = array.get(index);
-  array.set(index, null);
-  return $asArrayOf_O(x.clone__O(), 1)
-});
-const $f_sci_VectorPointer__stabilize__I__V = (function($thiz, index) {
-  const x1 = (((-1) + $thiz.depth__I()) | 0);
-  switch (x1) {
-    case 5: {
-      $thiz.display5_$eq__AAAAAAO__V($asArrayOf_O($thiz.display5__AAAAAAO().clone__O(), 6));
-      $thiz.display4_$eq__AAAAAO__V($asArrayOf_O($thiz.display4__AAAAAO().clone__O(), 5));
-      $thiz.display3_$eq__AAAAO__V($asArrayOf_O($thiz.display3__AAAAO().clone__O(), 4));
-      $thiz.display2_$eq__AAAO__V($asArrayOf_O($thiz.display2__AAAO().clone__O(), 3));
-      $thiz.display1_$eq__AAO__V($asArrayOf_O($thiz.display1__AAO().clone__O(), 2));
-      $thiz.display5__AAAAAAO().set((31 & ((index >>> 25) | 0)), $thiz.display4__AAAAAO());
-      $thiz.display4__AAAAAO().set((31 & ((index >>> 20) | 0)), $thiz.display3__AAAAO());
-      $thiz.display3__AAAAO().set((31 & ((index >>> 15) | 0)), $thiz.display2__AAAO());
-      $thiz.display2__AAAO().set((31 & ((index >>> 10) | 0)), $thiz.display1__AAO());
-      $thiz.display1__AAO().set((31 & ((index >>> 5) | 0)), $thiz.display0__AO());
-      break
-    }
-    case 4: {
-      $thiz.display4_$eq__AAAAAO__V($asArrayOf_O($thiz.display4__AAAAAO().clone__O(), 5));
-      $thiz.display3_$eq__AAAAO__V($asArrayOf_O($thiz.display3__AAAAO().clone__O(), 4));
-      $thiz.display2_$eq__AAAO__V($asArrayOf_O($thiz.display2__AAAO().clone__O(), 3));
-      $thiz.display1_$eq__AAO__V($asArrayOf_O($thiz.display1__AAO().clone__O(), 2));
-      $thiz.display4__AAAAAO().set((31 & ((index >>> 20) | 0)), $thiz.display3__AAAAO());
-      $thiz.display3__AAAAO().set((31 & ((index >>> 15) | 0)), $thiz.display2__AAAO());
-      $thiz.display2__AAAO().set((31 & ((index >>> 10) | 0)), $thiz.display1__AAO());
-      $thiz.display1__AAO().set((31 & ((index >>> 5) | 0)), $thiz.display0__AO());
-      break
-    }
-    case 3: {
-      $thiz.display3_$eq__AAAAO__V($asArrayOf_O($thiz.display3__AAAAO().clone__O(), 4));
-      $thiz.display2_$eq__AAAO__V($asArrayOf_O($thiz.display2__AAAO().clone__O(), 3));
-      $thiz.display1_$eq__AAO__V($asArrayOf_O($thiz.display1__AAO().clone__O(), 2));
-      $thiz.display3__AAAAO().set((31 & ((index >>> 15) | 0)), $thiz.display2__AAAO());
-      $thiz.display2__AAAO().set((31 & ((index >>> 10) | 0)), $thiz.display1__AAO());
-      $thiz.display1__AAO().set((31 & ((index >>> 5) | 0)), $thiz.display0__AO());
-      break
-    }
-    case 2: {
-      $thiz.display2_$eq__AAAO__V($asArrayOf_O($thiz.display2__AAAO().clone__O(), 3));
-      $thiz.display1_$eq__AAO__V($asArrayOf_O($thiz.display1__AAO().clone__O(), 2));
-      $thiz.display2__AAAO().set((31 & ((index >>> 10) | 0)), $thiz.display1__AAO());
-      $thiz.display1__AAO().set((31 & ((index >>> 5) | 0)), $thiz.display0__AO());
-      break
-    }
-    case 1: {
-      $thiz.display1_$eq__AAO__V($asArrayOf_O($thiz.display1__AAO().clone__O(), 2));
-      $thiz.display1__AAO().set((31 & ((index >>> 5) | 0)), $thiz.display0__AO());
-      break
-    }
-    case 0: {
-      break
-    }
-    default: {
-      throw new $c_s_MatchError(x1)
-    }
-  }
-});
-const $f_sci_VectorPointer__gotoPosWritable0__I__I__V = (function($thiz, newIndex, xor) {
-  const x1 = (((-1) + $thiz.depth__I()) | 0);
-  switch (x1) {
-    case 5: {
-      $thiz.display5_$eq__AAAAAAO__V($asArrayOf_O($thiz.display5__AAAAAAO().clone__O(), 6));
-      const array = $thiz.display5__AAAAAAO();
-      const index = (31 & ((newIndex >>> 25) | 0));
-      $thiz.display4_$eq__AAAAAO__V($asArrayOf_O($f_sci_VectorPointer__nullSlotAndCopy__AAO__I__AO($thiz, array, index), 5));
-      const array$1 = $thiz.display4__AAAAAO();
-      const index$1 = (31 & ((newIndex >>> 20) | 0));
-      $thiz.display3_$eq__AAAAO__V($asArrayOf_O($f_sci_VectorPointer__nullSlotAndCopy__AAO__I__AO($thiz, array$1, index$1), 4));
-      const array$2 = $thiz.display3__AAAAO();
-      const index$2 = (31 & ((newIndex >>> 15) | 0));
-      $thiz.display2_$eq__AAAO__V($asArrayOf_O($f_sci_VectorPointer__nullSlotAndCopy__AAO__I__AO($thiz, array$2, index$2), 3));
-      const array$3 = $thiz.display2__AAAO();
-      const index$3 = (31 & ((newIndex >>> 10) | 0));
-      $thiz.display1_$eq__AAO__V($asArrayOf_O($f_sci_VectorPointer__nullSlotAndCopy__AAO__I__AO($thiz, array$3, index$3), 2));
-      const array$4 = $thiz.display1__AAO();
-      const index$4 = (31 & ((newIndex >>> 5) | 0));
-      $thiz.display0_$eq__AO__V($f_sci_VectorPointer__nullSlotAndCopy__AAO__I__AO($thiz, array$4, index$4));
-      break
-    }
-    case 4: {
-      $thiz.display4_$eq__AAAAAO__V($asArrayOf_O($thiz.display4__AAAAAO().clone__O(), 5));
-      const array$5 = $thiz.display4__AAAAAO();
-      const index$5 = (31 & ((newIndex >>> 20) | 0));
-      $thiz.display3_$eq__AAAAO__V($asArrayOf_O($f_sci_VectorPointer__nullSlotAndCopy__AAO__I__AO($thiz, array$5, index$5), 4));
-      const array$6 = $thiz.display3__AAAAO();
-      const index$6 = (31 & ((newIndex >>> 15) | 0));
-      $thiz.display2_$eq__AAAO__V($asArrayOf_O($f_sci_VectorPointer__nullSlotAndCopy__AAO__I__AO($thiz, array$6, index$6), 3));
-      const array$7 = $thiz.display2__AAAO();
-      const index$7 = (31 & ((newIndex >>> 10) | 0));
-      $thiz.display1_$eq__AAO__V($asArrayOf_O($f_sci_VectorPointer__nullSlotAndCopy__AAO__I__AO($thiz, array$7, index$7), 2));
-      const array$8 = $thiz.display1__AAO();
-      const index$8 = (31 & ((newIndex >>> 5) | 0));
-      $thiz.display0_$eq__AO__V($f_sci_VectorPointer__nullSlotAndCopy__AAO__I__AO($thiz, array$8, index$8));
-      break
-    }
-    case 3: {
-      $thiz.display3_$eq__AAAAO__V($asArrayOf_O($thiz.display3__AAAAO().clone__O(), 4));
-      const array$9 = $thiz.display3__AAAAO();
-      const index$9 = (31 & ((newIndex >>> 15) | 0));
-      $thiz.display2_$eq__AAAO__V($asArrayOf_O($f_sci_VectorPointer__nullSlotAndCopy__AAO__I__AO($thiz, array$9, index$9), 3));
-      const array$10 = $thiz.display2__AAAO();
-      const index$10 = (31 & ((newIndex >>> 10) | 0));
-      $thiz.display1_$eq__AAO__V($asArrayOf_O($f_sci_VectorPointer__nullSlotAndCopy__AAO__I__AO($thiz, array$10, index$10), 2));
-      const array$11 = $thiz.display1__AAO();
-      const index$11 = (31 & ((newIndex >>> 5) | 0));
-      $thiz.display0_$eq__AO__V($f_sci_VectorPointer__nullSlotAndCopy__AAO__I__AO($thiz, array$11, index$11));
-      break
-    }
-    case 2: {
-      $thiz.display2_$eq__AAAO__V($asArrayOf_O($thiz.display2__AAAO().clone__O(), 3));
-      const array$12 = $thiz.display2__AAAO();
-      const index$12 = (31 & ((newIndex >>> 10) | 0));
-      $thiz.display1_$eq__AAO__V($asArrayOf_O($f_sci_VectorPointer__nullSlotAndCopy__AAO__I__AO($thiz, array$12, index$12), 2));
-      const array$13 = $thiz.display1__AAO();
-      const index$13 = (31 & ((newIndex >>> 5) | 0));
-      $thiz.display0_$eq__AO__V($f_sci_VectorPointer__nullSlotAndCopy__AAO__I__AO($thiz, array$13, index$13));
-      break
-    }
-    case 1: {
-      $thiz.display1_$eq__AAO__V($asArrayOf_O($thiz.display1__AAO().clone__O(), 2));
-      const array$14 = $thiz.display1__AAO();
-      const index$14 = (31 & ((newIndex >>> 5) | 0));
-      $thiz.display0_$eq__AO__V($f_sci_VectorPointer__nullSlotAndCopy__AAO__I__AO($thiz, array$14, index$14));
-      break
-    }
-    case 0: {
-      $thiz.display0_$eq__AO__V($asArrayOf_O($thiz.display0__AO().clone__O(), 1));
-      break
-    }
-    default: {
-      throw new $c_s_MatchError(x1)
-    }
-  }
-});
-const $f_sci_VectorPointer__gotoPosWritable1__I__I__I__V = (function($thiz, oldIndex, newIndex, xor) {
-  if ((xor < 32)) {
-    $thiz.display0_$eq__AO__V($asArrayOf_O($thiz.display0__AO().clone__O(), 1))
-  } else if ((xor < 1024)) {
-    $thiz.display1_$eq__AAO__V($asArrayOf_O($thiz.display1__AAO().clone__O(), 2));
-    $thiz.display1__AAO().set((31 & ((oldIndex >>> 5) | 0)), $thiz.display0__AO());
-    const array = $thiz.display1__AAO();
-    const index = (31 & ((newIndex >>> 5) | 0));
-    $thiz.display0_$eq__AO__V($f_sci_VectorPointer__nullSlotAndCopy__AAO__I__AO($thiz, array, index))
-  } else if ((xor < 32768)) {
-    $thiz.display1_$eq__AAO__V($asArrayOf_O($thiz.display1__AAO().clone__O(), 2));
-    $thiz.display2_$eq__AAAO__V($asArrayOf_O($thiz.display2__AAAO().clone__O(), 3));
-    $thiz.display1__AAO().set((31 & ((oldIndex >>> 5) | 0)), $thiz.display0__AO());
-    $thiz.display2__AAAO().set((31 & ((oldIndex >>> 10) | 0)), $thiz.display1__AAO());
-    const array$1 = $thiz.display2__AAAO();
-    const index$1 = (31 & ((newIndex >>> 10) | 0));
-    $thiz.display1_$eq__AAO__V($asArrayOf_O($f_sci_VectorPointer__nullSlotAndCopy__AAO__I__AO($thiz, array$1, index$1), 2));
-    const array$2 = $thiz.display1__AAO();
-    const index$2 = (31 & ((newIndex >>> 5) | 0));
-    $thiz.display0_$eq__AO__V($f_sci_VectorPointer__nullSlotAndCopy__AAO__I__AO($thiz, array$2, index$2))
-  } else if ((xor < 1048576)) {
-    $thiz.display1_$eq__AAO__V($asArrayOf_O($thiz.display1__AAO().clone__O(), 2));
-    $thiz.display2_$eq__AAAO__V($asArrayOf_O($thiz.display2__AAAO().clone__O(), 3));
-    $thiz.display3_$eq__AAAAO__V($asArrayOf_O($thiz.display3__AAAAO().clone__O(), 4));
-    $thiz.display1__AAO().set((31 & ((oldIndex >>> 5) | 0)), $thiz.display0__AO());
-    $thiz.display2__AAAO().set((31 & ((oldIndex >>> 10) | 0)), $thiz.display1__AAO());
-    $thiz.display3__AAAAO().set((31 & ((oldIndex >>> 15) | 0)), $thiz.display2__AAAO());
-    const array$3 = $thiz.display3__AAAAO();
-    const index$3 = (31 & ((newIndex >>> 15) | 0));
-    $thiz.display2_$eq__AAAO__V($asArrayOf_O($f_sci_VectorPointer__nullSlotAndCopy__AAO__I__AO($thiz, array$3, index$3), 3));
-    const array$4 = $thiz.display2__AAAO();
-    const index$4 = (31 & ((newIndex >>> 10) | 0));
-    $thiz.display1_$eq__AAO__V($asArrayOf_O($f_sci_VectorPointer__nullSlotAndCopy__AAO__I__AO($thiz, array$4, index$4), 2));
-    const array$5 = $thiz.display1__AAO();
-    const index$5 = (31 & ((newIndex >>> 5) | 0));
-    $thiz.display0_$eq__AO__V($f_sci_VectorPointer__nullSlotAndCopy__AAO__I__AO($thiz, array$5, index$5))
-  } else if ((xor < 33554432)) {
-    $thiz.display1_$eq__AAO__V($asArrayOf_O($thiz.display1__AAO().clone__O(), 2));
-    $thiz.display2_$eq__AAAO__V($asArrayOf_O($thiz.display2__AAAO().clone__O(), 3));
-    $thiz.display3_$eq__AAAAO__V($asArrayOf_O($thiz.display3__AAAAO().clone__O(), 4));
-    $thiz.display4_$eq__AAAAAO__V($asArrayOf_O($thiz.display4__AAAAAO().clone__O(), 5));
-    $thiz.display1__AAO().set((31 & ((oldIndex >>> 5) | 0)), $thiz.display0__AO());
-    $thiz.display2__AAAO().set((31 & ((oldIndex >>> 10) | 0)), $thiz.display1__AAO());
-    $thiz.display3__AAAAO().set((31 & ((oldIndex >>> 15) | 0)), $thiz.display2__AAAO());
-    $thiz.display4__AAAAAO().set((31 & ((oldIndex >>> 20) | 0)), $thiz.display3__AAAAO());
-    const array$6 = $thiz.display4__AAAAAO();
-    const index$6 = (31 & ((newIndex >>> 20) | 0));
-    $thiz.display3_$eq__AAAAO__V($asArrayOf_O($f_sci_VectorPointer__nullSlotAndCopy__AAO__I__AO($thiz, array$6, index$6), 4));
-    const array$7 = $thiz.display3__AAAAO();
-    const index$7 = (31 & ((newIndex >>> 15) | 0));
-    $thiz.display2_$eq__AAAO__V($asArrayOf_O($f_sci_VectorPointer__nullSlotAndCopy__AAO__I__AO($thiz, array$7, index$7), 3));
-    const array$8 = $thiz.display2__AAAO();
-    const index$8 = (31 & ((newIndex >>> 10) | 0));
-    $thiz.display1_$eq__AAO__V($asArrayOf_O($f_sci_VectorPointer__nullSlotAndCopy__AAO__I__AO($thiz, array$8, index$8), 2));
-    const array$9 = $thiz.display1__AAO();
-    const index$9 = (31 & ((newIndex >>> 5) | 0));
-    $thiz.display0_$eq__AO__V($f_sci_VectorPointer__nullSlotAndCopy__AAO__I__AO($thiz, array$9, index$9))
-  } else if ((xor < 1073741824)) {
-    $thiz.display1_$eq__AAO__V($asArrayOf_O($thiz.display1__AAO().clone__O(), 2));
-    $thiz.display2_$eq__AAAO__V($asArrayOf_O($thiz.display2__AAAO().clone__O(), 3));
-    $thiz.display3_$eq__AAAAO__V($asArrayOf_O($thiz.display3__AAAAO().clone__O(), 4));
-    $thiz.display4_$eq__AAAAAO__V($asArrayOf_O($thiz.display4__AAAAAO().clone__O(), 5));
-    $thiz.display5_$eq__AAAAAAO__V($asArrayOf_O($thiz.display5__AAAAAAO().clone__O(), 6));
-    $thiz.display1__AAO().set((31 & ((oldIndex >>> 5) | 0)), $thiz.display0__AO());
-    $thiz.display2__AAAO().set((31 & ((oldIndex >>> 10) | 0)), $thiz.display1__AAO());
-    $thiz.display3__AAAAO().set((31 & ((oldIndex >>> 15) | 0)), $thiz.display2__AAAO());
-    $thiz.display4__AAAAAO().set((31 & ((oldIndex >>> 20) | 0)), $thiz.display3__AAAAO());
-    $thiz.display5__AAAAAAO().set((31 & ((oldIndex >>> 25) | 0)), $thiz.display4__AAAAAO());
-    const array$10 = $thiz.display5__AAAAAAO();
-    const index$10 = (31 & ((newIndex >>> 25) | 0));
-    $thiz.display4_$eq__AAAAAO__V($asArrayOf_O($f_sci_VectorPointer__nullSlotAndCopy__AAO__I__AO($thiz, array$10, index$10), 5));
-    const array$11 = $thiz.display4__AAAAAO();
-    const index$11 = (31 & ((newIndex >>> 20) | 0));
-    $thiz.display3_$eq__AAAAO__V($asArrayOf_O($f_sci_VectorPointer__nullSlotAndCopy__AAO__I__AO($thiz, array$11, index$11), 4));
-    const array$12 = $thiz.display3__AAAAO();
-    const index$12 = (31 & ((newIndex >>> 15) | 0));
-    $thiz.display2_$eq__AAAO__V($asArrayOf_O($f_sci_VectorPointer__nullSlotAndCopy__AAO__I__AO($thiz, array$12, index$12), 3));
-    const array$13 = $thiz.display2__AAAO();
-    const index$13 = (31 & ((newIndex >>> 10) | 0));
-    $thiz.display1_$eq__AAO__V($asArrayOf_O($f_sci_VectorPointer__nullSlotAndCopy__AAO__I__AO($thiz, array$13, index$13), 2));
-    const array$14 = $thiz.display1__AAO();
-    const index$14 = (31 & ((newIndex >>> 5) | 0));
-    $thiz.display0_$eq__AO__V($f_sci_VectorPointer__nullSlotAndCopy__AAO__I__AO($thiz, array$14, index$14))
-  } else {
-    throw $ct_jl_IllegalArgumentException__(new $c_jl_IllegalArgumentException())
-  }
-});
-const $f_sci_VectorPointer__copyRange__AO__I__I__AO = (function($thiz, array, oldLeft, newLeft) {
-  const componentType = $objectGetClass(array).getComponentType__jl_Class();
-  const elems = $asArrayOf_O($m_jl_reflect_Array$().newInstance__jl_Class__I__O(componentType, 32), 1);
-  const length = ((32 - ((newLeft > oldLeft) ? newLeft : oldLeft)) | 0);
-  $systemArraycopy(array, oldLeft, elems, newLeft, length);
-  return elems
-});
-const $f_sci_VectorPointer__gotoFreshPosWritable0__I__I__I__V = (function($thiz, oldIndex, newIndex, xor) {
-  if ((xor >= 32)) {
-    if ((xor < 1024)) {
-      if (($thiz.depth__I() === 1)) {
-        $thiz.display1_$eq__AAO__V($newArrayObject($d_O.getArrayOf().getArrayOf(), [32]));
-        $thiz.display1__AAO().set((31 & ((oldIndex >>> 5) | 0)), $thiz.display0__AO());
-        $thiz.depth_$eq__I__V(((1 + $thiz.depth__I()) | 0))
-      };
-      $thiz.display0_$eq__AO__V($newArrayObject($d_O.getArrayOf(), [32]))
-    } else if ((xor < 32768)) {
-      if (($thiz.depth__I() === 2)) {
-        $thiz.display2_$eq__AAAO__V($newArrayObject($d_O.getArrayOf().getArrayOf().getArrayOf(), [32]));
-        $thiz.display2__AAAO().set((31 & ((oldIndex >>> 10) | 0)), $thiz.display1__AAO());
-        $thiz.depth_$eq__I__V(((1 + $thiz.depth__I()) | 0))
-      };
-      $thiz.display1_$eq__AAO__V($thiz.display2__AAAO().get((31 & ((newIndex >>> 10) | 0))));
-      if (($thiz.display1__AAO() === null)) {
-        $thiz.display1_$eq__AAO__V($newArrayObject($d_O.getArrayOf().getArrayOf(), [32]))
-      };
-      $thiz.display0_$eq__AO__V($newArrayObject($d_O.getArrayOf(), [32]))
-    } else if ((xor < 1048576)) {
-      if (($thiz.depth__I() === 3)) {
-        $thiz.display3_$eq__AAAAO__V($newArrayObject($d_O.getArrayOf().getArrayOf().getArrayOf().getArrayOf(), [32]));
-        $thiz.display3__AAAAO().set((31 & ((oldIndex >>> 15) | 0)), $thiz.display2__AAAO());
-        $thiz.depth_$eq__I__V(((1 + $thiz.depth__I()) | 0))
-      };
-      $thiz.display2_$eq__AAAO__V($thiz.display3__AAAAO().get((31 & ((newIndex >>> 15) | 0))));
-      if (($thiz.display2__AAAO() === null)) {
-        $thiz.display2_$eq__AAAO__V($newArrayObject($d_O.getArrayOf().getArrayOf().getArrayOf(), [32]))
-      };
-      $thiz.display1_$eq__AAO__V($thiz.display2__AAAO().get((31 & ((newIndex >>> 10) | 0))));
-      if (($thiz.display1__AAO() === null)) {
-        $thiz.display1_$eq__AAO__V($newArrayObject($d_O.getArrayOf().getArrayOf(), [32]))
-      };
-      $thiz.display0_$eq__AO__V($newArrayObject($d_O.getArrayOf(), [32]))
-    } else if ((xor < 33554432)) {
-      if (($thiz.depth__I() === 4)) {
-        $thiz.display4_$eq__AAAAAO__V($newArrayObject($d_O.getArrayOf().getArrayOf().getArrayOf().getArrayOf().getArrayOf(), [32]));
-        $thiz.display4__AAAAAO().set((31 & ((oldIndex >>> 20) | 0)), $thiz.display3__AAAAO());
-        $thiz.depth_$eq__I__V(((1 + $thiz.depth__I()) | 0))
-      };
-      $thiz.display3_$eq__AAAAO__V($thiz.display4__AAAAAO().get((31 & ((newIndex >>> 20) | 0))));
-      if (($thiz.display3__AAAAO() === null)) {
-        $thiz.display3_$eq__AAAAO__V($newArrayObject($d_O.getArrayOf().getArrayOf().getArrayOf().getArrayOf(), [32]))
-      };
-      $thiz.display2_$eq__AAAO__V($thiz.display3__AAAAO().get((31 & ((newIndex >>> 15) | 0))));
-      if (($thiz.display2__AAAO() === null)) {
-        $thiz.display2_$eq__AAAO__V($newArrayObject($d_O.getArrayOf().getArrayOf().getArrayOf(), [32]))
-      };
-      $thiz.display1_$eq__AAO__V($thiz.display2__AAAO().get((31 & ((newIndex >>> 10) | 0))));
-      if (($thiz.display1__AAO() === null)) {
-        $thiz.display1_$eq__AAO__V($newArrayObject($d_O.getArrayOf().getArrayOf(), [32]))
-      };
-      $thiz.display0_$eq__AO__V($newArrayObject($d_O.getArrayOf(), [32]))
-    } else if ((xor < 1073741824)) {
-      if (($thiz.depth__I() === 5)) {
-        $thiz.display5_$eq__AAAAAAO__V($newArrayObject($d_O.getArrayOf().getArrayOf().getArrayOf().getArrayOf().getArrayOf().getArrayOf(), [32]));
-        $thiz.display5__AAAAAAO().set((31 & ((oldIndex >>> 25) | 0)), $thiz.display4__AAAAAO());
-        $thiz.depth_$eq__I__V(((1 + $thiz.depth__I()) | 0))
-      };
-      $thiz.display4_$eq__AAAAAO__V($thiz.display5__AAAAAAO().get((31 & ((newIndex >>> 25) | 0))));
-      if (($thiz.display4__AAAAAO() === null)) {
-        $thiz.display4_$eq__AAAAAO__V($newArrayObject($d_O.getArrayOf().getArrayOf().getArrayOf().getArrayOf().getArrayOf(), [32]))
-      };
-      $thiz.display3_$eq__AAAAO__V($thiz.display4__AAAAAO().get((31 & ((newIndex >>> 20) | 0))));
-      if (($thiz.display3__AAAAO() === null)) {
-        $thiz.display3_$eq__AAAAO__V($newArrayObject($d_O.getArrayOf().getArrayOf().getArrayOf().getArrayOf(), [32]))
-      };
-      $thiz.display2_$eq__AAAO__V($thiz.display3__AAAAO().get((31 & ((newIndex >>> 15) | 0))));
-      if (($thiz.display2__AAAO() === null)) {
-        $thiz.display2_$eq__AAAO__V($newArrayObject($d_O.getArrayOf().getArrayOf().getArrayOf(), [32]))
-      };
-      $thiz.display1_$eq__AAO__V($thiz.display2__AAAO().get((31 & ((newIndex >>> 10) | 0))));
-      if (($thiz.display1__AAO() === null)) {
-        $thiz.display1_$eq__AAO__V($newArrayObject($d_O.getArrayOf().getArrayOf(), [32]))
-      };
-      $thiz.display0_$eq__AO__V($newArrayObject($d_O.getArrayOf(), [32]))
+const $p_sci_VectorSliceBuilder__balancePrefix__I__V = (function($thiz, n) {
+  if (($thiz.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.get((((-1) + n) | 0)) === null)) {
+    if ((n === $thiz.sci_VectorSliceBuilder__f_maxDim)) {
+      $thiz.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.set((((-1) + n) | 0), $thiz.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.get(((11 - n) | 0)));
+      $thiz.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.set(((11 - n) | 0), null)
     } else {
-      throw $ct_jl_IllegalArgumentException__(new $c_jl_IllegalArgumentException())
+      $p_sci_VectorSliceBuilder__balancePrefix__I__V($thiz, ((1 + n) | 0));
+      const $$x1 = $thiz.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices;
+      const n$1 = ((1 + n) | 0);
+      const preN1 = $asArrayOf_O($$x1.get((((-1) + n$1) | 0)), 2);
+      $thiz.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.set((((-1) + n) | 0), preN1.get(0));
+      if ((preN1.u.length === 1)) {
+        const $$x2 = $thiz.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices;
+        const n$2 = ((1 + n) | 0);
+        $$x2.set((((-1) + n$2) | 0), null);
+        let $$x3;
+        if (($thiz.sci_VectorSliceBuilder__f_maxDim === ((1 + n) | 0))) {
+          const $$x4 = $thiz.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices;
+          const n$3 = ((1 + n) | 0);
+          $$x3 = ($$x4.get(((11 - n$3) | 0)) === null)
+        } else {
+          $$x3 = false
+        };
+        if ($$x3) {
+          $thiz.sci_VectorSliceBuilder__f_maxDim = n
+        }
+      } else {
+        const $$x5 = $thiz.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices;
+        const n$4 = ((1 + n) | 0);
+        const to = preN1.u.length;
+        $$x5.set((((-1) + n$4) | 0), $m_ju_Arrays$().copyOfRange__AO__I__I__AO(preN1, 1, to))
+      }
     }
   }
 });
-const $f_sci_VectorPointer__gotoFreshPosWritable1__I__I__I__V = (function($thiz, oldIndex, newIndex, xor) {
-  $f_sci_VectorPointer__stabilize__I__V($thiz, oldIndex);
-  $f_sci_VectorPointer__gotoFreshPosWritable0__I__I__I__V($thiz, oldIndex, newIndex, xor)
+const $p_sci_VectorSliceBuilder__balanceSuffix__I__V = (function($thiz, n) {
+  if (($thiz.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.get(((11 - n) | 0)) === null)) {
+    if ((n === $thiz.sci_VectorSliceBuilder__f_maxDim)) {
+      $thiz.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.set(((11 - n) | 0), $thiz.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.get((((-1) + n) | 0)));
+      $thiz.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.set((((-1) + n) | 0), null)
+    } else {
+      $p_sci_VectorSliceBuilder__balanceSuffix__I__V($thiz, ((1 + n) | 0));
+      const $$x1 = $thiz.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices;
+      const n$1 = ((1 + n) | 0);
+      const sufN1 = $asArrayOf_O($$x1.get(((11 - n$1) | 0)), 2);
+      $thiz.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.set(((11 - n) | 0), sufN1.get((((-1) + sufN1.u.length) | 0)));
+      if ((sufN1.u.length === 1)) {
+        const $$x2 = $thiz.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices;
+        const n$2 = ((1 + n) | 0);
+        $$x2.set(((11 - n$2) | 0), null);
+        let $$x3;
+        if (($thiz.sci_VectorSliceBuilder__f_maxDim === ((1 + n) | 0))) {
+          const $$x4 = $thiz.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices;
+          const n$3 = ((1 + n) | 0);
+          $$x3 = ($$x4.get((((-1) + n$3) | 0)) === null)
+        } else {
+          $$x3 = false
+        };
+        if ($$x3) {
+          $thiz.sci_VectorSliceBuilder__f_maxDim = n
+        }
+      } else {
+        const $$x5 = $thiz.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices;
+        const n$4 = ((1 + n) | 0);
+        const to = (((-1) + sufN1.u.length) | 0);
+        $$x5.set(((11 - n$4) | 0), $m_ju_Arrays$().copyOfRange__AO__I__I__AO(sufN1, 0, to))
+      }
+    }
+  }
 });
+class $c_sci_VectorSliceBuilder extends $c_O {
+  constructor(lo, hi) {
+    super();
+    this.sci_VectorSliceBuilder__f_lo = 0;
+    this.sci_VectorSliceBuilder__f_hi = 0;
+    this.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices = null;
+    this.sci_VectorSliceBuilder__f_len = 0;
+    this.sci_VectorSliceBuilder__f_pos = 0;
+    this.sci_VectorSliceBuilder__f_maxDim = 0;
+    this.sci_VectorSliceBuilder__f_lo = lo;
+    this.sci_VectorSliceBuilder__f_hi = hi;
+    this.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices = $newArrayObject($d_O.getArrayOf().getArrayOf(), [11]);
+    this.sci_VectorSliceBuilder__f_len = 0;
+    this.sci_VectorSliceBuilder__f_pos = 0;
+    this.sci_VectorSliceBuilder__f_maxDim = 0
+  };
+  consider__I__AO__V(n, a) {
+    const count = $imul(a.u.length, (1 << $imul(5, (((-1) + n) | 0))));
+    const a$1 = ((this.sci_VectorSliceBuilder__f_lo - this.sci_VectorSliceBuilder__f_pos) | 0);
+    const lo0 = ((a$1 > 0) ? a$1 : 0);
+    const a$2 = ((this.sci_VectorSliceBuilder__f_hi - this.sci_VectorSliceBuilder__f_pos) | 0);
+    const hi0 = ((a$2 < count) ? a$2 : count);
+    if ((hi0 > lo0)) {
+      $p_sci_VectorSliceBuilder__addSlice__I__AO__I__I__V(this, n, a, lo0, hi0);
+      this.sci_VectorSliceBuilder__f_len = ((this.sci_VectorSliceBuilder__f_len + ((hi0 - lo0) | 0)) | 0)
+    };
+    this.sci_VectorSliceBuilder__f_pos = ((this.sci_VectorSliceBuilder__f_pos + count) | 0)
+  };
+  result__sci_Vector() {
+    if ((this.sci_VectorSliceBuilder__f_len <= 32)) {
+      if ((this.sci_VectorSliceBuilder__f_len === 0)) {
+        return $m_sci_Vector0$()
+      } else {
+        const prefix1 = this.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.get(0);
+        const suffix1 = this.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.get(10);
+        let a;
+        if ((prefix1 !== null)) {
+          if ((suffix1 !== null)) {
+            const newLength = ((prefix1.u.length + suffix1.u.length) | 0);
+            const dest = $m_ju_Arrays$().copyOf__AO__I__AO(prefix1, newLength);
+            const destPos = prefix1.u.length;
+            const length = suffix1.u.length;
+            $systemArraycopy(suffix1, 0, dest, destPos, length);
+            a = dest
+          } else {
+            a = prefix1
+          }
+        } else if ((suffix1 !== null)) {
+          a = suffix1
+        } else {
+          const prefix2 = $asArrayOf_O(this.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.get(1), 2);
+          if ((prefix2 !== null)) {
+            a = prefix2.get(0)
+          } else {
+            const suffix2 = $asArrayOf_O(this.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.get(9), 2);
+            a = suffix2.get(0)
+          }
+        };
+        return new $c_sci_Vector1(a)
+      }
+    } else {
+      $p_sci_VectorSliceBuilder__balancePrefix__I__V(this, 1);
+      $p_sci_VectorSliceBuilder__balanceSuffix__I__V(this, 1);
+      let resultDim = this.sci_VectorSliceBuilder__f_maxDim;
+      if ((resultDim < 6)) {
+        const $$x1 = this.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices;
+        const n = this.sci_VectorSliceBuilder__f_maxDim;
+        const pre = $$x1.get((((-1) + n) | 0));
+        const $$x2 = this.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices;
+        const n$1 = this.sci_VectorSliceBuilder__f_maxDim;
+        const suf = $$x2.get(((11 - n$1) | 0));
+        if (((pre !== null) && (suf !== null))) {
+          if ((((pre.u.length + suf.u.length) | 0) <= 30)) {
+            const $$x3 = this.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices;
+            const n$2 = this.sci_VectorSliceBuilder__f_maxDim;
+            const newLength$1 = ((pre.u.length + suf.u.length) | 0);
+            const dest$1 = $m_ju_Arrays$().copyOf__AO__I__AO(pre, newLength$1);
+            const destPos$1 = pre.u.length;
+            const length$1 = suf.u.length;
+            $systemArraycopy(suf, 0, dest$1, destPos$1, length$1);
+            $$x3.set((((-1) + n$2) | 0), dest$1);
+            const $$x4 = this.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices;
+            const n$3 = this.sci_VectorSliceBuilder__f_maxDim;
+            $$x4.set(((11 - n$3) | 0), null)
+          } else {
+            resultDim = ((1 + resultDim) | 0)
+          }
+        } else {
+          const one = ((pre !== null) ? pre : suf);
+          if ((one.u.length > 30)) {
+            resultDim = ((1 + resultDim) | 0)
+          }
+        }
+      };
+      const prefix1$2 = this.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.get(0);
+      const suffix1$2 = this.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.get(10);
+      const len1 = prefix1$2.u.length;
+      const x1 = resultDim;
+      let res;
+      switch (x1) {
+        case 2: {
+          const a$1 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty2;
+          const p = this.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.get(1);
+          let $$x5;
+          if ((p !== null)) {
+            $$x5 = p
+          } else {
+            const s = this.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.get(9);
+            $$x5 = ((s !== null) ? s : a$1)
+          };
+          const data2 = $asArrayOf_O($$x5, 2);
+          res = new $c_sci_Vector2(prefix1$2, len1, data2, suffix1$2, this.sci_VectorSliceBuilder__f_len);
+          break
+        }
+        case 3: {
+          const a$2 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty2;
+          const p$1 = this.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.get(1);
+          const prefix2$2 = $asArrayOf_O(((p$1 !== null) ? p$1 : a$2), 2);
+          const a$3 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty3;
+          const p$2 = this.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.get(2);
+          let $$x6;
+          if ((p$2 !== null)) {
+            $$x6 = p$2
+          } else {
+            const s$1 = this.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.get(8);
+            $$x6 = ((s$1 !== null) ? s$1 : a$3)
+          };
+          const data3 = $asArrayOf_O($$x6, 3);
+          const a$4 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty2;
+          const s$2 = this.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.get(9);
+          const suffix2$2 = $asArrayOf_O(((s$2 !== null) ? s$2 : a$4), 2);
+          const len12 = ((len1 + (prefix2$2.u.length << 5)) | 0);
+          res = new $c_sci_Vector3(prefix1$2, len1, prefix2$2, len12, data3, suffix2$2, suffix1$2, this.sci_VectorSliceBuilder__f_len);
+          break
+        }
+        case 4: {
+          const a$5 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty2;
+          const p$3 = this.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.get(1);
+          const prefix2$3 = $asArrayOf_O(((p$3 !== null) ? p$3 : a$5), 2);
+          const a$6 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty3;
+          const p$4 = this.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.get(2);
+          const prefix3 = $asArrayOf_O(((p$4 !== null) ? p$4 : a$6), 3);
+          const a$7 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty4;
+          const p$5 = this.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.get(3);
+          let $$x7;
+          if ((p$5 !== null)) {
+            $$x7 = p$5
+          } else {
+            const s$3 = this.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.get(7);
+            $$x7 = ((s$3 !== null) ? s$3 : a$7)
+          };
+          const data4 = $asArrayOf_O($$x7, 4);
+          const a$8 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty3;
+          const s$4 = this.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.get(8);
+          const suffix3 = $asArrayOf_O(((s$4 !== null) ? s$4 : a$8), 3);
+          const a$9 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty2;
+          const s$5 = this.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.get(9);
+          const suffix2$3 = $asArrayOf_O(((s$5 !== null) ? s$5 : a$9), 2);
+          const len12$2 = ((len1 + (prefix2$3.u.length << 5)) | 0);
+          const len123 = ((len12$2 + (prefix3.u.length << 10)) | 0);
+          res = new $c_sci_Vector4(prefix1$2, len1, prefix2$3, len12$2, prefix3, len123, data4, suffix3, suffix2$3, suffix1$2, this.sci_VectorSliceBuilder__f_len);
+          break
+        }
+        case 5: {
+          const a$10 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty2;
+          const p$6 = this.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.get(1);
+          const prefix2$4 = $asArrayOf_O(((p$6 !== null) ? p$6 : a$10), 2);
+          const a$11 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty3;
+          const p$7 = this.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.get(2);
+          const prefix3$2 = $asArrayOf_O(((p$7 !== null) ? p$7 : a$11), 3);
+          const a$12 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty4;
+          const p$8 = this.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.get(3);
+          const prefix4 = $asArrayOf_O(((p$8 !== null) ? p$8 : a$12), 4);
+          const a$13 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty5;
+          const p$9 = this.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.get(4);
+          let $$x8;
+          if ((p$9 !== null)) {
+            $$x8 = p$9
+          } else {
+            const s$6 = this.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.get(6);
+            $$x8 = ((s$6 !== null) ? s$6 : a$13)
+          };
+          const data5 = $asArrayOf_O($$x8, 5);
+          const a$14 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty4;
+          const s$7 = this.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.get(7);
+          const suffix4 = $asArrayOf_O(((s$7 !== null) ? s$7 : a$14), 4);
+          const a$15 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty3;
+          const s$8 = this.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.get(8);
+          const suffix3$2 = $asArrayOf_O(((s$8 !== null) ? s$8 : a$15), 3);
+          const a$16 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty2;
+          const s$9 = this.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.get(9);
+          const suffix2$4 = $asArrayOf_O(((s$9 !== null) ? s$9 : a$16), 2);
+          const len12$3 = ((len1 + (prefix2$4.u.length << 5)) | 0);
+          const len123$2 = ((len12$3 + (prefix3$2.u.length << 10)) | 0);
+          const len1234 = ((len123$2 + (prefix4.u.length << 15)) | 0);
+          res = new $c_sci_Vector5(prefix1$2, len1, prefix2$4, len12$3, prefix3$2, len123$2, prefix4, len1234, data5, suffix4, suffix3$2, suffix2$4, suffix1$2, this.sci_VectorSliceBuilder__f_len);
+          break
+        }
+        case 6: {
+          const a$17 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty2;
+          const p$10 = this.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.get(1);
+          const prefix2$5 = $asArrayOf_O(((p$10 !== null) ? p$10 : a$17), 2);
+          const a$18 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty3;
+          const p$11 = this.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.get(2);
+          const prefix3$3 = $asArrayOf_O(((p$11 !== null) ? p$11 : a$18), 3);
+          const a$19 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty4;
+          const p$12 = this.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.get(3);
+          const prefix4$2 = $asArrayOf_O(((p$12 !== null) ? p$12 : a$19), 4);
+          const a$20 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty5;
+          const p$13 = this.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.get(4);
+          const prefix5 = $asArrayOf_O(((p$13 !== null) ? p$13 : a$20), 5);
+          const a$21 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty6;
+          const p$14 = this.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.get(5);
+          let $$x9;
+          if ((p$14 !== null)) {
+            $$x9 = p$14
+          } else {
+            const s$10 = this.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.get(5);
+            $$x9 = ((s$10 !== null) ? s$10 : a$21)
+          };
+          const data6 = $asArrayOf_O($$x9, 6);
+          const a$22 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty5;
+          const s$11 = this.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.get(6);
+          const suffix5 = $asArrayOf_O(((s$11 !== null) ? s$11 : a$22), 5);
+          const a$23 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty4;
+          const s$12 = this.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.get(7);
+          const suffix4$2 = $asArrayOf_O(((s$12 !== null) ? s$12 : a$23), 4);
+          const a$24 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty3;
+          const s$13 = this.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.get(8);
+          const suffix3$3 = $asArrayOf_O(((s$13 !== null) ? s$13 : a$24), 3);
+          const a$25 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty2;
+          const s$14 = this.sci_VectorSliceBuilder__f_scala$collection$immutable$VectorSliceBuilder$$slices.get(9);
+          const suffix2$5 = $asArrayOf_O(((s$14 !== null) ? s$14 : a$25), 2);
+          const len12$4 = ((len1 + (prefix2$5.u.length << 5)) | 0);
+          const len123$3 = ((len12$4 + (prefix3$3.u.length << 10)) | 0);
+          const len1234$2 = ((len123$3 + (prefix4$2.u.length << 15)) | 0);
+          const len12345 = ((len1234$2 + (prefix5.u.length << 20)) | 0);
+          res = new $c_sci_Vector6(prefix1$2, len1, prefix2$5, len12$4, prefix3$3, len123$3, prefix4$2, len1234$2, prefix5, len12345, data6, suffix5, suffix4$2, suffix3$3, suffix2$5, suffix1$2, this.sci_VectorSliceBuilder__f_len);
+          break
+        }
+        default: {
+          throw new $c_s_MatchError(x1)
+        }
+      };
+      return res
+    }
+  };
+  toString__T() {
+    return (((((((((("VectorSliceBuilder(lo=" + this.sci_VectorSliceBuilder__f_lo) + ", hi=") + this.sci_VectorSliceBuilder__f_hi) + ", len=") + this.sci_VectorSliceBuilder__f_len) + ", pos=") + this.sci_VectorSliceBuilder__f_pos) + ", maxDim=") + this.sci_VectorSliceBuilder__f_maxDim) + ")")
+  };
+}
+const $d_sci_VectorSliceBuilder = new $TypeData().initClass({
+  sci_VectorSliceBuilder: 0
+}, false, "scala.collection.immutable.VectorSliceBuilder", {
+  sci_VectorSliceBuilder: 1,
+  O: 1
+});
+$c_sci_VectorSliceBuilder.prototype.$classData = $d_sci_VectorSliceBuilder;
+class $c_sci_VectorStatics$ extends $c_O {
+  constructor() {
+    super();
+    this.sci_VectorStatics$__f_empty1 = null;
+    this.sci_VectorStatics$__f_empty2 = null;
+    this.sci_VectorStatics$__f_empty3 = null;
+    this.sci_VectorStatics$__f_empty4 = null;
+    this.sci_VectorStatics$__f_empty5 = null;
+    this.sci_VectorStatics$__f_empty6 = null;
+    $n_sci_VectorStatics$ = this;
+    this.sci_VectorStatics$__f_empty1 = $newArrayObject($d_O.getArrayOf(), [0]);
+    this.sci_VectorStatics$__f_empty2 = $newArrayObject($d_O.getArrayOf().getArrayOf(), [0]);
+    this.sci_VectorStatics$__f_empty3 = $newArrayObject($d_O.getArrayOf().getArrayOf().getArrayOf(), [0]);
+    this.sci_VectorStatics$__f_empty4 = $newArrayObject($d_O.getArrayOf().getArrayOf().getArrayOf().getArrayOf(), [0]);
+    this.sci_VectorStatics$__f_empty5 = $newArrayObject($d_O.getArrayOf().getArrayOf().getArrayOf().getArrayOf().getArrayOf(), [0]);
+    this.sci_VectorStatics$__f_empty6 = $newArrayObject($d_O.getArrayOf().getArrayOf().getArrayOf().getArrayOf().getArrayOf().getArrayOf(), [0])
+  };
+  copyAppend1__AO__O__AO(a, elem) {
+    const alen = a.u.length;
+    const ac = $newArrayObject($d_O.getArrayOf(), [((1 + alen) | 0)]);
+    $systemArraycopy(a, 0, ac, 0, alen);
+    ac.set(alen, elem);
+    return ac
+  };
+  copyAppend__AO__O__AO(a, elem) {
+    const newLength = ((1 + a.u.length) | 0);
+    const ac = $m_ju_Arrays$().copyOf__AO__I__AO(a, newLength);
+    ac.set((((-1) + ac.u.length) | 0), elem);
+    return ac
+  };
+  copyPrepend__O__AO__AO(elem, a) {
+    const componentType = $objectGetClass(a).getComponentType__jl_Class();
+    const length = ((1 + a.u.length) | 0);
+    const ac = $asArrayOf_O($m_jl_reflect_Array$().newInstance__jl_Class__I__O(componentType, length), 1);
+    const length$1 = a.u.length;
+    $systemArraycopy(a, 0, ac, 1, length$1);
+    ac.set(0, elem);
+    return ac
+  };
+  foreachRec__I__AO__F1__V(level, a, f) {
+    let i = 0;
+    const len = a.u.length;
+    if ((level === 0)) {
+      while ((i < len)) {
+        f.apply__O__O(a.get(i));
+        i = ((1 + i) | 0)
+      }
+    } else {
+      const l = (((-1) + level) | 0);
+      while ((i < len)) {
+        this.foreachRec__I__AO__F1__V(l, $asArrayOf_O(a.get(i), 1), f);
+        i = ((1 + i) | 0)
+      }
+    }
+  };
+  mapElems1__AO__F1__AO(a, f) {
+    let i = 0;
+    while ((i < a.u.length)) {
+      const v1 = a.get(i);
+      const v2 = f.apply__O__O(v1);
+      if ((!Object.is(v1, v2))) {
+        return this.mapElems1Rest__AO__F1__I__O__AO(a, f, i, v2)
+      };
+      i = ((1 + i) | 0)
+    };
+    return a
+  };
+  mapElems1Rest__AO__F1__I__O__AO(a, f, at, v2) {
+    const ac = $newArrayObject($d_O.getArrayOf(), [a.u.length]);
+    if ((at > 0)) {
+      $systemArraycopy(a, 0, ac, 0, at)
+    };
+    ac.set(at, v2);
+    let i = ((1 + at) | 0);
+    while ((i < a.u.length)) {
+      ac.set(i, f.apply__O__O(a.get(i)));
+      i = ((1 + i) | 0)
+    };
+    return ac
+  };
+  mapElems__I__AO__F1__AO(n, a, f) {
+    if ((n === 1)) {
+      return this.mapElems1__AO__F1__AO(a, f)
+    } else {
+      let i = 0;
+      while ((i < a.u.length)) {
+        const v1 = a.get(i);
+        const v2 = this.mapElems__I__AO__F1__AO((((-1) + n) | 0), $asArrayOf_O(v1, 1), f);
+        if ((v1 !== v2)) {
+          return this.mapElemsRest__I__AO__F1__I__O__AO(n, a, f, i, v2)
+        };
+        i = ((1 + i) | 0)
+      };
+      return a
+    }
+  };
+  mapElemsRest__I__AO__F1__I__O__AO(n, a, f, at, v2) {
+    const componentType = $objectGetClass(a).getComponentType__jl_Class();
+    const length = a.u.length;
+    const ac = $asArrayOf_O($m_jl_reflect_Array$().newInstance__jl_Class__I__O(componentType, length), 1);
+    if ((at > 0)) {
+      $systemArraycopy(a, 0, ac, 0, at)
+    };
+    ac.set(at, v2);
+    let i = ((1 + at) | 0);
+    while ((i < a.u.length)) {
+      ac.set(i, this.mapElems__I__AO__F1__AO((((-1) + n) | 0), $asArrayOf_O(a.get(i), 1), f));
+      i = ((1 + i) | 0)
+    };
+    return ac
+  };
+  append1IfSpace__AO__sc_IterableOnce__AO(suffix1, xs) {
+    if ($is_sci_Iterable(xs)) {
+      const x2 = $as_sci_Iterable(xs);
+      if ((x2.sizeCompare__I__I(((32 - suffix1.u.length) | 0)) <= 0)) {
+        const x1$2 = x2.size__I();
+        switch (x1$2) {
+          case 0: {
+            return null;
+            break
+          }
+          case 1: {
+            return this.copyAppend__AO__O__AO(suffix1, x2.head__O());
+            break
+          }
+          default: {
+            const newLength = ((suffix1.u.length + x1$2) | 0);
+            const suffix1b = $m_ju_Arrays$().copyOf__AO__I__AO(suffix1, newLength);
+            x2.copyToArray__O__I__I(suffix1b, suffix1.u.length);
+            return suffix1b
+          }
+        }
+      } else {
+        return null
+      }
+    } else {
+      const s = xs.knownSize__I();
+      if (((s > 0) && (s <= ((32 - suffix1.u.length) | 0)))) {
+        const newLength$1 = ((suffix1.u.length + s) | 0);
+        const suffix1b$2 = $m_ju_Arrays$().copyOf__AO__I__AO(suffix1, newLength$1);
+        const this$1 = xs.iterator__sc_Iterator();
+        const start = suffix1.u.length;
+        $f_sc_IterableOnceOps__copyToArray__O__I__I(this$1, suffix1b$2, start);
+        return suffix1b$2
+      } else {
+        return null
+      }
+    }
+  };
+}
+const $d_sci_VectorStatics$ = new $TypeData().initClass({
+  sci_VectorStatics$: 0
+}, false, "scala.collection.immutable.VectorStatics$", {
+  sci_VectorStatics$: 1,
+  O: 1
+});
+$c_sci_VectorStatics$.prototype.$classData = $d_sci_VectorStatics$;
+let $n_sci_VectorStatics$ = (void 0);
+function $m_sci_VectorStatics$() {
+  if ((!$n_sci_VectorStatics$)) {
+    $n_sci_VectorStatics$ = new $c_sci_VectorStatics$()
+  };
+  return $n_sci_VectorStatics$
+}
 class $c_scm_HashMap$Node {
 }
 function $as_scm_HashMap$Node(obj) {
@@ -7083,17 +7046,6 @@ class $c_scm_HashSet$Node extends $c_O {
       } else {
         _$this = _$this.scm_HashSet$Node__f__next
       }
-    }
-  };
-  foreach__F1__V(f) {
-    let _$this = this;
-    while (true) {
-      f.apply__O__O(_$this.scm_HashSet$Node__f__key);
-      if ((_$this.scm_HashSet$Node__f__next !== null)) {
-        _$this = _$this.scm_HashSet$Node__f__next;
-        continue
-      };
-      break
     }
   };
   toString__T() {
@@ -7853,6 +7805,13 @@ class $c_s_util_hashing_MurmurHash3 extends $c_O {
     h = (h ^ ((h >>> 16) | 0));
     return h
   };
+  tuple2Hash__I__I__I__I(x, y, seed) {
+    let h = seed;
+    h = this.mix__I__I__I(h, $f_T__hashCode__I("Tuple2"));
+    h = this.mix__I__I__I(h, x);
+    h = this.mix__I__I__I(h, y);
+    return this.finalizeHash__I__I__I(h, 2)
+  };
   productHash__s_Product__I__Z__I(x, seed, ignorePrefix) {
     const arr = x.productArity__I();
     if ((arr === 0)) {
@@ -7873,28 +7832,24 @@ class $c_s_util_hashing_MurmurHash3 extends $c_O {
     }
   };
   unorderedHash__sc_IterableOnce__I__I(xs, seed) {
-    let elem = 0;
-    elem = 0;
-    let elem$1 = 0;
-    elem$1 = 0;
-    let elem$2 = 0;
-    elem$2 = 0;
-    let elem$3 = 0;
-    elem$3 = 1;
-    const this$5 = xs.iterator__sc_Iterator();
-    while (this$5.hasNext__Z()) {
-      const arg1 = this$5.next__O();
-      const h = $m_sr_Statics$().anyHash__O__I(arg1);
-      elem = ((elem + h) | 0);
-      elem$1 = (elem$1 ^ h);
-      elem$3 = $imul(elem$3, (1 | h));
-      elem$2 = ((1 + elem$2) | 0)
+    let a = 0;
+    let b = 0;
+    let n = 0;
+    let c = 1;
+    const iterator = xs.iterator__sc_Iterator();
+    while (iterator.hasNext__Z()) {
+      const x = iterator.next__O();
+      const h = $m_sr_Statics$().anyHash__O__I(x);
+      a = ((a + h) | 0);
+      b = (b ^ h);
+      c = $imul(c, (1 | h));
+      n = ((1 + n) | 0)
     };
-    let h$1 = seed;
-    h$1 = this.mix__I__I__I(h$1, elem);
-    h$1 = this.mix__I__I__I(h$1, elem$1);
-    h$1 = this.mixLast__I__I__I(h$1, elem$3);
-    return this.finalizeHash__I__I__I(h$1, elem$2)
+    let h$2 = seed;
+    h$2 = this.mix__I__I__I(h$2, a);
+    h$2 = this.mix__I__I__I(h$2, b);
+    h$2 = this.mixLast__I__I__I(h$2, c);
+    return this.finalizeHash__I__I__I(h$2, n)
   };
   orderedHash__sc_IterableOnce__I__I(xs, seed) {
     const it = xs.iterator__sc_Iterator();
@@ -8728,8 +8683,7 @@ class $c_Lio_lemonlabs_uri_QueryString$ extends $c_O {
     this.Lio_lemonlabs_uri_QueryString$__f_orderQueryString = new $c_Lcats_kernel_Order$$anon$2(ev, f)
   };
   empty__Lio_lemonlabs_uri_config_UriConfig__Lio_lemonlabs_uri_QueryString(config) {
-    const this$1 = $m_s_package$().s_package$__f_Vector;
-    return new $c_Lio_lemonlabs_uri_QueryString(this$1.sci_Vector$__f_NIL, config)
+    return new $c_Lio_lemonlabs_uri_QueryString(($m_s_package$(), $m_sci_Vector0$()), config)
   };
 }
 const $d_Lio_lemonlabs_uri_QueryString$ = new $TypeData().initClass({
@@ -8853,8 +8807,8 @@ class $c_Lio_lemonlabs_uri_UrlPath$ extends $c_O {
     this.Lio_lemonlabs_uri_UrlPath$__f_showUrlPath = null;
     this.Lio_lemonlabs_uri_UrlPath$__f_orderUrlPath = null;
     $n_Lio_lemonlabs_uri_UrlPath$ = this;
-    const this$1 = $m_s_package$().s_package$__f_Vector;
-    const x$1 = this$1.sci_Vector$__f_NIL;
+    $m_s_package$();
+    const x$1 = $m_sci_Vector0$();
     $m_Lio_lemonlabs_uri_AbsolutePath$();
     const x$2 = $m_Lio_lemonlabs_uri_config_UriConfig$().Lio_lemonlabs_uri_config_UriConfig$__f_default;
     this.Lio_lemonlabs_uri_UrlPath$__f_slash = new $c_Lio_lemonlabs_uri_AbsolutePath(x$1, x$2);
@@ -12129,7 +12083,7 @@ function $m_sci_$colon$colon$() {
   };
   return $n_sci_$colon$colon$
 }
-class $c_sci_HashMapBuilder$$anon$2 extends $c_sci_ChampBaseIterator {
+class $c_sci_HashMapBuilder$$anon$1 extends $c_sci_ChampBaseIterator {
   constructor(outer, x2$1) {
     super();
     $ct_sci_ChampBaseIterator__sci_Node__(this, x2$1.sci_HashMap__f_rootNode);
@@ -12140,14 +12094,14 @@ class $c_sci_HashMapBuilder$$anon$2 extends $c_sci_ChampBaseIterator {
     }
   };
 }
-const $d_sci_HashMapBuilder$$anon$2 = new $TypeData().initClass({
-  sci_HashMapBuilder$$anon$2: 0
-}, false, "scala.collection.immutable.HashMapBuilder$$anon$2", {
-  sci_HashMapBuilder$$anon$2: 1,
+const $d_sci_HashMapBuilder$$anon$1 = new $TypeData().initClass({
+  sci_HashMapBuilder$$anon$1: 0
+}, false, "scala.collection.immutable.HashMapBuilder$$anon$1", {
+  sci_HashMapBuilder$$anon$1: 1,
   sci_ChampBaseIterator: 1,
   O: 1
 });
-$c_sci_HashMapBuilder$$anon$2.prototype.$classData = $d_sci_HashMapBuilder$$anon$2;
+$c_sci_HashMapBuilder$$anon$1.prototype.$classData = $d_sci_HashMapBuilder$$anon$1;
 class $c_sci_HashSetBuilder$$anon$1 extends $c_sci_ChampBaseIterator {
   constructor(outer, x2$1) {
     super();
@@ -12885,10 +12839,15 @@ class $c_s_util_hashing_MurmurHash3$ extends $c_s_util_hashing_MurmurHash3 {
     this.s_util_hashing_MurmurHash3$__f_seqSeed = 0;
     this.s_util_hashing_MurmurHash3$__f_mapSeed = 0;
     this.s_util_hashing_MurmurHash3$__f_setSeed = 0;
+    this.s_util_hashing_MurmurHash3$__f_emptyMapHash = 0;
     $n_s_util_hashing_MurmurHash3$ = this;
     this.s_util_hashing_MurmurHash3$__f_seqSeed = $f_T__hashCode__I("Seq");
     this.s_util_hashing_MurmurHash3$__f_mapSeed = $f_T__hashCode__I("Map");
-    this.s_util_hashing_MurmurHash3$__f_setSeed = $f_T__hashCode__I("Set")
+    this.s_util_hashing_MurmurHash3$__f_setSeed = $f_T__hashCode__I("Set");
+    this.s_util_hashing_MurmurHash3$__f_emptyMapHash = this.unorderedHash__sc_IterableOnce__I__I($m_sci_Nil$(), this.s_util_hashing_MurmurHash3$__f_mapSeed)
+  };
+  tuple2Hash__O__O__I(x, y) {
+    return this.tuple2Hash__I__I__I__I($m_sr_Statics$().anyHash__O__I(x), $m_sr_Statics$().anyHash__O__I(y), (-889275714))
   };
   seqHash__sc_Seq__I(xs) {
     if ($is_sc_IndexedSeq(xs)) {
@@ -12899,6 +12858,19 @@ class $c_s_util_hashing_MurmurHash3$ extends $c_s_util_hashing_MurmurHash3 {
       return this.listHash__sci_List__I__I(x3, this.s_util_hashing_MurmurHash3$__f_seqSeed)
     } else {
       return this.orderedHash__sc_IterableOnce__I__I(xs, this.s_util_hashing_MurmurHash3$__f_seqSeed)
+    }
+  };
+  mapHash__sc_Map__I(xs) {
+    if (xs.isEmpty__Z()) {
+      return this.s_util_hashing_MurmurHash3$__f_emptyMapHash
+    } else {
+      const accum = new $c_s_util_hashing_MurmurHash3$accum$1();
+      let h = this.s_util_hashing_MurmurHash3$__f_mapSeed;
+      xs.foreachEntry__F2__V(accum);
+      h = this.mix__I__I__I(h, accum.s_util_hashing_MurmurHash3$accum$1__f_a);
+      h = this.mix__I__I__I(h, accum.s_util_hashing_MurmurHash3$accum$1__f_b);
+      h = this.mixLast__I__I__I(h, accum.s_util_hashing_MurmurHash3$accum$1__f_c);
+      return this.finalizeHash__I__I__I(h, accum.s_util_hashing_MurmurHash3$accum$1__f_n)
     }
   };
 }
@@ -12917,6 +12889,40 @@ function $m_s_util_hashing_MurmurHash3$() {
   };
   return $n_s_util_hashing_MurmurHash3$
 }
+class $c_s_util_hashing_MurmurHash3$accum$1 extends $c_O {
+  constructor() {
+    super();
+    this.s_util_hashing_MurmurHash3$accum$1__f_a = 0;
+    this.s_util_hashing_MurmurHash3$accum$1__f_b = 0;
+    this.s_util_hashing_MurmurHash3$accum$1__f_n = 0;
+    this.s_util_hashing_MurmurHash3$accum$1__f_c = 0;
+    this.s_util_hashing_MurmurHash3$accum$1__f_a = 0;
+    this.s_util_hashing_MurmurHash3$accum$1__f_b = 0;
+    this.s_util_hashing_MurmurHash3$accum$1__f_n = 0;
+    this.s_util_hashing_MurmurHash3$accum$1__f_c = 1
+  };
+  toString__T() {
+    return "<function2>"
+  };
+  apply__O__O__V(k, v) {
+    const h = $m_s_util_hashing_MurmurHash3$().tuple2Hash__O__O__I(k, v);
+    this.s_util_hashing_MurmurHash3$accum$1__f_a = ((this.s_util_hashing_MurmurHash3$accum$1__f_a + h) | 0);
+    this.s_util_hashing_MurmurHash3$accum$1__f_b = (this.s_util_hashing_MurmurHash3$accum$1__f_b ^ h);
+    this.s_util_hashing_MurmurHash3$accum$1__f_c = $imul(this.s_util_hashing_MurmurHash3$accum$1__f_c, (1 | h));
+    this.s_util_hashing_MurmurHash3$accum$1__f_n = ((1 + this.s_util_hashing_MurmurHash3$accum$1__f_n) | 0)
+  };
+  apply__O__O__O(v1, v2) {
+    this.apply__O__O__V(v1, v2)
+  };
+}
+const $d_s_util_hashing_MurmurHash3$accum$1 = new $TypeData().initClass({
+  s_util_hashing_MurmurHash3$accum$1: 0
+}, false, "scala.util.hashing.MurmurHash3$accum$1", {
+  s_util_hashing_MurmurHash3$accum$1: 1,
+  O: 1,
+  F2: 1
+});
+$c_s_util_hashing_MurmurHash3$accum$1.prototype.$classData = $d_s_util_hashing_MurmurHash3$accum$1;
 class $c_Lshapeless_syntax_HListOps extends $c_O {
   constructor(l) {
     super();
@@ -13132,8 +13138,8 @@ const $ct_jl_Error__T__ = (function($thiz, s) {
   return $thiz
 });
 const $ct_jl_Error__jl_Throwable__ = (function($thiz, e) {
-  const s = ((e === null) ? null : e.toString__T());
-  $ct_jl_Throwable__T__jl_Throwable__Z__Z__($thiz, s, e, true, true);
+  const message = ((e === null) ? null : e.toString__T());
+  $ct_jl_Throwable__T__jl_Throwable__Z__Z__($thiz, message, e, true, true);
   return $thiz
 });
 class $c_jl_Error extends $c_jl_Throwable {
@@ -13730,7 +13736,7 @@ const $f_sc_IterableOps__sizeCompare__I__I = (function($thiz, otherSize) {
       const it = $thiz.iterator__sc_Iterator();
       while (it.hasNext__Z()) {
         if ((i === otherSize)) {
-          return (it.hasNext__Z() ? 1 : 0)
+          return 1
         };
         it.next__O();
         i = ((1 + i) | 0)
@@ -14276,6 +14282,22 @@ class $c_sci_BitmapIndexedMapNode extends $c_sci_MapNode {
     let j = 0;
     while ((j < jN)) {
       this.getNode__I__sci_MapNode(j).foreach__F1__V(f);
+      j = ((1 + j) | 0)
+    }
+  };
+  foreachEntry__F2__V(f) {
+    const i = this.sci_BitmapIndexedMapNode__f_dataMap;
+    const iN = $m_jl_Integer$().bitCount__I__I(i);
+    let i$1 = 0;
+    while ((i$1 < iN)) {
+      f.apply__O__O__O(this.getKey__I__O(i$1), this.getValue__I__O(i$1));
+      i$1 = ((1 + i$1) | 0)
+    };
+    const i$2 = this.sci_BitmapIndexedMapNode__f_nodeMap;
+    const jN = $m_jl_Integer$().bitCount__I__I(i$2);
+    let j = 0;
+    while ((j < jN)) {
+      this.getNode__I__sci_MapNode(j).foreachEntry__F2__V(f);
       j = ((1 + j) | 0)
     }
   };
@@ -15093,38 +15115,18 @@ class $c_sci_HashCollisionMapNode extends $c_sci_MapNode {
   };
   updated__O__O__I__I__I__Z__sci_MapNode(key, value, originalHash, hash, shift, replaceValue) {
     const index = this.indexOf__O__I(key);
-    if ((index >= 0)) {
-      if (replaceValue) {
-        if (Object.is($as_T2(this.sci_HashCollisionMapNode__f_content.apply__I__O(index))._2__O(), value)) {
-          return this
-        } else {
-          const this$1 = this.sci_HashCollisionMapNode__f_content;
-          const elem = $ct_T2__O__O__(new $c_T2(), key, value);
-          return new $c_sci_HashCollisionMapNode(originalHash, hash, this$1.updateAt__I__O__sci_Vector(index, elem))
-        }
-      } else {
-        return this
-      }
-    } else {
-      return new $c_sci_HashCollisionMapNode(originalHash, hash, this.sci_HashCollisionMapNode__f_content.appended__O__sci_Vector($ct_T2__O__O__(new $c_T2(), key, value)))
-    }
+    return ((index >= 0) ? (replaceValue ? (Object.is($as_T2(this.sci_HashCollisionMapNode__f_content.apply__I__O(index))._2__O(), value) ? this : new $c_sci_HashCollisionMapNode(originalHash, hash, this.sci_HashCollisionMapNode__f_content.updated__I__O__sci_Vector(index, $ct_T2__O__O__(new $c_T2(), key, value)))) : this) : new $c_sci_HashCollisionMapNode(originalHash, hash, this.sci_HashCollisionMapNode__f_content.appended__O__sci_Vector($ct_T2__O__O__(new $c_T2(), key, value))))
   };
   removed__O__I__I__I__sci_MapNode(key, originalHash, hash, shift) {
     if ((!this.containsKey__O__I__I__I__Z(key, originalHash, hash, shift))) {
       return this
     } else {
-      const this$1 = this.sci_HashCollisionMapNode__f_content;
-      $m_sci_Vector$();
-      const b = new $c_sci_VectorBuilder();
-      const it = this$1.iterator__sc_Iterator();
-      while (it.hasNext__Z()) {
-        const elem = it.next__O();
-        const keyValuePair = $as_T2(elem);
-        if (($m_sr_BoxesRunTime$().equals__O__O__Z(keyValuePair._1__O(), key) !== true)) {
-          b.addOne__O__sci_VectorBuilder(elem)
-        }
-      };
-      const updatedContent = b.result__sci_Vector();
+      const this$2 = this.sci_HashCollisionMapNode__f_content;
+      const pred = new $c_sjsr_AnonFunction1(((this$1, key$1) => ((keyValuePair$2) => {
+        const keyValuePair = $as_T2(keyValuePair$2);
+        return $m_sr_BoxesRunTime$().equals__O__O__Z(keyValuePair._1__O(), key$1)
+      }))(this, key));
+      const updatedContent = this$2.filterImpl__F1__Z__sci_Vector(pred, true);
       const x1 = updatedContent.length__I();
       if ((x1 === 1)) {
         const x1$2 = $as_T2(updatedContent.apply__I__O(0));
@@ -15180,8 +15182,19 @@ class $c_sci_HashCollisionMapNode extends $c_sci_MapNode {
     return this.sci_HashCollisionMapNode__f_originalHash
   };
   foreach__F1__V(f) {
-    const this$1 = this.sci_HashCollisionMapNode__f_content;
-    $f_sc_IterableOnceOps__foreach__F1__V(this$1, f)
+    this.sci_HashCollisionMapNode__f_content.foreach__F1__V(f)
+  };
+  foreachEntry__F2__V(f) {
+    this.sci_HashCollisionMapNode__f_content.foreach__F1__V(new $c_sjsr_AnonFunction1(((this$1, f$1) => ((x0$1$2) => {
+      const x0$1 = $as_T2(x0$1$2);
+      if ((x0$1 !== null)) {
+        const k = x0$1._1__O();
+        const v = x0$1._2__O();
+        return f$1.apply__O__O__O(k, v)
+      } else {
+        throw new $c_s_MatchError(x0$1)
+      }
+    }))(this, f)))
   };
   equals__O__Z(that) {
     if ((that instanceof $c_sci_HashCollisionMapNode)) {
@@ -15267,17 +15280,9 @@ class $c_sci_HashCollisionSetNode extends $c_sci_SetNode {
     if ((!this.contains__O__I__I__I__Z(element, originalHash, hash, shift))) {
       return this
     } else {
-      const this$1 = this.sci_HashCollisionSetNode__f_content;
-      $m_sci_Vector$();
-      const b = new $c_sci_VectorBuilder();
-      const it = this$1.iterator__sc_Iterator();
-      while (it.hasNext__Z()) {
-        const elem = it.next__O();
-        if (($m_sr_BoxesRunTime$().equals__O__O__Z(elem, element) !== true)) {
-          b.addOne__O__sci_VectorBuilder(elem)
-        }
-      };
-      const updatedContent = b.result__sci_Vector();
+      const this$2 = this.sci_HashCollisionSetNode__f_content;
+      const pred = new $c_sjsr_AnonFunction1(((this$1, element$1) => ((element0$2) => $m_sr_BoxesRunTime$().equals__O__O__Z(element0$2, element$1)))(this, element));
+      const updatedContent = this$2.filterImpl__F1__Z__sci_Vector(pred, true);
       const x1 = updatedContent.length__I();
       if ((x1 === 1)) {
         const $$x1 = $m_sci_Node$().bitposFrom__I__I($m_sci_Node$().maskFrom__I__I__I(hash, 0));
@@ -16442,7 +16447,7 @@ class $c_Lio_lemonlabs_uri_QueryString extends $c_O {
     let paramsAsString;
     if ((x === x1)) {
       const this$1 = this.Lio_lemonlabs_uri_QueryString__f_params;
-      paramsAsString = $as_sci_Vector($f_sc_StrictOptimizedIterableOps__map__F1__O(this$1, paramToString))
+      paramsAsString = this$1.map__F1__sci_Vector(paramToString)
     } else {
       const x$3 = $m_Lio_lemonlabs_uri_config_ExcludeNones$();
       if ((!(x$3 === x1))) {
@@ -20341,9 +20346,6 @@ class $c_sc_AbstractIterator extends $c_O {
   copyToArray__O__I__I(xs, start) {
     return $f_sc_IterableOnceOps__copyToArray__O__I__I(this, xs, start)
   };
-  copyToArray__O__I__I__I(xs, start, len) {
-    return $f_sc_IterableOnceOps__copyToArray__O__I__I__I(this, xs, start, len)
-  };
   addString__scm_StringBuilder__T__T__T__scm_StringBuilder(b, start, sep, end) {
     return $f_sc_IterableOnceOps__addString__scm_StringBuilder__T__T__T__scm_StringBuilder(this, b, start, sep, end)
   };
@@ -21324,18 +21326,13 @@ class $c_Lio_lemonlabs_uri_IpV6 extends $c_O {
     return this.value__T()
   };
   hexPieces__sci_Vector() {
-    const this$1 = this.Lio_lemonlabs_uri_IpV6__f_pieces;
-    $m_sci_Vector$();
-    const b = new $c_sci_VectorBuilder();
-    const it = this$1.iterator__sc_Iterator();
-    while (it.hasNext__Z()) {
-      const arg1 = it.next__O();
-      const c = $uC(arg1);
+    const this$3 = this.Lio_lemonlabs_uri_IpV6__f_pieces;
+    const f = new $c_sjsr_AnonFunction1(((this$1) => ((c$2) => {
+      const c = $uC(c$2);
       const i = c;
-      const elem = $as_T($uD((i >>> 0)).toString(16));
-      b.addOne__O__sci_VectorBuilder(elem)
-    };
-    return b.result__sci_Vector()
+      return $as_T($uD((i >>> 0)).toString(16))
+    }))(this));
+    return this$3.map__F1__sci_Vector(f)
   };
   publicSuffix__s_Option() {
     return $m_s_None$()
@@ -21356,10 +21353,13 @@ class $c_Lio_lemonlabs_uri_IpV6 extends $c_O {
     if ((x1 !== null)) {
       const start = x1._1$mcI$sp__I();
       const end = x1._2$mcI$sp__I();
-      const this$2 = this.hexPieces__sci_Vector().take__I__sci_Vector(start);
-      const $$x1 = $f_sc_IterableOnceOps__mkString__T__T__T__T(this$2, "", ":", "");
-      const this$3 = this.hexPieces__sci_Vector().drop__I__sci_Vector(end);
-      return (((("[" + $$x1) + "::") + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$3, "", ":", "")) + "]")
+      const this$2 = this.hexPieces__sci_Vector();
+      const this$3 = this$2.slice__I__I__sci_Vector(0, start);
+      const $$x1 = $f_sc_IterableOnceOps__mkString__T__T__T__T(this$3, "", ":", "");
+      const this$4 = this.hexPieces__sci_Vector();
+      const until = this$4.length__I();
+      const this$5 = this$4.slice__I__I__sci_Vector(end, until);
+      return (((("[" + $$x1) + "::") + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$5, "", ":", "")) + "]")
     };
     throw new $c_s_MatchError(x1)
   };
@@ -21653,19 +21653,14 @@ function $asArrayOf_Lio_lemonlabs_uri_Url(obj, depth) {
   return (($isArrayOf_Lio_lemonlabs_uri_Url(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lio.lemonlabs.uri.Url;", depth))
 }
 const $f_Lio_lemonlabs_uri_UrlPath__toString__Lio_lemonlabs_uri_config_UriConfig__T = (function($thiz, c) {
-  const this$1 = $thiz.parts__sci_Vector();
-  $m_sci_Vector$();
-  const b = new $c_sci_VectorBuilder();
-  const it = this$1.iterator__sc_Iterator();
-  while (it.hasNext__Z()) {
-    const arg1 = it.next__O();
-    const p = $as_T(arg1);
-    const this$3 = c.Lio_lemonlabs_uri_config_UriConfig__f_pathEncoder;
-    const charset = c.Lio_lemonlabs_uri_config_UriConfig__f_charset;
-    const elem = $f_Lio_lemonlabs_uri_encoding_UriEncoder__encode__T__T__T(this$3, p, charset);
-    b.addOne__O__sci_VectorBuilder(elem)
-  };
-  const encodedParts = b.result__sci_Vector();
+  const this$3 = $thiz.parts__sci_Vector();
+  const f = new $c_sjsr_AnonFunction1(((this$1, c$1) => ((p$2) => {
+    const p = $as_T(p$2);
+    const this$2 = c$1.Lio_lemonlabs_uri_config_UriConfig__f_pathEncoder;
+    const charset = c$1.Lio_lemonlabs_uri_config_UriConfig__f_charset;
+    return $f_Lio_lemonlabs_uri_encoding_UriEncoder__encode__T__T__T(this$2, p, charset)
+  }))($thiz, c));
+  const encodedParts = this$3.map__F1__sci_Vector(f);
   return $f_sc_IterableOnceOps__mkString__T__T__T__T(encodedParts, "", "/", "")
 });
 function $is_Lio_lemonlabs_uri_UrlPath(obj) {
@@ -21991,7 +21986,8 @@ class $c_Lio_lemonlabs_uri_decoding_PercentDecoder extends $c_O {
   };
   decodeBytes__T__T__AB(s, charset) {
     const this$1 = $m_s_Predef$().wrapCharArray__AC__scm_ArraySeq$ofChar($f_T__toCharArray__AC(s));
-    return $p_Lio_lemonlabs_uri_decoding_PercentDecoder__go$1__sci_List__scm_ArrayBuilder__AB(this, $m_sci_List$().from__sc_IterableOnce__sci_List(this$1), new $c_scm_ArrayBuilder$ofByte())
+    $m_sci_List$();
+    return $p_Lio_lemonlabs_uri_decoding_PercentDecoder__go$1__sci_List__scm_ArrayBuilder__AB(this, $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this$1), new $c_scm_ArrayBuilder$ofByte())
   };
   decode__T__T(s) {
     const bytes = this.decodeBytes__T__T__AB(s, $m_Lio_lemonlabs_uri_decoding_PercentDecoder$().Lio_lemonlabs_uri_decoding_PercentDecoder$__f_cs);
@@ -24242,40 +24238,6 @@ const $d_s_PartialFunction$OrElse = new $TypeData().initClass({
   Ljava_io_Serializable: 1
 });
 $c_s_PartialFunction$OrElse.prototype.$classData = $d_s_PartialFunction$OrElse;
-class $c_s_Product$$anon$1 extends $c_sc_AbstractIterator {
-  constructor(outer) {
-    super();
-    this.s_Product$$anon$1__f_c = 0;
-    this.s_Product$$anon$1__f_cmax = 0;
-    this.s_Product$$anon$1__f_$outer = null;
-    if ((outer === null)) {
-      throw $m_sjsr_package$().unwrapJavaScriptException__jl_Throwable__O(null)
-    } else {
-      this.s_Product$$anon$1__f_$outer = outer
-    };
-    this.s_Product$$anon$1__f_c = 0;
-    this.s_Product$$anon$1__f_cmax = outer.productArity__I()
-  };
-  hasNext__Z() {
-    return (this.s_Product$$anon$1__f_c < this.s_Product$$anon$1__f_cmax)
-  };
-  next__O() {
-    const result = this.s_Product$$anon$1__f_$outer.productElement__I__O(this.s_Product$$anon$1__f_c);
-    this.s_Product$$anon$1__f_c = ((1 + this.s_Product$$anon$1__f_c) | 0);
-    return result
-  };
-}
-const $d_s_Product$$anon$1 = new $TypeData().initClass({
-  s_Product$$anon$1: 0
-}, false, "scala.Product$$anon$1", {
-  s_Product$$anon$1: 1,
-  sc_AbstractIterator: 1,
-  O: 1,
-  sc_Iterator: 1,
-  sc_IterableOnce: 1,
-  sc_IterableOnceOps: 1
-});
-$c_s_Product$$anon$1.prototype.$classData = $d_s_Product$$anon$1;
 const $ct_T2__O__O__ = (function($thiz, _1, _2) {
   $thiz.T2__f__1 = _1;
   $thiz.T2__f__2 = _2;
@@ -24372,41 +24334,6 @@ const $f_sc_IndexedSeqOps__drop__I__O = (function($thiz, n) {
 const $f_sc_IndexedSeqOps__map__F1__O = (function($thiz, f) {
   return $thiz.iterableFactory__sc_IterableFactory().from__sc_IterableOnce__O(new $c_sc_IndexedSeqView$Map($thiz, f))
 });
-class $c_sc_IndexedSeqOps$$anon$1 extends $c_sc_AbstractIterator {
-  constructor(outer) {
-    super();
-    this.sc_IndexedSeqOps$$anon$1__f_i = 0;
-    this.sc_IndexedSeqOps$$anon$1__f_$outer = null;
-    if ((outer === null)) {
-      throw $m_sjsr_package$().unwrapJavaScriptException__jl_Throwable__O(null)
-    } else {
-      this.sc_IndexedSeqOps$$anon$1__f_$outer = outer
-    };
-    this.sc_IndexedSeqOps$$anon$1__f_i = outer.length__I()
-  };
-  hasNext__Z() {
-    return (this.sc_IndexedSeqOps$$anon$1__f_i > 0)
-  };
-  next__O() {
-    if ((this.sc_IndexedSeqOps$$anon$1__f_i > 0)) {
-      this.sc_IndexedSeqOps$$anon$1__f_i = (((-1) + this.sc_IndexedSeqOps$$anon$1__f_i) | 0);
-      return this.sc_IndexedSeqOps$$anon$1__f_$outer.apply__I__O(this.sc_IndexedSeqOps$$anon$1__f_i)
-    } else {
-      return $m_sc_Iterator$().sc_Iterator$__f_scala$collection$Iterator$$_empty.next__O()
-    }
-  };
-}
-const $d_sc_IndexedSeqOps$$anon$1 = new $TypeData().initClass({
-  sc_IndexedSeqOps$$anon$1: 0
-}, false, "scala.collection.IndexedSeqOps$$anon$1", {
-  sc_IndexedSeqOps$$anon$1: 1,
-  sc_AbstractIterator: 1,
-  O: 1,
-  sc_Iterator: 1,
-  sc_IterableOnce: 1,
-  sc_IterableOnceOps: 1
-});
-$c_sc_IndexedSeqOps$$anon$1.prototype.$classData = $d_sc_IndexedSeqOps$$anon$1;
 const $f_sc_Iterable__toString__T = (function($thiz) {
   const start = ($thiz.className__T() + "(");
   return $f_sc_IterableOnceOps__mkString__T__T__T__T($thiz, start, ", ", ")")
@@ -24603,7 +24530,25 @@ const $d_sc_Iterator$$anon$9 = new $TypeData().initClass({
   sc_IterableOnceOps: 1
 });
 $c_sc_Iterator$$anon$9.prototype.$classData = $d_sc_Iterator$$anon$9;
-const $p_sc_Iterator$ConcatIterator__advance__Z = (function($thiz) {
+const $p_sc_Iterator$ConcatIterator__merge$1__V = (function($thiz) {
+  while (true) {
+    if (($thiz.sc_Iterator$ConcatIterator__f_current instanceof $c_sc_Iterator$ConcatIterator)) {
+      const c = $as_sc_Iterator$ConcatIterator($thiz.sc_Iterator$ConcatIterator__f_current);
+      $thiz.sc_Iterator$ConcatIterator__f_current = c.sc_Iterator$ConcatIterator__f_current;
+      $thiz.sc_Iterator$ConcatIterator__f_currentHasNextChecked = c.sc_Iterator$ConcatIterator__f_currentHasNextChecked;
+      if ((c.sc_Iterator$ConcatIterator__f_tail !== null)) {
+        if (($thiz.sc_Iterator$ConcatIterator__f_last === null)) {
+          $thiz.sc_Iterator$ConcatIterator__f_last = c.sc_Iterator$ConcatIterator__f_last
+        };
+        c.sc_Iterator$ConcatIterator__f_last.sc_Iterator$ConcatIteratorCell__f_tail = $thiz.sc_Iterator$ConcatIterator__f_tail;
+        $thiz.sc_Iterator$ConcatIterator__f_tail = c.sc_Iterator$ConcatIterator__f_tail
+      };
+      continue
+    };
+    break
+  }
+});
+const $p_sc_Iterator$ConcatIterator__advance$1__Z = (function($thiz) {
   while (true) {
     if (($thiz.sc_Iterator$ConcatIterator__f_tail === null)) {
       $thiz.sc_Iterator$ConcatIterator__f_current = null;
@@ -24611,8 +24556,11 @@ const $p_sc_Iterator$ConcatIterator__advance__Z = (function($thiz) {
       return false
     } else {
       $thiz.sc_Iterator$ConcatIterator__f_current = $thiz.sc_Iterator$ConcatIterator__f_tail.headIterator__sc_Iterator();
+      if (($thiz.sc_Iterator$ConcatIterator__f_last === $thiz.sc_Iterator$ConcatIterator__f_tail)) {
+        $thiz.sc_Iterator$ConcatIterator__f_last = $thiz.sc_Iterator$ConcatIterator__f_last.sc_Iterator$ConcatIteratorCell__f_tail
+      };
       $thiz.sc_Iterator$ConcatIterator__f_tail = $thiz.sc_Iterator$ConcatIterator__f_tail.sc_Iterator$ConcatIteratorCell__f_tail;
-      $p_sc_Iterator$ConcatIterator__merge__V($thiz);
+      $p_sc_Iterator$ConcatIterator__merge$1__V($thiz);
       if ($thiz.sc_Iterator$ConcatIterator__f_currentHasNextChecked) {
         return true
       } else if ((($thiz.sc_Iterator$ConcatIterator__f_current !== null) && $thiz.sc_Iterator$ConcatIterator__f_current.hasNext__Z())) {
@@ -24620,21 +24568,6 @@ const $p_sc_Iterator$ConcatIterator__advance__Z = (function($thiz) {
         return true
       }
     }
-  }
-});
-const $p_sc_Iterator$ConcatIterator__merge__V = (function($thiz) {
-  while (true) {
-    if (($thiz.sc_Iterator$ConcatIterator__f_current instanceof $c_sc_Iterator$ConcatIterator)) {
-      const c = $as_sc_Iterator$ConcatIterator($thiz.sc_Iterator$ConcatIterator__f_current);
-      $thiz.sc_Iterator$ConcatIterator__f_current = c.sc_Iterator$ConcatIterator__f_current;
-      $thiz.sc_Iterator$ConcatIterator__f_currentHasNextChecked = c.sc_Iterator$ConcatIterator__f_currentHasNextChecked;
-      if ((c.sc_Iterator$ConcatIterator__f_tail !== null)) {
-        c.sc_Iterator$ConcatIterator__f_last.sc_Iterator$ConcatIteratorCell__f_tail = $thiz.sc_Iterator$ConcatIterator__f_tail;
-        $thiz.sc_Iterator$ConcatIterator__f_tail = c.sc_Iterator$ConcatIterator__f_tail
-      };
-      continue
-    };
-    break
   }
 });
 class $c_sc_Iterator$ConcatIterator extends $c_sc_AbstractIterator {
@@ -24657,7 +24590,7 @@ class $c_sc_Iterator$ConcatIterator extends $c_sc_AbstractIterator {
         this.sc_Iterator$ConcatIterator__f_currentHasNextChecked = true;
         return true
       } else {
-        return $p_sc_Iterator$ConcatIterator__advance__Z(this)
+        return $p_sc_Iterator$ConcatIterator__advance$1__Z(this)
       }
     } else {
       return false
@@ -25025,9 +24958,7 @@ class $c_sci_HashMapBuilder extends $c_O {
       if ((index$3 < 0)) {
         x3.sci_HashCollisionMapNode__f_content = x3.sci_HashCollisionMapNode__f_content.appended__O__sci_Vector($ct_T2__O__O__(new $c_T2(), key, value))
       } else {
-        const this$1 = x3.sci_HashCollisionMapNode__f_content;
-        const elem = $ct_T2__O__O__(new $c_T2(), key, value);
-        x3.sci_HashCollisionMapNode__f_content = this$1.updateAt__I__O__sci_Vector(index$3, elem)
+        x3.sci_HashCollisionMapNode__f_content = x3.sci_HashCollisionMapNode__f_content.updated__I__O__sci_Vector(index$3, $ct_T2__O__O__(new $c_T2(), key, value))
       }
     } else {
       throw new $c_s_MatchError(mapNode)
@@ -25062,7 +24993,7 @@ class $c_sci_HashMapBuilder extends $c_O {
     $p_sci_HashMapBuilder__ensureUnaliased__V(this);
     if ((xs instanceof $c_sci_HashMap)) {
       const x2 = $as_sci_HashMap(xs);
-      new $c_sci_HashMapBuilder$$anon$2(this, x2)
+      new $c_sci_HashMapBuilder$$anon$1(this, x2)
     } else if ((xs instanceof $c_scm_HashMap)) {
       const x3 = $as_scm_HashMap(xs);
       const iter = x3.nodeIterator__sc_Iterator();
@@ -25073,6 +25004,9 @@ class $c_sci_HashMapBuilder extends $c_O {
         const hash = $m_sc_Hashing$().improve__I__I(originalHash);
         this.update__sci_MapNode__O__O__I__I__I__V(this.sci_HashMapBuilder__f_scala$collection$immutable$HashMapBuilder$$rootNode, next.scm_HashMap$Node__f__key, next.scm_HashMap$Node__f__value, originalHash, hash, 0)
       }
+    } else if ($is_sci_Map(xs)) {
+      const x4 = $as_sci_Map(xs);
+      x4.foreachEntry__F2__V(new $c_sjsr_AnonFunction2(((this$1) => ((key$2, value$2) => this$1.addOne__O__O__sci_HashMapBuilder(key$2, value$2)))(this)))
     } else {
       const it = xs.iterator__sc_Iterator();
       while (it.hasNext__Z()) {
@@ -25193,8 +25127,7 @@ class $c_sci_HashSetBuilder extends $c_O {
       if ((index$3 < 0)) {
         x3.sci_HashCollisionSetNode__f_content = x3.sci_HashCollisionSetNode__f_content.appended__O__sci_Vector(element)
       } else {
-        const this$2 = x3.sci_HashCollisionSetNode__f_content;
-        x3.sci_HashCollisionSetNode__f_content = this$2.updateAt__I__O__sci_Vector(index$3, element)
+        x3.sci_HashCollisionSetNode__f_content = x3.sci_HashCollisionSetNode__f_content.updated__I__O__sci_Vector(index$3, element)
       }
     } else {
       throw new $c_s_MatchError(setNode)
@@ -25387,26 +25320,14 @@ $c_sci_LazyList$LazyIterator.prototype.$classData = $d_sci_LazyList$LazyIterator
 class $c_sci_List$ extends $c_O {
   constructor() {
     super();
+    this.sci_List$__f_scala$collection$immutable$List$$TupleOfNil = null;
     this.sci_List$__f_partialNotApplied = null;
     $n_sci_List$ = this;
+    this.sci_List$__f_scala$collection$immutable$List$$TupleOfNil = $ct_T2__O__O__(new $c_T2(), $m_sci_Nil$(), $m_sci_Nil$());
     this.sci_List$__f_partialNotApplied = new $c_sci_List$$anon$1()
   };
   apply__sci_Seq__O(elems) {
-    return this.from__sc_IterableOnce__sci_List(elems)
-  };
-  from__sc_IterableOnce__sci_List(coll) {
-    if ((coll instanceof $c_sci_List)) {
-      const x2 = $as_sci_List(coll);
-      return x2
-    } else if ((coll.knownSize__I() === 0)) {
-      return $m_sci_Nil$()
-    } else if ((coll instanceof $c_scm_ListBuffer)) {
-      const x3 = $as_scm_ListBuffer(coll);
-      return x3.toList__sci_List()
-    } else {
-      const this$2 = new $c_scm_ListBuffer();
-      return this$2.addAll__sc_IterableOnce__scm_ListBuffer(coll).toList__sci_List()
-    }
+    return $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems)
   };
   newBuilder__scm_Builder() {
     return new $c_scm_ListBuffer()
@@ -25415,7 +25336,7 @@ class $c_sci_List$ extends $c_O {
     return $f_sc_StrictOptimizedSeqFactory__tabulate__I__F1__sc_SeqOps(this, n, f)
   };
   from__sc_IterableOnce__O(source) {
-    return this.from__sc_IterableOnce__sci_List(source)
+    return $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(source)
   };
 }
 const $d_sci_List$ = new $TypeData().initClass({
@@ -25646,6 +25567,71 @@ const $d_sci_MapBuilderImpl = new $TypeData().initClass({
   scm_Clearable: 1
 });
 $c_sci_MapBuilderImpl.prototype.$classData = $d_sci_MapBuilderImpl;
+class $c_sci_MapKeyValueTupleHashIterator extends $c_sci_ChampBaseReverseIterator {
+  constructor(rootNode) {
+    super();
+    this.sci_MapKeyValueTupleHashIterator__f_hash = 0;
+    this.sci_MapKeyValueTupleHashIterator__f_value = null;
+    $ct_sci_ChampBaseReverseIterator__sci_Node__(this, rootNode);
+    this.sci_MapKeyValueTupleHashIterator__f_hash = 0
+  };
+  iterator__sc_Iterator() {
+    return this
+  };
+  isEmpty__Z() {
+    return (!this.hasNext__Z())
+  };
+  concat__F0__sc_Iterator(xs) {
+    return $f_sc_Iterator__concat__F0__sc_Iterator(this, xs)
+  };
+  drop__I__sc_Iterator(n) {
+    return $f_sc_Iterator__drop__I__sc_Iterator(this, n)
+  };
+  toString__T() {
+    return "<iterator>"
+  };
+  copyToArray__O__I__I(xs, start) {
+    return $f_sc_IterableOnceOps__copyToArray__O__I__I(this, xs, start)
+  };
+  addString__scm_StringBuilder__T__T__T__scm_StringBuilder(b, start, sep, end) {
+    return $f_sc_IterableOnceOps__addString__scm_StringBuilder__T__T__T__scm_StringBuilder(this, b, start, sep, end)
+  };
+  toArray__s_reflect_ClassTag__O(evidence$2) {
+    return $f_sc_IterableOnceOps__toArray__s_reflect_ClassTag__O(this, evidence$2)
+  };
+  knownSize__I() {
+    return (-1)
+  };
+  hashCode__I() {
+    const $$x2 = $m_s_util_hashing_MurmurHash3$();
+    const $$x1 = this.sci_MapKeyValueTupleHashIterator__f_hash;
+    const x = this.sci_MapKeyValueTupleHashIterator__f_value;
+    return $$x2.tuple2Hash__I__I__I__I($$x1, $m_sr_Statics$().anyHash__O__I(x), (-889275714))
+  };
+  next__sci_MapKeyValueTupleHashIterator() {
+    if ((!this.hasNext__Z())) {
+      throw $ct_ju_NoSuchElementException__(new $c_ju_NoSuchElementException())
+    };
+    this.sci_MapKeyValueTupleHashIterator__f_hash = this.sci_ChampBaseReverseIterator__f_currentValueNode.getHash__I__I(this.sci_ChampBaseReverseIterator__f_currentValueCursor);
+    this.sci_MapKeyValueTupleHashIterator__f_value = $as_sci_MapNode(this.sci_ChampBaseReverseIterator__f_currentValueNode).getValue__I__O(this.sci_ChampBaseReverseIterator__f_currentValueCursor);
+    this.sci_ChampBaseReverseIterator__f_currentValueCursor = (((-1) + this.sci_ChampBaseReverseIterator__f_currentValueCursor) | 0);
+    return this
+  };
+  next__O() {
+    return this.next__sci_MapKeyValueTupleHashIterator()
+  };
+}
+const $d_sci_MapKeyValueTupleHashIterator = new $TypeData().initClass({
+  sci_MapKeyValueTupleHashIterator: 0
+}, false, "scala.collection.immutable.MapKeyValueTupleHashIterator", {
+  sci_MapKeyValueTupleHashIterator: 1,
+  sci_ChampBaseReverseIterator: 1,
+  O: 1,
+  sc_Iterator: 1,
+  sc_IterableOnce: 1,
+  sc_IterableOnceOps: 1
+});
+$c_sci_MapKeyValueTupleHashIterator.prototype.$classData = $d_sci_MapKeyValueTupleHashIterator;
 class $c_sci_MapKeyValueTupleIterator extends $c_sci_ChampBaseIterator {
   constructor(rootNode) {
     super();
@@ -25668,9 +25654,6 @@ class $c_sci_MapKeyValueTupleIterator extends $c_sci_ChampBaseIterator {
   };
   copyToArray__O__I__I(xs, start) {
     return $f_sc_IterableOnceOps__copyToArray__O__I__I(this, xs, start)
-  };
-  copyToArray__O__I__I__I(xs, start, len) {
-    return $f_sc_IterableOnceOps__copyToArray__O__I__I__I(this, xs, start, len)
   };
   addString__scm_StringBuilder__T__T__T__scm_StringBuilder(b, start, sep, end) {
     return $f_sc_IterableOnceOps__addString__scm_StringBuilder__T__T__T__scm_StringBuilder(this, b, start, sep, end)
@@ -25704,6 +25687,233 @@ const $d_sci_MapKeyValueTupleIterator = new $TypeData().initClass({
   sc_IterableOnceOps: 1
 });
 $c_sci_MapKeyValueTupleIterator.prototype.$classData = $d_sci_MapKeyValueTupleIterator;
+const $p_sci_NewVectorIterator__advanceSlice__V = (function($thiz) {
+  if (($thiz.sci_NewVectorIterator__f_scala$collection$immutable$NewVectorIterator$$len1 <= $thiz.sci_NewVectorIterator__f_scala$collection$immutable$NewVectorIterator$$i1)) {
+    $m_sc_Iterator$().sc_Iterator$__f_scala$collection$Iterator$$_empty.next__O()
+  };
+  $thiz.sci_NewVectorIterator__f_sliceIdx = ((1 + $thiz.sci_NewVectorIterator__f_sliceIdx) | 0);
+  let slice = $thiz.sci_NewVectorIterator__f_v.vectorSlice__I__AO($thiz.sci_NewVectorIterator__f_sliceIdx);
+  while ((slice.u.length === 0)) {
+    $thiz.sci_NewVectorIterator__f_sliceIdx = ((1 + $thiz.sci_NewVectorIterator__f_sliceIdx) | 0);
+    slice = $thiz.sci_NewVectorIterator__f_v.vectorSlice__I__AO($thiz.sci_NewVectorIterator__f_sliceIdx)
+  };
+  $thiz.sci_NewVectorIterator__f_sliceStart = $thiz.sci_NewVectorIterator__f_sliceEnd;
+  const count = $thiz.sci_NewVectorIterator__f_sliceCount;
+  const idx = $thiz.sci_NewVectorIterator__f_sliceIdx;
+  const c = ((count / 2) | 0);
+  const a = ((idx - c) | 0);
+  $thiz.sci_NewVectorIterator__f_sliceDim = ((((1 + c) | 0) - ((a < 0) ? ((-a) | 0) : a)) | 0);
+  const x1 = $thiz.sci_NewVectorIterator__f_sliceDim;
+  switch (x1) {
+    case 1: {
+      $thiz.sci_NewVectorIterator__f_a1 = slice;
+      break
+    }
+    case 2: {
+      $thiz.sci_NewVectorIterator__f_a2 = $asArrayOf_O(slice, 2);
+      break
+    }
+    case 3: {
+      $thiz.sci_NewVectorIterator__f_a3 = $asArrayOf_O(slice, 3);
+      break
+    }
+    case 4: {
+      $thiz.sci_NewVectorIterator__f_a4 = $asArrayOf_O(slice, 4);
+      break
+    }
+    case 5: {
+      $thiz.sci_NewVectorIterator__f_a5 = $asArrayOf_O(slice, 5);
+      break
+    }
+    case 6: {
+      $thiz.sci_NewVectorIterator__f_a6 = $asArrayOf_O(slice, 6);
+      break
+    }
+    default: {
+      throw new $c_s_MatchError(x1)
+    }
+  };
+  $thiz.sci_NewVectorIterator__f_sliceEnd = (($thiz.sci_NewVectorIterator__f_sliceStart + $imul(slice.u.length, (1 << $imul(5, (((-1) + $thiz.sci_NewVectorIterator__f_sliceDim) | 0))))) | 0);
+  if (($thiz.sci_NewVectorIterator__f_sliceEnd > $thiz.sci_NewVectorIterator__f_totalLength)) {
+    $thiz.sci_NewVectorIterator__f_sliceEnd = $thiz.sci_NewVectorIterator__f_totalLength
+  };
+  if (($thiz.sci_NewVectorIterator__f_sliceDim > 1)) {
+    $thiz.sci_NewVectorIterator__f_oldPos = (((-1) + (1 << $imul(5, $thiz.sci_NewVectorIterator__f_sliceDim))) | 0)
+  }
+});
+const $p_sci_NewVectorIterator__advance__V = (function($thiz) {
+  const pos = (((($thiz.sci_NewVectorIterator__f_scala$collection$immutable$NewVectorIterator$$i1 - $thiz.sci_NewVectorIterator__f_scala$collection$immutable$NewVectorIterator$$len1) | 0) + $thiz.sci_NewVectorIterator__f_totalLength) | 0);
+  if ((pos === $thiz.sci_NewVectorIterator__f_sliceEnd)) {
+    $p_sci_NewVectorIterator__advanceSlice__V($thiz)
+  };
+  if (($thiz.sci_NewVectorIterator__f_sliceDim > 1)) {
+    const io = ((pos - $thiz.sci_NewVectorIterator__f_sliceStart) | 0);
+    const xor = ($thiz.sci_NewVectorIterator__f_oldPos ^ io);
+    $p_sci_NewVectorIterator__advanceA__I__I__V($thiz, io, xor);
+    $thiz.sci_NewVectorIterator__f_oldPos = io
+  };
+  $thiz.sci_NewVectorIterator__f_scala$collection$immutable$NewVectorIterator$$len1 = (($thiz.sci_NewVectorIterator__f_scala$collection$immutable$NewVectorIterator$$len1 - $thiz.sci_NewVectorIterator__f_scala$collection$immutable$NewVectorIterator$$i1) | 0);
+  const a = $thiz.sci_NewVectorIterator__f_a1.u.length;
+  const b = $thiz.sci_NewVectorIterator__f_scala$collection$immutable$NewVectorIterator$$len1;
+  $thiz.sci_NewVectorIterator__f_a1len = ((a < b) ? a : b);
+  $thiz.sci_NewVectorIterator__f_scala$collection$immutable$NewVectorIterator$$i1 = 0
+});
+const $p_sci_NewVectorIterator__advanceA__I__I__V = (function($thiz, io, xor) {
+  if ((xor < 1024)) {
+    $thiz.sci_NewVectorIterator__f_a1 = $thiz.sci_NewVectorIterator__f_a2.get((31 & ((io >>> 5) | 0)))
+  } else if ((xor < 32768)) {
+    $thiz.sci_NewVectorIterator__f_a2 = $thiz.sci_NewVectorIterator__f_a3.get((31 & ((io >>> 10) | 0)));
+    $thiz.sci_NewVectorIterator__f_a1 = $thiz.sci_NewVectorIterator__f_a2.get(0)
+  } else if ((xor < 1048576)) {
+    $thiz.sci_NewVectorIterator__f_a3 = $thiz.sci_NewVectorIterator__f_a4.get((31 & ((io >>> 15) | 0)));
+    $thiz.sci_NewVectorIterator__f_a2 = $thiz.sci_NewVectorIterator__f_a3.get(0);
+    $thiz.sci_NewVectorIterator__f_a1 = $thiz.sci_NewVectorIterator__f_a2.get(0)
+  } else if ((xor < 33554432)) {
+    $thiz.sci_NewVectorIterator__f_a4 = $thiz.sci_NewVectorIterator__f_a5.get((31 & ((io >>> 20) | 0)));
+    $thiz.sci_NewVectorIterator__f_a3 = $thiz.sci_NewVectorIterator__f_a4.get(0);
+    $thiz.sci_NewVectorIterator__f_a2 = $thiz.sci_NewVectorIterator__f_a3.get(0);
+    $thiz.sci_NewVectorIterator__f_a1 = $thiz.sci_NewVectorIterator__f_a2.get(0)
+  } else {
+    $thiz.sci_NewVectorIterator__f_a5 = $thiz.sci_NewVectorIterator__f_a6.get(((io >>> 25) | 0));
+    $thiz.sci_NewVectorIterator__f_a4 = $thiz.sci_NewVectorIterator__f_a5.get(0);
+    $thiz.sci_NewVectorIterator__f_a3 = $thiz.sci_NewVectorIterator__f_a4.get(0);
+    $thiz.sci_NewVectorIterator__f_a2 = $thiz.sci_NewVectorIterator__f_a3.get(0);
+    $thiz.sci_NewVectorIterator__f_a1 = $thiz.sci_NewVectorIterator__f_a2.get(0)
+  }
+});
+const $p_sci_NewVectorIterator__setA__I__I__V = (function($thiz, io, xor) {
+  if ((xor < 1024)) {
+    $thiz.sci_NewVectorIterator__f_a1 = $thiz.sci_NewVectorIterator__f_a2.get((31 & ((io >>> 5) | 0)))
+  } else if ((xor < 32768)) {
+    $thiz.sci_NewVectorIterator__f_a2 = $thiz.sci_NewVectorIterator__f_a3.get((31 & ((io >>> 10) | 0)));
+    $thiz.sci_NewVectorIterator__f_a1 = $thiz.sci_NewVectorIterator__f_a2.get((31 & ((io >>> 5) | 0)))
+  } else if ((xor < 1048576)) {
+    $thiz.sci_NewVectorIterator__f_a3 = $thiz.sci_NewVectorIterator__f_a4.get((31 & ((io >>> 15) | 0)));
+    $thiz.sci_NewVectorIterator__f_a2 = $thiz.sci_NewVectorIterator__f_a3.get((31 & ((io >>> 10) | 0)));
+    $thiz.sci_NewVectorIterator__f_a1 = $thiz.sci_NewVectorIterator__f_a2.get((31 & ((io >>> 5) | 0)))
+  } else if ((xor < 33554432)) {
+    $thiz.sci_NewVectorIterator__f_a4 = $thiz.sci_NewVectorIterator__f_a5.get((31 & ((io >>> 20) | 0)));
+    $thiz.sci_NewVectorIterator__f_a3 = $thiz.sci_NewVectorIterator__f_a4.get((31 & ((io >>> 15) | 0)));
+    $thiz.sci_NewVectorIterator__f_a2 = $thiz.sci_NewVectorIterator__f_a3.get((31 & ((io >>> 10) | 0)));
+    $thiz.sci_NewVectorIterator__f_a1 = $thiz.sci_NewVectorIterator__f_a2.get((31 & ((io >>> 5) | 0)))
+  } else {
+    $thiz.sci_NewVectorIterator__f_a5 = $thiz.sci_NewVectorIterator__f_a6.get(((io >>> 25) | 0));
+    $thiz.sci_NewVectorIterator__f_a4 = $thiz.sci_NewVectorIterator__f_a5.get((31 & ((io >>> 20) | 0)));
+    $thiz.sci_NewVectorIterator__f_a3 = $thiz.sci_NewVectorIterator__f_a4.get((31 & ((io >>> 15) | 0)));
+    $thiz.sci_NewVectorIterator__f_a2 = $thiz.sci_NewVectorIterator__f_a3.get((31 & ((io >>> 10) | 0)));
+    $thiz.sci_NewVectorIterator__f_a1 = $thiz.sci_NewVectorIterator__f_a2.get((31 & ((io >>> 5) | 0)))
+  }
+});
+class $c_sci_NewVectorIterator extends $c_O {
+  constructor(v, totalLength, sliceCount) {
+    super();
+    this.sci_NewVectorIterator__f_v = null;
+    this.sci_NewVectorIterator__f_totalLength = 0;
+    this.sci_NewVectorIterator__f_sliceCount = 0;
+    this.sci_NewVectorIterator__f_a1 = null;
+    this.sci_NewVectorIterator__f_a2 = null;
+    this.sci_NewVectorIterator__f_a3 = null;
+    this.sci_NewVectorIterator__f_a4 = null;
+    this.sci_NewVectorIterator__f_a5 = null;
+    this.sci_NewVectorIterator__f_a6 = null;
+    this.sci_NewVectorIterator__f_a1len = 0;
+    this.sci_NewVectorIterator__f_scala$collection$immutable$NewVectorIterator$$i1 = 0;
+    this.sci_NewVectorIterator__f_oldPos = 0;
+    this.sci_NewVectorIterator__f_scala$collection$immutable$NewVectorIterator$$len1 = 0;
+    this.sci_NewVectorIterator__f_sliceIdx = 0;
+    this.sci_NewVectorIterator__f_sliceDim = 0;
+    this.sci_NewVectorIterator__f_sliceStart = 0;
+    this.sci_NewVectorIterator__f_sliceEnd = 0;
+    this.sci_NewVectorIterator__f_v = v;
+    this.sci_NewVectorIterator__f_totalLength = totalLength;
+    this.sci_NewVectorIterator__f_sliceCount = sliceCount;
+    this.sci_NewVectorIterator__f_a1 = v.sci_Vector__f_prefix1;
+    this.sci_NewVectorIterator__f_a1len = this.sci_NewVectorIterator__f_a1.u.length;
+    this.sci_NewVectorIterator__f_scala$collection$immutable$NewVectorIterator$$i1 = 0;
+    this.sci_NewVectorIterator__f_oldPos = 0;
+    this.sci_NewVectorIterator__f_scala$collection$immutable$NewVectorIterator$$len1 = this.sci_NewVectorIterator__f_totalLength;
+    this.sci_NewVectorIterator__f_sliceIdx = 0;
+    this.sci_NewVectorIterator__f_sliceDim = 1;
+    this.sci_NewVectorIterator__f_sliceStart = 0;
+    this.sci_NewVectorIterator__f_sliceEnd = this.sci_NewVectorIterator__f_a1len
+  };
+  iterator__sc_Iterator() {
+    return this
+  };
+  isEmpty__Z() {
+    return (this.sci_NewVectorIterator__f_scala$collection$immutable$NewVectorIterator$$len1 <= this.sci_NewVectorIterator__f_scala$collection$immutable$NewVectorIterator$$i1)
+  };
+  concat__F0__sc_Iterator(xs) {
+    return $f_sc_Iterator__concat__F0__sc_Iterator(this, xs)
+  };
+  toString__T() {
+    return "<iterator>"
+  };
+  copyToArray__O__I__I(xs, start) {
+    return $f_sc_IterableOnceOps__copyToArray__O__I__I(this, xs, start)
+  };
+  addString__scm_StringBuilder__T__T__T__scm_StringBuilder(b, start, sep, end) {
+    return $f_sc_IterableOnceOps__addString__scm_StringBuilder__T__T__T__scm_StringBuilder(this, b, start, sep, end)
+  };
+  toArray__s_reflect_ClassTag__O(evidence$2) {
+    return $f_sc_IterableOnceOps__toArray__s_reflect_ClassTag__O(this, evidence$2)
+  };
+  knownSize__I() {
+    return ((this.sci_NewVectorIterator__f_scala$collection$immutable$NewVectorIterator$$len1 - this.sci_NewVectorIterator__f_scala$collection$immutable$NewVectorIterator$$i1) | 0)
+  };
+  hasNext__Z() {
+    return (this.sci_NewVectorIterator__f_scala$collection$immutable$NewVectorIterator$$len1 > this.sci_NewVectorIterator__f_scala$collection$immutable$NewVectorIterator$$i1)
+  };
+  next__O() {
+    if ((this.sci_NewVectorIterator__f_scala$collection$immutable$NewVectorIterator$$i1 === this.sci_NewVectorIterator__f_a1len)) {
+      $p_sci_NewVectorIterator__advance__V(this)
+    };
+    const r = this.sci_NewVectorIterator__f_a1.get(this.sci_NewVectorIterator__f_scala$collection$immutable$NewVectorIterator$$i1);
+    this.sci_NewVectorIterator__f_scala$collection$immutable$NewVectorIterator$$i1 = ((1 + this.sci_NewVectorIterator__f_scala$collection$immutable$NewVectorIterator$$i1) | 0);
+    return r
+  };
+  drop__I__sc_Iterator(n) {
+    if ((n > 0)) {
+      const oldpos = ((((this.sci_NewVectorIterator__f_scala$collection$immutable$NewVectorIterator$$i1 - this.sci_NewVectorIterator__f_scala$collection$immutable$NewVectorIterator$$len1) | 0) + this.sci_NewVectorIterator__f_totalLength) | 0);
+      const a = ((oldpos + n) | 0);
+      const b = this.sci_NewVectorIterator__f_totalLength;
+      const newpos = ((a < b) ? a : b);
+      if ((newpos === this.sci_NewVectorIterator__f_totalLength)) {
+        this.sci_NewVectorIterator__f_scala$collection$immutable$NewVectorIterator$$i1 = 0;
+        this.sci_NewVectorIterator__f_scala$collection$immutable$NewVectorIterator$$len1 = 0;
+        this.sci_NewVectorIterator__f_a1len = 0
+      } else {
+        while ((newpos >= this.sci_NewVectorIterator__f_sliceEnd)) {
+          $p_sci_NewVectorIterator__advanceSlice__V(this)
+        };
+        const io = ((newpos - this.sci_NewVectorIterator__f_sliceStart) | 0);
+        if ((this.sci_NewVectorIterator__f_sliceDim > 1)) {
+          const xor = (this.sci_NewVectorIterator__f_oldPos ^ io);
+          $p_sci_NewVectorIterator__setA__I__I__V(this, io, xor);
+          this.sci_NewVectorIterator__f_oldPos = io
+        };
+        this.sci_NewVectorIterator__f_a1len = this.sci_NewVectorIterator__f_a1.u.length;
+        this.sci_NewVectorIterator__f_scala$collection$immutable$NewVectorIterator$$i1 = (31 & io);
+        this.sci_NewVectorIterator__f_scala$collection$immutable$NewVectorIterator$$len1 = ((this.sci_NewVectorIterator__f_scala$collection$immutable$NewVectorIterator$$i1 + ((this.sci_NewVectorIterator__f_totalLength - newpos) | 0)) | 0);
+        if ((this.sci_NewVectorIterator__f_a1len > this.sci_NewVectorIterator__f_scala$collection$immutable$NewVectorIterator$$len1)) {
+          this.sci_NewVectorIterator__f_a1len = this.sci_NewVectorIterator__f_scala$collection$immutable$NewVectorIterator$$len1
+        }
+      }
+    };
+    return this
+  };
+}
+const $d_sci_NewVectorIterator = new $TypeData().initClass({
+  sci_NewVectorIterator: 0
+}, false, "scala.collection.immutable.NewVectorIterator", {
+  sci_NewVectorIterator: 1,
+  O: 1,
+  sc_Iterator: 1,
+  sc_IterableOnce: 1,
+  sc_IterableOnceOps: 1,
+  jl_Cloneable: 1
+});
+$c_sci_NewVectorIterator.prototype.$classData = $d_sci_NewVectorIterator;
 class $c_sci_Seq$ extends $c_sc_SeqFactory$Delegate {
   constructor() {
     super();
@@ -25831,9 +26041,6 @@ class $c_sci_SetHashIterator extends $c_sci_ChampBaseIterator {
   copyToArray__O__I__I(xs, start) {
     return $f_sc_IterableOnceOps__copyToArray__O__I__I(this, xs, start)
   };
-  copyToArray__O__I__I__I(xs, start, len) {
-    return $f_sc_IterableOnceOps__copyToArray__O__I__I__I(this, xs, start, len)
-  };
   addString__scm_StringBuilder__T__T__T__scm_StringBuilder(b, start, sep, end) {
     return $f_sc_IterableOnceOps__addString__scm_StringBuilder__T__T__T__scm_StringBuilder(this, b, start, sep, end)
   };
@@ -25889,9 +26096,6 @@ class $c_sci_SetIterator extends $c_sci_ChampBaseIterator {
   copyToArray__O__I__I(xs, start) {
     return $f_sc_IterableOnceOps__copyToArray__O__I__I(this, xs, start)
   };
-  copyToArray__O__I__I__I(xs, start, len) {
-    return $f_sc_IterableOnceOps__copyToArray__O__I__I__I(this, xs, start, len)
-  };
   addString__scm_StringBuilder__T__T__T__scm_StringBuilder(b, start, sep, end) {
     return $f_sc_IterableOnceOps__addString__scm_StringBuilder__T__T__T__scm_StringBuilder(this, b, start, sep, end)
   };
@@ -25923,12 +26127,12 @@ const $d_sci_SetIterator = new $TypeData().initClass({
 $c_sci_SetIterator.prototype.$classData = $d_sci_SetIterator;
 const $p_sci_Vector$__liftedTree1$1__I = (function($thiz) {
   try {
-    const x = $m_jl_System$SystemProperties$().getProperty__T__T__T("scala.collection.immutable.Vector.defaultApplyPreferredMaxLength", "1024");
+    const x = $m_jl_System$SystemProperties$().getProperty__T__T__T("scala.collection.immutable.Vector.defaultApplyPreferredMaxLength", "250");
     const this$4 = $m_jl_Integer$();
     return this$4.parseInt__T__I__I(x, 10)
   } catch (e) {
     if ((e instanceof $c_jl_SecurityException)) {
-      return 1024
+      return 250
     } else {
       throw e
     }
@@ -25937,67 +26141,53 @@ const $p_sci_Vector$__liftedTree1$1__I = (function($thiz) {
 class $c_sci_Vector$ extends $c_O {
   constructor() {
     super();
-    this.sci_Vector$__f_NIL = null;
     this.sci_Vector$__f_scala$collection$immutable$Vector$$defaultApplyPreferredMaxLength = 0;
+    this.sci_Vector$__f_scala$collection$immutable$Vector$$emptyIterator = null;
     $n_sci_Vector$ = this;
-    this.sci_Vector$__f_NIL = new $c_sci_Vector(0, 0, 0);
-    this.sci_Vector$__f_scala$collection$immutable$Vector$$defaultApplyPreferredMaxLength = $p_sci_Vector$__liftedTree1$1__I(this)
+    this.sci_Vector$__f_scala$collection$immutable$Vector$$defaultApplyPreferredMaxLength = $p_sci_Vector$__liftedTree1$1__I(this);
+    this.sci_Vector$__f_scala$collection$immutable$Vector$$emptyIterator = new $c_sci_NewVectorIterator($m_sci_Vector0$(), 0, 0)
   };
   apply__sci_Seq__O(elems) {
     return this.from__sc_IterableOnce__sci_Vector(elems)
   };
   from__sc_IterableOnce__sci_Vector(it) {
-    if ((it instanceof $c_sci_ArraySeq)) {
-      const x2 = $as_sci_ArraySeq(it);
-      if ((x2.length__I() <= 32)) {
-        if ($f_sc_SeqOps__isEmpty__Z(x2)) {
-          return this.sci_Vector$__f_NIL
-        } else {
-          const unsafeArray = x2.unsafeArray__O();
-          const len = $m_sr_ScalaRunTime$().array_length__O__I(unsafeArray);
-          const v = new $c_sci_Vector(0, len, 0);
-          const display0 = $newArrayObject($d_O.getArrayOf(), [len]);
-          if ($isArrayOf_O(unsafeArray, 1)) {
-            $systemArraycopy(unsafeArray, 0, display0, 0, len)
-          } else {
-            let i = 0;
-            while ((i < len)) {
-              display0.set(i, $m_sr_ScalaRunTime$().array_apply__O__I__O(unsafeArray, i));
-              i = ((1 + i) | 0)
+    if ((it instanceof $c_sci_Vector)) {
+      const x2 = $as_sci_Vector(it);
+      return x2
+    } else {
+      const knownSize = it.knownSize__I();
+      if ((knownSize === 0)) {
+        return $m_sci_Vector0$()
+      } else if (((knownSize > 0) && (knownSize <= 32))) {
+        let a1$3;
+        matchEnd5: {
+          if ((it instanceof $c_sci_ArraySeq$ofRef)) {
+            const x2$2 = $as_sci_ArraySeq$ofRef(it);
+            const x = x2$2.elemTag__s_reflect_ClassTag();
+            if (((x !== null) && x.equals__O__Z($d_O.getClassOf()))) {
+              a1$3 = x2$2.sci_ArraySeq$ofRef__f_unsafeArray;
+              break matchEnd5
             }
           };
-          v.sci_Vector__f_display0 = display0;
-          v.sci_Vector__f_depth = 1;
-          return v
-        }
+          if ($is_sci_Iterable(it)) {
+            const x3 = $as_sci_Iterable(it);
+            const a1 = $newArrayObject($d_O.getArrayOf(), [knownSize]);
+            x3.copyToArray__O__I__I(a1, 0);
+            a1$3 = a1;
+            break matchEnd5
+          };
+          const a1$2 = $newArrayObject($d_O.getArrayOf(), [knownSize]);
+          const this$1 = it.iterator__sc_Iterator();
+          $f_sc_IterableOnceOps__copyToArray__O__I__I(this$1, a1$2, 0);
+          a1$3 = a1$2
+        };
+        return new $c_sci_Vector1(a1$3)
+      } else {
+        const this$2 = new $c_sci_VectorBuilder();
+        const this$3 = this$2.addAll__sc_IterableOnce__sci_VectorBuilder(it);
+        return this$3.result__sci_Vector()
       }
-    };
-    if ((it instanceof $c_sci_Vector)) {
-      const x3 = $as_sci_Vector(it);
-      return x3
-    };
-    const knownSize = it.knownSize__I();
-    if ((knownSize === 0)) {
-      return this.sci_Vector$__f_NIL
-    } else if (((knownSize > 0) && (knownSize <= 32))) {
-      const display0$2 = $newArrayObject($d_O.getArrayOf(), [knownSize]);
-      const this$1 = it.iterator__sc_Iterator();
-      $f_sc_IterableOnceOps__copyToArray__O__I__I(this$1, display0$2, 0);
-      const v$2 = new $c_sci_Vector(0, knownSize, 0);
-      v$2.sci_Vector__f_depth = 1;
-      v$2.sci_Vector__f_display0 = display0$2;
-      return v$2
-    } else {
-      const this$2 = new $c_sci_VectorBuilder();
-      const this$3 = this$2.addAll__sc_IterableOnce__sci_VectorBuilder(it);
-      return this$3.result__sci_Vector()
     }
-  };
-  scala$collection$immutable$Vector$$single__O__sci_Vector(elem) {
-    const s = new $c_sci_Vector(0, 1, 0);
-    s.sci_Vector__f_depth = 1;
-    s.sci_Vector__f_display0 = $makeNativeArrayWrapper($d_O.getArrayOf(), [elem]);
-    return s
   };
   tabulate__I__F1__O(n, f) {
     return $f_sc_StrictOptimizedSeqFactory__tabulate__I__F1__sc_SeqOps(this, n, f)
@@ -26027,6 +26217,487 @@ function $m_sci_Vector$() {
   };
   return $n_sci_Vector$
 }
+const $p_sci_VectorBuilder__addArr1__AO__V = (function($thiz, data) {
+  const dl = data.u.length;
+  if ((dl > 0)) {
+    if (($thiz.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$len1 === 32)) {
+      $p_sci_VectorBuilder__advance__V($thiz)
+    };
+    const a = ((32 - $thiz.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$len1) | 0);
+    const copy1 = ((a < dl) ? a : dl);
+    const copy2 = ((dl - copy1) | 0);
+    const dest = $thiz.sci_VectorBuilder__f_a1;
+    const destPos = $thiz.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$len1;
+    $systemArraycopy(data, 0, dest, destPos, copy1);
+    $thiz.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$len1 = (($thiz.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$len1 + copy1) | 0);
+    if ((copy2 > 0)) {
+      $p_sci_VectorBuilder__advance__V($thiz);
+      const dest$1 = $thiz.sci_VectorBuilder__f_a1;
+      $systemArraycopy(data, copy1, dest$1, 0, copy2);
+      $thiz.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$len1 = (($thiz.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$len1 + copy2) | 0)
+    }
+  }
+});
+const $p_sci_VectorBuilder__addVector__sci_Vector__sci_VectorBuilder = (function($thiz, xs) {
+  const sliceCount = xs.vectorSliceCount__I();
+  let sliceIdx = 0;
+  while ((sliceIdx < sliceCount)) {
+    const slice = xs.vectorSlice__I__AO(sliceIdx);
+    const idx = sliceIdx;
+    const c = ((sliceCount / 2) | 0);
+    const a = ((idx - c) | 0);
+    const x1 = ((((1 + c) | 0) - ((a < 0) ? ((-a) | 0) : a)) | 0);
+    if ((x1 === 1)) {
+      $p_sci_VectorBuilder__addArr1__AO__V($thiz, slice)
+    } else {
+      $m_sci_VectorStatics$().foreachRec__I__AO__F1__V((((-2) + x1) | 0), slice, new $c_sjsr_AnonFunction1(((this$3) => ((data$2) => {
+        const data = $asArrayOf_O(data$2, 1);
+        $p_sci_VectorBuilder__addArr1__AO__V(this$3, data)
+      }))($thiz)))
+    };
+    sliceIdx = ((1 + sliceIdx) | 0)
+  };
+  return $thiz
+});
+const $p_sci_VectorBuilder__advance__V = (function($thiz) {
+  const idx = ((32 + $thiz.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$lenRest) | 0);
+  const xor = (idx ^ $thiz.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$lenRest);
+  $thiz.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$lenRest = idx;
+  $thiz.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$len1 = 0;
+  $p_sci_VectorBuilder__advance1__I__I__V($thiz, idx, xor)
+});
+const $p_sci_VectorBuilder__advance1__I__I__V = (function($thiz, idx, xor) {
+  if ((xor < 1024)) {
+    if (($thiz.sci_VectorBuilder__f_depth === 1)) {
+      $thiz.sci_VectorBuilder__f_a2 = $newArrayObject($d_O.getArrayOf().getArrayOf(), [32]);
+      $thiz.sci_VectorBuilder__f_a2.set(0, $thiz.sci_VectorBuilder__f_a1);
+      $thiz.sci_VectorBuilder__f_depth = ((1 + $thiz.sci_VectorBuilder__f_depth) | 0)
+    };
+    $thiz.sci_VectorBuilder__f_a1 = $newArrayObject($d_O.getArrayOf(), [32]);
+    $thiz.sci_VectorBuilder__f_a2.set((31 & ((idx >>> 5) | 0)), $thiz.sci_VectorBuilder__f_a1)
+  } else if ((xor < 32768)) {
+    if (($thiz.sci_VectorBuilder__f_depth === 2)) {
+      $thiz.sci_VectorBuilder__f_a3 = $newArrayObject($d_O.getArrayOf().getArrayOf().getArrayOf(), [32]);
+      $thiz.sci_VectorBuilder__f_a3.set(0, $thiz.sci_VectorBuilder__f_a2);
+      $thiz.sci_VectorBuilder__f_depth = ((1 + $thiz.sci_VectorBuilder__f_depth) | 0)
+    };
+    $thiz.sci_VectorBuilder__f_a1 = $newArrayObject($d_O.getArrayOf(), [32]);
+    $thiz.sci_VectorBuilder__f_a2 = $newArrayObject($d_O.getArrayOf().getArrayOf(), [32]);
+    $thiz.sci_VectorBuilder__f_a2.set((31 & ((idx >>> 5) | 0)), $thiz.sci_VectorBuilder__f_a1);
+    $thiz.sci_VectorBuilder__f_a3.set((31 & ((idx >>> 10) | 0)), $thiz.sci_VectorBuilder__f_a2)
+  } else if ((xor < 1048576)) {
+    if (($thiz.sci_VectorBuilder__f_depth === 3)) {
+      $thiz.sci_VectorBuilder__f_a4 = $newArrayObject($d_O.getArrayOf().getArrayOf().getArrayOf().getArrayOf(), [32]);
+      $thiz.sci_VectorBuilder__f_a4.set(0, $thiz.sci_VectorBuilder__f_a3);
+      $thiz.sci_VectorBuilder__f_depth = ((1 + $thiz.sci_VectorBuilder__f_depth) | 0)
+    };
+    $thiz.sci_VectorBuilder__f_a1 = $newArrayObject($d_O.getArrayOf(), [32]);
+    $thiz.sci_VectorBuilder__f_a2 = $newArrayObject($d_O.getArrayOf().getArrayOf(), [32]);
+    $thiz.sci_VectorBuilder__f_a3 = $newArrayObject($d_O.getArrayOf().getArrayOf().getArrayOf(), [32]);
+    $thiz.sci_VectorBuilder__f_a2.set((31 & ((idx >>> 5) | 0)), $thiz.sci_VectorBuilder__f_a1);
+    $thiz.sci_VectorBuilder__f_a3.set((31 & ((idx >>> 10) | 0)), $thiz.sci_VectorBuilder__f_a2);
+    $thiz.sci_VectorBuilder__f_a4.set((31 & ((idx >>> 15) | 0)), $thiz.sci_VectorBuilder__f_a3)
+  } else if ((xor < 33554432)) {
+    if (($thiz.sci_VectorBuilder__f_depth === 4)) {
+      $thiz.sci_VectorBuilder__f_a5 = $newArrayObject($d_O.getArrayOf().getArrayOf().getArrayOf().getArrayOf().getArrayOf(), [32]);
+      $thiz.sci_VectorBuilder__f_a5.set(0, $thiz.sci_VectorBuilder__f_a4);
+      $thiz.sci_VectorBuilder__f_depth = ((1 + $thiz.sci_VectorBuilder__f_depth) | 0)
+    };
+    $thiz.sci_VectorBuilder__f_a1 = $newArrayObject($d_O.getArrayOf(), [32]);
+    $thiz.sci_VectorBuilder__f_a2 = $newArrayObject($d_O.getArrayOf().getArrayOf(), [32]);
+    $thiz.sci_VectorBuilder__f_a3 = $newArrayObject($d_O.getArrayOf().getArrayOf().getArrayOf(), [32]);
+    $thiz.sci_VectorBuilder__f_a4 = $newArrayObject($d_O.getArrayOf().getArrayOf().getArrayOf().getArrayOf(), [32]);
+    $thiz.sci_VectorBuilder__f_a2.set((31 & ((idx >>> 5) | 0)), $thiz.sci_VectorBuilder__f_a1);
+    $thiz.sci_VectorBuilder__f_a3.set((31 & ((idx >>> 10) | 0)), $thiz.sci_VectorBuilder__f_a2);
+    $thiz.sci_VectorBuilder__f_a4.set((31 & ((idx >>> 15) | 0)), $thiz.sci_VectorBuilder__f_a3);
+    $thiz.sci_VectorBuilder__f_a5.set((31 & ((idx >>> 20) | 0)), $thiz.sci_VectorBuilder__f_a4)
+  } else if ((xor < 1073741824)) {
+    if (($thiz.sci_VectorBuilder__f_depth === 5)) {
+      $thiz.sci_VectorBuilder__f_a6 = $newArrayObject($d_O.getArrayOf().getArrayOf().getArrayOf().getArrayOf().getArrayOf().getArrayOf(), [64]);
+      $thiz.sci_VectorBuilder__f_a6.set(0, $thiz.sci_VectorBuilder__f_a5);
+      $thiz.sci_VectorBuilder__f_depth = ((1 + $thiz.sci_VectorBuilder__f_depth) | 0)
+    };
+    $thiz.sci_VectorBuilder__f_a1 = $newArrayObject($d_O.getArrayOf(), [32]);
+    $thiz.sci_VectorBuilder__f_a2 = $newArrayObject($d_O.getArrayOf().getArrayOf(), [32]);
+    $thiz.sci_VectorBuilder__f_a3 = $newArrayObject($d_O.getArrayOf().getArrayOf().getArrayOf(), [32]);
+    $thiz.sci_VectorBuilder__f_a4 = $newArrayObject($d_O.getArrayOf().getArrayOf().getArrayOf().getArrayOf(), [32]);
+    $thiz.sci_VectorBuilder__f_a5 = $newArrayObject($d_O.getArrayOf().getArrayOf().getArrayOf().getArrayOf().getArrayOf(), [32]);
+    $thiz.sci_VectorBuilder__f_a2.set((31 & ((idx >>> 5) | 0)), $thiz.sci_VectorBuilder__f_a1);
+    $thiz.sci_VectorBuilder__f_a3.set((31 & ((idx >>> 10) | 0)), $thiz.sci_VectorBuilder__f_a2);
+    $thiz.sci_VectorBuilder__f_a4.set((31 & ((idx >>> 15) | 0)), $thiz.sci_VectorBuilder__f_a3);
+    $thiz.sci_VectorBuilder__f_a5.set((31 & ((idx >>> 20) | 0)), $thiz.sci_VectorBuilder__f_a4);
+    $thiz.sci_VectorBuilder__f_a6.set((31 & ((idx >>> 25) | 0)), $thiz.sci_VectorBuilder__f_a5)
+  } else {
+    throw $ct_jl_IllegalArgumentException__T__(new $c_jl_IllegalArgumentException(), ((((((((((((((((("advance1(" + idx) + ", ") + xor) + "): a1=") + $thiz.sci_VectorBuilder__f_a1) + ", a2=") + $thiz.sci_VectorBuilder__f_a2) + ", a3=") + $thiz.sci_VectorBuilder__f_a3) + ", a4=") + $thiz.sci_VectorBuilder__f_a4) + ", a5=") + $thiz.sci_VectorBuilder__f_a5) + ", a6=") + $thiz.sci_VectorBuilder__f_a6) + ", depth=") + $thiz.sci_VectorBuilder__f_depth))
+  }
+});
+class $c_sci_VectorBuilder extends $c_O {
+  constructor() {
+    super();
+    this.sci_VectorBuilder__f_a6 = null;
+    this.sci_VectorBuilder__f_a5 = null;
+    this.sci_VectorBuilder__f_a4 = null;
+    this.sci_VectorBuilder__f_a3 = null;
+    this.sci_VectorBuilder__f_a2 = null;
+    this.sci_VectorBuilder__f_a1 = null;
+    this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$len1 = 0;
+    this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$lenRest = 0;
+    this.sci_VectorBuilder__f_offset = 0;
+    this.sci_VectorBuilder__f_depth = 0;
+    this.sci_VectorBuilder__f_a1 = $newArrayObject($d_O.getArrayOf(), [32]);
+    this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$len1 = 0;
+    this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$lenRest = 0;
+    this.sci_VectorBuilder__f_offset = 0;
+    this.sci_VectorBuilder__f_depth = 1
+  };
+  sizeHint__I__V(size) {
+    /*<skip>*/
+  };
+  initFrom__AO__V(prefix1) {
+    this.sci_VectorBuilder__f_depth = 1;
+    const i = prefix1.u.length;
+    this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$len1 = (31 & i);
+    this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$lenRest = ((i - this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$len1) | 0);
+    this.sci_VectorBuilder__f_a1 = ((prefix1.u.length === 32) ? prefix1 : $m_ju_Arrays$().copyOfRange__AO__I__I__AO(prefix1, 0, 32));
+    if (((this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$len1 === 0) && (this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$lenRest > 0))) {
+      this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$len1 = 32;
+      this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$lenRest = (((-32) + this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$lenRest) | 0)
+    }
+  };
+  initFrom__sci_Vector__sci_VectorBuilder(v) {
+    const x1 = v.vectorSliceCount__I();
+    switch (x1) {
+      case 0: {
+        break
+      }
+      case 1: {
+        const v1 = $as_sci_Vector1(v);
+        this.sci_VectorBuilder__f_depth = 1;
+        const i = v1.sci_Vector__f_prefix1.u.length;
+        this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$len1 = (31 & i);
+        this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$lenRest = ((i - this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$len1) | 0);
+        const a = v1.sci_Vector__f_prefix1;
+        this.sci_VectorBuilder__f_a1 = ((a.u.length === 32) ? a : $m_ju_Arrays$().copyOfRange__AO__I__I__AO(a, 0, 32));
+        break
+      }
+      case 3: {
+        const v2 = $as_sci_Vector2(v);
+        const d2 = v2.sci_Vector2__f_data2;
+        const a$1 = v2.sci_BigVector__f_suffix1;
+        this.sci_VectorBuilder__f_a1 = ((a$1.u.length === 32) ? a$1 : $m_ju_Arrays$().copyOfRange__AO__I__I__AO(a$1, 0, 32));
+        this.sci_VectorBuilder__f_depth = 2;
+        this.sci_VectorBuilder__f_offset = ((32 - v2.sci_Vector2__f_len1) | 0);
+        const i$1 = ((v2.sci_BigVector__f_length0 + this.sci_VectorBuilder__f_offset) | 0);
+        this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$len1 = (31 & i$1);
+        this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$lenRest = ((i$1 - this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$len1) | 0);
+        this.sci_VectorBuilder__f_a2 = $newArrayObject($d_O.getArrayOf().getArrayOf(), [32]);
+        this.sci_VectorBuilder__f_a2.set(0, v2.sci_Vector__f_prefix1);
+        const dest = this.sci_VectorBuilder__f_a2;
+        const length = d2.u.length;
+        $systemArraycopy(d2, 0, dest, 1, length);
+        this.sci_VectorBuilder__f_a2.set(((1 + d2.u.length) | 0), this.sci_VectorBuilder__f_a1);
+        break
+      }
+      case 5: {
+        const v3 = $as_sci_Vector3(v);
+        const d3 = v3.sci_Vector3__f_data3;
+        const s2 = v3.sci_Vector3__f_suffix2;
+        const a$2 = v3.sci_BigVector__f_suffix1;
+        this.sci_VectorBuilder__f_a1 = ((a$2.u.length === 32) ? a$2 : $m_ju_Arrays$().copyOfRange__AO__I__I__AO(a$2, 0, 32));
+        this.sci_VectorBuilder__f_depth = 3;
+        this.sci_VectorBuilder__f_offset = ((1024 - v3.sci_Vector3__f_len12) | 0);
+        const i$2 = ((v3.sci_BigVector__f_length0 + this.sci_VectorBuilder__f_offset) | 0);
+        this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$len1 = (31 & i$2);
+        this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$lenRest = ((i$2 - this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$len1) | 0);
+        this.sci_VectorBuilder__f_a3 = $newArrayObject($d_O.getArrayOf().getArrayOf().getArrayOf(), [32]);
+        this.sci_VectorBuilder__f_a3.set(0, $asArrayOf_O($m_sci_VectorStatics$().copyPrepend__O__AO__AO(v3.sci_Vector__f_prefix1, v3.sci_Vector3__f_prefix2), 2));
+        const dest$1 = this.sci_VectorBuilder__f_a3;
+        const length$1 = d3.u.length;
+        $systemArraycopy(d3, 0, dest$1, 1, length$1);
+        this.sci_VectorBuilder__f_a2 = $asArrayOf_O($m_ju_Arrays$().copyOf__AO__I__AO(s2, 32), 2);
+        this.sci_VectorBuilder__f_a3.set(((1 + d3.u.length) | 0), this.sci_VectorBuilder__f_a2);
+        this.sci_VectorBuilder__f_a2.set(s2.u.length, this.sci_VectorBuilder__f_a1);
+        break
+      }
+      case 7: {
+        const v4 = $as_sci_Vector4(v);
+        const d4 = v4.sci_Vector4__f_data4;
+        const s3 = v4.sci_Vector4__f_suffix3;
+        const s2$2 = v4.sci_Vector4__f_suffix2;
+        const a$3 = v4.sci_BigVector__f_suffix1;
+        this.sci_VectorBuilder__f_a1 = ((a$3.u.length === 32) ? a$3 : $m_ju_Arrays$().copyOfRange__AO__I__I__AO(a$3, 0, 32));
+        this.sci_VectorBuilder__f_depth = 4;
+        this.sci_VectorBuilder__f_offset = ((32768 - v4.sci_Vector4__f_len123) | 0);
+        const i$3 = ((v4.sci_BigVector__f_length0 + this.sci_VectorBuilder__f_offset) | 0);
+        this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$len1 = (31 & i$3);
+        this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$lenRest = ((i$3 - this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$len1) | 0);
+        this.sci_VectorBuilder__f_a4 = $newArrayObject($d_O.getArrayOf().getArrayOf().getArrayOf().getArrayOf(), [32]);
+        this.sci_VectorBuilder__f_a4.set(0, $asArrayOf_O($m_sci_VectorStatics$().copyPrepend__O__AO__AO($m_sci_VectorStatics$().copyPrepend__O__AO__AO(v4.sci_Vector__f_prefix1, v4.sci_Vector4__f_prefix2), v4.sci_Vector4__f_prefix3), 3));
+        const dest$2 = this.sci_VectorBuilder__f_a4;
+        const length$2 = d4.u.length;
+        $systemArraycopy(d4, 0, dest$2, 1, length$2);
+        this.sci_VectorBuilder__f_a3 = $asArrayOf_O($m_ju_Arrays$().copyOf__AO__I__AO(s3, 32), 3);
+        this.sci_VectorBuilder__f_a2 = $asArrayOf_O($m_ju_Arrays$().copyOf__AO__I__AO(s2$2, 32), 2);
+        this.sci_VectorBuilder__f_a4.set(((1 + d4.u.length) | 0), this.sci_VectorBuilder__f_a3);
+        this.sci_VectorBuilder__f_a3.set(s3.u.length, this.sci_VectorBuilder__f_a2);
+        this.sci_VectorBuilder__f_a2.set(s2$2.u.length, this.sci_VectorBuilder__f_a1);
+        break
+      }
+      case 9: {
+        const v5 = $as_sci_Vector5(v);
+        const d5 = v5.sci_Vector5__f_data5;
+        const s4 = v5.sci_Vector5__f_suffix4;
+        const s3$2 = v5.sci_Vector5__f_suffix3;
+        const s2$3 = v5.sci_Vector5__f_suffix2;
+        const a$4 = v5.sci_BigVector__f_suffix1;
+        this.sci_VectorBuilder__f_a1 = ((a$4.u.length === 32) ? a$4 : $m_ju_Arrays$().copyOfRange__AO__I__I__AO(a$4, 0, 32));
+        this.sci_VectorBuilder__f_depth = 5;
+        this.sci_VectorBuilder__f_offset = ((1048576 - v5.sci_Vector5__f_len1234) | 0);
+        const i$4 = ((v5.sci_BigVector__f_length0 + this.sci_VectorBuilder__f_offset) | 0);
+        this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$len1 = (31 & i$4);
+        this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$lenRest = ((i$4 - this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$len1) | 0);
+        this.sci_VectorBuilder__f_a5 = $newArrayObject($d_O.getArrayOf().getArrayOf().getArrayOf().getArrayOf().getArrayOf(), [32]);
+        this.sci_VectorBuilder__f_a5.set(0, $asArrayOf_O($m_sci_VectorStatics$().copyPrepend__O__AO__AO($m_sci_VectorStatics$().copyPrepend__O__AO__AO($m_sci_VectorStatics$().copyPrepend__O__AO__AO(v5.sci_Vector__f_prefix1, v5.sci_Vector5__f_prefix2), v5.sci_Vector5__f_prefix3), v5.sci_Vector5__f_prefix4), 4));
+        const dest$3 = this.sci_VectorBuilder__f_a5;
+        const length$3 = d5.u.length;
+        $systemArraycopy(d5, 0, dest$3, 1, length$3);
+        this.sci_VectorBuilder__f_a4 = $asArrayOf_O($m_ju_Arrays$().copyOf__AO__I__AO(s4, 32), 4);
+        this.sci_VectorBuilder__f_a3 = $asArrayOf_O($m_ju_Arrays$().copyOf__AO__I__AO(s3$2, 32), 3);
+        this.sci_VectorBuilder__f_a2 = $asArrayOf_O($m_ju_Arrays$().copyOf__AO__I__AO(s2$3, 32), 2);
+        this.sci_VectorBuilder__f_a5.set(((1 + d5.u.length) | 0), this.sci_VectorBuilder__f_a4);
+        this.sci_VectorBuilder__f_a4.set(s4.u.length, this.sci_VectorBuilder__f_a3);
+        this.sci_VectorBuilder__f_a3.set(s3$2.u.length, this.sci_VectorBuilder__f_a2);
+        this.sci_VectorBuilder__f_a2.set(s2$3.u.length, this.sci_VectorBuilder__f_a1);
+        break
+      }
+      case 11: {
+        const v6 = $as_sci_Vector6(v);
+        const d6 = v6.sci_Vector6__f_data6;
+        const s5 = v6.sci_Vector6__f_suffix5;
+        const s4$2 = v6.sci_Vector6__f_suffix4;
+        const s3$3 = v6.sci_Vector6__f_suffix3;
+        const s2$4 = v6.sci_Vector6__f_suffix2;
+        const a$5 = v6.sci_BigVector__f_suffix1;
+        this.sci_VectorBuilder__f_a1 = ((a$5.u.length === 32) ? a$5 : $m_ju_Arrays$().copyOfRange__AO__I__I__AO(a$5, 0, 32));
+        this.sci_VectorBuilder__f_depth = 6;
+        this.sci_VectorBuilder__f_offset = ((33554432 - v6.sci_Vector6__f_len12345) | 0);
+        const i$5 = ((v6.sci_BigVector__f_length0 + this.sci_VectorBuilder__f_offset) | 0);
+        this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$len1 = (31 & i$5);
+        this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$lenRest = ((i$5 - this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$len1) | 0);
+        this.sci_VectorBuilder__f_a6 = $newArrayObject($d_O.getArrayOf().getArrayOf().getArrayOf().getArrayOf().getArrayOf().getArrayOf(), [32]);
+        this.sci_VectorBuilder__f_a6.set(0, $asArrayOf_O($m_sci_VectorStatics$().copyPrepend__O__AO__AO($m_sci_VectorStatics$().copyPrepend__O__AO__AO($m_sci_VectorStatics$().copyPrepend__O__AO__AO($m_sci_VectorStatics$().copyPrepend__O__AO__AO(v6.sci_Vector__f_prefix1, v6.sci_Vector6__f_prefix2), v6.sci_Vector6__f_prefix3), v6.sci_Vector6__f_prefix4), v6.sci_Vector6__f_prefix5), 5));
+        const dest$4 = this.sci_VectorBuilder__f_a6;
+        const length$4 = d6.u.length;
+        $systemArraycopy(d6, 0, dest$4, 1, length$4);
+        this.sci_VectorBuilder__f_a5 = $asArrayOf_O($m_ju_Arrays$().copyOf__AO__I__AO(s5, 32), 5);
+        this.sci_VectorBuilder__f_a4 = $asArrayOf_O($m_ju_Arrays$().copyOf__AO__I__AO(s4$2, 32), 4);
+        this.sci_VectorBuilder__f_a3 = $asArrayOf_O($m_ju_Arrays$().copyOf__AO__I__AO(s3$3, 32), 3);
+        this.sci_VectorBuilder__f_a2 = $asArrayOf_O($m_ju_Arrays$().copyOf__AO__I__AO(s2$4, 32), 2);
+        this.sci_VectorBuilder__f_a6.set(((1 + d6.u.length) | 0), this.sci_VectorBuilder__f_a5);
+        this.sci_VectorBuilder__f_a5.set(s5.u.length, this.sci_VectorBuilder__f_a4);
+        this.sci_VectorBuilder__f_a4.set(s4$2.u.length, this.sci_VectorBuilder__f_a3);
+        this.sci_VectorBuilder__f_a3.set(s3$3.u.length, this.sci_VectorBuilder__f_a2);
+        this.sci_VectorBuilder__f_a2.set(s2$4.u.length, this.sci_VectorBuilder__f_a1);
+        break
+      }
+      default: {
+        throw new $c_s_MatchError(x1)
+      }
+    };
+    if (((this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$len1 === 0) && (this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$lenRest > 0))) {
+      this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$len1 = 32;
+      this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$lenRest = (((-32) + this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$lenRest) | 0)
+    };
+    return this
+  };
+  addOne__O__sci_VectorBuilder(elem) {
+    if ((this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$len1 === 32)) {
+      $p_sci_VectorBuilder__advance__V(this)
+    };
+    this.sci_VectorBuilder__f_a1.set(this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$len1, elem);
+    this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$len1 = ((1 + this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$len1) | 0);
+    return this
+  };
+  addAll__sc_IterableOnce__sci_VectorBuilder(xs) {
+    if ((xs instanceof $c_sci_Vector)) {
+      const x2 = $as_sci_Vector(xs);
+      return (((this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$len1 === 0) && (this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$lenRest === 0)) ? this.initFrom__sci_Vector__sci_VectorBuilder(x2) : $p_sci_VectorBuilder__addVector__sci_Vector__sci_VectorBuilder(this, x2))
+    } else {
+      return $as_sci_VectorBuilder($f_scm_Growable__addAll__sc_IterableOnce__scm_Growable(this, xs))
+    }
+  };
+  result__sci_Vector() {
+    const len = ((this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$len1 + this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$lenRest) | 0);
+    const realLen = ((len - this.sci_VectorBuilder__f_offset) | 0);
+    if ((realLen === 0)) {
+      $m_sci_Vector$();
+      return $m_sci_Vector0$()
+    } else if ((len <= 32)) {
+      if ((realLen === 32)) {
+        return new $c_sci_Vector1(this.sci_VectorBuilder__f_a1)
+      } else {
+        const original = this.sci_VectorBuilder__f_a1;
+        return new $c_sci_Vector1($m_ju_Arrays$().copyOf__AO__I__AO(original, realLen))
+      }
+    } else if ((len <= 1024)) {
+      const i1 = (31 & (((-1) + len) | 0));
+      const i2 = (((((-1) + len) | 0) >>> 5) | 0);
+      const original$1 = this.sci_VectorBuilder__f_a2;
+      const data = $asArrayOf_O($m_ju_Arrays$().copyOfRange__AO__I__I__AO(original$1, 1, i2), 2);
+      const prefix1 = this.sci_VectorBuilder__f_a2.get(0);
+      const a = this.sci_VectorBuilder__f_a2.get(i2);
+      const len$1 = ((1 + i1) | 0);
+      const suffix1 = ((a.u.length === len$1) ? a : $m_ju_Arrays$().copyOf__AO__I__AO(a, len$1));
+      return new $c_sci_Vector2(prefix1, ((32 - this.sci_VectorBuilder__f_offset) | 0), data, suffix1, realLen)
+    } else if ((len <= 32768)) {
+      const i1$2 = (31 & (((-1) + len) | 0));
+      const i2$2 = (31 & (((((-1) + len) | 0) >>> 5) | 0));
+      const i3 = (((((-1) + len) | 0) >>> 10) | 0);
+      const original$2 = this.sci_VectorBuilder__f_a3;
+      const data$2 = $asArrayOf_O($m_ju_Arrays$().copyOfRange__AO__I__I__AO(original$2, 1, i3), 3);
+      const a$1 = this.sci_VectorBuilder__f_a3.get(0);
+      const to = a$1.u.length;
+      const prefix2 = $asArrayOf_O($m_ju_Arrays$().copyOfRange__AO__I__I__AO(a$1, 1, to), 2);
+      const prefix1$2 = this.sci_VectorBuilder__f_a3.get(0).get(0);
+      const original$3 = this.sci_VectorBuilder__f_a3.get(i3);
+      const suffix2 = $asArrayOf_O($m_ju_Arrays$().copyOf__AO__I__AO(original$3, i2$2), 2);
+      const a$2 = this.sci_VectorBuilder__f_a3.get(i3).get(i2$2);
+      const len$2 = ((1 + i1$2) | 0);
+      const suffix1$2 = ((a$2.u.length === len$2) ? a$2 : $m_ju_Arrays$().copyOf__AO__I__AO(a$2, len$2));
+      const len1 = prefix1$2.u.length;
+      const len12 = ((len1 + (prefix2.u.length << 5)) | 0);
+      return new $c_sci_Vector3(prefix1$2, len1, prefix2, len12, data$2, suffix2, suffix1$2, realLen)
+    } else if ((len <= 1048576)) {
+      const i1$3 = (31 & (((-1) + len) | 0));
+      const i2$3 = (31 & (((((-1) + len) | 0) >>> 5) | 0));
+      const i3$2 = (31 & (((((-1) + len) | 0) >>> 10) | 0));
+      const i4 = (((((-1) + len) | 0) >>> 15) | 0);
+      const original$4 = this.sci_VectorBuilder__f_a4;
+      const data$3 = $asArrayOf_O($m_ju_Arrays$().copyOfRange__AO__I__I__AO(original$4, 1, i4), 4);
+      const a$3 = this.sci_VectorBuilder__f_a4.get(0);
+      const to$1 = a$3.u.length;
+      const prefix3 = $asArrayOf_O($m_ju_Arrays$().copyOfRange__AO__I__I__AO(a$3, 1, to$1), 3);
+      const a$4 = this.sci_VectorBuilder__f_a4.get(0).get(0);
+      const to$2 = a$4.u.length;
+      const prefix2$2 = $asArrayOf_O($m_ju_Arrays$().copyOfRange__AO__I__I__AO(a$4, 1, to$2), 2);
+      const prefix1$3 = this.sci_VectorBuilder__f_a4.get(0).get(0).get(0);
+      const original$5 = this.sci_VectorBuilder__f_a4.get(i4);
+      const suffix3 = $asArrayOf_O($m_ju_Arrays$().copyOf__AO__I__AO(original$5, i3$2), 3);
+      const original$6 = this.sci_VectorBuilder__f_a4.get(i4).get(i3$2);
+      const suffix2$2 = $asArrayOf_O($m_ju_Arrays$().copyOf__AO__I__AO(original$6, i2$3), 2);
+      const a$5 = this.sci_VectorBuilder__f_a4.get(i4).get(i3$2).get(i2$3);
+      const len$3 = ((1 + i1$3) | 0);
+      const suffix1$3 = ((a$5.u.length === len$3) ? a$5 : $m_ju_Arrays$().copyOf__AO__I__AO(a$5, len$3));
+      const len1$2 = prefix1$3.u.length;
+      const len12$2 = ((len1$2 + (prefix2$2.u.length << 5)) | 0);
+      const len123 = ((len12$2 + (prefix3.u.length << 10)) | 0);
+      return new $c_sci_Vector4(prefix1$3, len1$2, prefix2$2, len12$2, prefix3, len123, data$3, suffix3, suffix2$2, suffix1$3, realLen)
+    } else if ((len <= 33554432)) {
+      const i1$4 = (31 & (((-1) + len) | 0));
+      const i2$4 = (31 & (((((-1) + len) | 0) >>> 5) | 0));
+      const i3$3 = (31 & (((((-1) + len) | 0) >>> 10) | 0));
+      const i4$2 = (31 & (((((-1) + len) | 0) >>> 15) | 0));
+      const i5 = (((((-1) + len) | 0) >>> 20) | 0);
+      const original$7 = this.sci_VectorBuilder__f_a5;
+      const data$4 = $asArrayOf_O($m_ju_Arrays$().copyOfRange__AO__I__I__AO(original$7, 1, i5), 5);
+      const a$6 = this.sci_VectorBuilder__f_a5.get(0);
+      const to$3 = a$6.u.length;
+      const prefix4 = $asArrayOf_O($m_ju_Arrays$().copyOfRange__AO__I__I__AO(a$6, 1, to$3), 4);
+      const a$7 = this.sci_VectorBuilder__f_a5.get(0).get(0);
+      const to$4 = a$7.u.length;
+      const prefix3$2 = $asArrayOf_O($m_ju_Arrays$().copyOfRange__AO__I__I__AO(a$7, 1, to$4), 3);
+      const a$8 = this.sci_VectorBuilder__f_a5.get(0).get(0).get(0);
+      const to$5 = a$8.u.length;
+      const prefix2$3 = $asArrayOf_O($m_ju_Arrays$().copyOfRange__AO__I__I__AO(a$8, 1, to$5), 2);
+      const prefix1$4 = this.sci_VectorBuilder__f_a5.get(0).get(0).get(0).get(0);
+      const original$8 = this.sci_VectorBuilder__f_a5.get(i5);
+      const suffix4 = $asArrayOf_O($m_ju_Arrays$().copyOf__AO__I__AO(original$8, i4$2), 4);
+      const original$9 = this.sci_VectorBuilder__f_a5.get(i5).get(i4$2);
+      const suffix3$2 = $asArrayOf_O($m_ju_Arrays$().copyOf__AO__I__AO(original$9, i3$3), 3);
+      const original$10 = this.sci_VectorBuilder__f_a5.get(i5).get(i4$2).get(i3$3);
+      const suffix2$3 = $asArrayOf_O($m_ju_Arrays$().copyOf__AO__I__AO(original$10, i2$4), 2);
+      const a$9 = this.sci_VectorBuilder__f_a5.get(i5).get(i4$2).get(i3$3).get(i2$4);
+      const len$4 = ((1 + i1$4) | 0);
+      const suffix1$4 = ((a$9.u.length === len$4) ? a$9 : $m_ju_Arrays$().copyOf__AO__I__AO(a$9, len$4));
+      const len1$3 = prefix1$4.u.length;
+      const len12$3 = ((len1$3 + (prefix2$3.u.length << 5)) | 0);
+      const len123$2 = ((len12$3 + (prefix3$2.u.length << 10)) | 0);
+      const len1234 = ((len123$2 + (prefix4.u.length << 15)) | 0);
+      return new $c_sci_Vector5(prefix1$4, len1$3, prefix2$3, len12$3, prefix3$2, len123$2, prefix4, len1234, data$4, suffix4, suffix3$2, suffix2$3, suffix1$4, realLen)
+    } else {
+      const i1$5 = (31 & (((-1) + len) | 0));
+      const i2$5 = (31 & (((((-1) + len) | 0) >>> 5) | 0));
+      const i3$4 = (31 & (((((-1) + len) | 0) >>> 10) | 0));
+      const i4$3 = (31 & (((((-1) + len) | 0) >>> 15) | 0));
+      const i5$2 = (31 & (((((-1) + len) | 0) >>> 20) | 0));
+      const i6 = (((((-1) + len) | 0) >>> 25) | 0);
+      const original$11 = this.sci_VectorBuilder__f_a6;
+      const data$5 = $asArrayOf_O($m_ju_Arrays$().copyOfRange__AO__I__I__AO(original$11, 1, i6), 6);
+      const a$10 = this.sci_VectorBuilder__f_a6.get(0);
+      const to$6 = a$10.u.length;
+      const prefix5 = $asArrayOf_O($m_ju_Arrays$().copyOfRange__AO__I__I__AO(a$10, 1, to$6), 5);
+      const a$11 = this.sci_VectorBuilder__f_a6.get(0).get(0);
+      const to$7 = a$11.u.length;
+      const prefix4$2 = $asArrayOf_O($m_ju_Arrays$().copyOfRange__AO__I__I__AO(a$11, 1, to$7), 4);
+      const a$12 = this.sci_VectorBuilder__f_a6.get(0).get(0).get(0);
+      const to$8 = a$12.u.length;
+      const prefix3$3 = $asArrayOf_O($m_ju_Arrays$().copyOfRange__AO__I__I__AO(a$12, 1, to$8), 3);
+      const a$13 = this.sci_VectorBuilder__f_a6.get(0).get(0).get(0).get(0);
+      const to$9 = a$13.u.length;
+      const prefix2$4 = $asArrayOf_O($m_ju_Arrays$().copyOfRange__AO__I__I__AO(a$13, 1, to$9), 2);
+      const prefix1$5 = this.sci_VectorBuilder__f_a6.get(0).get(0).get(0).get(0).get(0);
+      const original$12 = this.sci_VectorBuilder__f_a6.get(i6);
+      const suffix5 = $asArrayOf_O($m_ju_Arrays$().copyOf__AO__I__AO(original$12, i5$2), 5);
+      const original$13 = this.sci_VectorBuilder__f_a6.get(i6).get(i5$2);
+      const suffix4$2 = $asArrayOf_O($m_ju_Arrays$().copyOf__AO__I__AO(original$13, i4$3), 4);
+      const original$14 = this.sci_VectorBuilder__f_a6.get(i6).get(i5$2).get(i4$3);
+      const suffix3$3 = $asArrayOf_O($m_ju_Arrays$().copyOf__AO__I__AO(original$14, i3$4), 3);
+      const original$15 = this.sci_VectorBuilder__f_a6.get(i6).get(i5$2).get(i4$3).get(i3$4);
+      const suffix2$4 = $asArrayOf_O($m_ju_Arrays$().copyOf__AO__I__AO(original$15, i2$5), 2);
+      const a$14 = this.sci_VectorBuilder__f_a6.get(i6).get(i5$2).get(i4$3).get(i3$4).get(i2$5);
+      const len$5 = ((1 + i1$5) | 0);
+      const suffix1$5 = ((a$14.u.length === len$5) ? a$14 : $m_ju_Arrays$().copyOf__AO__I__AO(a$14, len$5));
+      const len1$4 = prefix1$5.u.length;
+      const len12$4 = ((len1$4 + (prefix2$4.u.length << 5)) | 0);
+      const len123$3 = ((len12$4 + (prefix3$3.u.length << 10)) | 0);
+      const len1234$2 = ((len123$3 + (prefix4$2.u.length << 15)) | 0);
+      const len12345 = ((len1234$2 + (prefix5.u.length << 20)) | 0);
+      return new $c_sci_Vector6(prefix1$5, len1$4, prefix2$4, len12$4, prefix3$3, len123$3, prefix4$2, len1234$2, prefix5, len12345, data$5, suffix5, suffix4$2, suffix3$3, suffix2$4, suffix1$5, realLen)
+    }
+  };
+  toString__T() {
+    return (((((((("VectorBuilder(len1=" + this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$len1) + ", lenRest=") + this.sci_VectorBuilder__f_scala$collection$immutable$VectorBuilder$$lenRest) + ", offset=") + this.sci_VectorBuilder__f_offset) + ", depth=") + this.sci_VectorBuilder__f_depth) + ")")
+  };
+  result__O() {
+    return this.result__sci_Vector()
+  };
+  addAll__sc_IterableOnce__scm_Growable(xs) {
+    return this.addAll__sc_IterableOnce__sci_VectorBuilder(xs)
+  };
+  addOne__O__scm_Growable(elem) {
+    return this.addOne__O__sci_VectorBuilder(elem)
+  };
+}
+function $as_sci_VectorBuilder(obj) {
+  return (((obj instanceof $c_sci_VectorBuilder) || (obj === null)) ? obj : $throwClassCastException(obj, "scala.collection.immutable.VectorBuilder"))
+}
+function $isArrayOf_sci_VectorBuilder(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.sci_VectorBuilder)))
+}
+function $asArrayOf_sci_VectorBuilder(obj, depth) {
+  return (($isArrayOf_sci_VectorBuilder(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscala.collection.immutable.VectorBuilder;", depth))
+}
+const $d_sci_VectorBuilder = new $TypeData().initClass({
+  sci_VectorBuilder: 0
+}, false, "scala.collection.immutable.VectorBuilder", {
+  sci_VectorBuilder: 1,
+  O: 1,
+  scm_ReusableBuilder: 1,
+  scm_Builder: 1,
+  scm_Growable: 1,
+  scm_Clearable: 1
+});
+$c_sci_VectorBuilder.prototype.$classData = $d_sci_VectorBuilder;
 const $p_scm_ArrayBuffer$__growArray$1__J__I__I__AO__AO = (function($thiz, arrayLength$1, n$1, end$1, array$2) {
   const lo = (arrayLength$1.RTLong__f_lo << 1);
   const hi = (((arrayLength$1.RTLong__f_lo >>> 31) | 0) | (arrayLength$1.RTLong__f_hi << 1));
@@ -28170,9 +28841,6 @@ class $c_Lorg_parboiled2_ValueStack extends $c_O {
   concat__sc_IterableOnce__O(suffix) {
     return $f_sc_IterableOps__concat__sc_IterableOnce__O(this, suffix)
   };
-  foreach__F1__V(f) {
-    $f_sc_IterableOnceOps__foreach__F1__V(this, f)
-  };
   copyToArray__O__I__I(xs, start) {
     return $f_sc_IterableOnceOps__copyToArray__O__I__I(this, xs, start)
   };
@@ -28184,9 +28852,6 @@ class $c_Lorg_parboiled2_ValueStack extends $c_O {
   };
   knownSize__I() {
     return (-1)
-  };
-  size__I() {
-    return this.Lorg_parboiled2_ValueStack__f__size
   };
   isEmpty__Z() {
     return (this.Lorg_parboiled2_ValueStack__f__size === 0)
@@ -28392,6 +29057,9 @@ class $c_sc_AbstractIterable extends $c_O {
   head__O() {
     return this.iterator__sc_Iterator().next__O()
   };
+  sizeCompare__I__I(otherSize) {
+    return $f_sc_IterableOps__sizeCompare__I__I(this, otherSize)
+  };
   drop__I__O(n) {
     return $f_sc_IterableOps__drop__I__O(this, n)
   };
@@ -28416,9 +29084,6 @@ class $c_sc_AbstractIterable extends $c_O {
   isEmpty__Z() {
     return $f_sc_IterableOnceOps__isEmpty__Z(this)
   };
-  size__I() {
-    return $f_sc_IterableOnceOps__size__I(this)
-  };
   copyToArray__O__I__I(xs, start) {
     return $f_sc_IterableOnceOps__copyToArray__O__I__I(this, xs, start)
   };
@@ -28426,7 +29091,8 @@ class $c_sc_AbstractIterable extends $c_O {
     return $f_sc_IterableOnceOps__addString__scm_StringBuilder__T__T__T__scm_StringBuilder(this, b, start, sep, end)
   };
   toList__sci_List() {
-    return $m_sci_List$().from__sc_IterableOnce__sci_List(this)
+    $m_sci_List$();
+    return $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this)
   };
   toVector__sci_Vector() {
     return $m_sci_Vector$().from__sc_IterableOnce__sci_Vector(this)
@@ -28573,6 +29239,13 @@ const $d_sc_Iterator$$anon$21 = new $TypeData().initClass({
 $c_sc_Iterator$$anon$21.prototype.$classData = $d_sc_Iterator$$anon$21;
 const $f_sc_MapOps__applyOrElse__O__F1__O = (function($thiz, x, default$1) {
   return $thiz.getOrElse__O__F0__O(x, new $c_sjsr_AnonFunction0(((this$1, default$2, x$1) => (() => default$2.apply__O__O(x$1)))($thiz, default$1, x)))
+});
+const $f_sc_MapOps__foreachEntry__F2__V = (function($thiz, f) {
+  const it = $thiz.iterator__sc_Iterator();
+  while (it.hasNext__Z()) {
+    const next = $as_T2(it.next__O());
+    f.apply__O__O__O(next._1__O(), next._2__O())
+  }
 });
 const $f_sc_MapOps__addString__scm_StringBuilder__T__T__T__scm_StringBuilder = (function($thiz, sb, start, sep, end) {
   const this$2 = $thiz.iterator__sc_Iterator();
@@ -28822,296 +29495,42 @@ const $d_sci_NumericRange$NumericRangeIterator = new $TypeData().initClass({
   Ljava_io_Serializable: 1
 });
 $c_sci_NumericRange$NumericRangeIterator.prototype.$classData = $d_sci_NumericRange$NumericRangeIterator;
-const $p_sci_VectorBuilder__advanceToNextBlockIfNecessary__V = (function($thiz) {
-  if (($thiz.sci_VectorBuilder__f_lo >= $thiz.sci_VectorBuilder__f_display0.u.length)) {
-    const newBlockIndex = ((32 + $thiz.sci_VectorBuilder__f_blockIndex) | 0);
-    const xor = ($thiz.sci_VectorBuilder__f_blockIndex ^ newBlockIndex);
-    $f_sci_VectorPointer__gotoNextBlockStartWritable__I__I__V($thiz, newBlockIndex, xor);
-    $thiz.sci_VectorBuilder__f_blockIndex = newBlockIndex;
-    $thiz.sci_VectorBuilder__f_lo = 0
-  }
+const $ct_sci_Set$SetNIterator__I__ = (function($thiz, n) {
+  $thiz.sci_Set$SetNIterator__f_current = 0;
+  $thiz.sci_Set$SetNIterator__f_remainder = n;
+  return $thiz
 });
-class $c_sci_VectorBuilder extends $c_O {
+class $c_sci_Set$SetNIterator extends $c_sc_AbstractIterator {
   constructor() {
     super();
-    this.sci_VectorBuilder__f_blockIndex = 0;
-    this.sci_VectorBuilder__f_lo = 0;
-    this.sci_VectorBuilder__f_depth = 0;
-    this.sci_VectorBuilder__f_display0 = null;
-    this.sci_VectorBuilder__f_display1 = null;
-    this.sci_VectorBuilder__f_display2 = null;
-    this.sci_VectorBuilder__f_display3 = null;
-    this.sci_VectorBuilder__f_display4 = null;
-    this.sci_VectorBuilder__f_display5 = null;
-    this.sci_VectorBuilder__f_display0 = $newArrayObject($d_O.getArrayOf(), [32]);
-    this.sci_VectorBuilder__f_depth = 1;
-    this.sci_VectorBuilder__f_blockIndex = 0;
-    this.sci_VectorBuilder__f_lo = 0
+    this.sci_Set$SetNIterator__f_current = 0;
+    this.sci_Set$SetNIterator__f_remainder = 0
   };
-  sizeHint__I__V(size) {
-    /*<skip>*/
-  };
-  depth__I() {
-    return this.sci_VectorBuilder__f_depth
-  };
-  depth_$eq__I__V(x$1) {
-    this.sci_VectorBuilder__f_depth = x$1
-  };
-  display0__AO() {
-    return this.sci_VectorBuilder__f_display0
-  };
-  display0_$eq__AO__V(x$1) {
-    this.sci_VectorBuilder__f_display0 = x$1
-  };
-  display1__AAO() {
-    return this.sci_VectorBuilder__f_display1
-  };
-  display1_$eq__AAO__V(x$1) {
-    this.sci_VectorBuilder__f_display1 = x$1
-  };
-  display2__AAAO() {
-    return this.sci_VectorBuilder__f_display2
-  };
-  display2_$eq__AAAO__V(x$1) {
-    this.sci_VectorBuilder__f_display2 = x$1
-  };
-  display3__AAAAO() {
-    return this.sci_VectorBuilder__f_display3
-  };
-  display3_$eq__AAAAO__V(x$1) {
-    this.sci_VectorBuilder__f_display3 = x$1
-  };
-  display4__AAAAAO() {
-    return this.sci_VectorBuilder__f_display4
-  };
-  display4_$eq__AAAAAO__V(x$1) {
-    this.sci_VectorBuilder__f_display4 = x$1
-  };
-  display5__AAAAAAO() {
-    return this.sci_VectorBuilder__f_display5
-  };
-  display5_$eq__AAAAAAO__V(x$1) {
-    this.sci_VectorBuilder__f_display5 = x$1
-  };
-  size__I() {
-    return ((this.sci_VectorBuilder__f_blockIndex + this.sci_VectorBuilder__f_lo) | 0)
-  };
-  addOne__O__sci_VectorBuilder(elem) {
-    $p_sci_VectorBuilder__advanceToNextBlockIfNecessary__V(this);
-    this.sci_VectorBuilder__f_display0.set(this.sci_VectorBuilder__f_lo, elem);
-    this.sci_VectorBuilder__f_lo = ((1 + this.sci_VectorBuilder__f_lo) | 0);
-    return this
-  };
-  addAll__sc_IterableOnce__sci_VectorBuilder(xs) {
-    const it = xs.iterator__sc_Iterator();
-    while (it.hasNext__Z()) {
-      $p_sci_VectorBuilder__advanceToNextBlockIfNecessary__V(this);
-      this.sci_VectorBuilder__f_lo = ((this.sci_VectorBuilder__f_lo + it.copyToArray__O__I__I__I(this.sci_VectorBuilder__f_display0, this.sci_VectorBuilder__f_lo, ((this.sci_VectorBuilder__f_display0.u.length - this.sci_VectorBuilder__f_lo) | 0))) | 0)
-    };
-    return this
-  };
-  result__sci_Vector() {
-    const size = this.size__I();
-    if ((size === 0)) {
-      const this$1 = $m_sci_Vector$();
-      return this$1.sci_Vector$__f_NIL
-    };
-    const s = new $c_sci_Vector(0, size, 0);
-    const depth = this.sci_VectorBuilder__f_depth;
-    $f_sci_VectorPointer__initFrom__sci_VectorPointer__I__V(s, this, depth);
-    if ((this.sci_VectorBuilder__f_depth > 1)) {
-      const xor = (((-1) + size) | 0);
-      $f_sci_VectorPointer__gotoPos__I__I__V(s, 0, xor)
-    };
-    return s
-  };
-  result__O() {
-    return this.result__sci_Vector()
-  };
-  addAll__sc_IterableOnce__scm_Growable(xs) {
-    return this.addAll__sc_IterableOnce__sci_VectorBuilder(xs)
-  };
-  addOne__O__scm_Growable(elem) {
-    return this.addOne__O__sci_VectorBuilder(elem)
-  };
-}
-const $d_sci_VectorBuilder = new $TypeData().initClass({
-  sci_VectorBuilder: 0
-}, false, "scala.collection.immutable.VectorBuilder", {
-  sci_VectorBuilder: 1,
-  O: 1,
-  scm_ReusableBuilder: 1,
-  scm_Builder: 1,
-  scm_Growable: 1,
-  scm_Clearable: 1,
-  sci_VectorPointer: 1
-});
-$c_sci_VectorBuilder.prototype.$classData = $d_sci_VectorBuilder;
-const $p_sci_VectorIterator__advanceToNextBlockIfNecessary__V = (function($thiz) {
-  if (($thiz.sci_VectorIterator__f_lo === $thiz.sci_VectorIterator__f_endLo)) {
-    if (((($thiz.sci_VectorIterator__f_blockIndex + $thiz.sci_VectorIterator__f_lo) | 0) < $thiz.sci_VectorIterator__f_endIndex)) {
-      const newBlockIndex = ((32 + $thiz.sci_VectorIterator__f_blockIndex) | 0);
-      const xor = ($thiz.sci_VectorIterator__f_blockIndex ^ newBlockIndex);
-      $f_sci_VectorPointer__gotoNextBlockStart__I__I__V($thiz, newBlockIndex, xor);
-      $thiz.sci_VectorIterator__f_blockIndex = newBlockIndex;
-      const a = (($thiz.sci_VectorIterator__f_endIndex - $thiz.sci_VectorIterator__f_blockIndex) | 0);
-      $thiz.sci_VectorIterator__f_endLo = ((a < 32) ? a : 32);
-      $thiz.sci_VectorIterator__f_lo = 0
-    } else {
-      $thiz.sci_VectorIterator__f__hasNext = false
-    }
-  }
-});
-class $c_sci_VectorIterator extends $c_sc_AbstractIterator {
-  constructor(_startIndex, endIndex) {
-    super();
-    this.sci_VectorIterator__f_endIndex = 0;
-    this.sci_VectorIterator__f_blockIndex = 0;
-    this.sci_VectorIterator__f_lo = 0;
-    this.sci_VectorIterator__f_endLo = 0;
-    this.sci_VectorIterator__f__hasNext = false;
-    this.sci_VectorIterator__f_depth = 0;
-    this.sci_VectorIterator__f_display0 = null;
-    this.sci_VectorIterator__f_display1 = null;
-    this.sci_VectorIterator__f_display2 = null;
-    this.sci_VectorIterator__f_display3 = null;
-    this.sci_VectorIterator__f_display4 = null;
-    this.sci_VectorIterator__f_display5 = null;
-    this.sci_VectorIterator__f_endIndex = endIndex;
-    this.sci_VectorIterator__f_blockIndex = ((-32) & _startIndex);
-    this.sci_VectorIterator__f_lo = (31 & _startIndex);
-    const a = ((this.sci_VectorIterator__f_endIndex - this.sci_VectorIterator__f_blockIndex) | 0);
-    this.sci_VectorIterator__f_endLo = ((a < 32) ? a : 32);
-    this.sci_VectorIterator__f__hasNext = (((this.sci_VectorIterator__f_blockIndex + this.sci_VectorIterator__f_lo) | 0) < this.sci_VectorIterator__f_endIndex)
-  };
-  depth__I() {
-    return this.sci_VectorIterator__f_depth
-  };
-  depth_$eq__I__V(x$1) {
-    this.sci_VectorIterator__f_depth = x$1
-  };
-  display0__AO() {
-    return this.sci_VectorIterator__f_display0
-  };
-  display0_$eq__AO__V(x$1) {
-    this.sci_VectorIterator__f_display0 = x$1
-  };
-  display1__AAO() {
-    return this.sci_VectorIterator__f_display1
-  };
-  display1_$eq__AAO__V(x$1) {
-    this.sci_VectorIterator__f_display1 = x$1
-  };
-  display2__AAAO() {
-    return this.sci_VectorIterator__f_display2
-  };
-  display2_$eq__AAAO__V(x$1) {
-    this.sci_VectorIterator__f_display2 = x$1
-  };
-  display3__AAAAO() {
-    return this.sci_VectorIterator__f_display3
-  };
-  display3_$eq__AAAAO__V(x$1) {
-    this.sci_VectorIterator__f_display3 = x$1
-  };
-  display4__AAAAAO() {
-    return this.sci_VectorIterator__f_display4
-  };
-  display4_$eq__AAAAAO__V(x$1) {
-    this.sci_VectorIterator__f_display4 = x$1
-  };
-  display5__AAAAAAO() {
-    return this.sci_VectorIterator__f_display5
-  };
-  display5_$eq__AAAAAAO__V(x$1) {
-    this.sci_VectorIterator__f_display5 = x$1
+  knownSize__I() {
+    return this.sci_Set$SetNIterator__f_remainder
   };
   hasNext__Z() {
-    return this.sci_VectorIterator__f__hasNext
+    return (this.sci_Set$SetNIterator__f_remainder > 0)
+  };
+  next__O() {
+    if (this.hasNext__Z()) {
+      const r = this.apply__I__O(this.sci_Set$SetNIterator__f_current);
+      this.sci_Set$SetNIterator__f_current = ((1 + this.sci_Set$SetNIterator__f_current) | 0);
+      this.sci_Set$SetNIterator__f_remainder = (((-1) + this.sci_Set$SetNIterator__f_remainder) | 0);
+      return r
+    } else {
+      return $m_sc_Iterator$().sc_Iterator$__f_scala$collection$Iterator$$_empty.next__O()
+    }
   };
   drop__I__sc_Iterator(n) {
     if ((n > 0)) {
-      const value = this.sci_VectorIterator__f_lo;
-      const hi = (value >> 31);
-      const hi$1 = (n >> 31);
-      const lo = ((value + n) | 0);
-      const hi$2 = ((((-2147483648) ^ lo) < ((-2147483648) ^ value)) ? ((1 + ((hi + hi$1) | 0)) | 0) : ((hi + hi$1) | 0));
-      const value$1 = this.sci_VectorIterator__f_blockIndex;
-      const hi$3 = (value$1 >> 31);
-      const lo$1 = ((value$1 + lo) | 0);
-      const hi$4 = ((((-2147483648) ^ lo$1) < ((-2147483648) ^ value$1)) ? ((1 + ((hi$3 + hi$2) | 0)) | 0) : ((hi$3 + hi$2) | 0));
-      const value$2 = this.sci_VectorIterator__f_endIndex;
-      const hi$5 = (value$2 >> 31);
-      if (((hi$4 === hi$5) ? (((-2147483648) ^ lo$1) < ((-2147483648) ^ value$2)) : (hi$4 < hi$5))) {
-        this.sci_VectorIterator__f_lo = lo;
-        if ((this.sci_VectorIterator__f_lo >= 32)) {
-          this.sci_VectorIterator__f_blockIndex = ((-32) & ((this.sci_VectorIterator__f_blockIndex + this.sci_VectorIterator__f_lo) | 0));
-          const index = this.sci_VectorIterator__f_blockIndex;
-          const depth = this.sci_VectorIterator__f_depth;
-          $f_sci_VectorPointer__gotoNewBlockStart__I__I__V(this, index, depth);
-          const a = ((this.sci_VectorIterator__f_endIndex - this.sci_VectorIterator__f_blockIndex) | 0);
-          this.sci_VectorIterator__f_endLo = ((a < 32) ? a : 32);
-          this.sci_VectorIterator__f_lo = (31 & this.sci_VectorIterator__f_lo)
-        }
-      } else {
-        this.sci_VectorIterator__f__hasNext = false;
-        this.sci_VectorIterator__f_endIndex = 0
-      }
+      this.sci_Set$SetNIterator__f_current = ((this.sci_Set$SetNIterator__f_current + n) | 0);
+      const b = ((this.sci_Set$SetNIterator__f_remainder - n) | 0);
+      this.sci_Set$SetNIterator__f_remainder = ((b < 0) ? 0 : b)
     };
     return this
   };
-  next__O() {
-    if ((!this.sci_VectorIterator__f__hasNext)) {
-      throw $ct_ju_NoSuchElementException__T__(new $c_ju_NoSuchElementException(), "reached iterator end")
-    };
-    const res = this.sci_VectorIterator__f_display0.get(this.sci_VectorIterator__f_lo);
-    this.sci_VectorIterator__f_lo = ((1 + this.sci_VectorIterator__f_lo) | 0);
-    $p_sci_VectorIterator__advanceToNextBlockIfNecessary__V(this);
-    return res
-  };
-  copyToArray__O__I__I__I(xs, start, len) {
-    const xsLen = $m_sr_ScalaRunTime$().array_length__O__I(xs);
-    const srcLen = this.remainingElementCount__I();
-    const x = ((len < srcLen) ? len : srcLen);
-    const y = ((xsLen - start) | 0);
-    const x$1 = ((x < y) ? x : y);
-    const totalToBeCopied = ((x$1 > 0) ? x$1 : 0);
-    let totalCopied = 0;
-    while ((this.sci_VectorIterator__f__hasNext && (totalCopied < totalToBeCopied))) {
-      const _start = ((start + totalCopied) | 0);
-      const srcLen$1 = ((this.sci_VectorIterator__f_endLo - this.sci_VectorIterator__f_lo) | 0);
-      const len$1 = ((len - totalCopied) | 0);
-      const x$2 = ((len$1 < srcLen$1) ? len$1 : srcLen$1);
-      const y$1 = ((xsLen - _start) | 0);
-      const x$3 = ((x$2 < y$1) ? x$2 : y$1);
-      const toBeCopied = ((x$3 > 0) ? x$3 : 0);
-      $m_s_Array$().copy__O__I__O__I__I__V(this.sci_VectorIterator__f_display0, this.sci_VectorIterator__f_lo, xs, _start, toBeCopied);
-      totalCopied = ((totalCopied + toBeCopied) | 0);
-      this.sci_VectorIterator__f_lo = ((this.sci_VectorIterator__f_lo + toBeCopied) | 0);
-      $p_sci_VectorIterator__advanceToNextBlockIfNecessary__V(this)
-    };
-    return totalCopied
-  };
-  remainingElementCount__I() {
-    const x = ((this.sci_VectorIterator__f_endIndex - ((this.sci_VectorIterator__f_blockIndex + this.sci_VectorIterator__f_lo) | 0)) | 0);
-    return ((x > 0) ? x : 0)
-  };
-  knownSize__I() {
-    return this.remainingElementCount__I()
-  };
 }
-const $d_sci_VectorIterator = new $TypeData().initClass({
-  sci_VectorIterator: 0
-}, false, "scala.collection.immutable.VectorIterator", {
-  sci_VectorIterator: 1,
-  sc_AbstractIterator: 1,
-  O: 1,
-  sc_Iterator: 1,
-  sc_IterableOnce: 1,
-  sc_IterableOnceOps: 1,
-  sci_VectorPointer: 1
-});
-$c_sci_VectorIterator.prototype.$classData = $d_sci_VectorIterator;
 const $ct_scm_ArrayBuilder__ = (function($thiz) {
   $thiz.scm_ArrayBuilder__f_capacity = 0;
   $thiz.scm_ArrayBuilder__f_size = 0;
@@ -29886,8 +30305,8 @@ class $c_Lio_lemonlabs_uri_EmptyPath$ extends $c_O {
     return $m_Lio_lemonlabs_uri_config_UriConfig$().Lio_lemonlabs_uri_config_UriConfig$__f_default
   };
   parts__sci_Vector() {
-    const this$1 = $m_s_package$().s_package$__f_Vector;
-    return this$1.sci_Vector$__f_NIL
+    $m_s_package$();
+    return $m_sci_Vector0$()
   };
   toString__Lio_lemonlabs_uri_config_UriConfig__T(c) {
     return ""
@@ -34850,18 +35269,13 @@ class $c_Lio_lemonlabs_uri_parsing_UrlParser extends $c_Lorg_parboiled2_Parser {
     }))(this));
     this.Lio_lemonlabs_uri_parsing_UrlParser__f_extractQueryString = new $c_sjsr_AnonFunction1(((this$14) => ((tuples$2) => {
       const tuples = $as_sci_Seq(tuples$2);
-      const this$15 = tuples.toVector__sci_Vector();
+      const this$16 = tuples.toVector__sci_Vector();
       const eta$0$2 = this$14.queryDecoder__Lio_lemonlabs_uri_decoding_UriDecoder();
-      $m_sci_Vector$();
-      const b$3 = new $c_sci_VectorBuilder();
-      const it = this$15.iterator__sc_Iterator();
-      while (it.hasNext__Z()) {
-        const arg1$1 = it.next__O();
-        const kv = $as_T2(arg1$1);
-        const elem = $f_Lio_lemonlabs_uri_decoding_UriDecoder__decodeTuple__T2__T2(eta$0$2, kv);
-        b$3.addOne__O__sci_VectorBuilder(elem)
-      };
-      return new $c_Lio_lemonlabs_uri_QueryString(b$3.result__sci_Vector(), this$14.Lio_lemonlabs_uri_parsing_UrlParser__f_conf)
+      const f$1 = new $c_sjsr_AnonFunction1(((this$15, eta$0$2$1) => ((kv$2) => {
+        const kv = $as_T2(kv$2);
+        return $f_Lio_lemonlabs_uri_decoding_UriDecoder__decodeTuple__T2__T2(eta$0$2$1, kv)
+      }))(this$14, eta$0$2));
+      return new $c_Lio_lemonlabs_uri_QueryString(this$16.map__F1__sci_Vector(f$1), this$14.Lio_lemonlabs_uri_parsing_UrlParser__f_conf)
     }))(this));
     this.Lio_lemonlabs_uri_parsing_UrlParser__f_extractPathPart = new $c_sjsr_AnonFunction1(((this$15$1) => ((pathPart$2) => {
       const pathPart = $as_T(pathPart$2);
@@ -37844,6 +38258,90 @@ function $isArrayOf_sc_View(obj, depth) {
 function $asArrayOf_sc_View(obj, depth) {
   return (($isArrayOf_sc_View(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscala.collection.View;", depth))
 }
+class $c_sci_Set$Set2$$anon$1 extends $c_sci_Set$SetNIterator {
+  constructor(outer) {
+    super();
+    this.sci_Set$Set2$$anon$1__f_$outer = null;
+    if ((outer === null)) {
+      throw $m_sjsr_package$().unwrapJavaScriptException__jl_Throwable__O(null)
+    } else {
+      this.sci_Set$Set2$$anon$1__f_$outer = outer
+    };
+    $ct_sci_Set$SetNIterator__I__(this, 2)
+  };
+  apply__I__O(i) {
+    return this.sci_Set$Set2$$anon$1__f_$outer.scala$collection$immutable$Set$Set2$$getElem__I__O(i)
+  };
+}
+const $d_sci_Set$Set2$$anon$1 = new $TypeData().initClass({
+  sci_Set$Set2$$anon$1: 0
+}, false, "scala.collection.immutable.Set$Set2$$anon$1", {
+  sci_Set$Set2$$anon$1: 1,
+  sci_Set$SetNIterator: 1,
+  sc_AbstractIterator: 1,
+  O: 1,
+  sc_Iterator: 1,
+  sc_IterableOnce: 1,
+  sc_IterableOnceOps: 1,
+  Ljava_io_Serializable: 1
+});
+$c_sci_Set$Set2$$anon$1.prototype.$classData = $d_sci_Set$Set2$$anon$1;
+class $c_sci_Set$Set3$$anon$2 extends $c_sci_Set$SetNIterator {
+  constructor(outer) {
+    super();
+    this.sci_Set$Set3$$anon$2__f_$outer = null;
+    if ((outer === null)) {
+      throw $m_sjsr_package$().unwrapJavaScriptException__jl_Throwable__O(null)
+    } else {
+      this.sci_Set$Set3$$anon$2__f_$outer = outer
+    };
+    $ct_sci_Set$SetNIterator__I__(this, 3)
+  };
+  apply__I__O(i) {
+    return this.sci_Set$Set3$$anon$2__f_$outer.scala$collection$immutable$Set$Set3$$getElem__I__O(i)
+  };
+}
+const $d_sci_Set$Set3$$anon$2 = new $TypeData().initClass({
+  sci_Set$Set3$$anon$2: 0
+}, false, "scala.collection.immutable.Set$Set3$$anon$2", {
+  sci_Set$Set3$$anon$2: 1,
+  sci_Set$SetNIterator: 1,
+  sc_AbstractIterator: 1,
+  O: 1,
+  sc_Iterator: 1,
+  sc_IterableOnce: 1,
+  sc_IterableOnceOps: 1,
+  Ljava_io_Serializable: 1
+});
+$c_sci_Set$Set3$$anon$2.prototype.$classData = $d_sci_Set$Set3$$anon$2;
+class $c_sci_Set$Set4$$anon$3 extends $c_sci_Set$SetNIterator {
+  constructor(outer) {
+    super();
+    this.sci_Set$Set4$$anon$3__f_$outer = null;
+    if ((outer === null)) {
+      throw $m_sjsr_package$().unwrapJavaScriptException__jl_Throwable__O(null)
+    } else {
+      this.sci_Set$Set4$$anon$3__f_$outer = outer
+    };
+    $ct_sci_Set$SetNIterator__I__(this, 4)
+  };
+  apply__I__O(i) {
+    return this.sci_Set$Set4$$anon$3__f_$outer.scala$collection$immutable$Set$Set4$$getElem__I__O(i)
+  };
+}
+const $d_sci_Set$Set4$$anon$3 = new $TypeData().initClass({
+  sci_Set$Set4$$anon$3: 0
+}, false, "scala.collection.immutable.Set$Set4$$anon$3", {
+  sci_Set$Set4$$anon$3: 1,
+  sci_Set$SetNIterator: 1,
+  sc_AbstractIterator: 1,
+  O: 1,
+  sc_Iterator: 1,
+  sc_IterableOnce: 1,
+  sc_IterableOnceOps: 1,
+  Ljava_io_Serializable: 1
+});
+$c_sci_Set$Set4$$anon$3.prototype.$classData = $d_sci_Set$Set4$$anon$3;
 class $c_scm_ArrayBuilder$generic extends $c_scm_ArrayBuilder {
   constructor(elementClass) {
     super();
@@ -38411,95 +38909,6 @@ const $p_sc_StrictOptimizedLinearSeqOps__loop$2__I__sc_LinearSeq__sc_LinearSeq =
     }
   }
 });
-class $c_sci_MapKeyValueTupleHashIterator extends $c_sci_ChampBaseReverseIterator {
-  constructor(rootNode) {
-    super();
-    this.sci_MapKeyValueTupleHashIterator__f_scala$collection$immutable$MapKeyValueTupleHashIterator$$hash = 0;
-    this.sci_MapKeyValueTupleHashIterator__f_value = null;
-    this.sci_MapKeyValueTupleHashIterator__f_key = null;
-    $ct_sci_ChampBaseReverseIterator__sci_Node__(this, rootNode);
-    this.sci_MapKeyValueTupleHashIterator__f_scala$collection$immutable$MapKeyValueTupleHashIterator$$hash = 0;
-    this.sci_MapKeyValueTupleHashIterator__f_key = new $c_sci_MapKeyValueTupleHashIterator$$anon$1(this)
-  };
-  productArity__I() {
-    return 2
-  };
-  productElement__I__O(n) {
-    return $f_s_Product2__productElement__I__O(this, n)
-  };
-  productIterator__sc_Iterator() {
-    return new $c_s_Product$$anon$1(this)
-  };
-  iterator__sc_Iterator() {
-    return this
-  };
-  isEmpty__Z() {
-    return (!this.hasNext__Z())
-  };
-  concat__F0__sc_Iterator(xs) {
-    return $f_sc_Iterator__concat__F0__sc_Iterator(this, xs)
-  };
-  drop__I__sc_Iterator(n) {
-    return $f_sc_Iterator__drop__I__sc_Iterator(this, n)
-  };
-  toString__T() {
-    return "<iterator>"
-  };
-  copyToArray__O__I__I(xs, start) {
-    return $f_sc_IterableOnceOps__copyToArray__O__I__I(this, xs, start)
-  };
-  copyToArray__O__I__I__I(xs, start, len) {
-    return $f_sc_IterableOnceOps__copyToArray__O__I__I__I(this, xs, start, len)
-  };
-  addString__scm_StringBuilder__T__T__T__scm_StringBuilder(b, start, sep, end) {
-    return $f_sc_IterableOnceOps__addString__scm_StringBuilder__T__T__T__scm_StringBuilder(this, b, start, sep, end)
-  };
-  toArray__s_reflect_ClassTag__O(evidence$2) {
-    return $f_sc_IterableOnceOps__toArray__s_reflect_ClassTag__O(this, evidence$2)
-  };
-  knownSize__I() {
-    return (-1)
-  };
-  hashCode__I() {
-    const this$1 = $m_s_util_hashing_MurmurHash3$();
-    return this$1.productHash__s_Product__I__Z__I(this, (-889275714), false)
-  };
-  _1__O() {
-    return this.sci_MapKeyValueTupleHashIterator__f_key
-  };
-  _2__O() {
-    return this.sci_MapKeyValueTupleHashIterator__f_value
-  };
-  productPrefix__T() {
-    return "Tuple2"
-  };
-  next__sci_MapKeyValueTupleHashIterator() {
-    if ((!this.hasNext__Z())) {
-      throw $ct_ju_NoSuchElementException__(new $c_ju_NoSuchElementException())
-    };
-    this.sci_MapKeyValueTupleHashIterator__f_scala$collection$immutable$MapKeyValueTupleHashIterator$$hash = this.sci_ChampBaseReverseIterator__f_currentValueNode.getHash__I__I(this.sci_ChampBaseReverseIterator__f_currentValueCursor);
-    this.sci_MapKeyValueTupleHashIterator__f_value = $as_sci_MapNode(this.sci_ChampBaseReverseIterator__f_currentValueNode).getValue__I__O(this.sci_ChampBaseReverseIterator__f_currentValueCursor);
-    this.sci_ChampBaseReverseIterator__f_currentValueCursor = (((-1) + this.sci_ChampBaseReverseIterator__f_currentValueCursor) | 0);
-    return this
-  };
-  next__O() {
-    return this.next__sci_MapKeyValueTupleHashIterator()
-  };
-}
-const $d_sci_MapKeyValueTupleHashIterator = new $TypeData().initClass({
-  sci_MapKeyValueTupleHashIterator: 0
-}, false, "scala.collection.immutable.MapKeyValueTupleHashIterator", {
-  sci_MapKeyValueTupleHashIterator: 1,
-  sci_ChampBaseReverseIterator: 1,
-  O: 1,
-  sc_Iterator: 1,
-  sc_IterableOnce: 1,
-  sc_IterableOnceOps: 1,
-  s_Product2: 1,
-  s_Product: 1,
-  s_Equals: 1
-});
-$c_sci_MapKeyValueTupleHashIterator.prototype.$classData = $d_sci_MapKeyValueTupleHashIterator;
 const $f_sci_StrictOptimizedSeqOps__distinctBy__F1__O = (function($thiz, f) {
   if (($thiz.lengthCompare__I__I(1) <= 0)) {
     return $thiz
@@ -40606,19 +41015,16 @@ const $f_sc_Map__equals__O__Z = (function($thiz, o) {
       return true
     } else if (($thiz.size__I() === x2.size__I())) {
       try {
-        let res = true;
-        const it = $thiz.iterator__sc_Iterator();
-        while ((res && it.hasNext__Z())) {
-          const arg1 = it.next__O();
-          const x0$1 = $as_T2(arg1);
-          if ((x0$1 === null)) {
+        return $thiz.forall__F1__Z(new $c_sjsr_AnonFunction1(((this$1, x2$1) => ((x0$1$2) => {
+          const x0$1 = $as_T2(x0$1$2);
+          if ((x0$1 !== null)) {
+            const k = x0$1._1__O();
+            const v = x0$1._2__O();
+            return $m_sr_BoxesRunTime$().equals__O__O__Z(x2$1.getOrElse__O__F0__O(k, new $c_sjsr_AnonFunction0(((this$2) => (() => $m_sc_Map$().sc_Map$__f_scala$collection$Map$$DefaultSentinel))(this$1))), v)
+          } else {
             throw new $c_s_MatchError(x0$1)
-          };
-          const k = x0$1._1__O();
-          const v = x0$1._2__O();
-          res = $m_sr_BoxesRunTime$().equals__O__O__Z(x2.getOrElse__O__F0__O(k, new $c_sjsr_AnonFunction0(((this$1) => (() => $m_sc_Map$().sc_Map$__f_scala$collection$Map$$DefaultSentinel))($thiz))), v)
-        };
-        return res
+          }
+        }))($thiz, x2)))
       } catch (e) {
         if ((e instanceof $c_jl_ClassCastException)) {
           return false
@@ -40769,6 +41175,9 @@ class $c_sc_AbstractSeq extends $c_sc_AbstractIterable {
     const this$1 = this.iterator__sc_Iterator();
     return $f_sc_Iterator__indexWhere__F1__I__I(this$1, p, from)
   };
+  sizeCompare__I__I(otherSize) {
+    return this.lengthCompare__I__I(otherSize)
+  };
   lengthCompare__I__I(len) {
     return $f_sc_IterableOps__sizeCompare__I__I(this, len)
   };
@@ -40794,9 +41203,6 @@ class $c_sc_AbstractSeqView extends $c_sc_AbstractView {
   };
   concat__sc_IterableOnce__O(suffix) {
     return $f_sc_IterableOps__concat__sc_IterableOnce__O(this, suffix)
-  };
-  size__I() {
-    return this.length__I()
   };
   distinct__O() {
     return $f_sc_SeqOps__distinct__O(this)
@@ -40859,8 +41265,7 @@ class $c_sc_AbstractMap extends $c_sc_AbstractIterable {
     return $f_sc_Map__equals__O__Z(this, o)
   };
   hashCode__I() {
-    const this$1 = $m_s_util_hashing_MurmurHash3$();
-    return this$1.unorderedHash__sc_IterableOnce__I__I(this, this$1.s_util_hashing_MurmurHash3$__f_mapSeed)
+    return $m_s_util_hashing_MurmurHash3$().mapHash__sc_Map__I(this)
   };
   stringPrefix__T() {
     return "Map"
@@ -40874,6 +41279,9 @@ class $c_sc_AbstractMap extends $c_sc_AbstractIterable {
   applyOrElse__O__F1__O(x, default$1) {
     return $f_sc_MapOps__applyOrElse__O__F1__O(this, x, default$1)
   };
+  foreachEntry__F2__V(f) {
+    $f_sc_MapOps__foreachEntry__F2__V(this, f)
+  };
   isDefinedAt__O__Z(key) {
     return this.contains__O__Z(key)
   };
@@ -40886,25 +41294,21 @@ class $c_sc_AbstractMap extends $c_sc_AbstractIterable {
 }
 const $ct_sc_SeqView$Drop__sc_SeqOps__I__ = (function($thiz, underlying, n) {
   $thiz.sc_SeqView$Drop__f_underlying = underlying;
+  $thiz.sc_SeqView$Drop__f_n = n;
   $ct_sc_View$Drop__sc_IterableOps__I__($thiz, underlying, n);
   return $thiz
 });
 class $c_sc_SeqView$Drop extends $c_sc_View$Drop {
   constructor() {
     super();
-    this.sc_SeqView$Drop__f_underlying = null
-  };
-  drop__I__sc_SeqView(n) {
-    return $ct_sc_SeqView$Drop__sc_SeqOps__I__(new $c_sc_SeqView$Drop(), this, n)
+    this.sc_SeqView$Drop__f_underlying = null;
+    this.sc_SeqView$Drop__f_n = 0
   };
   stringPrefix__T() {
     return "SeqView"
   };
   concat__sc_IterableOnce__O(suffix) {
     return $f_sc_IterableOps__concat__sc_IterableOnce__O(this, suffix)
-  };
-  size__I() {
-    return this.length__I()
   };
   distinct__O() {
     return $f_sc_SeqOps__distinct__O(this)
@@ -40929,6 +41333,9 @@ class $c_sc_SeqView$Drop extends $c_sc_View$Drop {
   };
   apply__I__O(i) {
     return this.sc_SeqView$Drop__f_underlying.apply__I__O(((i + this.sc_View$Drop__f_normN) | 0))
+  };
+  drop__I__sc_SeqView(n) {
+    return $ct_sc_SeqView$Drop__sc_SeqOps__I__(new $c_sc_SeqView$Drop(), this.sc_SeqView$Drop__f_underlying, ((this.sc_SeqView$Drop__f_n + n) | 0))
   };
   drop__I__O(n) {
     return this.drop__I__sc_SeqView(n)
@@ -41011,9 +41418,6 @@ class $c_sc_SeqView$Map extends $c_sc_View$Map {
   };
   concat__sc_IterableOnce__O(suffix) {
     return $f_sc_IterableOps__concat__sc_IterableOnce__O(this, suffix)
-  };
-  size__I() {
-    return this.length__I()
   };
   distinct__O() {
     return $f_sc_SeqOps__distinct__O(this)
@@ -41376,6 +41780,9 @@ class $c_sc_AbstractIndexedSeqView extends $c_sc_AbstractSeqView {
   stringPrefix__T() {
     return "IndexedSeqView"
   };
+  head__O() {
+    return this.apply__I__O(0)
+  };
   lengthCompare__I__I(len) {
     const x = this.length__I();
     return ((x === len) ? 0 : ((x < len) ? (-1) : 1))
@@ -41405,6 +41812,9 @@ class $c_sc_IndexedSeqView$Drop extends $c_sc_SeqView$Drop {
   };
   stringPrefix__T() {
     return "IndexedSeqView"
+  };
+  head__O() {
+    return this.apply__I__O(0)
   };
   lengthCompare__I__I(len) {
     const x = this.length__I();
@@ -41453,6 +41863,9 @@ class $c_sc_IndexedSeqView$Id extends $c_sc_SeqView$Id {
   stringPrefix__T() {
     return "IndexedSeqView"
   };
+  head__O() {
+    return this.apply__I__O(0)
+  };
   lengthCompare__I__I(len) {
     const x = this.length__I();
     return ((x === len) ? 0 : ((x < len) ? (-1) : 1))
@@ -41499,6 +41912,9 @@ class $c_sc_IndexedSeqView$Map extends $c_sc_SeqView$Map {
   };
   stringPrefix__T() {
     return "IndexedSeqView"
+  };
+  head__O() {
+    return this.apply__I__O(0)
   };
   lengthCompare__I__I(len) {
     const x = this.length__I();
@@ -41871,12 +42287,22 @@ class $c_sci_Set$Set2 extends $c_sci_AbstractSet {
     return (this.contains__O__Z(elem) ? this : new $c_sci_Set$Set3(this.sci_Set$Set2__f_elem1, this.sci_Set$Set2__f_elem2, elem))
   };
   iterator__sc_Iterator() {
-    const rassoc$2 = this.sci_Set$Set2__f_elem1;
-    const rassoc$1 = this.sci_Set$Set2__f_elem2;
-    const this$1 = $m_sci_Nil$();
-    const this$2 = new $c_sci_$colon$colon(rassoc$1, this$1);
-    const this$3 = new $c_sci_$colon$colon(rassoc$2, this$2);
-    return new $c_sc_StrictOptimizedLinearSeqOps$$anon$1(this$3)
+    return new $c_sci_Set$Set2$$anon$1(this)
+  };
+  scala$collection$immutable$Set$Set2$$getElem__I__O(i) {
+    switch (i) {
+      case 0: {
+        return this.sci_Set$Set2__f_elem1;
+        break
+      }
+      case 1: {
+        return this.sci_Set$Set2__f_elem2;
+        break
+      }
+      default: {
+        throw new $c_s_MatchError(i)
+      }
+    }
   };
   foreach__F1__V(f) {
     f.apply__O__O(this.sci_Set$Set2__f_elem1);
@@ -41948,14 +42374,26 @@ class $c_sci_Set$Set3 extends $c_sci_AbstractSet {
     return (this.contains__O__Z(elem) ? this : new $c_sci_Set$Set4(this.sci_Set$Set3__f_elem1, this.sci_Set$Set3__f_elem2, this.sci_Set$Set3__f_elem3, elem))
   };
   iterator__sc_Iterator() {
-    const rassoc$5 = this.sci_Set$Set3__f_elem1;
-    const rassoc$4 = this.sci_Set$Set3__f_elem2;
-    const rassoc$3 = this.sci_Set$Set3__f_elem3;
-    const this$1 = $m_sci_Nil$();
-    const this$2 = new $c_sci_$colon$colon(rassoc$3, this$1);
-    const this$3 = new $c_sci_$colon$colon(rassoc$4, this$2);
-    const this$4 = new $c_sci_$colon$colon(rassoc$5, this$3);
-    return new $c_sc_StrictOptimizedLinearSeqOps$$anon$1(this$4)
+    return new $c_sci_Set$Set3$$anon$2(this)
+  };
+  scala$collection$immutable$Set$Set3$$getElem__I__O(i) {
+    switch (i) {
+      case 0: {
+        return this.sci_Set$Set3__f_elem1;
+        break
+      }
+      case 1: {
+        return this.sci_Set$Set3__f_elem2;
+        break
+      }
+      case 2: {
+        return this.sci_Set$Set3__f_elem3;
+        break
+      }
+      default: {
+        throw new $c_s_MatchError(i)
+      }
+    }
   };
   foreach__F1__V(f) {
     f.apply__O__O(this.sci_Set$Set3__f_elem1);
@@ -42044,16 +42482,30 @@ class $c_sci_Set$Set4 extends $c_sci_AbstractSet {
     }
   };
   iterator__sc_Iterator() {
-    const rassoc$9 = this.sci_Set$Set4__f_elem1;
-    const rassoc$8 = this.sci_Set$Set4__f_elem2;
-    const rassoc$7 = this.sci_Set$Set4__f_elem3;
-    const rassoc$6 = this.sci_Set$Set4__f_elem4;
-    const this$1 = $m_sci_Nil$();
-    const this$2 = new $c_sci_$colon$colon(rassoc$6, this$1);
-    const this$3 = new $c_sci_$colon$colon(rassoc$7, this$2);
-    const this$4 = new $c_sci_$colon$colon(rassoc$8, this$3);
-    const this$5 = new $c_sci_$colon$colon(rassoc$9, this$4);
-    return new $c_sc_StrictOptimizedLinearSeqOps$$anon$1(this$5)
+    return new $c_sci_Set$Set4$$anon$3(this)
+  };
+  scala$collection$immutable$Set$Set4$$getElem__I__O(i) {
+    switch (i) {
+      case 0: {
+        return this.sci_Set$Set4__f_elem1;
+        break
+      }
+      case 1: {
+        return this.sci_Set$Set4__f_elem2;
+        break
+      }
+      case 2: {
+        return this.sci_Set$Set4__f_elem3;
+        break
+      }
+      case 3: {
+        return this.sci_Set$Set4__f_elem4;
+        break
+      }
+      default: {
+        throw new $c_s_MatchError(i)
+      }
+    }
   };
   foreach__F1__V(f) {
     f.apply__O__O(this.sci_Set$Set4__f_elem1);
@@ -42260,6 +42712,23 @@ class $c_sci_Map$Map1 extends $c_sci_AbstractMap {
   foreach__F1__V(f) {
     f.apply__O__O($ct_T2__O__O__(new $c_T2(), this.sci_Map$Map1__f_key1, this.sci_Map$Map1__f_value1))
   };
+  forall__F1__Z(p) {
+    return $uZ(p.apply__O__O($ct_T2__O__O__(new $c_T2(), this.sci_Map$Map1__f_key1, this.sci_Map$Map1__f_value1)))
+  };
+  hashCode__I() {
+    let a = 0;
+    let b = 0;
+    let c = 1;
+    let h = $m_s_util_hashing_MurmurHash3$().tuple2Hash__O__O__I(this.sci_Map$Map1__f_key1, this.sci_Map$Map1__f_value1);
+    a = ((a + h) | 0);
+    b = (b ^ h);
+    c = $imul(c, (1 | h));
+    h = $m_s_util_hashing_MurmurHash3$().s_util_hashing_MurmurHash3$__f_mapSeed;
+    h = $m_s_util_hashing_MurmurHash3$().mix__I__I__I(h, a);
+    h = $m_s_util_hashing_MurmurHash3$().mix__I__I__I(h, b);
+    h = $m_s_util_hashing_MurmurHash3$().mixLast__I__I__I(h, c);
+    return $m_s_util_hashing_MurmurHash3$().finalizeHash__I__I__I(h, 1)
+  };
   updated__O__O__sci_MapOps(key, value) {
     return this.updated__O__O__sci_Map(key, value)
   };
@@ -42335,6 +42804,27 @@ class $c_sci_Map$Map2 extends $c_sci_AbstractMap {
   foreach__F1__V(f) {
     f.apply__O__O($ct_T2__O__O__(new $c_T2(), this.sci_Map$Map2__f_scala$collection$immutable$Map$Map2$$key1, this.sci_Map$Map2__f_scala$collection$immutable$Map$Map2$$value1));
     f.apply__O__O($ct_T2__O__O__(new $c_T2(), this.sci_Map$Map2__f_scala$collection$immutable$Map$Map2$$key2, this.sci_Map$Map2__f_scala$collection$immutable$Map$Map2$$value2))
+  };
+  forall__F1__Z(p) {
+    return ($uZ(p.apply__O__O($ct_T2__O__O__(new $c_T2(), this.sci_Map$Map2__f_scala$collection$immutable$Map$Map2$$key1, this.sci_Map$Map2__f_scala$collection$immutable$Map$Map2$$value1))) && $uZ(p.apply__O__O($ct_T2__O__O__(new $c_T2(), this.sci_Map$Map2__f_scala$collection$immutable$Map$Map2$$key2, this.sci_Map$Map2__f_scala$collection$immutable$Map$Map2$$value2))))
+  };
+  hashCode__I() {
+    let a = 0;
+    let b = 0;
+    let c = 1;
+    let h = $m_s_util_hashing_MurmurHash3$().tuple2Hash__O__O__I(this.sci_Map$Map2__f_scala$collection$immutable$Map$Map2$$key1, this.sci_Map$Map2__f_scala$collection$immutable$Map$Map2$$value1);
+    a = ((a + h) | 0);
+    b = (b ^ h);
+    c = $imul(c, (1 | h));
+    h = $m_s_util_hashing_MurmurHash3$().tuple2Hash__O__O__I(this.sci_Map$Map2__f_scala$collection$immutable$Map$Map2$$key2, this.sci_Map$Map2__f_scala$collection$immutable$Map$Map2$$value2);
+    a = ((a + h) | 0);
+    b = (b ^ h);
+    c = $imul(c, (1 | h));
+    h = $m_s_util_hashing_MurmurHash3$().s_util_hashing_MurmurHash3$__f_mapSeed;
+    h = $m_s_util_hashing_MurmurHash3$().mix__I__I__I(h, a);
+    h = $m_s_util_hashing_MurmurHash3$().mix__I__I__I(h, b);
+    h = $m_s_util_hashing_MurmurHash3$().mixLast__I__I__I(h, c);
+    return $m_s_util_hashing_MurmurHash3$().finalizeHash__I__I__I(h, 2)
   };
   updated__O__O__sci_MapOps(key, value) {
     return this.updated__O__O__sci_Map(key, value)
@@ -42418,6 +42908,31 @@ class $c_sci_Map$Map3 extends $c_sci_AbstractMap {
     f.apply__O__O($ct_T2__O__O__(new $c_T2(), this.sci_Map$Map3__f_scala$collection$immutable$Map$Map3$$key1, this.sci_Map$Map3__f_scala$collection$immutable$Map$Map3$$value1));
     f.apply__O__O($ct_T2__O__O__(new $c_T2(), this.sci_Map$Map3__f_scala$collection$immutable$Map$Map3$$key2, this.sci_Map$Map3__f_scala$collection$immutable$Map$Map3$$value2));
     f.apply__O__O($ct_T2__O__O__(new $c_T2(), this.sci_Map$Map3__f_scala$collection$immutable$Map$Map3$$key3, this.sci_Map$Map3__f_scala$collection$immutable$Map$Map3$$value3))
+  };
+  forall__F1__Z(p) {
+    return (($uZ(p.apply__O__O($ct_T2__O__O__(new $c_T2(), this.sci_Map$Map3__f_scala$collection$immutable$Map$Map3$$key1, this.sci_Map$Map3__f_scala$collection$immutable$Map$Map3$$value1))) && $uZ(p.apply__O__O($ct_T2__O__O__(new $c_T2(), this.sci_Map$Map3__f_scala$collection$immutable$Map$Map3$$key2, this.sci_Map$Map3__f_scala$collection$immutable$Map$Map3$$value2)))) && $uZ(p.apply__O__O($ct_T2__O__O__(new $c_T2(), this.sci_Map$Map3__f_scala$collection$immutable$Map$Map3$$key3, this.sci_Map$Map3__f_scala$collection$immutable$Map$Map3$$value3))))
+  };
+  hashCode__I() {
+    let a = 0;
+    let b = 0;
+    let c = 1;
+    let h = $m_s_util_hashing_MurmurHash3$().tuple2Hash__O__O__I(this.sci_Map$Map3__f_scala$collection$immutable$Map$Map3$$key1, this.sci_Map$Map3__f_scala$collection$immutable$Map$Map3$$value1);
+    a = ((a + h) | 0);
+    b = (b ^ h);
+    c = $imul(c, (1 | h));
+    h = $m_s_util_hashing_MurmurHash3$().tuple2Hash__O__O__I(this.sci_Map$Map3__f_scala$collection$immutable$Map$Map3$$key2, this.sci_Map$Map3__f_scala$collection$immutable$Map$Map3$$value2);
+    a = ((a + h) | 0);
+    b = (b ^ h);
+    c = $imul(c, (1 | h));
+    h = $m_s_util_hashing_MurmurHash3$().tuple2Hash__O__O__I(this.sci_Map$Map3__f_scala$collection$immutable$Map$Map3$$key3, this.sci_Map$Map3__f_scala$collection$immutable$Map$Map3$$value3);
+    a = ((a + h) | 0);
+    b = (b ^ h);
+    c = $imul(c, (1 | h));
+    h = $m_s_util_hashing_MurmurHash3$().s_util_hashing_MurmurHash3$__f_mapSeed;
+    h = $m_s_util_hashing_MurmurHash3$().mix__I__I__I(h, a);
+    h = $m_s_util_hashing_MurmurHash3$().mix__I__I__I(h, b);
+    h = $m_s_util_hashing_MurmurHash3$().mixLast__I__I__I(h, c);
+    return $m_s_util_hashing_MurmurHash3$().finalizeHash__I__I__I(h, 3)
   };
   updated__O__O__sci_MapOps(key, value) {
     return this.updated__O__O__sci_Map(key, value)
@@ -42520,8 +43035,37 @@ class $c_sci_Map$Map4 extends $c_sci_AbstractMap {
     f.apply__O__O($ct_T2__O__O__(new $c_T2(), this.sci_Map$Map4__f_scala$collection$immutable$Map$Map4$$key3, this.sci_Map$Map4__f_scala$collection$immutable$Map$Map4$$value3));
     f.apply__O__O($ct_T2__O__O__(new $c_T2(), this.sci_Map$Map4__f_scala$collection$immutable$Map$Map4$$key4, this.sci_Map$Map4__f_scala$collection$immutable$Map$Map4$$value4))
   };
+  forall__F1__Z(p) {
+    return ((($uZ(p.apply__O__O($ct_T2__O__O__(new $c_T2(), this.sci_Map$Map4__f_scala$collection$immutable$Map$Map4$$key1, this.sci_Map$Map4__f_scala$collection$immutable$Map$Map4$$value1))) && $uZ(p.apply__O__O($ct_T2__O__O__(new $c_T2(), this.sci_Map$Map4__f_scala$collection$immutable$Map$Map4$$key2, this.sci_Map$Map4__f_scala$collection$immutable$Map$Map4$$value2)))) && $uZ(p.apply__O__O($ct_T2__O__O__(new $c_T2(), this.sci_Map$Map4__f_scala$collection$immutable$Map$Map4$$key3, this.sci_Map$Map4__f_scala$collection$immutable$Map$Map4$$value3)))) && $uZ(p.apply__O__O($ct_T2__O__O__(new $c_T2(), this.sci_Map$Map4__f_scala$collection$immutable$Map$Map4$$key4, this.sci_Map$Map4__f_scala$collection$immutable$Map$Map4$$value4))))
+  };
   buildTo__sci_HashMapBuilder__sci_HashMapBuilder(builder) {
     return builder.addOne__O__O__sci_HashMapBuilder(this.sci_Map$Map4__f_scala$collection$immutable$Map$Map4$$key1, this.sci_Map$Map4__f_scala$collection$immutable$Map$Map4$$value1).addOne__O__O__sci_HashMapBuilder(this.sci_Map$Map4__f_scala$collection$immutable$Map$Map4$$key2, this.sci_Map$Map4__f_scala$collection$immutable$Map$Map4$$value2).addOne__O__O__sci_HashMapBuilder(this.sci_Map$Map4__f_scala$collection$immutable$Map$Map4$$key3, this.sci_Map$Map4__f_scala$collection$immutable$Map$Map4$$value3).addOne__O__O__sci_HashMapBuilder(this.sci_Map$Map4__f_scala$collection$immutable$Map$Map4$$key4, this.sci_Map$Map4__f_scala$collection$immutable$Map$Map4$$value4)
+  };
+  hashCode__I() {
+    let a = 0;
+    let b = 0;
+    let c = 1;
+    let h = $m_s_util_hashing_MurmurHash3$().tuple2Hash__O__O__I(this.sci_Map$Map4__f_scala$collection$immutable$Map$Map4$$key1, this.sci_Map$Map4__f_scala$collection$immutable$Map$Map4$$value1);
+    a = ((a + h) | 0);
+    b = (b ^ h);
+    c = $imul(c, (1 | h));
+    h = $m_s_util_hashing_MurmurHash3$().tuple2Hash__O__O__I(this.sci_Map$Map4__f_scala$collection$immutable$Map$Map4$$key2, this.sci_Map$Map4__f_scala$collection$immutable$Map$Map4$$value2);
+    a = ((a + h) | 0);
+    b = (b ^ h);
+    c = $imul(c, (1 | h));
+    h = $m_s_util_hashing_MurmurHash3$().tuple2Hash__O__O__I(this.sci_Map$Map4__f_scala$collection$immutable$Map$Map4$$key3, this.sci_Map$Map4__f_scala$collection$immutable$Map$Map4$$value3);
+    a = ((a + h) | 0);
+    b = (b ^ h);
+    c = $imul(c, (1 | h));
+    h = $m_s_util_hashing_MurmurHash3$().tuple2Hash__O__O__I(this.sci_Map$Map4__f_scala$collection$immutable$Map$Map4$$key4, this.sci_Map$Map4__f_scala$collection$immutable$Map$Map4$$value4);
+    a = ((a + h) | 0);
+    b = (b ^ h);
+    c = $imul(c, (1 | h));
+    h = $m_s_util_hashing_MurmurHash3$().s_util_hashing_MurmurHash3$__f_mapSeed;
+    h = $m_s_util_hashing_MurmurHash3$().mix__I__I__I(h, a);
+    h = $m_s_util_hashing_MurmurHash3$().mix__I__I__I(h, b);
+    h = $m_s_util_hashing_MurmurHash3$().mixLast__I__I__I(h, c);
+    return $m_s_util_hashing_MurmurHash3$().finalizeHash__I__I__I(h, 4)
   };
   updated__O__O__sci_MapOps(key, value) {
     return this.updated__O__O__sci_Map(key, value)
@@ -42865,7 +43409,16 @@ class $c_scm_AbstractSet extends $c_sc_AbstractSet {
 }
 const $p_sci_LazyList__scala$collection$immutable$LazyList$$state$lzycompute__sci_LazyList$State = (function($thiz) {
   if ((!$thiz.sci_LazyList__f_bitmap$0)) {
-    const res = $as_sci_LazyList$State($thiz.sci_LazyList__f_lazyState.apply__O());
+    if ($thiz.sci_LazyList__f_midEvaluation) {
+      throw $m_sjsr_package$().unwrapJavaScriptException__jl_Throwable__O($ct_jl_RuntimeException__T__(new $c_jl_RuntimeException(), "self-referential LazyList or a derivation thereof has no more elements"))
+    };
+    $thiz.sci_LazyList__f_midEvaluation = true;
+    let res;
+    try {
+      res = $as_sci_LazyList$State($thiz.sci_LazyList__f_lazyState.apply__O())
+    } finally {
+      $thiz.sci_LazyList__f_midEvaluation = false
+    };
     $thiz.sci_LazyList__f_scala$collection$immutable$LazyList$$stateEvaluated = true;
     $thiz.sci_LazyList__f_lazyState = null;
     $thiz.sci_LazyList__f_scala$collection$immutable$LazyList$$state = res;
@@ -42986,9 +43539,11 @@ class $c_sci_LazyList extends $c_sci_AbstractSeq {
     this.sci_LazyList__f_scala$collection$immutable$LazyList$$state = null;
     this.sci_LazyList__f_lazyState = null;
     this.sci_LazyList__f_scala$collection$immutable$LazyList$$stateEvaluated = false;
+    this.sci_LazyList__f_midEvaluation = false;
     this.sci_LazyList__f_bitmap$0 = false;
     this.sci_LazyList__f_lazyState = lazyState;
-    this.sci_LazyList__f_scala$collection$immutable$LazyList$$stateEvaluated = false
+    this.sci_LazyList__f_scala$collection$immutable$LazyList$$stateEvaluated = false;
+    this.sci_LazyList__f_midEvaluation = false
   };
   stringPrefix__T() {
     return "LinearSeq"
@@ -43099,7 +43654,7 @@ class $c_sci_LazyList extends $c_sci_AbstractSeq {
           const x2 = $as_sci_LazyList(x1);
           return x2.scala$collection$immutable$LazyList$$state__sci_LazyList$State()
         } else {
-          return ((x1.knownSize__I() === 0) ? $m_sci_LazyList$State$Empty$() : $m_sci_LazyList$().scala$collection$immutable$LazyList$$stateFromIterator__sc_Iterator__sci_LazyList$State($as_sc_IterableOnce(suffix$1.apply__O()).iterator__sc_Iterator()))
+          return ((x1.knownSize__I() === 0) ? $m_sci_LazyList$State$Empty$() : $m_sci_LazyList$().scala$collection$immutable$LazyList$$stateFromIterator__sc_Iterator__sci_LazyList$State(x1.iterator__sc_Iterator()))
         }
       } else {
         $m_sci_LazyList$();
@@ -43389,6 +43944,10 @@ class $c_sci_WrappedString extends $c_sci_AbstractSeq {
   map__F1__O(f) {
     return $f_sc_IndexedSeqOps__map__F1__O(this, f)
   };
+  head__O() {
+    const this$1 = this.sci_WrappedString__f_scala$collection$immutable$WrappedString$$self;
+    return $bC((65535 & $uI(this$1.charCodeAt(0))))
+  };
   lengthCompare__I__I(len) {
     const this$1 = this.sci_WrappedString__f_scala$collection$immutable$WrappedString$$self;
     const x = $uI(this$1.length);
@@ -43547,6 +44106,9 @@ class $c_sjsr_WrappedVarArgs extends $c_O {
   drop__I__O(n) {
     return $f_sc_IndexedSeqOps__drop__I__O(this, n)
   };
+  head__O() {
+    return this.apply__I__O(0)
+  };
   lengthCompare__I__I(len) {
     const x = this.length__I();
     return ((x === len) ? 0 : ((x < len) ? (-1) : 1))
@@ -43577,6 +44139,10 @@ class $c_sjsr_WrappedVarArgs extends $c_O {
     const this$2 = new $c_sc_IndexedSeqView$IndexedSeqViewIterator(this$1);
     return $f_sc_Iterator__indexWhere__F1__I__I(this$2, p, from)
   };
+  sizeCompare__I__I(otherSize) {
+    const x = this.length__I();
+    return ((x === otherSize) ? 0 : ((x < otherSize) ? (-1) : 1))
+  };
   isEmpty__Z() {
     return $f_sc_SeqOps__isEmpty__Z(this)
   };
@@ -43585,10 +44151,6 @@ class $c_sjsr_WrappedVarArgs extends $c_O {
   };
   newSpecificBuilder__scm_Builder() {
     return $m_sjsr_WrappedVarArgs$().newBuilder__scm_Builder()
-  };
-  head__O() {
-    const this$1 = new $c_sc_IndexedSeqView$Id(this);
-    return new $c_sc_IndexedSeqView$IndexedSeqViewIterator(this$1).next__O()
   };
   tail__O() {
     return $f_sc_IterableOps__tail__O(this)
@@ -43612,7 +44174,8 @@ class $c_sjsr_WrappedVarArgs extends $c_O {
     return $f_sc_IterableOnceOps__addString__scm_StringBuilder__T__T__T__scm_StringBuilder(this, b, start, sep, end)
   };
   toList__sci_List() {
-    return $m_sci_List$().from__sc_IterableOnce__sci_List(this)
+    $m_sci_List$();
+    return $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this)
   };
   toVector__sci_Vector() {
     return $m_sci_Vector$().from__sc_IterableOnce__sci_Vector(this)
@@ -43737,6 +44300,9 @@ class $c_sci_HashMap extends $c_sci_AbstractMap {
   foreach__F1__V(f) {
     this.sci_HashMap__f_rootNode.foreach__F1__V(f)
   };
+  foreachEntry__F2__V(f) {
+    this.sci_HashMap__f_rootNode.foreachEntry__F2__V(f)
+  };
   equals__O__Z(that) {
     if ((that instanceof $c_sci_HashMap)) {
       const x2 = $as_sci_HashMap(that);
@@ -43752,9 +44318,13 @@ class $c_sci_HashMap extends $c_sci_AbstractMap {
     }
   };
   hashCode__I() {
-    const hashIterator = new $c_sci_MapKeyValueTupleHashIterator(this.sci_HashMap__f_rootNode);
-    const hash = $m_s_util_hashing_MurmurHash3$().unorderedHash__sc_IterableOnce__I__I(hashIterator, $m_s_util_hashing_MurmurHash3$().s_util_hashing_MurmurHash3$__f_mapSeed);
-    return hash
+    if (this.isEmpty__Z()) {
+      return $m_s_util_hashing_MurmurHash3$().s_util_hashing_MurmurHash3$__f_emptyMapHash
+    } else {
+      const hashIterator = new $c_sci_MapKeyValueTupleHashIterator(this.sci_HashMap__f_rootNode);
+      const hash = $m_s_util_hashing_MurmurHash3$().unorderedHash__sc_IterableOnce__I__I(hashIterator, $m_s_util_hashing_MurmurHash3$().s_util_hashing_MurmurHash3$__f_mapSeed);
+      return hash
+    }
   };
   className__T() {
     return "HashMap"
@@ -44117,17 +44687,6 @@ class $c_scm_HashSet extends $c_scm_AbstractSet {
   isEmpty__Z() {
     return (this.scm_HashSet__f_contentSize === 0)
   };
-  foreach__F1__V(f) {
-    const len = this.scm_HashSet__f_scala$collection$mutable$HashSet$$table.u.length;
-    let i = 0;
-    while ((i < len)) {
-      const n = this.scm_HashSet__f_scala$collection$mutable$HashSet$$table.get(i);
-      if ((n !== null)) {
-        n.foreach__F1__V(f)
-      };
-      i = ((1 + i) | 0)
-    }
-  };
   className__T() {
     return "HashSet"
   };
@@ -44476,6 +45035,9 @@ class $c_sci_ArraySeq extends $c_sci_AbstractSeq {
   stringPrefix__T() {
     return "IndexedSeq"
   };
+  head__O() {
+    return this.apply__I__O(0)
+  };
   lengthCompare__I__I(len) {
     const x = this.length__I();
     return ((x === len) ? 0 : ((x < len) ? (-1) : 1))
@@ -44674,6 +45236,182 @@ const $d_sci_NumericRange$Inclusive = new $TypeData().initClass({
   Ljava_io_Serializable: 1
 });
 $c_sci_NumericRange$Inclusive.prototype.$classData = $d_sci_NumericRange$Inclusive;
+const $ct_sci_Vector__AO__ = (function($thiz, prefix1) {
+  $thiz.sci_Vector__f_prefix1 = prefix1;
+  return $thiz
+});
+class $c_sci_Vector extends $c_sci_AbstractSeq {
+  constructor() {
+    super();
+    this.sci_Vector__f_prefix1 = null
+  };
+  distinctBy__F1__O(f) {
+    return $f_sci_StrictOptimizedSeqOps__distinctBy__F1__O(this, f)
+  };
+  canEqual__O__Z(that) {
+    return $f_sci_IndexedSeq__canEqual__O__Z(this, that)
+  };
+  sameElements__sc_IterableOnce__Z(o) {
+    return $f_sci_IndexedSeq__sameElements__sc_IterableOnce__Z(this, o)
+  };
+  stringPrefix__T() {
+    return "IndexedSeq"
+  };
+  lengthCompare__I__I(len) {
+    const x = this.length__I();
+    return ((x === len) ? 0 : ((x < len) ? (-1) : 1))
+  };
+  knownSize__I() {
+    return this.length__I()
+  };
+  iterableFactory__sc_SeqFactory() {
+    return $m_sci_Vector$()
+  };
+  length__I() {
+    return ((this instanceof $c_sci_BigVector) ? $as_sci_BigVector(this).sci_BigVector__f_length0 : this.sci_Vector__f_prefix1.u.length)
+  };
+  iterator__sc_Iterator() {
+    return (($m_sci_Vector0$() === this) ? $m_sci_Vector$().sci_Vector$__f_scala$collection$immutable$Vector$$emptyIterator : new $c_sci_NewVectorIterator(this, this.length__I(), this.vectorSliceCount__I()))
+  };
+  filterImpl__F1__Z__sci_Vector(pred, isFlipped) {
+    let i = 0;
+    const len = this.sci_Vector__f_prefix1.u.length;
+    while ((i !== len)) {
+      if (($uZ(pred.apply__O__O(this.sci_Vector__f_prefix1.get(i))) === isFlipped)) {
+        let bitmap = 0;
+        let j = ((1 + i) | 0);
+        while ((j < len)) {
+          if (($uZ(pred.apply__O__O(this.sci_Vector__f_prefix1.get(j))) !== isFlipped)) {
+            bitmap = (bitmap | (1 << j))
+          };
+          j = ((1 + j) | 0)
+        };
+        const $$x1 = i;
+        const i$1 = bitmap;
+        const newLen = (($$x1 + $m_jl_Integer$().bitCount__I__I(i$1)) | 0);
+        if ((this instanceof $c_sci_BigVector)) {
+          const b = new $c_sci_VectorBuilder();
+          let k = 0;
+          while ((k < i)) {
+            b.addOne__O__sci_VectorBuilder(this.sci_Vector__f_prefix1.get(k));
+            k = ((1 + k) | 0)
+          };
+          k = ((1 + i) | 0);
+          while ((i !== newLen)) {
+            if ((((1 << k) & bitmap) !== 0)) {
+              b.addOne__O__sci_VectorBuilder(this.sci_Vector__f_prefix1.get(k));
+              i = ((1 + i) | 0)
+            };
+            k = ((1 + k) | 0)
+          };
+          $as_sci_BigVector(this).foreachRest__F1__V(new $c_sjsr_AnonFunction1(((this$1, pred$1, isFlipped$1, b$1) => ((v$2) => (($uZ(pred$1.apply__O__O(v$2)) !== isFlipped$1) ? b$1.addOne__O__sci_VectorBuilder(v$2) : (void 0))))(this, pred, isFlipped, b)));
+          return b.result__sci_Vector()
+        } else {
+          if ((newLen === 0)) {
+            return $m_sci_Vector0$()
+          };
+          const newData = $newArrayObject($d_O.getArrayOf(), [newLen]);
+          const src = this.sci_Vector__f_prefix1;
+          const length = i;
+          $systemArraycopy(src, 0, newData, 0, length);
+          let k$2 = ((1 + i) | 0);
+          while ((i !== newLen)) {
+            if ((((1 << k$2) & bitmap) !== 0)) {
+              newData.set(i, this.sci_Vector__f_prefix1.get(k$2));
+              i = ((1 + i) | 0)
+            };
+            k$2 = ((1 + k$2) | 0)
+          };
+          return new $c_sci_Vector1(newData)
+        }
+      };
+      i = ((1 + i) | 0)
+    };
+    if ((this instanceof $c_sci_BigVector)) {
+      const b$2 = new $c_sci_VectorBuilder();
+      b$2.initFrom__AO__V(this.sci_Vector__f_prefix1);
+      $as_sci_BigVector(this).foreachRest__F1__V(new $c_sjsr_AnonFunction1(((this$2, pred$2, isFlipped$2, b$2$1) => ((v$3$2) => (($uZ(pred$2.apply__O__O(v$3$2)) !== isFlipped$2) ? b$2$1.addOne__O__sci_VectorBuilder(v$3$2) : (void 0))))(this, pred, isFlipped, b$2)));
+      return b$2.result__sci_Vector()
+    } else {
+      return this
+    }
+  };
+  appendedAll__sc_IterableOnce__sci_Vector(suffix) {
+    const k = suffix.knownSize__I();
+    return ((k === 0) ? this : this.appendedAll0__sc_IterableOnce__I__sci_Vector(suffix, k))
+  };
+  appendedAll0__sc_IterableOnce__I__sci_Vector(suffix, k) {
+    const tinyAppendLimit = ((4 + this.vectorSliceCount__I()) | 0);
+    if (((k > 0) && (k < tinyAppendLimit))) {
+      const v = new $c_sr_ObjectRef(this);
+      if ($is_sci_Iterable(suffix)) {
+        const x2 = $as_sci_Iterable(suffix);
+        x2.foreach__F1__V(new $c_sjsr_AnonFunction1(((this$2, v$1) => ((x$2) => {
+          v$1.sr_ObjectRef__f_elem = $as_sci_Vector(v$1.sr_ObjectRef__f_elem).appended__O__sci_Vector(x$2)
+        }))(this, v)))
+      } else {
+        const this$3 = suffix.iterator__sc_Iterator();
+        while (this$3.hasNext__Z()) {
+          const arg1 = this$3.next__O();
+          v.sr_ObjectRef__f_elem = $as_sci_Vector(v.sr_ObjectRef__f_elem).appended__O__sci_Vector(arg1)
+        }
+      };
+      return $as_sci_Vector(v.sr_ObjectRef__f_elem)
+    } else {
+      return new $c_sci_VectorBuilder().initFrom__sci_Vector__sci_VectorBuilder(this).addAll__sc_IterableOnce__sci_VectorBuilder(suffix).result__sci_Vector()
+    }
+  };
+  className__T() {
+    return "Vector"
+  };
+  toVector__sci_Vector() {
+    return this
+  };
+  applyPreferredMaxLength__I() {
+    return $m_sci_Vector$().sci_Vector$__f_scala$collection$immutable$Vector$$defaultApplyPreferredMaxLength
+  };
+  ioob__I__jl_IndexOutOfBoundsException(index) {
+    return $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), (((index + " is out of bounds (min 0, max ") + (((-1) + this.length__I()) | 0)) + ")"))
+  };
+  head__O() {
+    if ((this.sci_Vector__f_prefix1.u.length === 0)) {
+      throw $ct_ju_NoSuchElementException__T__(new $c_ju_NoSuchElementException(), "empty.head")
+    } else {
+      return this.sci_Vector__f_prefix1.get(0)
+    }
+  };
+  foreach__F1__V(f) {
+    const c = this.vectorSliceCount__I();
+    let i = 0;
+    while ((i < c)) {
+      const $$x1 = $m_sci_VectorStatics$();
+      const idx = i;
+      const c$1 = ((c / 2) | 0);
+      const a = ((idx - c$1) | 0);
+      $$x1.foreachRec__I__AO__F1__V((((-1) + ((((1 + c$1) | 0) - ((a < 0) ? ((-a) | 0) : a)) | 0)) | 0), this.vectorSlice__I__AO(i), f);
+      i = ((1 + i) | 0)
+    }
+  };
+  drop__I__O(n) {
+    const until = this.length__I();
+    return this.slice__I__I__sci_Vector(n, until)
+  };
+  appendedAll__sc_IterableOnce__O(suffix) {
+    return this.appendedAll__sc_IterableOnce__sci_Vector(suffix)
+  };
+  iterableFactory__sc_IterableFactory() {
+    return $m_sci_Vector$()
+  };
+}
+function $as_sci_Vector(obj) {
+  return (((obj instanceof $c_sci_Vector) || (obj === null)) ? obj : $throwClassCastException(obj, "scala.collection.immutable.Vector"))
+}
+function $isArrayOf_sci_Vector(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.sci_Vector)))
+}
+function $asArrayOf_sci_Vector(obj, depth) {
+  return (($isArrayOf_sci_Vector(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscala.collection.immutable.Vector;", depth))
+}
 class $c_scm_ArraySeq extends $c_scm_AbstractSeq {
   distinctBy__F1__O(f) {
     return $f_sc_StrictOptimizedSeqOps__distinctBy__F1__O(this, f)
@@ -44686,6 +45424,9 @@ class $c_scm_ArraySeq extends $c_scm_AbstractSeq {
   };
   drop__I__O(n) {
     return $f_sc_IndexedSeqOps__drop__I__O(this, n)
+  };
+  head__O() {
+    return this.apply__I__O(0)
   };
   lengthCompare__I__I(len) {
     const x = this.length__I();
@@ -45734,12 +46475,48 @@ class $c_sci_List extends $c_sci_AbstractSeq {
     } else if (prefix.isEmpty__Z()) {
       return this
     } else {
-      const this$1 = new $c_scm_ListBuffer();
-      return this$1.addAll__sc_IterableOnce__scm_ListBuffer(prefix).prependToList__sci_List__sci_List(this)
+      const result = new $c_sci_$colon$colon(prefix.head__O(), this);
+      let curr = result;
+      let that = $as_sci_List(prefix.tail__O());
+      while ((!that.isEmpty__Z())) {
+        const temp = new $c_sci_$colon$colon(that.head__O(), this);
+        curr.sci_$colon$colon__f_next = temp;
+        curr = temp;
+        that = $as_sci_List(that.tail__O())
+      };
+      return result
     }
   };
   isEmpty__Z() {
     return (this === $m_sci_Nil$())
+  };
+  prependedAll__sc_IterableOnce__sci_List(prefix) {
+    if ((prefix instanceof $c_sci_List)) {
+      const x2 = $as_sci_List(prefix);
+      return this.$colon$colon$colon__sci_List__sci_List(x2)
+    };
+    if ((prefix.knownSize__I() === 0)) {
+      return this
+    };
+    if ((prefix instanceof $c_scm_ListBuffer)) {
+      const x3 = $as_scm_ListBuffer(prefix);
+      if (this.isEmpty__Z()) {
+        return x3.toList__sci_List()
+      }
+    };
+    const iter = prefix.iterator__sc_Iterator();
+    if (iter.hasNext__Z()) {
+      const result = new $c_sci_$colon$colon(iter.next__O(), this);
+      let curr = result;
+      while (iter.hasNext__Z()) {
+        const temp = new $c_sci_$colon$colon(iter.next__O(), this);
+        curr.sci_$colon$colon__f_next = temp;
+        curr = temp
+      };
+      return result
+    } else {
+      return this
+    }
   };
   appendedAll__sc_IterableOnce__sci_List(suffix) {
     if ((suffix instanceof $c_sci_List)) {
@@ -45884,631 +46661,15 @@ function $isArrayOf_sci_List(obj, depth) {
 function $asArrayOf_sci_List(obj, depth) {
   return (($isArrayOf_sci_List(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscala.collection.immutable.List;", depth))
 }
-const $p_sci_Vector__checkRangeConvert__I__I = (function($thiz, index) {
-  const idx = ((index + $thiz.sci_Vector__f_startIndex) | 0);
-  if (((index >= 0) && (idx < $thiz.sci_Vector__f_endIndex))) {
-    return idx
-  } else {
-    throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), (((index + " is out of bounds (min 0, max ") + (((-1) + $thiz.sci_Vector__f_endIndex) | 0)) + ")"))
-  }
-});
-const $p_sci_Vector__getElem__I__I__O = (function($thiz, index, xor) {
-  if ((xor < 32)) {
-    return $thiz.sci_Vector__f_display0.get((31 & index))
-  } else if ((xor < 1024)) {
-    return $thiz.sci_Vector__f_display1.get((31 & ((index >>> 5) | 0))).get((31 & index))
-  } else if ((xor < 32768)) {
-    return $thiz.sci_Vector__f_display2.get((31 & ((index >>> 10) | 0))).get((31 & ((index >>> 5) | 0))).get((31 & index))
-  } else if ((xor < 1048576)) {
-    return $thiz.sci_Vector__f_display3.get((31 & ((index >>> 15) | 0))).get((31 & ((index >>> 10) | 0))).get((31 & ((index >>> 5) | 0))).get((31 & index))
-  } else if ((xor < 33554432)) {
-    return $thiz.sci_Vector__f_display4.get((31 & ((index >>> 20) | 0))).get((31 & ((index >>> 15) | 0))).get((31 & ((index >>> 10) | 0))).get((31 & ((index >>> 5) | 0))).get((31 & index))
-  } else if ((xor < 1073741824)) {
-    return $thiz.sci_Vector__f_display5.get((31 & ((index >>> 25) | 0))).get((31 & ((index >>> 20) | 0))).get((31 & ((index >>> 15) | 0))).get((31 & ((index >>> 10) | 0))).get((31 & ((index >>> 5) | 0))).get((31 & index))
-  } else {
-    throw $ct_jl_IllegalArgumentException__(new $c_jl_IllegalArgumentException())
-  }
-});
-const $p_sci_Vector__gotoPosWritable__I__I__I__V = (function($thiz, oldIndex, newIndex, xor) {
-  if ($thiz.sci_Vector__f_dirty) {
-    $f_sci_VectorPointer__gotoPosWritable1__I__I__I__V($thiz, oldIndex, newIndex, xor)
-  } else {
-    $f_sci_VectorPointer__gotoPosWritable0__I__I__V($thiz, newIndex, xor);
-    $thiz.sci_Vector__f_dirty = true
-  }
-});
-const $p_sci_Vector__gotoFreshPosWritable__I__I__I__V = (function($thiz, oldIndex, newIndex, xor) {
-  if ($thiz.sci_Vector__f_dirty) {
-    $f_sci_VectorPointer__gotoFreshPosWritable1__I__I__I__V($thiz, oldIndex, newIndex, xor)
-  } else {
-    $f_sci_VectorPointer__gotoFreshPosWritable0__I__I__I__V($thiz, oldIndex, newIndex, xor);
-    $thiz.sci_Vector__f_dirty = true
-  }
-});
-const $p_sci_Vector__shiftTopLevel__I__I__V = (function($thiz, oldLeft, newLeft) {
-  const x1 = (((-1) + $thiz.sci_Vector__f_depth) | 0);
-  switch (x1) {
-    case 0: {
-      const array = $thiz.sci_Vector__f_display0;
-      $thiz.sci_Vector__f_display0 = $f_sci_VectorPointer__copyRange__AO__I__I__AO($thiz, array, oldLeft, newLeft);
-      break
-    }
-    case 1: {
-      const array$1 = $thiz.sci_Vector__f_display1;
-      $thiz.sci_Vector__f_display1 = $asArrayOf_O($f_sci_VectorPointer__copyRange__AO__I__I__AO($thiz, array$1, oldLeft, newLeft), 2);
-      break
-    }
-    case 2: {
-      const array$2 = $thiz.sci_Vector__f_display2;
-      $thiz.sci_Vector__f_display2 = $asArrayOf_O($f_sci_VectorPointer__copyRange__AO__I__I__AO($thiz, array$2, oldLeft, newLeft), 3);
-      break
-    }
-    case 3: {
-      const array$3 = $thiz.sci_Vector__f_display3;
-      $thiz.sci_Vector__f_display3 = $asArrayOf_O($f_sci_VectorPointer__copyRange__AO__I__I__AO($thiz, array$3, oldLeft, newLeft), 4);
-      break
-    }
-    case 4: {
-      const array$4 = $thiz.sci_Vector__f_display4;
-      $thiz.sci_Vector__f_display4 = $asArrayOf_O($f_sci_VectorPointer__copyRange__AO__I__I__AO($thiz, array$4, oldLeft, newLeft), 5);
-      break
-    }
-    case 5: {
-      const array$5 = $thiz.sci_Vector__f_display5;
-      $thiz.sci_Vector__f_display5 = $asArrayOf_O($f_sci_VectorPointer__copyRange__AO__I__I__AO($thiz, array$5, oldLeft, newLeft), 6);
-      break
-    }
-    default: {
-      throw new $c_s_MatchError(x1)
-    }
-  }
-});
-const $p_sci_Vector__zeroLeft__AO__I__V = (function($thiz, array, index) {
-  let i = 0;
-  while ((i < index)) {
-    array.set(i, null);
-    i = ((1 + i) | 0)
-  }
-});
-const $p_sci_Vector__zeroRight__AO__I__V = (function($thiz, array, index) {
-  let i = index;
-  while ((i < array.u.length)) {
-    array.set(i, null);
-    i = ((1 + i) | 0)
-  }
-});
-const $p_sci_Vector__copyLeft__AO__I__AO = (function($thiz, array, right) {
-  const copy = $asArrayOf_O(array.clone__O(), 1);
-  const toIndex = array.u.length;
-  $m_ju_Arrays$().fill__AO__I__I__O__V(copy, right, toIndex, null);
-  return copy
-});
-const $p_sci_Vector__copyRight__AO__I__AO = (function($thiz, array, left) {
-  const copy = $asArrayOf_O(array.clone__O(), 1);
-  $m_ju_Arrays$().fill__AO__I__I__O__V(copy, 0, left, null);
-  return copy
-});
-const $p_sci_Vector__cleanLeftEdge__I__V = (function($thiz, cutIndex) {
-  if ((cutIndex < 32)) {
-    $p_sci_Vector__zeroLeft__AO__I__V($thiz, $thiz.sci_Vector__f_display0, cutIndex)
-  } else if ((cutIndex < 1024)) {
-    $p_sci_Vector__zeroLeft__AO__I__V($thiz, $thiz.sci_Vector__f_display0, (31 & cutIndex));
-    $thiz.sci_Vector__f_display1 = $asArrayOf_O($p_sci_Vector__copyRight__AO__I__AO($thiz, $thiz.sci_Vector__f_display1, ((cutIndex >>> 5) | 0)), 2)
-  } else if ((cutIndex < 32768)) {
-    $p_sci_Vector__zeroLeft__AO__I__V($thiz, $thiz.sci_Vector__f_display0, (31 & cutIndex));
-    $thiz.sci_Vector__f_display1 = $asArrayOf_O($p_sci_Vector__copyRight__AO__I__AO($thiz, $thiz.sci_Vector__f_display1, (31 & ((cutIndex >>> 5) | 0))), 2);
-    $thiz.sci_Vector__f_display2 = $asArrayOf_O($p_sci_Vector__copyRight__AO__I__AO($thiz, $thiz.sci_Vector__f_display2, ((cutIndex >>> 10) | 0)), 3)
-  } else if ((cutIndex < 1048576)) {
-    $p_sci_Vector__zeroLeft__AO__I__V($thiz, $thiz.sci_Vector__f_display0, (31 & cutIndex));
-    $thiz.sci_Vector__f_display1 = $asArrayOf_O($p_sci_Vector__copyRight__AO__I__AO($thiz, $thiz.sci_Vector__f_display1, (31 & ((cutIndex >>> 5) | 0))), 2);
-    $thiz.sci_Vector__f_display2 = $asArrayOf_O($p_sci_Vector__copyRight__AO__I__AO($thiz, $thiz.sci_Vector__f_display2, (31 & ((cutIndex >>> 10) | 0))), 3);
-    $thiz.sci_Vector__f_display3 = $asArrayOf_O($p_sci_Vector__copyRight__AO__I__AO($thiz, $thiz.sci_Vector__f_display3, ((cutIndex >>> 15) | 0)), 4)
-  } else if ((cutIndex < 33554432)) {
-    $p_sci_Vector__zeroLeft__AO__I__V($thiz, $thiz.sci_Vector__f_display0, (31 & cutIndex));
-    $thiz.sci_Vector__f_display1 = $asArrayOf_O($p_sci_Vector__copyRight__AO__I__AO($thiz, $thiz.sci_Vector__f_display1, (31 & ((cutIndex >>> 5) | 0))), 2);
-    $thiz.sci_Vector__f_display2 = $asArrayOf_O($p_sci_Vector__copyRight__AO__I__AO($thiz, $thiz.sci_Vector__f_display2, (31 & ((cutIndex >>> 10) | 0))), 3);
-    $thiz.sci_Vector__f_display3 = $asArrayOf_O($p_sci_Vector__copyRight__AO__I__AO($thiz, $thiz.sci_Vector__f_display3, (31 & ((cutIndex >>> 15) | 0))), 4);
-    $thiz.sci_Vector__f_display4 = $asArrayOf_O($p_sci_Vector__copyRight__AO__I__AO($thiz, $thiz.sci_Vector__f_display4, ((cutIndex >>> 20) | 0)), 5)
-  } else if ((cutIndex < 1073741824)) {
-    $p_sci_Vector__zeroLeft__AO__I__V($thiz, $thiz.sci_Vector__f_display0, (31 & cutIndex));
-    $thiz.sci_Vector__f_display1 = $asArrayOf_O($p_sci_Vector__copyRight__AO__I__AO($thiz, $thiz.sci_Vector__f_display1, (31 & ((cutIndex >>> 5) | 0))), 2);
-    $thiz.sci_Vector__f_display2 = $asArrayOf_O($p_sci_Vector__copyRight__AO__I__AO($thiz, $thiz.sci_Vector__f_display2, (31 & ((cutIndex >>> 10) | 0))), 3);
-    $thiz.sci_Vector__f_display3 = $asArrayOf_O($p_sci_Vector__copyRight__AO__I__AO($thiz, $thiz.sci_Vector__f_display3, (31 & ((cutIndex >>> 15) | 0))), 4);
-    $thiz.sci_Vector__f_display4 = $asArrayOf_O($p_sci_Vector__copyRight__AO__I__AO($thiz, $thiz.sci_Vector__f_display4, (31 & ((cutIndex >>> 20) | 0))), 5);
-    $thiz.sci_Vector__f_display5 = $asArrayOf_O($p_sci_Vector__copyRight__AO__I__AO($thiz, $thiz.sci_Vector__f_display5, ((cutIndex >>> 25) | 0)), 6)
-  } else {
-    throw $ct_jl_IllegalArgumentException__(new $c_jl_IllegalArgumentException())
-  }
-});
-const $p_sci_Vector__cleanRightEdge__I__V = (function($thiz, cutIndex) {
-  if ((cutIndex <= 32)) {
-    $p_sci_Vector__zeroRight__AO__I__V($thiz, $thiz.sci_Vector__f_display0, cutIndex)
-  } else if ((cutIndex <= 1024)) {
-    $p_sci_Vector__zeroRight__AO__I__V($thiz, $thiz.sci_Vector__f_display0, ((1 + (31 & (((-1) + cutIndex) | 0))) | 0));
-    $thiz.sci_Vector__f_display1 = $asArrayOf_O($p_sci_Vector__copyLeft__AO__I__AO($thiz, $thiz.sci_Vector__f_display1, ((cutIndex >>> 5) | 0)), 2)
-  } else if ((cutIndex <= 32768)) {
-    $p_sci_Vector__zeroRight__AO__I__V($thiz, $thiz.sci_Vector__f_display0, ((1 + (31 & (((-1) + cutIndex) | 0))) | 0));
-    $thiz.sci_Vector__f_display1 = $asArrayOf_O($p_sci_Vector__copyLeft__AO__I__AO($thiz, $thiz.sci_Vector__f_display1, ((1 + (31 & (((((-1) + cutIndex) | 0) >>> 5) | 0))) | 0)), 2);
-    $thiz.sci_Vector__f_display2 = $asArrayOf_O($p_sci_Vector__copyLeft__AO__I__AO($thiz, $thiz.sci_Vector__f_display2, ((cutIndex >>> 10) | 0)), 3)
-  } else if ((cutIndex <= 1048576)) {
-    $p_sci_Vector__zeroRight__AO__I__V($thiz, $thiz.sci_Vector__f_display0, ((1 + (31 & (((-1) + cutIndex) | 0))) | 0));
-    $thiz.sci_Vector__f_display1 = $asArrayOf_O($p_sci_Vector__copyLeft__AO__I__AO($thiz, $thiz.sci_Vector__f_display1, ((1 + (31 & (((((-1) + cutIndex) | 0) >>> 5) | 0))) | 0)), 2);
-    $thiz.sci_Vector__f_display2 = $asArrayOf_O($p_sci_Vector__copyLeft__AO__I__AO($thiz, $thiz.sci_Vector__f_display2, ((1 + (31 & (((((-1) + cutIndex) | 0) >>> 10) | 0))) | 0)), 3);
-    $thiz.sci_Vector__f_display3 = $asArrayOf_O($p_sci_Vector__copyLeft__AO__I__AO($thiz, $thiz.sci_Vector__f_display3, ((cutIndex >>> 15) | 0)), 4)
-  } else if ((cutIndex <= 33554432)) {
-    $p_sci_Vector__zeroRight__AO__I__V($thiz, $thiz.sci_Vector__f_display0, ((1 + (31 & (((-1) + cutIndex) | 0))) | 0));
-    $thiz.sci_Vector__f_display1 = $asArrayOf_O($p_sci_Vector__copyLeft__AO__I__AO($thiz, $thiz.sci_Vector__f_display1, ((1 + (31 & (((((-1) + cutIndex) | 0) >>> 5) | 0))) | 0)), 2);
-    $thiz.sci_Vector__f_display2 = $asArrayOf_O($p_sci_Vector__copyLeft__AO__I__AO($thiz, $thiz.sci_Vector__f_display2, ((1 + (31 & (((((-1) + cutIndex) | 0) >>> 10) | 0))) | 0)), 3);
-    $thiz.sci_Vector__f_display3 = $asArrayOf_O($p_sci_Vector__copyLeft__AO__I__AO($thiz, $thiz.sci_Vector__f_display3, ((1 + (31 & (((((-1) + cutIndex) | 0) >>> 15) | 0))) | 0)), 4);
-    $thiz.sci_Vector__f_display4 = $asArrayOf_O($p_sci_Vector__copyLeft__AO__I__AO($thiz, $thiz.sci_Vector__f_display4, ((cutIndex >>> 20) | 0)), 5)
-  } else if ((cutIndex <= 1073741824)) {
-    $p_sci_Vector__zeroRight__AO__I__V($thiz, $thiz.sci_Vector__f_display0, ((1 + (31 & (((-1) + cutIndex) | 0))) | 0));
-    $thiz.sci_Vector__f_display1 = $asArrayOf_O($p_sci_Vector__copyLeft__AO__I__AO($thiz, $thiz.sci_Vector__f_display1, ((1 + (31 & (((((-1) + cutIndex) | 0) >>> 5) | 0))) | 0)), 2);
-    $thiz.sci_Vector__f_display2 = $asArrayOf_O($p_sci_Vector__copyLeft__AO__I__AO($thiz, $thiz.sci_Vector__f_display2, ((1 + (31 & (((((-1) + cutIndex) | 0) >>> 10) | 0))) | 0)), 3);
-    $thiz.sci_Vector__f_display3 = $asArrayOf_O($p_sci_Vector__copyLeft__AO__I__AO($thiz, $thiz.sci_Vector__f_display3, ((1 + (31 & (((((-1) + cutIndex) | 0) >>> 15) | 0))) | 0)), 4);
-    $thiz.sci_Vector__f_display4 = $asArrayOf_O($p_sci_Vector__copyLeft__AO__I__AO($thiz, $thiz.sci_Vector__f_display4, ((1 + (31 & (((((-1) + cutIndex) | 0) >>> 20) | 0))) | 0)), 5);
-    $thiz.sci_Vector__f_display5 = $asArrayOf_O($p_sci_Vector__copyLeft__AO__I__AO($thiz, $thiz.sci_Vector__f_display5, ((cutIndex >>> 25) | 0)), 6)
-  } else {
-    throw $ct_jl_IllegalArgumentException__(new $c_jl_IllegalArgumentException())
-  }
-});
-const $p_sci_Vector__requiredDepth__I__I = (function($thiz, xor) {
-  if ((xor < 32)) {
-    return 1
-  } else if ((xor < 1024)) {
-    return 2
-  } else if ((xor < 32768)) {
-    return 3
-  } else if ((xor < 1048576)) {
-    return 4
-  } else if ((xor < 33554432)) {
-    return 5
-  } else if ((xor < 1073741824)) {
-    return 6
-  } else {
-    throw $ct_jl_IllegalArgumentException__(new $c_jl_IllegalArgumentException())
-  }
-});
-const $p_sci_Vector__dropFront0__I__sci_Vector = (function($thiz, cutIndex) {
-  const blockIndex = ((-32) & cutIndex);
-  const xor = (cutIndex ^ (((-1) + $thiz.sci_Vector__f_endIndex) | 0));
-  const d = $p_sci_Vector__requiredDepth__I__I($thiz, xor);
-  const shift = (cutIndex & (~(((-1) + (1 << $imul(5, d))) | 0)));
-  const s = new $c_sci_Vector(((cutIndex - shift) | 0), (($thiz.sci_Vector__f_endIndex - shift) | 0), ((blockIndex - shift) | 0));
-  const depth = $thiz.sci_Vector__f_depth;
-  $f_sci_VectorPointer__initFrom__sci_VectorPointer__I__V(s, $thiz, depth);
-  s.sci_Vector__f_dirty = $thiz.sci_Vector__f_dirty;
-  $p_sci_Vector__gotoPosWritable__I__I__I__V(s, $thiz.sci_Vector__f_focus, blockIndex, ($thiz.sci_Vector__f_focus ^ blockIndex));
-  $f_sci_VectorPointer__preClean__I__V(s, d);
-  $p_sci_Vector__cleanLeftEdge__I__V(s, ((cutIndex - shift) | 0));
-  return s
-});
-const $p_sci_Vector__dropBack0__I__sci_Vector = (function($thiz, cutIndex) {
-  const blockIndex = ((-32) & (((-1) + cutIndex) | 0));
-  const xor = ($thiz.sci_Vector__f_startIndex ^ (((-1) + cutIndex) | 0));
-  const d = $p_sci_Vector__requiredDepth__I__I($thiz, xor);
-  const shift = ($thiz.sci_Vector__f_startIndex & (~(((-1) + (1 << $imul(5, d))) | 0)));
-  const s = new $c_sci_Vector((($thiz.sci_Vector__f_startIndex - shift) | 0), ((cutIndex - shift) | 0), ((blockIndex - shift) | 0));
-  const depth = $thiz.sci_Vector__f_depth;
-  $f_sci_VectorPointer__initFrom__sci_VectorPointer__I__V(s, $thiz, depth);
-  s.sci_Vector__f_dirty = $thiz.sci_Vector__f_dirty;
-  $p_sci_Vector__gotoPosWritable__I__I__I__V(s, $thiz.sci_Vector__f_focus, blockIndex, ($thiz.sci_Vector__f_focus ^ blockIndex));
-  $f_sci_VectorPointer__preClean__I__V(s, d);
-  $p_sci_Vector__cleanRightEdge__I__V(s, ((cutIndex - shift) | 0));
-  return s
-});
-class $c_sci_Vector extends $c_sci_AbstractSeq {
-  constructor(startIndex, endIndex, focus) {
-    super();
-    this.sci_Vector__f_startIndex = 0;
-    this.sci_Vector__f_endIndex = 0;
-    this.sci_Vector__f_focus = 0;
-    this.sci_Vector__f_dirty = false;
-    this.sci_Vector__f_depth = 0;
-    this.sci_Vector__f_display0 = null;
-    this.sci_Vector__f_display1 = null;
-    this.sci_Vector__f_display2 = null;
-    this.sci_Vector__f_display3 = null;
-    this.sci_Vector__f_display4 = null;
-    this.sci_Vector__f_display5 = null;
-    this.sci_Vector__f_startIndex = startIndex;
-    this.sci_Vector__f_endIndex = endIndex;
-    this.sci_Vector__f_focus = focus;
-    this.sci_Vector__f_dirty = false
-  };
-  distinctBy__F1__O(f) {
-    return $f_sci_StrictOptimizedSeqOps__distinctBy__F1__O(this, f)
-  };
-  map__F1__O(f) {
-    return $f_sc_StrictOptimizedIterableOps__map__F1__O(this, f)
-  };
-  canEqual__O__Z(that) {
-    return $f_sci_IndexedSeq__canEqual__O__Z(this, that)
-  };
-  sameElements__sc_IterableOnce__Z(o) {
-    return $f_sci_IndexedSeq__sameElements__sc_IterableOnce__Z(this, o)
-  };
-  stringPrefix__T() {
-    return "IndexedSeq"
-  };
-  lengthCompare__I__I(len) {
-    const x = this.length__I();
-    return ((x === len) ? 0 : ((x < len) ? (-1) : 1))
-  };
-  knownSize__I() {
-    return this.length__I()
-  };
-  depth__I() {
-    return this.sci_Vector__f_depth
-  };
-  depth_$eq__I__V(x$1) {
-    this.sci_Vector__f_depth = x$1
-  };
-  display0__AO() {
-    return this.sci_Vector__f_display0
-  };
-  display0_$eq__AO__V(x$1) {
-    this.sci_Vector__f_display0 = x$1
-  };
-  display1__AAO() {
-    return this.sci_Vector__f_display1
-  };
-  display1_$eq__AAO__V(x$1) {
-    this.sci_Vector__f_display1 = x$1
-  };
-  display2__AAAO() {
-    return this.sci_Vector__f_display2
-  };
-  display2_$eq__AAAO__V(x$1) {
-    this.sci_Vector__f_display2 = x$1
-  };
-  display3__AAAAO() {
-    return this.sci_Vector__f_display3
-  };
-  display3_$eq__AAAAO__V(x$1) {
-    this.sci_Vector__f_display3 = x$1
-  };
-  display4__AAAAAO() {
-    return this.sci_Vector__f_display4
-  };
-  display4_$eq__AAAAAO__V(x$1) {
-    this.sci_Vector__f_display4 = x$1
-  };
-  display5__AAAAAAO() {
-    return this.sci_Vector__f_display5
-  };
-  display5_$eq__AAAAAAO__V(x$1) {
-    this.sci_Vector__f_display5 = x$1
-  };
-  iterableFactory__sc_SeqFactory() {
-    return $m_sci_Vector$()
-  };
-  length__I() {
-    return ((this.sci_Vector__f_endIndex - this.sci_Vector__f_startIndex) | 0)
-  };
-  initIterator__sci_VectorIterator__V(s) {
-    const depth = this.sci_Vector__f_depth;
-    $f_sci_VectorPointer__initFrom__sci_VectorPointer__I__V(s, this, depth);
-    if (this.sci_Vector__f_dirty) {
-      const index = this.sci_Vector__f_focus;
-      $f_sci_VectorPointer__stabilize__I__V(s, index)
-    };
-    if ((s.sci_VectorIterator__f_depth > 1)) {
-      const index$1 = this.sci_Vector__f_startIndex;
-      const xor = (this.sci_Vector__f_startIndex ^ this.sci_Vector__f_focus);
-      $f_sci_VectorPointer__gotoPos__I__I__V(s, index$1, xor)
-    }
-  };
-  iterator__sc_Iterator() {
-    if ($f_sc_SeqOps__isEmpty__Z(this)) {
-      return $m_sc_Iterator$().sc_Iterator$__f_scala$collection$Iterator$$_empty
-    } else {
-      const s = new $c_sci_VectorIterator(this.sci_Vector__f_startIndex, this.sci_Vector__f_endIndex);
-      this.initIterator__sci_VectorIterator__V(s);
-      return s
-    }
-  };
-  apply__I__O(index) {
-    const idx = $p_sci_Vector__checkRangeConvert__I__I(this, index);
-    return $p_sci_Vector__getElem__I__I__O(this, idx, (idx ^ this.sci_Vector__f_focus))
-  };
-  take__I__sci_Vector(n) {
-    if ((n <= 0)) {
-      const this$1 = $m_sci_Vector$();
-      return this$1.sci_Vector$__f_NIL
-    } else {
-      return ((this.sci_Vector__f_startIndex < ((this.sci_Vector__f_endIndex - n) | 0)) ? $p_sci_Vector__dropBack0__I__sci_Vector(this, ((this.sci_Vector__f_startIndex + n) | 0)) : this)
-    }
-  };
-  drop__I__sci_Vector(n) {
-    if ((n <= 0)) {
-      return this
-    } else if ((this.sci_Vector__f_startIndex < ((this.sci_Vector__f_endIndex - n) | 0))) {
-      return $p_sci_Vector__dropFront0__I__sci_Vector(this, ((this.sci_Vector__f_startIndex + n) | 0))
-    } else {
-      const this$1 = $m_sci_Vector$();
-      return this$1.sci_Vector$__f_NIL
-    }
-  };
-  head__O() {
-    if ($f_sc_SeqOps__isEmpty__Z(this)) {
-      throw $ct_ju_NoSuchElementException__T__(new $c_ju_NoSuchElementException(), "empty.head")
-    };
-    return this.apply__I__O(0)
-  };
-  tail__sci_Vector() {
-    if ($f_sc_SeqOps__isEmpty__Z(this)) {
-      throw $ct_jl_UnsupportedOperationException__T__(new $c_jl_UnsupportedOperationException(), "empty.tail")
-    };
-    return this.drop__I__sci_Vector(1)
-  };
-  appendedAll__sc_IterableOnce__sci_Vector(suffix) {
-    const this$1 = suffix.iterator__sc_Iterator();
-    if ((!this$1.hasNext__Z())) {
-      return this
-    } else if ($is_sc_Iterable(suffix)) {
-      const x2 = $as_sc_Iterable(suffix);
-      const x1$2 = x2.size__I();
-      if (((x1$2 <= 2) || (x1$2 < ((this.length__I() >>> 5) | 0)))) {
-        const v = new $c_sr_ObjectRef(this);
-        x2.foreach__F1__V(new $c_sjsr_AnonFunction1(((this$3, v$1) => ((x$2) => {
-          const this$4 = $as_sci_Vector(v$1.sr_ObjectRef__f_elem);
-          v$1.sr_ObjectRef__f_elem = this$4.appended__O__sci_Vector(x$2)
-        }))(this, v)));
-        return $as_sci_Vector(v.sr_ObjectRef__f_elem)
-      } else if (((this.length__I() < ((x1$2 >>> 5) | 0)) && (x2 instanceof $c_sci_Vector))) {
-        let v$2 = $as_sci_Vector(x2);
-        const ri = new $c_sc_IndexedSeqOps$$anon$1(this);
-        while (ri.hasNext__Z()) {
-          const rassoc$1 = ri.next__O();
-          const this$5 = v$2;
-          v$2 = this$5.prepended__O__sci_Vector(rassoc$1)
-        };
-        return v$2
-      } else {
-        return $as_sci_Vector($f_sc_StrictOptimizedSeqOps__appendedAll__sc_IterableOnce__O(this, x2))
-      }
-    } else {
-      return $as_sci_Vector($f_sc_StrictOptimizedSeqOps__appendedAll__sc_IterableOnce__O(this, suffix))
-    }
-  };
-  updateAt__I__O__sci_Vector(index, elem) {
-    const idx = $p_sci_Vector__checkRangeConvert__I__I(this, index);
-    const s = new $c_sci_Vector(this.sci_Vector__f_startIndex, this.sci_Vector__f_endIndex, idx);
-    const depth = this.sci_Vector__f_depth;
-    $f_sci_VectorPointer__initFrom__sci_VectorPointer__I__V(s, this, depth);
-    s.sci_Vector__f_dirty = this.sci_Vector__f_dirty;
-    $p_sci_Vector__gotoPosWritable__I__I__I__V(s, this.sci_Vector__f_focus, idx, (this.sci_Vector__f_focus ^ idx));
-    s.sci_Vector__f_display0.set((31 & idx), elem);
-    return s
-  };
-  prepended__O__sci_Vector(value) {
-    const thisLength = this.length__I();
-    let result;
-    if (((this.sci_Vector__f_depth === 1) && (thisLength < 32))) {
-      const s = new $c_sci_Vector(0, ((1 + thisLength) | 0), 0);
-      s.sci_Vector__f_depth = 1;
-      const newDisplay0 = $newArrayObject($d_O.getArrayOf(), [((1 + thisLength) | 0)]);
-      const src = this.sci_Vector__f_display0;
-      const srcPos = this.sci_Vector__f_startIndex;
-      $systemArraycopy(src, srcPos, newDisplay0, 1, thisLength);
-      newDisplay0.set(0, value);
-      s.sci_Vector__f_display0 = newDisplay0;
-      result = s
-    } else if ((thisLength > 0)) {
-      const blockIndex = ((-32) & (((-1) + this.sci_Vector__f_startIndex) | 0));
-      const lo = (31 & (((-1) + this.sci_Vector__f_startIndex) | 0));
-      if ((this.sci_Vector__f_startIndex !== ((32 + blockIndex) | 0))) {
-        const s$2 = new $c_sci_Vector((((-1) + this.sci_Vector__f_startIndex) | 0), this.sci_Vector__f_endIndex, blockIndex);
-        const depth = this.sci_Vector__f_depth;
-        $f_sci_VectorPointer__initFrom__sci_VectorPointer__I__V(s$2, this, depth);
-        s$2.sci_Vector__f_dirty = this.sci_Vector__f_dirty;
-        $p_sci_Vector__gotoPosWritable__I__I__I__V(s$2, this.sci_Vector__f_focus, blockIndex, (this.sci_Vector__f_focus ^ blockIndex));
-        s$2.sci_Vector__f_display0.set(lo, value);
-        result = s$2
-      } else {
-        const freeSpace = (((1 << $imul(5, this.sci_Vector__f_depth)) - this.sci_Vector__f_endIndex) | 0);
-        const shift = (freeSpace & (~(((-1) + (1 << $imul(5, (((-1) + this.sci_Vector__f_depth) | 0)))) | 0)));
-        const shiftBlocks = ((freeSpace >>> $imul(5, (((-1) + this.sci_Vector__f_depth) | 0))) | 0);
-        if ((shift !== 0)) {
-          if ((this.sci_Vector__f_depth > 1)) {
-            const newBlockIndex = ((blockIndex + shift) | 0);
-            const newFocus = ((this.sci_Vector__f_focus + shift) | 0);
-            const s$3 = new $c_sci_Vector((((((-1) + this.sci_Vector__f_startIndex) | 0) + shift) | 0), ((this.sci_Vector__f_endIndex + shift) | 0), newBlockIndex);
-            const depth$1 = this.sci_Vector__f_depth;
-            $f_sci_VectorPointer__initFrom__sci_VectorPointer__I__V(s$3, this, depth$1);
-            s$3.sci_Vector__f_dirty = this.sci_Vector__f_dirty;
-            $p_sci_Vector__shiftTopLevel__I__I__V(s$3, 0, shiftBlocks);
-            $p_sci_Vector__gotoFreshPosWritable__I__I__I__V(s$3, newFocus, newBlockIndex, (newFocus ^ newBlockIndex));
-            s$3.sci_Vector__f_display0.set(lo, value);
-            result = s$3
-          } else {
-            const newBlockIndex$2 = ((32 + blockIndex) | 0);
-            const newFocus$2 = this.sci_Vector__f_focus;
-            const s$4 = new $c_sci_Vector((((((-1) + this.sci_Vector__f_startIndex) | 0) + shift) | 0), ((this.sci_Vector__f_endIndex + shift) | 0), newBlockIndex$2);
-            const depth$2 = this.sci_Vector__f_depth;
-            $f_sci_VectorPointer__initFrom__sci_VectorPointer__I__V(s$4, this, depth$2);
-            s$4.sci_Vector__f_dirty = this.sci_Vector__f_dirty;
-            $p_sci_Vector__shiftTopLevel__I__I__V(s$4, 0, shiftBlocks);
-            $p_sci_Vector__gotoPosWritable__I__I__I__V(s$4, newFocus$2, newBlockIndex$2, (newFocus$2 ^ newBlockIndex$2));
-            s$4.sci_Vector__f_display0.set((((-1) + shift) | 0), value);
-            result = s$4
-          }
-        } else if ((blockIndex < 0)) {
-          const move = (((1 << $imul(5, ((1 + this.sci_Vector__f_depth) | 0))) - (1 << $imul(5, this.sci_Vector__f_depth))) | 0);
-          const newBlockIndex$3 = ((blockIndex + move) | 0);
-          const newFocus$3 = ((this.sci_Vector__f_focus + move) | 0);
-          const s$5 = new $c_sci_Vector((((((-1) + this.sci_Vector__f_startIndex) | 0) + move) | 0), ((this.sci_Vector__f_endIndex + move) | 0), newBlockIndex$3);
-          const depth$3 = this.sci_Vector__f_depth;
-          $f_sci_VectorPointer__initFrom__sci_VectorPointer__I__V(s$5, this, depth$3);
-          s$5.sci_Vector__f_dirty = this.sci_Vector__f_dirty;
-          $p_sci_Vector__gotoFreshPosWritable__I__I__I__V(s$5, newFocus$3, newBlockIndex$3, (newFocus$3 ^ newBlockIndex$3));
-          s$5.sci_Vector__f_display0.set(lo, value);
-          result = s$5
-        } else {
-          const newFocus$4 = this.sci_Vector__f_focus;
-          const s$6 = new $c_sci_Vector((((-1) + this.sci_Vector__f_startIndex) | 0), this.sci_Vector__f_endIndex, blockIndex);
-          const depth$4 = this.sci_Vector__f_depth;
-          $f_sci_VectorPointer__initFrom__sci_VectorPointer__I__V(s$6, this, depth$4);
-          s$6.sci_Vector__f_dirty = this.sci_Vector__f_dirty;
-          $p_sci_Vector__gotoFreshPosWritable__I__I__I__V(s$6, newFocus$4, blockIndex, (newFocus$4 ^ blockIndex));
-          s$6.sci_Vector__f_display0.set(lo, value);
-          result = s$6
-        }
-      }
-    } else {
-      result = $m_sci_Vector$().scala$collection$immutable$Vector$$single__O__sci_Vector(value)
-    };
-    return result
-  };
-  appended__O__sci_Vector(value) {
-    const thisLength = this.length__I();
-    let result;
-    if (((this.sci_Vector__f_depth === 1) && (thisLength < 32))) {
-      const s = new $c_sci_Vector(0, ((1 + thisLength) | 0), 0);
-      s.sci_Vector__f_depth = 1;
-      const newDisplay0 = $newArrayObject($d_O.getArrayOf(), [((1 + thisLength) | 0)]);
-      const src = this.sci_Vector__f_display0;
-      const srcPos = this.sci_Vector__f_startIndex;
-      $systemArraycopy(src, srcPos, newDisplay0, 0, thisLength);
-      newDisplay0.set(thisLength, value);
-      s.sci_Vector__f_display0 = newDisplay0;
-      result = s
-    } else if ((thisLength > 0)) {
-      const blockIndex = ((-32) & this.sci_Vector__f_endIndex);
-      const lo = (31 & this.sci_Vector__f_endIndex);
-      if ((this.sci_Vector__f_endIndex !== blockIndex)) {
-        const s$2 = new $c_sci_Vector(this.sci_Vector__f_startIndex, ((1 + this.sci_Vector__f_endIndex) | 0), blockIndex);
-        const depth = this.sci_Vector__f_depth;
-        $f_sci_VectorPointer__initFrom__sci_VectorPointer__I__V(s$2, this, depth);
-        s$2.sci_Vector__f_dirty = this.sci_Vector__f_dirty;
-        $p_sci_Vector__gotoPosWritable__I__I__I__V(s$2, this.sci_Vector__f_focus, blockIndex, (this.sci_Vector__f_focus ^ blockIndex));
-        s$2.sci_Vector__f_display0.set(lo, value);
-        result = s$2
-      } else {
-        const shift = (this.sci_Vector__f_startIndex & (~(((-1) + (1 << $imul(5, (((-1) + this.sci_Vector__f_depth) | 0)))) | 0)));
-        const shiftBlocks = ((this.sci_Vector__f_startIndex >>> $imul(5, (((-1) + this.sci_Vector__f_depth) | 0))) | 0);
-        if ((shift !== 0)) {
-          if ((this.sci_Vector__f_depth > 1)) {
-            const newBlockIndex = ((blockIndex - shift) | 0);
-            const newFocus = ((this.sci_Vector__f_focus - shift) | 0);
-            const s$3 = new $c_sci_Vector(((this.sci_Vector__f_startIndex - shift) | 0), ((((1 + this.sci_Vector__f_endIndex) | 0) - shift) | 0), newBlockIndex);
-            const depth$1 = this.sci_Vector__f_depth;
-            $f_sci_VectorPointer__initFrom__sci_VectorPointer__I__V(s$3, this, depth$1);
-            s$3.sci_Vector__f_dirty = this.sci_Vector__f_dirty;
-            $p_sci_Vector__shiftTopLevel__I__I__V(s$3, shiftBlocks, 0);
-            $p_sci_Vector__gotoFreshPosWritable__I__I__I__V(s$3, newFocus, newBlockIndex, (newFocus ^ newBlockIndex));
-            s$3.sci_Vector__f_display0.set(lo, value);
-            result = s$3
-          } else {
-            const newBlockIndex$2 = (((-32) + blockIndex) | 0);
-            const newFocus$2 = this.sci_Vector__f_focus;
-            const s$4 = new $c_sci_Vector(((this.sci_Vector__f_startIndex - shift) | 0), ((((1 + this.sci_Vector__f_endIndex) | 0) - shift) | 0), newBlockIndex$2);
-            const depth$2 = this.sci_Vector__f_depth;
-            $f_sci_VectorPointer__initFrom__sci_VectorPointer__I__V(s$4, this, depth$2);
-            s$4.sci_Vector__f_dirty = this.sci_Vector__f_dirty;
-            $p_sci_Vector__shiftTopLevel__I__I__V(s$4, shiftBlocks, 0);
-            $p_sci_Vector__gotoPosWritable__I__I__I__V(s$4, newFocus$2, newBlockIndex$2, (newFocus$2 ^ newBlockIndex$2));
-            if ((s$4.sci_Vector__f_display0.u.length < ((31 - shift) | 0))) {
-              const newDisplay0$2 = $newArrayObject($d_O.getArrayOf(), [((31 - shift) | 0)]);
-              const xs = s$4.sci_Vector__f_display0;
-              $m_sc_ArrayOps$().copyToArray$extension__O__O__I__I__I(xs, newDisplay0$2, 0, 2147483647);
-              s$4.sci_Vector__f_display0 = newDisplay0$2
-            };
-            s$4.sci_Vector__f_display0.set(((32 - shift) | 0), value);
-            result = s$4
-          }
-        } else {
-          const newFocus$3 = this.sci_Vector__f_focus;
-          const s$5 = new $c_sci_Vector(this.sci_Vector__f_startIndex, ((1 + this.sci_Vector__f_endIndex) | 0), blockIndex);
-          const depth$3 = this.sci_Vector__f_depth;
-          $f_sci_VectorPointer__initFrom__sci_VectorPointer__I__V(s$5, this, depth$3);
-          s$5.sci_Vector__f_dirty = this.sci_Vector__f_dirty;
-          $p_sci_Vector__gotoFreshPosWritable__I__I__I__V(s$5, newFocus$3, blockIndex, (newFocus$3 ^ blockIndex));
-          s$5.sci_Vector__f_display0.set(lo, value);
-          result = s$5
-        }
-      }
-    } else {
-      result = $m_sci_Vector$().scala$collection$immutable$Vector$$single__O__sci_Vector(value)
-    };
-    return result
-  };
-  applyPreferredMaxLength__I() {
-    return $m_sci_Vector$().sci_Vector$__f_scala$collection$immutable$Vector$$defaultApplyPreferredMaxLength
-  };
-  equals__O__Z(o) {
-    if ((o instanceof $c_sci_Vector)) {
-      const x2 = $as_sci_Vector(o);
-      return ((this === x2) || ((this.length__I() === x2.length__I()) && (((((((((this.sci_Vector__f_startIndex === x2.sci_Vector__f_startIndex) && (this.sci_Vector__f_endIndex === x2.sci_Vector__f_endIndex)) && (this.sci_Vector__f_display0 === x2.sci_Vector__f_display0)) && (this.sci_Vector__f_display1 === x2.sci_Vector__f_display1)) && (this.sci_Vector__f_display2 === x2.sci_Vector__f_display2)) && (this.sci_Vector__f_display3 === x2.sci_Vector__f_display3)) && (this.sci_Vector__f_display4 === x2.sci_Vector__f_display4)) && (this.sci_Vector__f_display5 === x2.sci_Vector__f_display5)) || $f_sc_Seq__equals__O__Z(this, o))))
-    } else {
-      return $f_sc_Seq__equals__O__Z(this, o)
-    }
-  };
-  toVector__sci_Vector() {
-    return this
-  };
-  className__T() {
-    return "Vector"
-  };
-  appendedAll__sc_IterableOnce__O(suffix) {
-    return this.appendedAll__sc_IterableOnce__sci_Vector(suffix)
-  };
-  tail__O() {
-    return this.tail__sci_Vector()
-  };
-  drop__I__O(n) {
-    return this.drop__I__sci_Vector(n)
-  };
-  apply__O__O(v1) {
-    return this.apply__I__O($uI(v1))
-  };
-  iterableFactory__sc_IterableFactory() {
-    return $m_sci_Vector$()
+class $c_sci_VectorImpl extends $c_sci_Vector {
+  slice__I__I__sci_Vector(from, until) {
+    const lo = ((from > 0) ? from : 0);
+    const b = this.length__I();
+    const hi = ((until < b) ? until : b);
+    const newlen = ((hi - lo) | 0);
+    return ((newlen === this.length__I()) ? this : ((newlen <= 0) ? $m_sci_Vector0$() : this.slice0__I__I__sci_Vector(lo, hi)))
   };
 }
-function $as_sci_Vector(obj) {
-  return (((obj instanceof $c_sci_Vector) || (obj === null)) ? obj : $throwClassCastException(obj, "scala.collection.immutable.Vector"))
-}
-function $isArrayOf_sci_Vector(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.sci_Vector)))
-}
-function $asArrayOf_sci_Vector(obj, depth) {
-  return (($isArrayOf_sci_Vector(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscala.collection.immutable.Vector;", depth))
-}
-const $d_sci_Vector = new $TypeData().initClass({
-  sci_Vector: 0
-}, false, "scala.collection.immutable.Vector", {
-  sci_Vector: 1,
-  sci_AbstractSeq: 1,
-  sc_AbstractSeq: 1,
-  sc_AbstractIterable: 1,
-  O: 1,
-  sc_Iterable: 1,
-  sc_IterableOnce: 1,
-  sc_IterableOps: 1,
-  sc_IterableOnceOps: 1,
-  sc_IterableFactoryDefaults: 1,
-  sc_Seq: 1,
-  s_PartialFunction: 1,
-  F1: 1,
-  sc_SeqOps: 1,
-  s_Equals: 1,
-  sci_Seq: 1,
-  sci_Iterable: 1,
-  sci_SeqOps: 1,
-  sci_IndexedSeq: 1,
-  sc_IndexedSeq: 1,
-  sc_IndexedSeqOps: 1,
-  sci_IndexedSeqOps: 1,
-  sci_StrictOptimizedSeqOps: 1,
-  sc_StrictOptimizedSeqOps: 1,
-  sc_StrictOptimizedIterableOps: 1,
-  sci_VectorPointer: 1,
-  scg_DefaultSerializable: 1,
-  Ljava_io_Serializable: 1
-});
-$c_sci_Vector.prototype.$classData = $d_sci_Vector;
 class $c_scm_ArraySeq$ofBoolean extends $c_scm_ArraySeq {
   constructor(array) {
     super();
@@ -47411,6 +47572,158 @@ function $isArrayOf_scm_HashMap(obj, depth) {
 function $asArrayOf_scm_HashMap(obj, depth) {
   return (($isArrayOf_scm_HashMap(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscala.collection.mutable.HashMap;", depth))
 }
+const $ct_sci_BigVector__AO__AO__I__ = (function($thiz, _prefix1, suffix1, length0) {
+  $thiz.sci_BigVector__f_suffix1 = suffix1;
+  $thiz.sci_BigVector__f_length0 = length0;
+  $ct_sci_Vector__AO__($thiz, _prefix1);
+  return $thiz
+});
+class $c_sci_BigVector extends $c_sci_VectorImpl {
+  constructor() {
+    super();
+    this.sci_BigVector__f_suffix1 = null;
+    this.sci_BigVector__f_length0 = 0
+  };
+  foreachRest__F1__V(f) {
+    const c = this.vectorSliceCount__I();
+    let i = 1;
+    while ((i < c)) {
+      const $$x1 = $m_sci_VectorStatics$();
+      const idx = i;
+      const c$1 = ((c / 2) | 0);
+      const a = ((idx - c$1) | 0);
+      $$x1.foreachRec__I__AO__F1__V((((-1) + ((((1 + c$1) | 0) - ((a < 0) ? ((-a) | 0) : a)) | 0)) | 0), this.vectorSlice__I__AO(i), f);
+      i = ((1 + i) | 0)
+    }
+  };
+}
+function $as_sci_BigVector(obj) {
+  return (((obj instanceof $c_sci_BigVector) || (obj === null)) ? obj : $throwClassCastException(obj, "scala.collection.immutable.BigVector"))
+}
+function $isArrayOf_sci_BigVector(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.sci_BigVector)))
+}
+function $asArrayOf_sci_BigVector(obj, depth) {
+  return (($isArrayOf_sci_BigVector(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscala.collection.immutable.BigVector;", depth))
+}
+class $c_sci_Vector1 extends $c_sci_VectorImpl {
+  constructor(_data1) {
+    super();
+    $ct_sci_Vector__AO__(this, _data1)
+  };
+  apply__I__O(index) {
+    if (((index >= 0) && (index < this.sci_Vector__f_prefix1.u.length))) {
+      return this.sci_Vector__f_prefix1.get(index)
+    } else {
+      throw this.ioob__I__jl_IndexOutOfBoundsException(index)
+    }
+  };
+  updated__I__O__sci_Vector(index, elem) {
+    if (((index >= 0) && (index < this.sci_Vector__f_prefix1.u.length))) {
+      const a1 = this.sci_Vector__f_prefix1;
+      const a1c = $asArrayOf_O(a1.clone__O(), 1);
+      a1c.set(index, elem);
+      return new $c_sci_Vector1(a1c)
+    } else {
+      throw this.ioob__I__jl_IndexOutOfBoundsException(index)
+    }
+  };
+  appended__O__sci_Vector(elem) {
+    const len1 = this.sci_Vector__f_prefix1.u.length;
+    if ((len1 < 32)) {
+      return new $c_sci_Vector1($m_sci_VectorStatics$().copyAppend1__AO__O__AO(this.sci_Vector__f_prefix1, elem))
+    } else {
+      const $$x2 = this.sci_Vector__f_prefix1;
+      const $$x1 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty2;
+      const a = $newArrayObject($d_O.getArrayOf(), [1]);
+      a.set(0, elem);
+      return new $c_sci_Vector2($$x2, 32, $$x1, a, 33)
+    }
+  };
+  map__F1__sci_Vector(f) {
+    return new $c_sci_Vector1($m_sci_VectorStatics$().mapElems1__AO__F1__AO(this.sci_Vector__f_prefix1, f))
+  };
+  slice0__I__I__sci_Vector(lo, hi) {
+    const original = this.sci_Vector__f_prefix1;
+    return new $c_sci_Vector1($m_ju_Arrays$().copyOfRange__AO__I__I__AO(original, lo, hi))
+  };
+  tail__sci_Vector() {
+    if ((this.sci_Vector__f_prefix1.u.length === 1)) {
+      return $m_sci_Vector0$()
+    } else {
+      const a = this.sci_Vector__f_prefix1;
+      const to = a.u.length;
+      return new $c_sci_Vector1($m_ju_Arrays$().copyOfRange__AO__I__I__AO(a, 1, to))
+    }
+  };
+  vectorSliceCount__I() {
+    return 1
+  };
+  vectorSlice__I__AO(idx) {
+    return this.sci_Vector__f_prefix1
+  };
+  appendedAll0__sc_IterableOnce__I__sci_Vector(suffix, k) {
+    const data1b = $m_sci_VectorStatics$().append1IfSpace__AO__sc_IterableOnce__AO(this.sci_Vector__f_prefix1, suffix);
+    return ((data1b !== null) ? new $c_sci_Vector1(data1b) : $c_sci_Vector.prototype.appendedAll0__sc_IterableOnce__I__sci_Vector.call(this, suffix, k))
+  };
+  tail__O() {
+    return this.tail__sci_Vector()
+  };
+  map__F1__O(f) {
+    return this.map__F1__sci_Vector(f)
+  };
+  apply__O__O(v1) {
+    const index = $uI(v1);
+    if (((index >= 0) && (index < this.sci_Vector__f_prefix1.u.length))) {
+      return this.sci_Vector__f_prefix1.get(index)
+    } else {
+      throw this.ioob__I__jl_IndexOutOfBoundsException(index)
+    }
+  };
+}
+function $as_sci_Vector1(obj) {
+  return (((obj instanceof $c_sci_Vector1) || (obj === null)) ? obj : $throwClassCastException(obj, "scala.collection.immutable.Vector1"))
+}
+function $isArrayOf_sci_Vector1(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.sci_Vector1)))
+}
+function $asArrayOf_sci_Vector1(obj, depth) {
+  return (($isArrayOf_sci_Vector1(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscala.collection.immutable.Vector1;", depth))
+}
+const $d_sci_Vector1 = new $TypeData().initClass({
+  sci_Vector1: 0
+}, false, "scala.collection.immutable.Vector1", {
+  sci_Vector1: 1,
+  sci_VectorImpl: 1,
+  sci_Vector: 1,
+  sci_AbstractSeq: 1,
+  sc_AbstractSeq: 1,
+  sc_AbstractIterable: 1,
+  O: 1,
+  sc_Iterable: 1,
+  sc_IterableOnce: 1,
+  sc_IterableOps: 1,
+  sc_IterableOnceOps: 1,
+  sc_IterableFactoryDefaults: 1,
+  sc_Seq: 1,
+  s_PartialFunction: 1,
+  F1: 1,
+  sc_SeqOps: 1,
+  s_Equals: 1,
+  sci_Seq: 1,
+  sci_Iterable: 1,
+  sci_SeqOps: 1,
+  sci_IndexedSeq: 1,
+  sc_IndexedSeq: 1,
+  sc_IndexedSeqOps: 1,
+  sci_IndexedSeqOps: 1,
+  sci_StrictOptimizedSeqOps: 1,
+  sc_StrictOptimizedSeqOps: 1,
+  sc_StrictOptimizedIterableOps: 1,
+  scg_DefaultSerializable: 1,
+  Ljava_io_Serializable: 1
+});
+$c_sci_Vector1.prototype.$classData = $d_sci_Vector1;
 class $c_sci_$colon$colon extends $c_sci_List {
   constructor(head, next) {
     super();
@@ -47574,6 +47887,2439 @@ function $m_sci_Nil$() {
   };
   return $n_sci_Nil$
 }
+class $c_sci_Vector0$ extends $c_sci_BigVector {
+  constructor() {
+    super();
+    $ct_sci_BigVector__AO__AO__I__(this, $m_sci_VectorStatics$().sci_VectorStatics$__f_empty1, $m_sci_VectorStatics$().sci_VectorStatics$__f_empty1, 0)
+  };
+  apply__I__E(index) {
+    throw this.ioob__I__jl_IndexOutOfBoundsException(index)
+  };
+  updated__I__O__sci_Vector(index, elem) {
+    throw this.ioob__I__jl_IndexOutOfBoundsException(index)
+  };
+  appended__O__sci_Vector(elem) {
+    const a = $newArrayObject($d_O.getArrayOf(), [1]);
+    a.set(0, elem);
+    return new $c_sci_Vector1(a)
+  };
+  map__F1__sci_Vector(f) {
+    return this
+  };
+  tail__sci_Vector() {
+    throw $ct_jl_UnsupportedOperationException__T__(new $c_jl_UnsupportedOperationException(), "empty.tail")
+  };
+  slice0__I__I__sci_Vector(lo, hi) {
+    return this
+  };
+  vectorSliceCount__I() {
+    return 0
+  };
+  vectorSlice__I__AO(idx) {
+    return null
+  };
+  equals__O__Z(o) {
+    return ((this === o) || ((!(o instanceof $c_sci_Vector)) && $f_sc_Seq__equals__O__Z(this, o)))
+  };
+  appendedAll0__sc_IterableOnce__I__sci_Vector(suffix, k) {
+    return $m_sci_Vector$().from__sc_IterableOnce__sci_Vector(suffix)
+  };
+  ioob__I__jl_IndexOutOfBoundsException(index) {
+    return $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), (index + " is out of bounds (empty vector)"))
+  };
+  tail__O() {
+    return this.tail__sci_Vector()
+  };
+  map__F1__O(f) {
+    return this
+  };
+  apply__O__O(v1) {
+    this.apply__I__E($uI(v1))
+  };
+  apply__I__O(i) {
+    this.apply__I__E(i)
+  };
+}
+const $d_sci_Vector0$ = new $TypeData().initClass({
+  sci_Vector0$: 0
+}, false, "scala.collection.immutable.Vector0$", {
+  sci_Vector0$: 1,
+  sci_BigVector: 1,
+  sci_VectorImpl: 1,
+  sci_Vector: 1,
+  sci_AbstractSeq: 1,
+  sc_AbstractSeq: 1,
+  sc_AbstractIterable: 1,
+  O: 1,
+  sc_Iterable: 1,
+  sc_IterableOnce: 1,
+  sc_IterableOps: 1,
+  sc_IterableOnceOps: 1,
+  sc_IterableFactoryDefaults: 1,
+  sc_Seq: 1,
+  s_PartialFunction: 1,
+  F1: 1,
+  sc_SeqOps: 1,
+  s_Equals: 1,
+  sci_Seq: 1,
+  sci_Iterable: 1,
+  sci_SeqOps: 1,
+  sci_IndexedSeq: 1,
+  sc_IndexedSeq: 1,
+  sc_IndexedSeqOps: 1,
+  sci_IndexedSeqOps: 1,
+  sci_StrictOptimizedSeqOps: 1,
+  sc_StrictOptimizedSeqOps: 1,
+  sc_StrictOptimizedIterableOps: 1,
+  scg_DefaultSerializable: 1,
+  Ljava_io_Serializable: 1
+});
+$c_sci_Vector0$.prototype.$classData = $d_sci_Vector0$;
+let $n_sci_Vector0$ = (void 0);
+function $m_sci_Vector0$() {
+  if ((!$n_sci_Vector0$)) {
+    $n_sci_Vector0$ = new $c_sci_Vector0$()
+  };
+  return $n_sci_Vector0$
+}
+class $c_sci_Vector2 extends $c_sci_BigVector {
+  constructor(_prefix1, len1, data2, _suffix1, _length0) {
+    super();
+    this.sci_Vector2__f_len1 = 0;
+    this.sci_Vector2__f_data2 = null;
+    this.sci_Vector2__f_len1 = len1;
+    this.sci_Vector2__f_data2 = data2;
+    $ct_sci_BigVector__AO__AO__I__(this, _prefix1, _suffix1, _length0)
+  };
+  apply__I__O(index) {
+    if (((index >= 0) && (index < this.sci_BigVector__f_length0))) {
+      const io = ((index - this.sci_Vector2__f_len1) | 0);
+      if ((io >= 0)) {
+        const i2 = ((io >>> 5) | 0);
+        const i1 = (31 & io);
+        return ((i2 < this.sci_Vector2__f_data2.u.length) ? this.sci_Vector2__f_data2.get(i2).get(i1) : this.sci_BigVector__f_suffix1.get((31 & io)))
+      } else {
+        return this.sci_Vector__f_prefix1.get(index)
+      }
+    } else {
+      throw this.ioob__I__jl_IndexOutOfBoundsException(index)
+    }
+  };
+  updated__I__O__sci_Vector(index, elem) {
+    if (((index >= 0) && (index < this.sci_BigVector__f_length0))) {
+      if ((index >= this.sci_Vector2__f_len1)) {
+        const io = ((index - this.sci_Vector2__f_len1) | 0);
+        const i2 = ((io >>> 5) | 0);
+        const i1 = (31 & io);
+        if ((i2 < this.sci_Vector2__f_data2.u.length)) {
+          const a2 = this.sci_Vector2__f_data2;
+          const a2c = $asArrayOf_O(a2.clone__O(), 2);
+          const a1 = a2c.get(i2);
+          const a1c = $asArrayOf_O(a1.clone__O(), 1);
+          a1c.set(i1, elem);
+          a2c.set(i2, a1c);
+          const x$2 = this.sci_Vector__f_prefix1;
+          const x$3 = this.sci_Vector2__f_len1;
+          const x$4 = this.sci_BigVector__f_suffix1;
+          const x$5 = this.sci_BigVector__f_length0;
+          return new $c_sci_Vector2(x$2, x$3, a2c, x$4, x$5)
+        } else {
+          const a1$1 = this.sci_BigVector__f_suffix1;
+          const a1c$1 = $asArrayOf_O(a1$1.clone__O(), 1);
+          a1c$1.set(i1, elem);
+          const x$7 = this.sci_Vector__f_prefix1;
+          const x$8 = this.sci_Vector2__f_len1;
+          const x$9 = this.sci_Vector2__f_data2;
+          const x$10 = this.sci_BigVector__f_length0;
+          return new $c_sci_Vector2(x$7, x$8, x$9, a1c$1, x$10)
+        }
+      } else {
+        const a1$2 = this.sci_Vector__f_prefix1;
+        const a1c$2 = $asArrayOf_O(a1$2.clone__O(), 1);
+        a1c$2.set(index, elem);
+        const len1 = this.sci_Vector2__f_len1;
+        const data2 = this.sci_Vector2__f_data2;
+        const suffix1 = this.sci_BigVector__f_suffix1;
+        const length0 = this.sci_BigVector__f_length0;
+        return new $c_sci_Vector2(a1c$2, len1, data2, suffix1, length0)
+      }
+    } else {
+      throw this.ioob__I__jl_IndexOutOfBoundsException(index)
+    }
+  };
+  appended__O__sci_Vector(elem) {
+    if ((this.sci_BigVector__f_suffix1.u.length < 32)) {
+      const x$1 = $m_sci_VectorStatics$().copyAppend1__AO__O__AO(this.sci_BigVector__f_suffix1, elem);
+      const x$2 = ((1 + this.sci_BigVector__f_length0) | 0);
+      const x$3 = this.sci_Vector__f_prefix1;
+      const x$4 = this.sci_Vector2__f_len1;
+      const x$5 = this.sci_Vector2__f_data2;
+      return new $c_sci_Vector2(x$3, x$4, x$5, x$1, x$2)
+    } else if ((this.sci_Vector2__f_data2.u.length < 30)) {
+      const x$6 = $asArrayOf_O($m_sci_VectorStatics$().copyAppend__AO__O__AO(this.sci_Vector2__f_data2, this.sci_BigVector__f_suffix1), 2);
+      const a = $newArrayObject($d_O.getArrayOf(), [1]);
+      a.set(0, elem);
+      const x$8 = ((1 + this.sci_BigVector__f_length0) | 0);
+      const x$9 = this.sci_Vector__f_prefix1;
+      const x$10 = this.sci_Vector2__f_len1;
+      return new $c_sci_Vector2(x$9, x$10, x$6, a, x$8)
+    } else {
+      const $$x5 = this.sci_Vector__f_prefix1;
+      const $$x4 = this.sci_Vector2__f_len1;
+      const $$x3 = this.sci_Vector2__f_data2;
+      const $$x2 = this.sci_Vector2__f_len1;
+      const $$x1 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty3;
+      const x = this.sci_BigVector__f_suffix1;
+      const a$1 = $newArrayObject($d_O.getArrayOf().getArrayOf(), [1]);
+      a$1.set(0, x);
+      const a$2 = $newArrayObject($d_O.getArrayOf(), [1]);
+      a$2.set(0, elem);
+      return new $c_sci_Vector3($$x5, $$x4, $$x3, ((960 + $$x2) | 0), $$x1, a$1, a$2, ((1 + this.sci_BigVector__f_length0) | 0))
+    }
+  };
+  map__F1__sci_Vector(f) {
+    const x$1 = $m_sci_VectorStatics$().mapElems1__AO__F1__AO(this.sci_Vector__f_prefix1, f);
+    const x$2 = $asArrayOf_O($m_sci_VectorStatics$().mapElems__I__AO__F1__AO(2, this.sci_Vector2__f_data2, f), 2);
+    const x$3 = $m_sci_VectorStatics$().mapElems1__AO__F1__AO(this.sci_BigVector__f_suffix1, f);
+    const x$4 = this.sci_Vector2__f_len1;
+    const x$5 = this.sci_BigVector__f_length0;
+    return new $c_sci_Vector2(x$1, x$4, x$2, x$3, x$5)
+  };
+  slice0__I__I__sci_Vector(lo, hi) {
+    const b = new $c_sci_VectorSliceBuilder(lo, hi);
+    b.consider__I__AO__V(1, this.sci_Vector__f_prefix1);
+    b.consider__I__AO__V(2, this.sci_Vector2__f_data2);
+    b.consider__I__AO__V(1, this.sci_BigVector__f_suffix1);
+    return b.result__sci_Vector()
+  };
+  tail__sci_Vector() {
+    if ((this.sci_Vector2__f_len1 > 1)) {
+      const a = this.sci_Vector__f_prefix1;
+      const to = a.u.length;
+      const x$1 = $m_ju_Arrays$().copyOfRange__AO__I__I__AO(a, 1, to);
+      const x$2 = (((-1) + this.sci_Vector2__f_len1) | 0);
+      const x$3 = (((-1) + this.sci_BigVector__f_length0) | 0);
+      const x$4 = this.sci_Vector2__f_data2;
+      const x$5 = this.sci_BigVector__f_suffix1;
+      return new $c_sci_Vector2(x$1, x$2, x$4, x$5, x$3)
+    } else {
+      return this.slice0__I__I__sci_Vector(1, this.sci_BigVector__f_length0)
+    }
+  };
+  vectorSliceCount__I() {
+    return 3
+  };
+  vectorSlice__I__AO(idx) {
+    switch (idx) {
+      case 0: {
+        return this.sci_Vector__f_prefix1;
+        break
+      }
+      case 1: {
+        return this.sci_Vector2__f_data2;
+        break
+      }
+      case 2: {
+        return this.sci_BigVector__f_suffix1;
+        break
+      }
+      default: {
+        throw new $c_s_MatchError(idx)
+      }
+    }
+  };
+  appendedAll0__sc_IterableOnce__I__sci_Vector(suffix, k) {
+    const suffix1b = $m_sci_VectorStatics$().append1IfSpace__AO__sc_IterableOnce__AO(this.sci_BigVector__f_suffix1, suffix);
+    if ((suffix1b !== null)) {
+      const x$2 = ((((this.sci_BigVector__f_length0 - this.sci_BigVector__f_suffix1.u.length) | 0) + suffix1b.u.length) | 0);
+      const x$3 = this.sci_Vector__f_prefix1;
+      const x$4 = this.sci_Vector2__f_len1;
+      const x$5 = this.sci_Vector2__f_data2;
+      return new $c_sci_Vector2(x$3, x$4, x$5, suffix1b, x$2)
+    } else {
+      return $c_sci_Vector.prototype.appendedAll0__sc_IterableOnce__I__sci_Vector.call(this, suffix, k)
+    }
+  };
+  tail__O() {
+    return this.tail__sci_Vector()
+  };
+  map__F1__O(f) {
+    return this.map__F1__sci_Vector(f)
+  };
+  apply__O__O(v1) {
+    const index = $uI(v1);
+    if (((index >= 0) && (index < this.sci_BigVector__f_length0))) {
+      const io = ((index - this.sci_Vector2__f_len1) | 0);
+      if ((io >= 0)) {
+        const i2 = ((io >>> 5) | 0);
+        const i1 = (31 & io);
+        return ((i2 < this.sci_Vector2__f_data2.u.length) ? this.sci_Vector2__f_data2.get(i2).get(i1) : this.sci_BigVector__f_suffix1.get((31 & io)))
+      } else {
+        return this.sci_Vector__f_prefix1.get(index)
+      }
+    } else {
+      throw this.ioob__I__jl_IndexOutOfBoundsException(index)
+    }
+  };
+}
+function $as_sci_Vector2(obj) {
+  return (((obj instanceof $c_sci_Vector2) || (obj === null)) ? obj : $throwClassCastException(obj, "scala.collection.immutable.Vector2"))
+}
+function $isArrayOf_sci_Vector2(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.sci_Vector2)))
+}
+function $asArrayOf_sci_Vector2(obj, depth) {
+  return (($isArrayOf_sci_Vector2(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscala.collection.immutable.Vector2;", depth))
+}
+const $d_sci_Vector2 = new $TypeData().initClass({
+  sci_Vector2: 0
+}, false, "scala.collection.immutable.Vector2", {
+  sci_Vector2: 1,
+  sci_BigVector: 1,
+  sci_VectorImpl: 1,
+  sci_Vector: 1,
+  sci_AbstractSeq: 1,
+  sc_AbstractSeq: 1,
+  sc_AbstractIterable: 1,
+  O: 1,
+  sc_Iterable: 1,
+  sc_IterableOnce: 1,
+  sc_IterableOps: 1,
+  sc_IterableOnceOps: 1,
+  sc_IterableFactoryDefaults: 1,
+  sc_Seq: 1,
+  s_PartialFunction: 1,
+  F1: 1,
+  sc_SeqOps: 1,
+  s_Equals: 1,
+  sci_Seq: 1,
+  sci_Iterable: 1,
+  sci_SeqOps: 1,
+  sci_IndexedSeq: 1,
+  sc_IndexedSeq: 1,
+  sc_IndexedSeqOps: 1,
+  sci_IndexedSeqOps: 1,
+  sci_StrictOptimizedSeqOps: 1,
+  sc_StrictOptimizedSeqOps: 1,
+  sc_StrictOptimizedIterableOps: 1,
+  scg_DefaultSerializable: 1,
+  Ljava_io_Serializable: 1
+});
+$c_sci_Vector2.prototype.$classData = $d_sci_Vector2;
+class $c_sci_Vector3 extends $c_sci_BigVector {
+  constructor(_prefix1, len1, prefix2, len12, data3, suffix2, _suffix1, _length0) {
+    super();
+    this.sci_Vector3__f_len1 = 0;
+    this.sci_Vector3__f_prefix2 = null;
+    this.sci_Vector3__f_len12 = 0;
+    this.sci_Vector3__f_data3 = null;
+    this.sci_Vector3__f_suffix2 = null;
+    this.sci_Vector3__f_len1 = len1;
+    this.sci_Vector3__f_prefix2 = prefix2;
+    this.sci_Vector3__f_len12 = len12;
+    this.sci_Vector3__f_data3 = data3;
+    this.sci_Vector3__f_suffix2 = suffix2;
+    $ct_sci_BigVector__AO__AO__I__(this, _prefix1, _suffix1, _length0)
+  };
+  apply__I__O(index) {
+    if (((index >= 0) && (index < this.sci_BigVector__f_length0))) {
+      const io = ((index - this.sci_Vector3__f_len12) | 0);
+      if ((io >= 0)) {
+        const i3 = ((io >>> 10) | 0);
+        const i2 = (31 & ((io >>> 5) | 0));
+        const i1 = (31 & io);
+        return ((i3 < this.sci_Vector3__f_data3.u.length) ? this.sci_Vector3__f_data3.get(i3).get(i2).get(i1) : ((i2 < this.sci_Vector3__f_suffix2.u.length) ? this.sci_Vector3__f_suffix2.get(i2).get(i1) : this.sci_BigVector__f_suffix1.get(i1)))
+      } else if ((index >= this.sci_Vector3__f_len1)) {
+        const io$2 = ((index - this.sci_Vector3__f_len1) | 0);
+        return this.sci_Vector3__f_prefix2.get(((io$2 >>> 5) | 0)).get((31 & io$2))
+      } else {
+        return this.sci_Vector__f_prefix1.get(index)
+      }
+    } else {
+      throw this.ioob__I__jl_IndexOutOfBoundsException(index)
+    }
+  };
+  updated__I__O__sci_Vector(index, elem) {
+    if (((index >= 0) && (index < this.sci_BigVector__f_length0))) {
+      if ((index >= this.sci_Vector3__f_len12)) {
+        const io = ((index - this.sci_Vector3__f_len12) | 0);
+        const i3 = ((io >>> 10) | 0);
+        const i2 = (31 & ((io >>> 5) | 0));
+        const i1 = (31 & io);
+        if ((i3 < this.sci_Vector3__f_data3.u.length)) {
+          const a3 = this.sci_Vector3__f_data3;
+          const a3c = $asArrayOf_O(a3.clone__O(), 3);
+          const a2 = a3c.get(i3);
+          const a2c = $asArrayOf_O(a2.clone__O(), 2);
+          const a1 = a2c.get(i2);
+          const a1c = $asArrayOf_O(a1.clone__O(), 1);
+          a1c.set(i1, elem);
+          a2c.set(i2, a1c);
+          a3c.set(i3, a2c);
+          const x$2 = this.sci_Vector__f_prefix1;
+          const x$3 = this.sci_Vector3__f_len1;
+          const x$4 = this.sci_Vector3__f_prefix2;
+          const x$5 = this.sci_Vector3__f_len12;
+          const x$6 = this.sci_Vector3__f_suffix2;
+          const x$7 = this.sci_BigVector__f_suffix1;
+          const x$8 = this.sci_BigVector__f_length0;
+          return new $c_sci_Vector3(x$2, x$3, x$4, x$5, a3c, x$6, x$7, x$8)
+        } else if ((i2 < this.sci_Vector3__f_suffix2.u.length)) {
+          const a2$1 = this.sci_Vector3__f_suffix2;
+          const a2c$1 = $asArrayOf_O(a2$1.clone__O(), 2);
+          const a1$1 = a2c$1.get(i2);
+          const a1c$1 = $asArrayOf_O(a1$1.clone__O(), 1);
+          a1c$1.set(i1, elem);
+          a2c$1.set(i2, a1c$1);
+          const x$10 = this.sci_Vector__f_prefix1;
+          const x$11 = this.sci_Vector3__f_len1;
+          const x$12 = this.sci_Vector3__f_prefix2;
+          const x$13 = this.sci_Vector3__f_len12;
+          const x$14 = this.sci_Vector3__f_data3;
+          const x$15 = this.sci_BigVector__f_suffix1;
+          const x$16 = this.sci_BigVector__f_length0;
+          return new $c_sci_Vector3(x$10, x$11, x$12, x$13, x$14, a2c$1, x$15, x$16)
+        } else {
+          const a1$2 = this.sci_BigVector__f_suffix1;
+          const a1c$2 = $asArrayOf_O(a1$2.clone__O(), 1);
+          a1c$2.set(i1, elem);
+          const x$18 = this.sci_Vector__f_prefix1;
+          const x$19 = this.sci_Vector3__f_len1;
+          const x$20 = this.sci_Vector3__f_prefix2;
+          const x$21 = this.sci_Vector3__f_len12;
+          const x$22 = this.sci_Vector3__f_data3;
+          const x$23 = this.sci_Vector3__f_suffix2;
+          const x$24 = this.sci_BigVector__f_length0;
+          return new $c_sci_Vector3(x$18, x$19, x$20, x$21, x$22, x$23, a1c$2, x$24)
+        }
+      } else if ((index >= this.sci_Vector3__f_len1)) {
+        const io$2 = ((index - this.sci_Vector3__f_len1) | 0);
+        const a2$2 = this.sci_Vector3__f_prefix2;
+        const idx2 = ((io$2 >>> 5) | 0);
+        const idx1 = (31 & io$2);
+        const a2c$2 = $asArrayOf_O(a2$2.clone__O(), 2);
+        const a1$3 = a2c$2.get(idx2);
+        const a1c$3 = $asArrayOf_O(a1$3.clone__O(), 1);
+        a1c$3.set(idx1, elem);
+        a2c$2.set(idx2, a1c$3);
+        const x$26 = this.sci_Vector__f_prefix1;
+        const x$27 = this.sci_Vector3__f_len1;
+        const x$28 = this.sci_Vector3__f_len12;
+        const x$29 = this.sci_Vector3__f_data3;
+        const x$30 = this.sci_Vector3__f_suffix2;
+        const x$31 = this.sci_BigVector__f_suffix1;
+        const x$32 = this.sci_BigVector__f_length0;
+        return new $c_sci_Vector3(x$26, x$27, a2c$2, x$28, x$29, x$30, x$31, x$32)
+      } else {
+        const a1$4 = this.sci_Vector__f_prefix1;
+        const a1c$4 = $asArrayOf_O(a1$4.clone__O(), 1);
+        a1c$4.set(index, elem);
+        const len1 = this.sci_Vector3__f_len1;
+        const prefix2 = this.sci_Vector3__f_prefix2;
+        const len12 = this.sci_Vector3__f_len12;
+        const data3 = this.sci_Vector3__f_data3;
+        const suffix2 = this.sci_Vector3__f_suffix2;
+        const suffix1 = this.sci_BigVector__f_suffix1;
+        const length0 = this.sci_BigVector__f_length0;
+        return new $c_sci_Vector3(a1c$4, len1, prefix2, len12, data3, suffix2, suffix1, length0)
+      }
+    } else {
+      throw this.ioob__I__jl_IndexOutOfBoundsException(index)
+    }
+  };
+  appended__O__sci_Vector(elem) {
+    if ((this.sci_BigVector__f_suffix1.u.length < 32)) {
+      const x$1 = $m_sci_VectorStatics$().copyAppend1__AO__O__AO(this.sci_BigVector__f_suffix1, elem);
+      const x$2 = ((1 + this.sci_BigVector__f_length0) | 0);
+      const x$3 = this.sci_Vector__f_prefix1;
+      const x$4 = this.sci_Vector3__f_len1;
+      const x$5 = this.sci_Vector3__f_prefix2;
+      const x$6 = this.sci_Vector3__f_len12;
+      const x$7 = this.sci_Vector3__f_data3;
+      const x$8 = this.sci_Vector3__f_suffix2;
+      return new $c_sci_Vector3(x$3, x$4, x$5, x$6, x$7, x$8, x$1, x$2)
+    } else if ((this.sci_Vector3__f_suffix2.u.length < 31)) {
+      const x$9 = $asArrayOf_O($m_sci_VectorStatics$().copyAppend__AO__O__AO(this.sci_Vector3__f_suffix2, this.sci_BigVector__f_suffix1), 2);
+      const a = $newArrayObject($d_O.getArrayOf(), [1]);
+      a.set(0, elem);
+      const x$11 = ((1 + this.sci_BigVector__f_length0) | 0);
+      const x$12 = this.sci_Vector__f_prefix1;
+      const x$13 = this.sci_Vector3__f_len1;
+      const x$14 = this.sci_Vector3__f_prefix2;
+      const x$15 = this.sci_Vector3__f_len12;
+      const x$16 = this.sci_Vector3__f_data3;
+      return new $c_sci_Vector3(x$12, x$13, x$14, x$15, x$16, x$9, a, x$11)
+    } else if ((this.sci_Vector3__f_data3.u.length < 30)) {
+      const x$17 = $asArrayOf_O($m_sci_VectorStatics$().copyAppend__AO__O__AO(this.sci_Vector3__f_data3, $m_sci_VectorStatics$().copyAppend__AO__O__AO(this.sci_Vector3__f_suffix2, this.sci_BigVector__f_suffix1)), 3);
+      const x$18 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty2;
+      const a$1 = $newArrayObject($d_O.getArrayOf(), [1]);
+      a$1.set(0, elem);
+      const x$20 = ((1 + this.sci_BigVector__f_length0) | 0);
+      const x$21 = this.sci_Vector__f_prefix1;
+      const x$22 = this.sci_Vector3__f_len1;
+      const x$23 = this.sci_Vector3__f_prefix2;
+      const x$24 = this.sci_Vector3__f_len12;
+      return new $c_sci_Vector3(x$21, x$22, x$23, x$24, x$17, x$18, a$1, x$20)
+    } else {
+      const $$x8 = this.sci_Vector__f_prefix1;
+      const $$x7 = this.sci_Vector3__f_len1;
+      const $$x6 = this.sci_Vector3__f_prefix2;
+      const $$x5 = this.sci_Vector3__f_len12;
+      const $$x4 = this.sci_Vector3__f_data3;
+      const $$x3 = this.sci_Vector3__f_len12;
+      const $$x2 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty4;
+      const x = $asArrayOf_O($m_sci_VectorStatics$().copyAppend__AO__O__AO(this.sci_Vector3__f_suffix2, this.sci_BigVector__f_suffix1), 2);
+      const a$2 = $newArrayObject($d_O.getArrayOf().getArrayOf().getArrayOf(), [1]);
+      a$2.set(0, x);
+      const $$x1 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty2;
+      const a$3 = $newArrayObject($d_O.getArrayOf(), [1]);
+      a$3.set(0, elem);
+      return new $c_sci_Vector4($$x8, $$x7, $$x6, $$x5, $$x4, ((30720 + $$x3) | 0), $$x2, a$2, $$x1, a$3, ((1 + this.sci_BigVector__f_length0) | 0))
+    }
+  };
+  map__F1__sci_Vector(f) {
+    const x$1 = $m_sci_VectorStatics$().mapElems1__AO__F1__AO(this.sci_Vector__f_prefix1, f);
+    const x$2 = $asArrayOf_O($m_sci_VectorStatics$().mapElems__I__AO__F1__AO(2, this.sci_Vector3__f_prefix2, f), 2);
+    const x$3 = $asArrayOf_O($m_sci_VectorStatics$().mapElems__I__AO__F1__AO(3, this.sci_Vector3__f_data3, f), 3);
+    const x$4 = $asArrayOf_O($m_sci_VectorStatics$().mapElems__I__AO__F1__AO(2, this.sci_Vector3__f_suffix2, f), 2);
+    const x$5 = $m_sci_VectorStatics$().mapElems1__AO__F1__AO(this.sci_BigVector__f_suffix1, f);
+    const x$6 = this.sci_Vector3__f_len1;
+    const x$7 = this.sci_Vector3__f_len12;
+    const x$8 = this.sci_BigVector__f_length0;
+    return new $c_sci_Vector3(x$1, x$6, x$2, x$7, x$3, x$4, x$5, x$8)
+  };
+  slice0__I__I__sci_Vector(lo, hi) {
+    const b = new $c_sci_VectorSliceBuilder(lo, hi);
+    b.consider__I__AO__V(1, this.sci_Vector__f_prefix1);
+    b.consider__I__AO__V(2, this.sci_Vector3__f_prefix2);
+    b.consider__I__AO__V(3, this.sci_Vector3__f_data3);
+    b.consider__I__AO__V(2, this.sci_Vector3__f_suffix2);
+    b.consider__I__AO__V(1, this.sci_BigVector__f_suffix1);
+    return b.result__sci_Vector()
+  };
+  tail__sci_Vector() {
+    if ((this.sci_Vector3__f_len1 > 1)) {
+      const a = this.sci_Vector__f_prefix1;
+      const to = a.u.length;
+      const x$1 = $m_ju_Arrays$().copyOfRange__AO__I__I__AO(a, 1, to);
+      const x$2 = (((-1) + this.sci_Vector3__f_len1) | 0);
+      const x$3 = (((-1) + this.sci_Vector3__f_len12) | 0);
+      const x$4 = (((-1) + this.sci_BigVector__f_length0) | 0);
+      const x$5 = this.sci_Vector3__f_prefix2;
+      const x$6 = this.sci_Vector3__f_data3;
+      const x$7 = this.sci_Vector3__f_suffix2;
+      const x$8 = this.sci_BigVector__f_suffix1;
+      return new $c_sci_Vector3(x$1, x$2, x$5, x$3, x$6, x$7, x$8, x$4)
+    } else {
+      return this.slice0__I__I__sci_Vector(1, this.sci_BigVector__f_length0)
+    }
+  };
+  vectorSliceCount__I() {
+    return 5
+  };
+  vectorSlice__I__AO(idx) {
+    switch (idx) {
+      case 0: {
+        return this.sci_Vector__f_prefix1;
+        break
+      }
+      case 1: {
+        return this.sci_Vector3__f_prefix2;
+        break
+      }
+      case 2: {
+        return this.sci_Vector3__f_data3;
+        break
+      }
+      case 3: {
+        return this.sci_Vector3__f_suffix2;
+        break
+      }
+      case 4: {
+        return this.sci_BigVector__f_suffix1;
+        break
+      }
+      default: {
+        throw new $c_s_MatchError(idx)
+      }
+    }
+  };
+  appendedAll0__sc_IterableOnce__I__sci_Vector(suffix, k) {
+    const suffix1b = $m_sci_VectorStatics$().append1IfSpace__AO__sc_IterableOnce__AO(this.sci_BigVector__f_suffix1, suffix);
+    if ((suffix1b !== null)) {
+      const x$2 = ((((this.sci_BigVector__f_length0 - this.sci_BigVector__f_suffix1.u.length) | 0) + suffix1b.u.length) | 0);
+      const x$3 = this.sci_Vector__f_prefix1;
+      const x$4 = this.sci_Vector3__f_len1;
+      const x$5 = this.sci_Vector3__f_prefix2;
+      const x$6 = this.sci_Vector3__f_len12;
+      const x$7 = this.sci_Vector3__f_data3;
+      const x$8 = this.sci_Vector3__f_suffix2;
+      return new $c_sci_Vector3(x$3, x$4, x$5, x$6, x$7, x$8, suffix1b, x$2)
+    } else {
+      return $c_sci_Vector.prototype.appendedAll0__sc_IterableOnce__I__sci_Vector.call(this, suffix, k)
+    }
+  };
+  tail__O() {
+    return this.tail__sci_Vector()
+  };
+  map__F1__O(f) {
+    return this.map__F1__sci_Vector(f)
+  };
+  apply__O__O(v1) {
+    const index = $uI(v1);
+    if (((index >= 0) && (index < this.sci_BigVector__f_length0))) {
+      const io = ((index - this.sci_Vector3__f_len12) | 0);
+      if ((io >= 0)) {
+        const i3 = ((io >>> 10) | 0);
+        const i2 = (31 & ((io >>> 5) | 0));
+        const i1 = (31 & io);
+        return ((i3 < this.sci_Vector3__f_data3.u.length) ? this.sci_Vector3__f_data3.get(i3).get(i2).get(i1) : ((i2 < this.sci_Vector3__f_suffix2.u.length) ? this.sci_Vector3__f_suffix2.get(i2).get(i1) : this.sci_BigVector__f_suffix1.get(i1)))
+      } else if ((index >= this.sci_Vector3__f_len1)) {
+        const io$2 = ((index - this.sci_Vector3__f_len1) | 0);
+        return this.sci_Vector3__f_prefix2.get(((io$2 >>> 5) | 0)).get((31 & io$2))
+      } else {
+        return this.sci_Vector__f_prefix1.get(index)
+      }
+    } else {
+      throw this.ioob__I__jl_IndexOutOfBoundsException(index)
+    }
+  };
+}
+function $as_sci_Vector3(obj) {
+  return (((obj instanceof $c_sci_Vector3) || (obj === null)) ? obj : $throwClassCastException(obj, "scala.collection.immutable.Vector3"))
+}
+function $isArrayOf_sci_Vector3(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.sci_Vector3)))
+}
+function $asArrayOf_sci_Vector3(obj, depth) {
+  return (($isArrayOf_sci_Vector3(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscala.collection.immutable.Vector3;", depth))
+}
+const $d_sci_Vector3 = new $TypeData().initClass({
+  sci_Vector3: 0
+}, false, "scala.collection.immutable.Vector3", {
+  sci_Vector3: 1,
+  sci_BigVector: 1,
+  sci_VectorImpl: 1,
+  sci_Vector: 1,
+  sci_AbstractSeq: 1,
+  sc_AbstractSeq: 1,
+  sc_AbstractIterable: 1,
+  O: 1,
+  sc_Iterable: 1,
+  sc_IterableOnce: 1,
+  sc_IterableOps: 1,
+  sc_IterableOnceOps: 1,
+  sc_IterableFactoryDefaults: 1,
+  sc_Seq: 1,
+  s_PartialFunction: 1,
+  F1: 1,
+  sc_SeqOps: 1,
+  s_Equals: 1,
+  sci_Seq: 1,
+  sci_Iterable: 1,
+  sci_SeqOps: 1,
+  sci_IndexedSeq: 1,
+  sc_IndexedSeq: 1,
+  sc_IndexedSeqOps: 1,
+  sci_IndexedSeqOps: 1,
+  sci_StrictOptimizedSeqOps: 1,
+  sc_StrictOptimizedSeqOps: 1,
+  sc_StrictOptimizedIterableOps: 1,
+  scg_DefaultSerializable: 1,
+  Ljava_io_Serializable: 1
+});
+$c_sci_Vector3.prototype.$classData = $d_sci_Vector3;
+class $c_sci_Vector4 extends $c_sci_BigVector {
+  constructor(_prefix1, len1, prefix2, len12, prefix3, len123, data4, suffix3, suffix2, _suffix1, _length0) {
+    super();
+    this.sci_Vector4__f_len1 = 0;
+    this.sci_Vector4__f_prefix2 = null;
+    this.sci_Vector4__f_len12 = 0;
+    this.sci_Vector4__f_prefix3 = null;
+    this.sci_Vector4__f_len123 = 0;
+    this.sci_Vector4__f_data4 = null;
+    this.sci_Vector4__f_suffix3 = null;
+    this.sci_Vector4__f_suffix2 = null;
+    this.sci_Vector4__f_len1 = len1;
+    this.sci_Vector4__f_prefix2 = prefix2;
+    this.sci_Vector4__f_len12 = len12;
+    this.sci_Vector4__f_prefix3 = prefix3;
+    this.sci_Vector4__f_len123 = len123;
+    this.sci_Vector4__f_data4 = data4;
+    this.sci_Vector4__f_suffix3 = suffix3;
+    this.sci_Vector4__f_suffix2 = suffix2;
+    $ct_sci_BigVector__AO__AO__I__(this, _prefix1, _suffix1, _length0)
+  };
+  apply__I__O(index) {
+    if (((index >= 0) && (index < this.sci_BigVector__f_length0))) {
+      const io = ((index - this.sci_Vector4__f_len123) | 0);
+      if ((io >= 0)) {
+        const i4 = ((io >>> 15) | 0);
+        const i3 = (31 & ((io >>> 10) | 0));
+        const i2 = (31 & ((io >>> 5) | 0));
+        const i1 = (31 & io);
+        return ((i4 < this.sci_Vector4__f_data4.u.length) ? this.sci_Vector4__f_data4.get(i4).get(i3).get(i2).get(i1) : ((i3 < this.sci_Vector4__f_suffix3.u.length) ? this.sci_Vector4__f_suffix3.get(i3).get(i2).get(i1) : ((i2 < this.sci_Vector4__f_suffix2.u.length) ? this.sci_Vector4__f_suffix2.get(i2).get(i1) : this.sci_BigVector__f_suffix1.get(i1))))
+      } else if ((index >= this.sci_Vector4__f_len12)) {
+        const io$2 = ((index - this.sci_Vector4__f_len12) | 0);
+        return this.sci_Vector4__f_prefix3.get(((io$2 >>> 10) | 0)).get((31 & ((io$2 >>> 5) | 0))).get((31 & io$2))
+      } else if ((index >= this.sci_Vector4__f_len1)) {
+        const io$3 = ((index - this.sci_Vector4__f_len1) | 0);
+        return this.sci_Vector4__f_prefix2.get(((io$3 >>> 5) | 0)).get((31 & io$3))
+      } else {
+        return this.sci_Vector__f_prefix1.get(index)
+      }
+    } else {
+      throw this.ioob__I__jl_IndexOutOfBoundsException(index)
+    }
+  };
+  updated__I__O__sci_Vector(index, elem) {
+    if (((index >= 0) && (index < this.sci_BigVector__f_length0))) {
+      if ((index >= this.sci_Vector4__f_len123)) {
+        const io = ((index - this.sci_Vector4__f_len123) | 0);
+        const i4 = ((io >>> 15) | 0);
+        const i3 = (31 & ((io >>> 10) | 0));
+        const i2 = (31 & ((io >>> 5) | 0));
+        const i1 = (31 & io);
+        if ((i4 < this.sci_Vector4__f_data4.u.length)) {
+          const a4 = this.sci_Vector4__f_data4;
+          const a4c = $asArrayOf_O(a4.clone__O(), 4);
+          const a3 = a4c.get(i4);
+          const a3c = $asArrayOf_O(a3.clone__O(), 3);
+          const a2 = a3c.get(i3);
+          const a2c = $asArrayOf_O(a2.clone__O(), 2);
+          const a1 = a2c.get(i2);
+          const a1c = $asArrayOf_O(a1.clone__O(), 1);
+          a1c.set(i1, elem);
+          a2c.set(i2, a1c);
+          a3c.set(i3, a2c);
+          a4c.set(i4, a3c);
+          const x$2 = this.sci_Vector__f_prefix1;
+          const x$3 = this.sci_Vector4__f_len1;
+          const x$4 = this.sci_Vector4__f_prefix2;
+          const x$5 = this.sci_Vector4__f_len12;
+          const x$6 = this.sci_Vector4__f_prefix3;
+          const x$7 = this.sci_Vector4__f_len123;
+          const x$8 = this.sci_Vector4__f_suffix3;
+          const x$9 = this.sci_Vector4__f_suffix2;
+          const x$10 = this.sci_BigVector__f_suffix1;
+          const x$11 = this.sci_BigVector__f_length0;
+          return new $c_sci_Vector4(x$2, x$3, x$4, x$5, x$6, x$7, a4c, x$8, x$9, x$10, x$11)
+        } else if ((i3 < this.sci_Vector4__f_suffix3.u.length)) {
+          const a3$1 = this.sci_Vector4__f_suffix3;
+          const a3c$1 = $asArrayOf_O(a3$1.clone__O(), 3);
+          const a2$1 = a3c$1.get(i3);
+          const a2c$1 = $asArrayOf_O(a2$1.clone__O(), 2);
+          const a1$1 = a2c$1.get(i2);
+          const a1c$1 = $asArrayOf_O(a1$1.clone__O(), 1);
+          a1c$1.set(i1, elem);
+          a2c$1.set(i2, a1c$1);
+          a3c$1.set(i3, a2c$1);
+          const x$13 = this.sci_Vector__f_prefix1;
+          const x$14 = this.sci_Vector4__f_len1;
+          const x$15 = this.sci_Vector4__f_prefix2;
+          const x$16 = this.sci_Vector4__f_len12;
+          const x$17 = this.sci_Vector4__f_prefix3;
+          const x$18 = this.sci_Vector4__f_len123;
+          const x$19 = this.sci_Vector4__f_data4;
+          const x$20 = this.sci_Vector4__f_suffix2;
+          const x$21 = this.sci_BigVector__f_suffix1;
+          const x$22 = this.sci_BigVector__f_length0;
+          return new $c_sci_Vector4(x$13, x$14, x$15, x$16, x$17, x$18, x$19, a3c$1, x$20, x$21, x$22)
+        } else if ((i2 < this.sci_Vector4__f_suffix2.u.length)) {
+          const a2$2 = this.sci_Vector4__f_suffix2;
+          const a2c$2 = $asArrayOf_O(a2$2.clone__O(), 2);
+          const a1$2 = a2c$2.get(i2);
+          const a1c$2 = $asArrayOf_O(a1$2.clone__O(), 1);
+          a1c$2.set(i1, elem);
+          a2c$2.set(i2, a1c$2);
+          const x$24 = this.sci_Vector__f_prefix1;
+          const x$25 = this.sci_Vector4__f_len1;
+          const x$26 = this.sci_Vector4__f_prefix2;
+          const x$27 = this.sci_Vector4__f_len12;
+          const x$28 = this.sci_Vector4__f_prefix3;
+          const x$29 = this.sci_Vector4__f_len123;
+          const x$30 = this.sci_Vector4__f_data4;
+          const x$31 = this.sci_Vector4__f_suffix3;
+          const x$32 = this.sci_BigVector__f_suffix1;
+          const x$33 = this.sci_BigVector__f_length0;
+          return new $c_sci_Vector4(x$24, x$25, x$26, x$27, x$28, x$29, x$30, x$31, a2c$2, x$32, x$33)
+        } else {
+          const a1$3 = this.sci_BigVector__f_suffix1;
+          const a1c$3 = $asArrayOf_O(a1$3.clone__O(), 1);
+          a1c$3.set(i1, elem);
+          const x$35 = this.sci_Vector__f_prefix1;
+          const x$36 = this.sci_Vector4__f_len1;
+          const x$37 = this.sci_Vector4__f_prefix2;
+          const x$38 = this.sci_Vector4__f_len12;
+          const x$39 = this.sci_Vector4__f_prefix3;
+          const x$40 = this.sci_Vector4__f_len123;
+          const x$41 = this.sci_Vector4__f_data4;
+          const x$42 = this.sci_Vector4__f_suffix3;
+          const x$43 = this.sci_Vector4__f_suffix2;
+          const x$44 = this.sci_BigVector__f_length0;
+          return new $c_sci_Vector4(x$35, x$36, x$37, x$38, x$39, x$40, x$41, x$42, x$43, a1c$3, x$44)
+        }
+      } else if ((index >= this.sci_Vector4__f_len12)) {
+        const io$2 = ((index - this.sci_Vector4__f_len12) | 0);
+        const a3$2 = this.sci_Vector4__f_prefix3;
+        const idx3 = ((io$2 >>> 10) | 0);
+        const idx2 = (31 & ((io$2 >>> 5) | 0));
+        const idx1 = (31 & io$2);
+        const a3c$2 = $asArrayOf_O(a3$2.clone__O(), 3);
+        const a2$3 = a3c$2.get(idx3);
+        const a2c$3 = $asArrayOf_O(a2$3.clone__O(), 2);
+        const a1$4 = a2c$3.get(idx2);
+        const a1c$4 = $asArrayOf_O(a1$4.clone__O(), 1);
+        a1c$4.set(idx1, elem);
+        a2c$3.set(idx2, a1c$4);
+        a3c$2.set(idx3, a2c$3);
+        const x$46 = this.sci_Vector__f_prefix1;
+        const x$47 = this.sci_Vector4__f_len1;
+        const x$48 = this.sci_Vector4__f_prefix2;
+        const x$49 = this.sci_Vector4__f_len12;
+        const x$50 = this.sci_Vector4__f_len123;
+        const x$51 = this.sci_Vector4__f_data4;
+        const x$52 = this.sci_Vector4__f_suffix3;
+        const x$53 = this.sci_Vector4__f_suffix2;
+        const x$54 = this.sci_BigVector__f_suffix1;
+        const x$55 = this.sci_BigVector__f_length0;
+        return new $c_sci_Vector4(x$46, x$47, x$48, x$49, a3c$2, x$50, x$51, x$52, x$53, x$54, x$55)
+      } else if ((index >= this.sci_Vector4__f_len1)) {
+        const io$3 = ((index - this.sci_Vector4__f_len1) | 0);
+        const a2$4 = this.sci_Vector4__f_prefix2;
+        const idx2$1 = ((io$3 >>> 5) | 0);
+        const idx1$1 = (31 & io$3);
+        const a2c$4 = $asArrayOf_O(a2$4.clone__O(), 2);
+        const a1$5 = a2c$4.get(idx2$1);
+        const a1c$5 = $asArrayOf_O(a1$5.clone__O(), 1);
+        a1c$5.set(idx1$1, elem);
+        a2c$4.set(idx2$1, a1c$5);
+        const x$57 = this.sci_Vector__f_prefix1;
+        const x$58 = this.sci_Vector4__f_len1;
+        const x$59 = this.sci_Vector4__f_len12;
+        const x$60 = this.sci_Vector4__f_prefix3;
+        const x$61 = this.sci_Vector4__f_len123;
+        const x$62 = this.sci_Vector4__f_data4;
+        const x$63 = this.sci_Vector4__f_suffix3;
+        const x$64 = this.sci_Vector4__f_suffix2;
+        const x$65 = this.sci_BigVector__f_suffix1;
+        const x$66 = this.sci_BigVector__f_length0;
+        return new $c_sci_Vector4(x$57, x$58, a2c$4, x$59, x$60, x$61, x$62, x$63, x$64, x$65, x$66)
+      } else {
+        const a1$6 = this.sci_Vector__f_prefix1;
+        const a1c$6 = $asArrayOf_O(a1$6.clone__O(), 1);
+        a1c$6.set(index, elem);
+        const len1 = this.sci_Vector4__f_len1;
+        const prefix2 = this.sci_Vector4__f_prefix2;
+        const len12 = this.sci_Vector4__f_len12;
+        const prefix3 = this.sci_Vector4__f_prefix3;
+        const len123 = this.sci_Vector4__f_len123;
+        const data4 = this.sci_Vector4__f_data4;
+        const suffix3 = this.sci_Vector4__f_suffix3;
+        const suffix2 = this.sci_Vector4__f_suffix2;
+        const suffix1 = this.sci_BigVector__f_suffix1;
+        const length0 = this.sci_BigVector__f_length0;
+        return new $c_sci_Vector4(a1c$6, len1, prefix2, len12, prefix3, len123, data4, suffix3, suffix2, suffix1, length0)
+      }
+    } else {
+      throw this.ioob__I__jl_IndexOutOfBoundsException(index)
+    }
+  };
+  appended__O__sci_Vector(elem) {
+    if ((this.sci_BigVector__f_suffix1.u.length < 32)) {
+      const x$1 = $m_sci_VectorStatics$().copyAppend1__AO__O__AO(this.sci_BigVector__f_suffix1, elem);
+      const x$2 = ((1 + this.sci_BigVector__f_length0) | 0);
+      const x$3 = this.sci_Vector__f_prefix1;
+      const x$4 = this.sci_Vector4__f_len1;
+      const x$5 = this.sci_Vector4__f_prefix2;
+      const x$6 = this.sci_Vector4__f_len12;
+      const x$7 = this.sci_Vector4__f_prefix3;
+      const x$8 = this.sci_Vector4__f_len123;
+      const x$9 = this.sci_Vector4__f_data4;
+      const x$10 = this.sci_Vector4__f_suffix3;
+      const x$11 = this.sci_Vector4__f_suffix2;
+      return new $c_sci_Vector4(x$3, x$4, x$5, x$6, x$7, x$8, x$9, x$10, x$11, x$1, x$2)
+    } else if ((this.sci_Vector4__f_suffix2.u.length < 31)) {
+      const x$12 = $asArrayOf_O($m_sci_VectorStatics$().copyAppend__AO__O__AO(this.sci_Vector4__f_suffix2, this.sci_BigVector__f_suffix1), 2);
+      const a = $newArrayObject($d_O.getArrayOf(), [1]);
+      a.set(0, elem);
+      const x$14 = ((1 + this.sci_BigVector__f_length0) | 0);
+      const x$15 = this.sci_Vector__f_prefix1;
+      const x$16 = this.sci_Vector4__f_len1;
+      const x$17 = this.sci_Vector4__f_prefix2;
+      const x$18 = this.sci_Vector4__f_len12;
+      const x$19 = this.sci_Vector4__f_prefix3;
+      const x$20 = this.sci_Vector4__f_len123;
+      const x$21 = this.sci_Vector4__f_data4;
+      const x$22 = this.sci_Vector4__f_suffix3;
+      return new $c_sci_Vector4(x$15, x$16, x$17, x$18, x$19, x$20, x$21, x$22, x$12, a, x$14)
+    } else if ((this.sci_Vector4__f_suffix3.u.length < 31)) {
+      const x$23 = $asArrayOf_O($m_sci_VectorStatics$().copyAppend__AO__O__AO(this.sci_Vector4__f_suffix3, $m_sci_VectorStatics$().copyAppend__AO__O__AO(this.sci_Vector4__f_suffix2, this.sci_BigVector__f_suffix1)), 3);
+      const x$24 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty2;
+      const a$1 = $newArrayObject($d_O.getArrayOf(), [1]);
+      a$1.set(0, elem);
+      const x$26 = ((1 + this.sci_BigVector__f_length0) | 0);
+      const x$27 = this.sci_Vector__f_prefix1;
+      const x$28 = this.sci_Vector4__f_len1;
+      const x$29 = this.sci_Vector4__f_prefix2;
+      const x$30 = this.sci_Vector4__f_len12;
+      const x$31 = this.sci_Vector4__f_prefix3;
+      const x$32 = this.sci_Vector4__f_len123;
+      const x$33 = this.sci_Vector4__f_data4;
+      return new $c_sci_Vector4(x$27, x$28, x$29, x$30, x$31, x$32, x$33, x$23, x$24, a$1, x$26)
+    } else if ((this.sci_Vector4__f_data4.u.length < 30)) {
+      const x$34 = $asArrayOf_O($m_sci_VectorStatics$().copyAppend__AO__O__AO(this.sci_Vector4__f_data4, $m_sci_VectorStatics$().copyAppend__AO__O__AO(this.sci_Vector4__f_suffix3, $m_sci_VectorStatics$().copyAppend__AO__O__AO(this.sci_Vector4__f_suffix2, this.sci_BigVector__f_suffix1))), 4);
+      const x$35 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty3;
+      const x$36 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty2;
+      const a$2 = $newArrayObject($d_O.getArrayOf(), [1]);
+      a$2.set(0, elem);
+      const x$38 = ((1 + this.sci_BigVector__f_length0) | 0);
+      const x$39 = this.sci_Vector__f_prefix1;
+      const x$40 = this.sci_Vector4__f_len1;
+      const x$41 = this.sci_Vector4__f_prefix2;
+      const x$42 = this.sci_Vector4__f_len12;
+      const x$43 = this.sci_Vector4__f_prefix3;
+      const x$44 = this.sci_Vector4__f_len123;
+      return new $c_sci_Vector4(x$39, x$40, x$41, x$42, x$43, x$44, x$34, x$35, x$36, a$2, x$38)
+    } else {
+      const $$x11 = this.sci_Vector__f_prefix1;
+      const $$x10 = this.sci_Vector4__f_len1;
+      const $$x9 = this.sci_Vector4__f_prefix2;
+      const $$x8 = this.sci_Vector4__f_len12;
+      const $$x7 = this.sci_Vector4__f_prefix3;
+      const $$x6 = this.sci_Vector4__f_len123;
+      const $$x5 = this.sci_Vector4__f_data4;
+      const $$x4 = this.sci_Vector4__f_len123;
+      const $$x3 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty5;
+      const x = $asArrayOf_O($m_sci_VectorStatics$().copyAppend__AO__O__AO(this.sci_Vector4__f_suffix3, $m_sci_VectorStatics$().copyAppend__AO__O__AO(this.sci_Vector4__f_suffix2, this.sci_BigVector__f_suffix1)), 3);
+      const a$3 = $newArrayObject($d_O.getArrayOf().getArrayOf().getArrayOf().getArrayOf(), [1]);
+      a$3.set(0, x);
+      const $$x2 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty3;
+      const $$x1 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty2;
+      const a$4 = $newArrayObject($d_O.getArrayOf(), [1]);
+      a$4.set(0, elem);
+      return new $c_sci_Vector5($$x11, $$x10, $$x9, $$x8, $$x7, $$x6, $$x5, ((983040 + $$x4) | 0), $$x3, a$3, $$x2, $$x1, a$4, ((1 + this.sci_BigVector__f_length0) | 0))
+    }
+  };
+  map__F1__sci_Vector(f) {
+    const x$1 = $m_sci_VectorStatics$().mapElems1__AO__F1__AO(this.sci_Vector__f_prefix1, f);
+    const x$2 = $asArrayOf_O($m_sci_VectorStatics$().mapElems__I__AO__F1__AO(2, this.sci_Vector4__f_prefix2, f), 2);
+    const x$3 = $asArrayOf_O($m_sci_VectorStatics$().mapElems__I__AO__F1__AO(3, this.sci_Vector4__f_prefix3, f), 3);
+    const x$4 = $asArrayOf_O($m_sci_VectorStatics$().mapElems__I__AO__F1__AO(4, this.sci_Vector4__f_data4, f), 4);
+    const x$5 = $asArrayOf_O($m_sci_VectorStatics$().mapElems__I__AO__F1__AO(3, this.sci_Vector4__f_suffix3, f), 3);
+    const x$6 = $asArrayOf_O($m_sci_VectorStatics$().mapElems__I__AO__F1__AO(2, this.sci_Vector4__f_suffix2, f), 2);
+    const x$7 = $m_sci_VectorStatics$().mapElems1__AO__F1__AO(this.sci_BigVector__f_suffix1, f);
+    const x$8 = this.sci_Vector4__f_len1;
+    const x$9 = this.sci_Vector4__f_len12;
+    const x$10 = this.sci_Vector4__f_len123;
+    const x$11 = this.sci_BigVector__f_length0;
+    return new $c_sci_Vector4(x$1, x$8, x$2, x$9, x$3, x$10, x$4, x$5, x$6, x$7, x$11)
+  };
+  slice0__I__I__sci_Vector(lo, hi) {
+    const b = new $c_sci_VectorSliceBuilder(lo, hi);
+    b.consider__I__AO__V(1, this.sci_Vector__f_prefix1);
+    b.consider__I__AO__V(2, this.sci_Vector4__f_prefix2);
+    b.consider__I__AO__V(3, this.sci_Vector4__f_prefix3);
+    b.consider__I__AO__V(4, this.sci_Vector4__f_data4);
+    b.consider__I__AO__V(3, this.sci_Vector4__f_suffix3);
+    b.consider__I__AO__V(2, this.sci_Vector4__f_suffix2);
+    b.consider__I__AO__V(1, this.sci_BigVector__f_suffix1);
+    return b.result__sci_Vector()
+  };
+  tail__sci_Vector() {
+    if ((this.sci_Vector4__f_len1 > 1)) {
+      const a = this.sci_Vector__f_prefix1;
+      const to = a.u.length;
+      const x$1 = $m_ju_Arrays$().copyOfRange__AO__I__I__AO(a, 1, to);
+      const x$2 = (((-1) + this.sci_Vector4__f_len1) | 0);
+      const x$3 = (((-1) + this.sci_Vector4__f_len12) | 0);
+      const x$4 = (((-1) + this.sci_Vector4__f_len123) | 0);
+      const x$5 = (((-1) + this.sci_BigVector__f_length0) | 0);
+      const x$6 = this.sci_Vector4__f_prefix2;
+      const x$7 = this.sci_Vector4__f_prefix3;
+      const x$8 = this.sci_Vector4__f_data4;
+      const x$9 = this.sci_Vector4__f_suffix3;
+      const x$10 = this.sci_Vector4__f_suffix2;
+      const x$11 = this.sci_BigVector__f_suffix1;
+      return new $c_sci_Vector4(x$1, x$2, x$6, x$3, x$7, x$4, x$8, x$9, x$10, x$11, x$5)
+    } else {
+      return this.slice0__I__I__sci_Vector(1, this.sci_BigVector__f_length0)
+    }
+  };
+  vectorSliceCount__I() {
+    return 7
+  };
+  vectorSlice__I__AO(idx) {
+    switch (idx) {
+      case 0: {
+        return this.sci_Vector__f_prefix1;
+        break
+      }
+      case 1: {
+        return this.sci_Vector4__f_prefix2;
+        break
+      }
+      case 2: {
+        return this.sci_Vector4__f_prefix3;
+        break
+      }
+      case 3: {
+        return this.sci_Vector4__f_data4;
+        break
+      }
+      case 4: {
+        return this.sci_Vector4__f_suffix3;
+        break
+      }
+      case 5: {
+        return this.sci_Vector4__f_suffix2;
+        break
+      }
+      case 6: {
+        return this.sci_BigVector__f_suffix1;
+        break
+      }
+      default: {
+        throw new $c_s_MatchError(idx)
+      }
+    }
+  };
+  appendedAll0__sc_IterableOnce__I__sci_Vector(suffix, k) {
+    const suffix1b = $m_sci_VectorStatics$().append1IfSpace__AO__sc_IterableOnce__AO(this.sci_BigVector__f_suffix1, suffix);
+    if ((suffix1b !== null)) {
+      const x$2 = ((((this.sci_BigVector__f_length0 - this.sci_BigVector__f_suffix1.u.length) | 0) + suffix1b.u.length) | 0);
+      const x$3 = this.sci_Vector__f_prefix1;
+      const x$4 = this.sci_Vector4__f_len1;
+      const x$5 = this.sci_Vector4__f_prefix2;
+      const x$6 = this.sci_Vector4__f_len12;
+      const x$7 = this.sci_Vector4__f_prefix3;
+      const x$8 = this.sci_Vector4__f_len123;
+      const x$9 = this.sci_Vector4__f_data4;
+      const x$10 = this.sci_Vector4__f_suffix3;
+      const x$11 = this.sci_Vector4__f_suffix2;
+      return new $c_sci_Vector4(x$3, x$4, x$5, x$6, x$7, x$8, x$9, x$10, x$11, suffix1b, x$2)
+    } else {
+      return $c_sci_Vector.prototype.appendedAll0__sc_IterableOnce__I__sci_Vector.call(this, suffix, k)
+    }
+  };
+  tail__O() {
+    return this.tail__sci_Vector()
+  };
+  map__F1__O(f) {
+    return this.map__F1__sci_Vector(f)
+  };
+  apply__O__O(v1) {
+    const index = $uI(v1);
+    if (((index >= 0) && (index < this.sci_BigVector__f_length0))) {
+      const io = ((index - this.sci_Vector4__f_len123) | 0);
+      if ((io >= 0)) {
+        const i4 = ((io >>> 15) | 0);
+        const i3 = (31 & ((io >>> 10) | 0));
+        const i2 = (31 & ((io >>> 5) | 0));
+        const i1 = (31 & io);
+        return ((i4 < this.sci_Vector4__f_data4.u.length) ? this.sci_Vector4__f_data4.get(i4).get(i3).get(i2).get(i1) : ((i3 < this.sci_Vector4__f_suffix3.u.length) ? this.sci_Vector4__f_suffix3.get(i3).get(i2).get(i1) : ((i2 < this.sci_Vector4__f_suffix2.u.length) ? this.sci_Vector4__f_suffix2.get(i2).get(i1) : this.sci_BigVector__f_suffix1.get(i1))))
+      } else if ((index >= this.sci_Vector4__f_len12)) {
+        const io$2 = ((index - this.sci_Vector4__f_len12) | 0);
+        return this.sci_Vector4__f_prefix3.get(((io$2 >>> 10) | 0)).get((31 & ((io$2 >>> 5) | 0))).get((31 & io$2))
+      } else if ((index >= this.sci_Vector4__f_len1)) {
+        const io$3 = ((index - this.sci_Vector4__f_len1) | 0);
+        return this.sci_Vector4__f_prefix2.get(((io$3 >>> 5) | 0)).get((31 & io$3))
+      } else {
+        return this.sci_Vector__f_prefix1.get(index)
+      }
+    } else {
+      throw this.ioob__I__jl_IndexOutOfBoundsException(index)
+    }
+  };
+}
+function $as_sci_Vector4(obj) {
+  return (((obj instanceof $c_sci_Vector4) || (obj === null)) ? obj : $throwClassCastException(obj, "scala.collection.immutable.Vector4"))
+}
+function $isArrayOf_sci_Vector4(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.sci_Vector4)))
+}
+function $asArrayOf_sci_Vector4(obj, depth) {
+  return (($isArrayOf_sci_Vector4(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscala.collection.immutable.Vector4;", depth))
+}
+const $d_sci_Vector4 = new $TypeData().initClass({
+  sci_Vector4: 0
+}, false, "scala.collection.immutable.Vector4", {
+  sci_Vector4: 1,
+  sci_BigVector: 1,
+  sci_VectorImpl: 1,
+  sci_Vector: 1,
+  sci_AbstractSeq: 1,
+  sc_AbstractSeq: 1,
+  sc_AbstractIterable: 1,
+  O: 1,
+  sc_Iterable: 1,
+  sc_IterableOnce: 1,
+  sc_IterableOps: 1,
+  sc_IterableOnceOps: 1,
+  sc_IterableFactoryDefaults: 1,
+  sc_Seq: 1,
+  s_PartialFunction: 1,
+  F1: 1,
+  sc_SeqOps: 1,
+  s_Equals: 1,
+  sci_Seq: 1,
+  sci_Iterable: 1,
+  sci_SeqOps: 1,
+  sci_IndexedSeq: 1,
+  sc_IndexedSeq: 1,
+  sc_IndexedSeqOps: 1,
+  sci_IndexedSeqOps: 1,
+  sci_StrictOptimizedSeqOps: 1,
+  sc_StrictOptimizedSeqOps: 1,
+  sc_StrictOptimizedIterableOps: 1,
+  scg_DefaultSerializable: 1,
+  Ljava_io_Serializable: 1
+});
+$c_sci_Vector4.prototype.$classData = $d_sci_Vector4;
+class $c_sci_Vector5 extends $c_sci_BigVector {
+  constructor(_prefix1, len1, prefix2, len12, prefix3, len123, prefix4, len1234, data5, suffix4, suffix3, suffix2, _suffix1, _length0) {
+    super();
+    this.sci_Vector5__f_len1 = 0;
+    this.sci_Vector5__f_prefix2 = null;
+    this.sci_Vector5__f_len12 = 0;
+    this.sci_Vector5__f_prefix3 = null;
+    this.sci_Vector5__f_len123 = 0;
+    this.sci_Vector5__f_prefix4 = null;
+    this.sci_Vector5__f_len1234 = 0;
+    this.sci_Vector5__f_data5 = null;
+    this.sci_Vector5__f_suffix4 = null;
+    this.sci_Vector5__f_suffix3 = null;
+    this.sci_Vector5__f_suffix2 = null;
+    this.sci_Vector5__f_len1 = len1;
+    this.sci_Vector5__f_prefix2 = prefix2;
+    this.sci_Vector5__f_len12 = len12;
+    this.sci_Vector5__f_prefix3 = prefix3;
+    this.sci_Vector5__f_len123 = len123;
+    this.sci_Vector5__f_prefix4 = prefix4;
+    this.sci_Vector5__f_len1234 = len1234;
+    this.sci_Vector5__f_data5 = data5;
+    this.sci_Vector5__f_suffix4 = suffix4;
+    this.sci_Vector5__f_suffix3 = suffix3;
+    this.sci_Vector5__f_suffix2 = suffix2;
+    $ct_sci_BigVector__AO__AO__I__(this, _prefix1, _suffix1, _length0)
+  };
+  apply__I__O(index) {
+    if (((index >= 0) && (index < this.sci_BigVector__f_length0))) {
+      const io = ((index - this.sci_Vector5__f_len1234) | 0);
+      if ((io >= 0)) {
+        const i5 = ((io >>> 20) | 0);
+        const i4 = (31 & ((io >>> 15) | 0));
+        const i3 = (31 & ((io >>> 10) | 0));
+        const i2 = (31 & ((io >>> 5) | 0));
+        const i1 = (31 & io);
+        return ((i5 < this.sci_Vector5__f_data5.u.length) ? this.sci_Vector5__f_data5.get(i5).get(i4).get(i3).get(i2).get(i1) : ((i4 < this.sci_Vector5__f_suffix4.u.length) ? this.sci_Vector5__f_suffix4.get(i4).get(i3).get(i2).get(i1) : ((i3 < this.sci_Vector5__f_suffix3.u.length) ? this.sci_Vector5__f_suffix3.get(i3).get(i2).get(i1) : ((i2 < this.sci_Vector5__f_suffix2.u.length) ? this.sci_Vector5__f_suffix2.get(i2).get(i1) : this.sci_BigVector__f_suffix1.get(i1)))))
+      } else if ((index >= this.sci_Vector5__f_len123)) {
+        const io$2 = ((index - this.sci_Vector5__f_len123) | 0);
+        return this.sci_Vector5__f_prefix4.get(((io$2 >>> 15) | 0)).get((31 & ((io$2 >>> 10) | 0))).get((31 & ((io$2 >>> 5) | 0))).get((31 & io$2))
+      } else if ((index >= this.sci_Vector5__f_len12)) {
+        const io$3 = ((index - this.sci_Vector5__f_len12) | 0);
+        return this.sci_Vector5__f_prefix3.get(((io$3 >>> 10) | 0)).get((31 & ((io$3 >>> 5) | 0))).get((31 & io$3))
+      } else if ((index >= this.sci_Vector5__f_len1)) {
+        const io$4 = ((index - this.sci_Vector5__f_len1) | 0);
+        return this.sci_Vector5__f_prefix2.get(((io$4 >>> 5) | 0)).get((31 & io$4))
+      } else {
+        return this.sci_Vector__f_prefix1.get(index)
+      }
+    } else {
+      throw this.ioob__I__jl_IndexOutOfBoundsException(index)
+    }
+  };
+  updated__I__O__sci_Vector(index, elem) {
+    if (((index >= 0) && (index < this.sci_BigVector__f_length0))) {
+      if ((index >= this.sci_Vector5__f_len1234)) {
+        const io = ((index - this.sci_Vector5__f_len1234) | 0);
+        const i5 = ((io >>> 20) | 0);
+        const i4 = (31 & ((io >>> 15) | 0));
+        const i3 = (31 & ((io >>> 10) | 0));
+        const i2 = (31 & ((io >>> 5) | 0));
+        const i1 = (31 & io);
+        if ((i5 < this.sci_Vector5__f_data5.u.length)) {
+          const a5 = this.sci_Vector5__f_data5;
+          const a5c = $asArrayOf_O(a5.clone__O(), 5);
+          const a4 = a5c.get(i5);
+          const a4c = $asArrayOf_O(a4.clone__O(), 4);
+          const a3 = a4c.get(i4);
+          const a3c = $asArrayOf_O(a3.clone__O(), 3);
+          const a2 = a3c.get(i3);
+          const a2c = $asArrayOf_O(a2.clone__O(), 2);
+          const a1 = a2c.get(i2);
+          const a1c = $asArrayOf_O(a1.clone__O(), 1);
+          a1c.set(i1, elem);
+          a2c.set(i2, a1c);
+          a3c.set(i3, a2c);
+          a4c.set(i4, a3c);
+          a5c.set(i5, a4c);
+          const x$2 = this.sci_Vector__f_prefix1;
+          const x$3 = this.sci_Vector5__f_len1;
+          const x$4 = this.sci_Vector5__f_prefix2;
+          const x$5 = this.sci_Vector5__f_len12;
+          const x$6 = this.sci_Vector5__f_prefix3;
+          const x$7 = this.sci_Vector5__f_len123;
+          const x$8 = this.sci_Vector5__f_prefix4;
+          const x$9 = this.sci_Vector5__f_len1234;
+          const x$10 = this.sci_Vector5__f_suffix4;
+          const x$11 = this.sci_Vector5__f_suffix3;
+          const x$12 = this.sci_Vector5__f_suffix2;
+          const x$13 = this.sci_BigVector__f_suffix1;
+          const x$14 = this.sci_BigVector__f_length0;
+          return new $c_sci_Vector5(x$2, x$3, x$4, x$5, x$6, x$7, x$8, x$9, a5c, x$10, x$11, x$12, x$13, x$14)
+        } else if ((i4 < this.sci_Vector5__f_suffix4.u.length)) {
+          const a4$1 = this.sci_Vector5__f_suffix4;
+          const a4c$1 = $asArrayOf_O(a4$1.clone__O(), 4);
+          const a3$1 = a4c$1.get(i4);
+          const a3c$1 = $asArrayOf_O(a3$1.clone__O(), 3);
+          const a2$1 = a3c$1.get(i3);
+          const a2c$1 = $asArrayOf_O(a2$1.clone__O(), 2);
+          const a1$1 = a2c$1.get(i2);
+          const a1c$1 = $asArrayOf_O(a1$1.clone__O(), 1);
+          a1c$1.set(i1, elem);
+          a2c$1.set(i2, a1c$1);
+          a3c$1.set(i3, a2c$1);
+          a4c$1.set(i4, a3c$1);
+          const x$16 = this.sci_Vector__f_prefix1;
+          const x$17 = this.sci_Vector5__f_len1;
+          const x$18 = this.sci_Vector5__f_prefix2;
+          const x$19 = this.sci_Vector5__f_len12;
+          const x$20 = this.sci_Vector5__f_prefix3;
+          const x$21 = this.sci_Vector5__f_len123;
+          const x$22 = this.sci_Vector5__f_prefix4;
+          const x$23 = this.sci_Vector5__f_len1234;
+          const x$24 = this.sci_Vector5__f_data5;
+          const x$25 = this.sci_Vector5__f_suffix3;
+          const x$26 = this.sci_Vector5__f_suffix2;
+          const x$27 = this.sci_BigVector__f_suffix1;
+          const x$28 = this.sci_BigVector__f_length0;
+          return new $c_sci_Vector5(x$16, x$17, x$18, x$19, x$20, x$21, x$22, x$23, x$24, a4c$1, x$25, x$26, x$27, x$28)
+        } else if ((i3 < this.sci_Vector5__f_suffix3.u.length)) {
+          const a3$2 = this.sci_Vector5__f_suffix3;
+          const a3c$2 = $asArrayOf_O(a3$2.clone__O(), 3);
+          const a2$2 = a3c$2.get(i3);
+          const a2c$2 = $asArrayOf_O(a2$2.clone__O(), 2);
+          const a1$2 = a2c$2.get(i2);
+          const a1c$2 = $asArrayOf_O(a1$2.clone__O(), 1);
+          a1c$2.set(i1, elem);
+          a2c$2.set(i2, a1c$2);
+          a3c$2.set(i3, a2c$2);
+          const x$30 = this.sci_Vector__f_prefix1;
+          const x$31 = this.sci_Vector5__f_len1;
+          const x$32 = this.sci_Vector5__f_prefix2;
+          const x$33 = this.sci_Vector5__f_len12;
+          const x$34 = this.sci_Vector5__f_prefix3;
+          const x$35 = this.sci_Vector5__f_len123;
+          const x$36 = this.sci_Vector5__f_prefix4;
+          const x$37 = this.sci_Vector5__f_len1234;
+          const x$38 = this.sci_Vector5__f_data5;
+          const x$39 = this.sci_Vector5__f_suffix4;
+          const x$40 = this.sci_Vector5__f_suffix2;
+          const x$41 = this.sci_BigVector__f_suffix1;
+          const x$42 = this.sci_BigVector__f_length0;
+          return new $c_sci_Vector5(x$30, x$31, x$32, x$33, x$34, x$35, x$36, x$37, x$38, x$39, a3c$2, x$40, x$41, x$42)
+        } else if ((i2 < this.sci_Vector5__f_suffix2.u.length)) {
+          const a2$3 = this.sci_Vector5__f_suffix2;
+          const a2c$3 = $asArrayOf_O(a2$3.clone__O(), 2);
+          const a1$3 = a2c$3.get(i2);
+          const a1c$3 = $asArrayOf_O(a1$3.clone__O(), 1);
+          a1c$3.set(i1, elem);
+          a2c$3.set(i2, a1c$3);
+          const x$44 = this.sci_Vector__f_prefix1;
+          const x$45 = this.sci_Vector5__f_len1;
+          const x$46 = this.sci_Vector5__f_prefix2;
+          const x$47 = this.sci_Vector5__f_len12;
+          const x$48 = this.sci_Vector5__f_prefix3;
+          const x$49 = this.sci_Vector5__f_len123;
+          const x$50 = this.sci_Vector5__f_prefix4;
+          const x$51 = this.sci_Vector5__f_len1234;
+          const x$52 = this.sci_Vector5__f_data5;
+          const x$53 = this.sci_Vector5__f_suffix4;
+          const x$54 = this.sci_Vector5__f_suffix3;
+          const x$55 = this.sci_BigVector__f_suffix1;
+          const x$56 = this.sci_BigVector__f_length0;
+          return new $c_sci_Vector5(x$44, x$45, x$46, x$47, x$48, x$49, x$50, x$51, x$52, x$53, x$54, a2c$3, x$55, x$56)
+        } else {
+          const a1$4 = this.sci_BigVector__f_suffix1;
+          const a1c$4 = $asArrayOf_O(a1$4.clone__O(), 1);
+          a1c$4.set(i1, elem);
+          const x$58 = this.sci_Vector__f_prefix1;
+          const x$59 = this.sci_Vector5__f_len1;
+          const x$60 = this.sci_Vector5__f_prefix2;
+          const x$61 = this.sci_Vector5__f_len12;
+          const x$62 = this.sci_Vector5__f_prefix3;
+          const x$63 = this.sci_Vector5__f_len123;
+          const x$64 = this.sci_Vector5__f_prefix4;
+          const x$65 = this.sci_Vector5__f_len1234;
+          const x$66 = this.sci_Vector5__f_data5;
+          const x$67 = this.sci_Vector5__f_suffix4;
+          const x$68 = this.sci_Vector5__f_suffix3;
+          const x$69 = this.sci_Vector5__f_suffix2;
+          const x$70 = this.sci_BigVector__f_length0;
+          return new $c_sci_Vector5(x$58, x$59, x$60, x$61, x$62, x$63, x$64, x$65, x$66, x$67, x$68, x$69, a1c$4, x$70)
+        }
+      } else if ((index >= this.sci_Vector5__f_len123)) {
+        const io$2 = ((index - this.sci_Vector5__f_len123) | 0);
+        const a4$2 = this.sci_Vector5__f_prefix4;
+        const idx4 = ((io$2 >>> 15) | 0);
+        const idx3 = (31 & ((io$2 >>> 10) | 0));
+        const idx2 = (31 & ((io$2 >>> 5) | 0));
+        const idx1 = (31 & io$2);
+        const a4c$2 = $asArrayOf_O(a4$2.clone__O(), 4);
+        const a3$3 = a4c$2.get(idx4);
+        const a3c$3 = $asArrayOf_O(a3$3.clone__O(), 3);
+        const a2$4 = a3c$3.get(idx3);
+        const a2c$4 = $asArrayOf_O(a2$4.clone__O(), 2);
+        const a1$5 = a2c$4.get(idx2);
+        const a1c$5 = $asArrayOf_O(a1$5.clone__O(), 1);
+        a1c$5.set(idx1, elem);
+        a2c$4.set(idx2, a1c$5);
+        a3c$3.set(idx3, a2c$4);
+        a4c$2.set(idx4, a3c$3);
+        const x$72 = this.sci_Vector__f_prefix1;
+        const x$73 = this.sci_Vector5__f_len1;
+        const x$74 = this.sci_Vector5__f_prefix2;
+        const x$75 = this.sci_Vector5__f_len12;
+        const x$76 = this.sci_Vector5__f_prefix3;
+        const x$77 = this.sci_Vector5__f_len123;
+        const x$78 = this.sci_Vector5__f_len1234;
+        const x$79 = this.sci_Vector5__f_data5;
+        const x$80 = this.sci_Vector5__f_suffix4;
+        const x$81 = this.sci_Vector5__f_suffix3;
+        const x$82 = this.sci_Vector5__f_suffix2;
+        const x$83 = this.sci_BigVector__f_suffix1;
+        const x$84 = this.sci_BigVector__f_length0;
+        return new $c_sci_Vector5(x$72, x$73, x$74, x$75, x$76, x$77, a4c$2, x$78, x$79, x$80, x$81, x$82, x$83, x$84)
+      } else if ((index >= this.sci_Vector5__f_len12)) {
+        const io$3 = ((index - this.sci_Vector5__f_len12) | 0);
+        const a3$4 = this.sci_Vector5__f_prefix3;
+        const idx3$1 = ((io$3 >>> 10) | 0);
+        const idx2$1 = (31 & ((io$3 >>> 5) | 0));
+        const idx1$1 = (31 & io$3);
+        const a3c$4 = $asArrayOf_O(a3$4.clone__O(), 3);
+        const a2$5 = a3c$4.get(idx3$1);
+        const a2c$5 = $asArrayOf_O(a2$5.clone__O(), 2);
+        const a1$6 = a2c$5.get(idx2$1);
+        const a1c$6 = $asArrayOf_O(a1$6.clone__O(), 1);
+        a1c$6.set(idx1$1, elem);
+        a2c$5.set(idx2$1, a1c$6);
+        a3c$4.set(idx3$1, a2c$5);
+        const x$86 = this.sci_Vector__f_prefix1;
+        const x$87 = this.sci_Vector5__f_len1;
+        const x$88 = this.sci_Vector5__f_prefix2;
+        const x$89 = this.sci_Vector5__f_len12;
+        const x$90 = this.sci_Vector5__f_len123;
+        const x$91 = this.sci_Vector5__f_prefix4;
+        const x$92 = this.sci_Vector5__f_len1234;
+        const x$93 = this.sci_Vector5__f_data5;
+        const x$94 = this.sci_Vector5__f_suffix4;
+        const x$95 = this.sci_Vector5__f_suffix3;
+        const x$96 = this.sci_Vector5__f_suffix2;
+        const x$97 = this.sci_BigVector__f_suffix1;
+        const x$98 = this.sci_BigVector__f_length0;
+        return new $c_sci_Vector5(x$86, x$87, x$88, x$89, a3c$4, x$90, x$91, x$92, x$93, x$94, x$95, x$96, x$97, x$98)
+      } else if ((index >= this.sci_Vector5__f_len1)) {
+        const io$4 = ((index - this.sci_Vector5__f_len1) | 0);
+        const a2$6 = this.sci_Vector5__f_prefix2;
+        const idx2$2 = ((io$4 >>> 5) | 0);
+        const idx1$2 = (31 & io$4);
+        const a2c$6 = $asArrayOf_O(a2$6.clone__O(), 2);
+        const a1$7 = a2c$6.get(idx2$2);
+        const a1c$7 = $asArrayOf_O(a1$7.clone__O(), 1);
+        a1c$7.set(idx1$2, elem);
+        a2c$6.set(idx2$2, a1c$7);
+        const x$100 = this.sci_Vector__f_prefix1;
+        const x$101 = this.sci_Vector5__f_len1;
+        const x$102 = this.sci_Vector5__f_len12;
+        const x$103 = this.sci_Vector5__f_prefix3;
+        const x$104 = this.sci_Vector5__f_len123;
+        const x$105 = this.sci_Vector5__f_prefix4;
+        const x$106 = this.sci_Vector5__f_len1234;
+        const x$107 = this.sci_Vector5__f_data5;
+        const x$108 = this.sci_Vector5__f_suffix4;
+        const x$109 = this.sci_Vector5__f_suffix3;
+        const x$110 = this.sci_Vector5__f_suffix2;
+        const x$111 = this.sci_BigVector__f_suffix1;
+        const x$112 = this.sci_BigVector__f_length0;
+        return new $c_sci_Vector5(x$100, x$101, a2c$6, x$102, x$103, x$104, x$105, x$106, x$107, x$108, x$109, x$110, x$111, x$112)
+      } else {
+        const a1$8 = this.sci_Vector__f_prefix1;
+        const a1c$8 = $asArrayOf_O(a1$8.clone__O(), 1);
+        a1c$8.set(index, elem);
+        const len1 = this.sci_Vector5__f_len1;
+        const prefix2 = this.sci_Vector5__f_prefix2;
+        const len12 = this.sci_Vector5__f_len12;
+        const prefix3 = this.sci_Vector5__f_prefix3;
+        const len123 = this.sci_Vector5__f_len123;
+        const prefix4 = this.sci_Vector5__f_prefix4;
+        const len1234 = this.sci_Vector5__f_len1234;
+        const data5 = this.sci_Vector5__f_data5;
+        const suffix4 = this.sci_Vector5__f_suffix4;
+        const suffix3 = this.sci_Vector5__f_suffix3;
+        const suffix2 = this.sci_Vector5__f_suffix2;
+        const suffix1 = this.sci_BigVector__f_suffix1;
+        const length0 = this.sci_BigVector__f_length0;
+        return new $c_sci_Vector5(a1c$8, len1, prefix2, len12, prefix3, len123, prefix4, len1234, data5, suffix4, suffix3, suffix2, suffix1, length0)
+      }
+    } else {
+      throw this.ioob__I__jl_IndexOutOfBoundsException(index)
+    }
+  };
+  appended__O__sci_Vector(elem) {
+    if ((this.sci_BigVector__f_suffix1.u.length < 32)) {
+      const x$1 = $m_sci_VectorStatics$().copyAppend1__AO__O__AO(this.sci_BigVector__f_suffix1, elem);
+      const x$2 = ((1 + this.sci_BigVector__f_length0) | 0);
+      const x$3 = this.sci_Vector__f_prefix1;
+      const x$4 = this.sci_Vector5__f_len1;
+      const x$5 = this.sci_Vector5__f_prefix2;
+      const x$6 = this.sci_Vector5__f_len12;
+      const x$7 = this.sci_Vector5__f_prefix3;
+      const x$8 = this.sci_Vector5__f_len123;
+      const x$9 = this.sci_Vector5__f_prefix4;
+      const x$10 = this.sci_Vector5__f_len1234;
+      const x$11 = this.sci_Vector5__f_data5;
+      const x$12 = this.sci_Vector5__f_suffix4;
+      const x$13 = this.sci_Vector5__f_suffix3;
+      const x$14 = this.sci_Vector5__f_suffix2;
+      return new $c_sci_Vector5(x$3, x$4, x$5, x$6, x$7, x$8, x$9, x$10, x$11, x$12, x$13, x$14, x$1, x$2)
+    } else if ((this.sci_Vector5__f_suffix2.u.length < 31)) {
+      const x$15 = $asArrayOf_O($m_sci_VectorStatics$().copyAppend__AO__O__AO(this.sci_Vector5__f_suffix2, this.sci_BigVector__f_suffix1), 2);
+      const a = $newArrayObject($d_O.getArrayOf(), [1]);
+      a.set(0, elem);
+      const x$17 = ((1 + this.sci_BigVector__f_length0) | 0);
+      const x$18 = this.sci_Vector__f_prefix1;
+      const x$19 = this.sci_Vector5__f_len1;
+      const x$20 = this.sci_Vector5__f_prefix2;
+      const x$21 = this.sci_Vector5__f_len12;
+      const x$22 = this.sci_Vector5__f_prefix3;
+      const x$23 = this.sci_Vector5__f_len123;
+      const x$24 = this.sci_Vector5__f_prefix4;
+      const x$25 = this.sci_Vector5__f_len1234;
+      const x$26 = this.sci_Vector5__f_data5;
+      const x$27 = this.sci_Vector5__f_suffix4;
+      const x$28 = this.sci_Vector5__f_suffix3;
+      return new $c_sci_Vector5(x$18, x$19, x$20, x$21, x$22, x$23, x$24, x$25, x$26, x$27, x$28, x$15, a, x$17)
+    } else if ((this.sci_Vector5__f_suffix3.u.length < 31)) {
+      const x$29 = $asArrayOf_O($m_sci_VectorStatics$().copyAppend__AO__O__AO(this.sci_Vector5__f_suffix3, $m_sci_VectorStatics$().copyAppend__AO__O__AO(this.sci_Vector5__f_suffix2, this.sci_BigVector__f_suffix1)), 3);
+      const x$30 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty2;
+      const a$1 = $newArrayObject($d_O.getArrayOf(), [1]);
+      a$1.set(0, elem);
+      const x$32 = ((1 + this.sci_BigVector__f_length0) | 0);
+      const x$33 = this.sci_Vector__f_prefix1;
+      const x$34 = this.sci_Vector5__f_len1;
+      const x$35 = this.sci_Vector5__f_prefix2;
+      const x$36 = this.sci_Vector5__f_len12;
+      const x$37 = this.sci_Vector5__f_prefix3;
+      const x$38 = this.sci_Vector5__f_len123;
+      const x$39 = this.sci_Vector5__f_prefix4;
+      const x$40 = this.sci_Vector5__f_len1234;
+      const x$41 = this.sci_Vector5__f_data5;
+      const x$42 = this.sci_Vector5__f_suffix4;
+      return new $c_sci_Vector5(x$33, x$34, x$35, x$36, x$37, x$38, x$39, x$40, x$41, x$42, x$29, x$30, a$1, x$32)
+    } else if ((this.sci_Vector5__f_suffix4.u.length < 31)) {
+      const x$43 = $asArrayOf_O($m_sci_VectorStatics$().copyAppend__AO__O__AO(this.sci_Vector5__f_suffix4, $m_sci_VectorStatics$().copyAppend__AO__O__AO(this.sci_Vector5__f_suffix3, $m_sci_VectorStatics$().copyAppend__AO__O__AO(this.sci_Vector5__f_suffix2, this.sci_BigVector__f_suffix1))), 4);
+      const x$44 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty3;
+      const x$45 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty2;
+      const a$2 = $newArrayObject($d_O.getArrayOf(), [1]);
+      a$2.set(0, elem);
+      const x$47 = ((1 + this.sci_BigVector__f_length0) | 0);
+      const x$48 = this.sci_Vector__f_prefix1;
+      const x$49 = this.sci_Vector5__f_len1;
+      const x$50 = this.sci_Vector5__f_prefix2;
+      const x$51 = this.sci_Vector5__f_len12;
+      const x$52 = this.sci_Vector5__f_prefix3;
+      const x$53 = this.sci_Vector5__f_len123;
+      const x$54 = this.sci_Vector5__f_prefix4;
+      const x$55 = this.sci_Vector5__f_len1234;
+      const x$56 = this.sci_Vector5__f_data5;
+      return new $c_sci_Vector5(x$48, x$49, x$50, x$51, x$52, x$53, x$54, x$55, x$56, x$43, x$44, x$45, a$2, x$47)
+    } else if ((this.sci_Vector5__f_data5.u.length < 30)) {
+      const x$57 = $asArrayOf_O($m_sci_VectorStatics$().copyAppend__AO__O__AO(this.sci_Vector5__f_data5, $m_sci_VectorStatics$().copyAppend__AO__O__AO(this.sci_Vector5__f_suffix4, $m_sci_VectorStatics$().copyAppend__AO__O__AO(this.sci_Vector5__f_suffix3, $m_sci_VectorStatics$().copyAppend__AO__O__AO(this.sci_Vector5__f_suffix2, this.sci_BigVector__f_suffix1)))), 5);
+      const x$58 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty4;
+      const x$59 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty3;
+      const x$60 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty2;
+      const a$3 = $newArrayObject($d_O.getArrayOf(), [1]);
+      a$3.set(0, elem);
+      const x$62 = ((1 + this.sci_BigVector__f_length0) | 0);
+      const x$63 = this.sci_Vector__f_prefix1;
+      const x$64 = this.sci_Vector5__f_len1;
+      const x$65 = this.sci_Vector5__f_prefix2;
+      const x$66 = this.sci_Vector5__f_len12;
+      const x$67 = this.sci_Vector5__f_prefix3;
+      const x$68 = this.sci_Vector5__f_len123;
+      const x$69 = this.sci_Vector5__f_prefix4;
+      const x$70 = this.sci_Vector5__f_len1234;
+      return new $c_sci_Vector5(x$63, x$64, x$65, x$66, x$67, x$68, x$69, x$70, x$57, x$58, x$59, x$60, a$3, x$62)
+    } else {
+      const $$x14 = this.sci_Vector__f_prefix1;
+      const $$x13 = this.sci_Vector5__f_len1;
+      const $$x12 = this.sci_Vector5__f_prefix2;
+      const $$x11 = this.sci_Vector5__f_len12;
+      const $$x10 = this.sci_Vector5__f_prefix3;
+      const $$x9 = this.sci_Vector5__f_len123;
+      const $$x8 = this.sci_Vector5__f_prefix4;
+      const $$x7 = this.sci_Vector5__f_len1234;
+      const $$x6 = this.sci_Vector5__f_data5;
+      const $$x5 = this.sci_Vector5__f_len1234;
+      const $$x4 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty6;
+      const x = $asArrayOf_O($m_sci_VectorStatics$().copyAppend__AO__O__AO(this.sci_Vector5__f_suffix4, $m_sci_VectorStatics$().copyAppend__AO__O__AO(this.sci_Vector5__f_suffix3, $m_sci_VectorStatics$().copyAppend__AO__O__AO(this.sci_Vector5__f_suffix2, this.sci_BigVector__f_suffix1))), 4);
+      const a$4 = $newArrayObject($d_O.getArrayOf().getArrayOf().getArrayOf().getArrayOf().getArrayOf(), [1]);
+      a$4.set(0, x);
+      const $$x3 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty4;
+      const $$x2 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty3;
+      const $$x1 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty2;
+      const a$5 = $newArrayObject($d_O.getArrayOf(), [1]);
+      a$5.set(0, elem);
+      return new $c_sci_Vector6($$x14, $$x13, $$x12, $$x11, $$x10, $$x9, $$x8, $$x7, $$x6, ((31457280 + $$x5) | 0), $$x4, a$4, $$x3, $$x2, $$x1, a$5, ((1 + this.sci_BigVector__f_length0) | 0))
+    }
+  };
+  map__F1__sci_Vector(f) {
+    const x$1 = $m_sci_VectorStatics$().mapElems1__AO__F1__AO(this.sci_Vector__f_prefix1, f);
+    const x$2 = $asArrayOf_O($m_sci_VectorStatics$().mapElems__I__AO__F1__AO(2, this.sci_Vector5__f_prefix2, f), 2);
+    const x$3 = $asArrayOf_O($m_sci_VectorStatics$().mapElems__I__AO__F1__AO(3, this.sci_Vector5__f_prefix3, f), 3);
+    const x$4 = $asArrayOf_O($m_sci_VectorStatics$().mapElems__I__AO__F1__AO(4, this.sci_Vector5__f_prefix4, f), 4);
+    const x$5 = $asArrayOf_O($m_sci_VectorStatics$().mapElems__I__AO__F1__AO(5, this.sci_Vector5__f_data5, f), 5);
+    const x$6 = $asArrayOf_O($m_sci_VectorStatics$().mapElems__I__AO__F1__AO(4, this.sci_Vector5__f_suffix4, f), 4);
+    const x$7 = $asArrayOf_O($m_sci_VectorStatics$().mapElems__I__AO__F1__AO(3, this.sci_Vector5__f_suffix3, f), 3);
+    const x$8 = $asArrayOf_O($m_sci_VectorStatics$().mapElems__I__AO__F1__AO(2, this.sci_Vector5__f_suffix2, f), 2);
+    const x$9 = $m_sci_VectorStatics$().mapElems1__AO__F1__AO(this.sci_BigVector__f_suffix1, f);
+    const x$10 = this.sci_Vector5__f_len1;
+    const x$11 = this.sci_Vector5__f_len12;
+    const x$12 = this.sci_Vector5__f_len123;
+    const x$13 = this.sci_Vector5__f_len1234;
+    const x$14 = this.sci_BigVector__f_length0;
+    return new $c_sci_Vector5(x$1, x$10, x$2, x$11, x$3, x$12, x$4, x$13, x$5, x$6, x$7, x$8, x$9, x$14)
+  };
+  slice0__I__I__sci_Vector(lo, hi) {
+    const b = new $c_sci_VectorSliceBuilder(lo, hi);
+    b.consider__I__AO__V(1, this.sci_Vector__f_prefix1);
+    b.consider__I__AO__V(2, this.sci_Vector5__f_prefix2);
+    b.consider__I__AO__V(3, this.sci_Vector5__f_prefix3);
+    b.consider__I__AO__V(4, this.sci_Vector5__f_prefix4);
+    b.consider__I__AO__V(5, this.sci_Vector5__f_data5);
+    b.consider__I__AO__V(4, this.sci_Vector5__f_suffix4);
+    b.consider__I__AO__V(3, this.sci_Vector5__f_suffix3);
+    b.consider__I__AO__V(2, this.sci_Vector5__f_suffix2);
+    b.consider__I__AO__V(1, this.sci_BigVector__f_suffix1);
+    return b.result__sci_Vector()
+  };
+  tail__sci_Vector() {
+    if ((this.sci_Vector5__f_len1 > 1)) {
+      const a = this.sci_Vector__f_prefix1;
+      const to = a.u.length;
+      const x$1 = $m_ju_Arrays$().copyOfRange__AO__I__I__AO(a, 1, to);
+      const x$2 = (((-1) + this.sci_Vector5__f_len1) | 0);
+      const x$3 = (((-1) + this.sci_Vector5__f_len12) | 0);
+      const x$4 = (((-1) + this.sci_Vector5__f_len123) | 0);
+      const x$5 = (((-1) + this.sci_Vector5__f_len1234) | 0);
+      const x$6 = (((-1) + this.sci_BigVector__f_length0) | 0);
+      const x$7 = this.sci_Vector5__f_prefix2;
+      const x$8 = this.sci_Vector5__f_prefix3;
+      const x$9 = this.sci_Vector5__f_prefix4;
+      const x$10 = this.sci_Vector5__f_data5;
+      const x$11 = this.sci_Vector5__f_suffix4;
+      const x$12 = this.sci_Vector5__f_suffix3;
+      const x$13 = this.sci_Vector5__f_suffix2;
+      const x$14 = this.sci_BigVector__f_suffix1;
+      return new $c_sci_Vector5(x$1, x$2, x$7, x$3, x$8, x$4, x$9, x$5, x$10, x$11, x$12, x$13, x$14, x$6)
+    } else {
+      return this.slice0__I__I__sci_Vector(1, this.sci_BigVector__f_length0)
+    }
+  };
+  vectorSliceCount__I() {
+    return 9
+  };
+  vectorSlice__I__AO(idx) {
+    switch (idx) {
+      case 0: {
+        return this.sci_Vector__f_prefix1;
+        break
+      }
+      case 1: {
+        return this.sci_Vector5__f_prefix2;
+        break
+      }
+      case 2: {
+        return this.sci_Vector5__f_prefix3;
+        break
+      }
+      case 3: {
+        return this.sci_Vector5__f_prefix4;
+        break
+      }
+      case 4: {
+        return this.sci_Vector5__f_data5;
+        break
+      }
+      case 5: {
+        return this.sci_Vector5__f_suffix4;
+        break
+      }
+      case 6: {
+        return this.sci_Vector5__f_suffix3;
+        break
+      }
+      case 7: {
+        return this.sci_Vector5__f_suffix2;
+        break
+      }
+      case 8: {
+        return this.sci_BigVector__f_suffix1;
+        break
+      }
+      default: {
+        throw new $c_s_MatchError(idx)
+      }
+    }
+  };
+  appendedAll0__sc_IterableOnce__I__sci_Vector(suffix, k) {
+    const suffix1b = $m_sci_VectorStatics$().append1IfSpace__AO__sc_IterableOnce__AO(this.sci_BigVector__f_suffix1, suffix);
+    if ((suffix1b !== null)) {
+      const x$2 = ((((this.sci_BigVector__f_length0 - this.sci_BigVector__f_suffix1.u.length) | 0) + suffix1b.u.length) | 0);
+      const x$3 = this.sci_Vector__f_prefix1;
+      const x$4 = this.sci_Vector5__f_len1;
+      const x$5 = this.sci_Vector5__f_prefix2;
+      const x$6 = this.sci_Vector5__f_len12;
+      const x$7 = this.sci_Vector5__f_prefix3;
+      const x$8 = this.sci_Vector5__f_len123;
+      const x$9 = this.sci_Vector5__f_prefix4;
+      const x$10 = this.sci_Vector5__f_len1234;
+      const x$11 = this.sci_Vector5__f_data5;
+      const x$12 = this.sci_Vector5__f_suffix4;
+      const x$13 = this.sci_Vector5__f_suffix3;
+      const x$14 = this.sci_Vector5__f_suffix2;
+      return new $c_sci_Vector5(x$3, x$4, x$5, x$6, x$7, x$8, x$9, x$10, x$11, x$12, x$13, x$14, suffix1b, x$2)
+    } else {
+      return $c_sci_Vector.prototype.appendedAll0__sc_IterableOnce__I__sci_Vector.call(this, suffix, k)
+    }
+  };
+  tail__O() {
+    return this.tail__sci_Vector()
+  };
+  map__F1__O(f) {
+    return this.map__F1__sci_Vector(f)
+  };
+  apply__O__O(v1) {
+    const index = $uI(v1);
+    if (((index >= 0) && (index < this.sci_BigVector__f_length0))) {
+      const io = ((index - this.sci_Vector5__f_len1234) | 0);
+      if ((io >= 0)) {
+        const i5 = ((io >>> 20) | 0);
+        const i4 = (31 & ((io >>> 15) | 0));
+        const i3 = (31 & ((io >>> 10) | 0));
+        const i2 = (31 & ((io >>> 5) | 0));
+        const i1 = (31 & io);
+        return ((i5 < this.sci_Vector5__f_data5.u.length) ? this.sci_Vector5__f_data5.get(i5).get(i4).get(i3).get(i2).get(i1) : ((i4 < this.sci_Vector5__f_suffix4.u.length) ? this.sci_Vector5__f_suffix4.get(i4).get(i3).get(i2).get(i1) : ((i3 < this.sci_Vector5__f_suffix3.u.length) ? this.sci_Vector5__f_suffix3.get(i3).get(i2).get(i1) : ((i2 < this.sci_Vector5__f_suffix2.u.length) ? this.sci_Vector5__f_suffix2.get(i2).get(i1) : this.sci_BigVector__f_suffix1.get(i1)))))
+      } else if ((index >= this.sci_Vector5__f_len123)) {
+        const io$2 = ((index - this.sci_Vector5__f_len123) | 0);
+        return this.sci_Vector5__f_prefix4.get(((io$2 >>> 15) | 0)).get((31 & ((io$2 >>> 10) | 0))).get((31 & ((io$2 >>> 5) | 0))).get((31 & io$2))
+      } else if ((index >= this.sci_Vector5__f_len12)) {
+        const io$3 = ((index - this.sci_Vector5__f_len12) | 0);
+        return this.sci_Vector5__f_prefix3.get(((io$3 >>> 10) | 0)).get((31 & ((io$3 >>> 5) | 0))).get((31 & io$3))
+      } else if ((index >= this.sci_Vector5__f_len1)) {
+        const io$4 = ((index - this.sci_Vector5__f_len1) | 0);
+        return this.sci_Vector5__f_prefix2.get(((io$4 >>> 5) | 0)).get((31 & io$4))
+      } else {
+        return this.sci_Vector__f_prefix1.get(index)
+      }
+    } else {
+      throw this.ioob__I__jl_IndexOutOfBoundsException(index)
+    }
+  };
+}
+function $as_sci_Vector5(obj) {
+  return (((obj instanceof $c_sci_Vector5) || (obj === null)) ? obj : $throwClassCastException(obj, "scala.collection.immutable.Vector5"))
+}
+function $isArrayOf_sci_Vector5(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.sci_Vector5)))
+}
+function $asArrayOf_sci_Vector5(obj, depth) {
+  return (($isArrayOf_sci_Vector5(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscala.collection.immutable.Vector5;", depth))
+}
+const $d_sci_Vector5 = new $TypeData().initClass({
+  sci_Vector5: 0
+}, false, "scala.collection.immutable.Vector5", {
+  sci_Vector5: 1,
+  sci_BigVector: 1,
+  sci_VectorImpl: 1,
+  sci_Vector: 1,
+  sci_AbstractSeq: 1,
+  sc_AbstractSeq: 1,
+  sc_AbstractIterable: 1,
+  O: 1,
+  sc_Iterable: 1,
+  sc_IterableOnce: 1,
+  sc_IterableOps: 1,
+  sc_IterableOnceOps: 1,
+  sc_IterableFactoryDefaults: 1,
+  sc_Seq: 1,
+  s_PartialFunction: 1,
+  F1: 1,
+  sc_SeqOps: 1,
+  s_Equals: 1,
+  sci_Seq: 1,
+  sci_Iterable: 1,
+  sci_SeqOps: 1,
+  sci_IndexedSeq: 1,
+  sc_IndexedSeq: 1,
+  sc_IndexedSeqOps: 1,
+  sci_IndexedSeqOps: 1,
+  sci_StrictOptimizedSeqOps: 1,
+  sc_StrictOptimizedSeqOps: 1,
+  sc_StrictOptimizedIterableOps: 1,
+  scg_DefaultSerializable: 1,
+  Ljava_io_Serializable: 1
+});
+$c_sci_Vector5.prototype.$classData = $d_sci_Vector5;
+class $c_sci_Vector6 extends $c_sci_BigVector {
+  constructor(_prefix1, len1, prefix2, len12, prefix3, len123, prefix4, len1234, prefix5, len12345, data6, suffix5, suffix4, suffix3, suffix2, _suffix1, _length0) {
+    super();
+    this.sci_Vector6__f_len1 = 0;
+    this.sci_Vector6__f_prefix2 = null;
+    this.sci_Vector6__f_len12 = 0;
+    this.sci_Vector6__f_prefix3 = null;
+    this.sci_Vector6__f_len123 = 0;
+    this.sci_Vector6__f_prefix4 = null;
+    this.sci_Vector6__f_len1234 = 0;
+    this.sci_Vector6__f_prefix5 = null;
+    this.sci_Vector6__f_len12345 = 0;
+    this.sci_Vector6__f_data6 = null;
+    this.sci_Vector6__f_suffix5 = null;
+    this.sci_Vector6__f_suffix4 = null;
+    this.sci_Vector6__f_suffix3 = null;
+    this.sci_Vector6__f_suffix2 = null;
+    this.sci_Vector6__f_len1 = len1;
+    this.sci_Vector6__f_prefix2 = prefix2;
+    this.sci_Vector6__f_len12 = len12;
+    this.sci_Vector6__f_prefix3 = prefix3;
+    this.sci_Vector6__f_len123 = len123;
+    this.sci_Vector6__f_prefix4 = prefix4;
+    this.sci_Vector6__f_len1234 = len1234;
+    this.sci_Vector6__f_prefix5 = prefix5;
+    this.sci_Vector6__f_len12345 = len12345;
+    this.sci_Vector6__f_data6 = data6;
+    this.sci_Vector6__f_suffix5 = suffix5;
+    this.sci_Vector6__f_suffix4 = suffix4;
+    this.sci_Vector6__f_suffix3 = suffix3;
+    this.sci_Vector6__f_suffix2 = suffix2;
+    $ct_sci_BigVector__AO__AO__I__(this, _prefix1, _suffix1, _length0)
+  };
+  apply__I__O(index) {
+    if (((index >= 0) && (index < this.sci_BigVector__f_length0))) {
+      const io = ((index - this.sci_Vector6__f_len12345) | 0);
+      if ((io >= 0)) {
+        const i6 = ((io >>> 25) | 0);
+        const i5 = (31 & ((io >>> 20) | 0));
+        const i4 = (31 & ((io >>> 15) | 0));
+        const i3 = (31 & ((io >>> 10) | 0));
+        const i2 = (31 & ((io >>> 5) | 0));
+        const i1 = (31 & io);
+        return ((i6 < this.sci_Vector6__f_data6.u.length) ? this.sci_Vector6__f_data6.get(i6).get(i5).get(i4).get(i3).get(i2).get(i1) : ((i5 < this.sci_Vector6__f_suffix5.u.length) ? this.sci_Vector6__f_suffix5.get(i5).get(i4).get(i3).get(i2).get(i1) : ((i4 < this.sci_Vector6__f_suffix4.u.length) ? this.sci_Vector6__f_suffix4.get(i4).get(i3).get(i2).get(i1) : ((i3 < this.sci_Vector6__f_suffix3.u.length) ? this.sci_Vector6__f_suffix3.get(i3).get(i2).get(i1) : ((i2 < this.sci_Vector6__f_suffix2.u.length) ? this.sci_Vector6__f_suffix2.get(i2).get(i1) : this.sci_BigVector__f_suffix1.get(i1))))))
+      } else if ((index >= this.sci_Vector6__f_len1234)) {
+        const io$2 = ((index - this.sci_Vector6__f_len1234) | 0);
+        return this.sci_Vector6__f_prefix5.get(((io$2 >>> 20) | 0)).get((31 & ((io$2 >>> 15) | 0))).get((31 & ((io$2 >>> 10) | 0))).get((31 & ((io$2 >>> 5) | 0))).get((31 & io$2))
+      } else if ((index >= this.sci_Vector6__f_len123)) {
+        const io$3 = ((index - this.sci_Vector6__f_len123) | 0);
+        return this.sci_Vector6__f_prefix4.get(((io$3 >>> 15) | 0)).get((31 & ((io$3 >>> 10) | 0))).get((31 & ((io$3 >>> 5) | 0))).get((31 & io$3))
+      } else if ((index >= this.sci_Vector6__f_len12)) {
+        const io$4 = ((index - this.sci_Vector6__f_len12) | 0);
+        return this.sci_Vector6__f_prefix3.get(((io$4 >>> 10) | 0)).get((31 & ((io$4 >>> 5) | 0))).get((31 & io$4))
+      } else if ((index >= this.sci_Vector6__f_len1)) {
+        const io$5 = ((index - this.sci_Vector6__f_len1) | 0);
+        return this.sci_Vector6__f_prefix2.get(((io$5 >>> 5) | 0)).get((31 & io$5))
+      } else {
+        return this.sci_Vector__f_prefix1.get(index)
+      }
+    } else {
+      throw this.ioob__I__jl_IndexOutOfBoundsException(index)
+    }
+  };
+  updated__I__O__sci_Vector(index, elem) {
+    if (((index >= 0) && (index < this.sci_BigVector__f_length0))) {
+      if ((index >= this.sci_Vector6__f_len12345)) {
+        const io = ((index - this.sci_Vector6__f_len12345) | 0);
+        const i6 = ((io >>> 25) | 0);
+        const i5 = (31 & ((io >>> 20) | 0));
+        const i4 = (31 & ((io >>> 15) | 0));
+        const i3 = (31 & ((io >>> 10) | 0));
+        const i2 = (31 & ((io >>> 5) | 0));
+        const i1 = (31 & io);
+        if ((i6 < this.sci_Vector6__f_data6.u.length)) {
+          const a6 = this.sci_Vector6__f_data6;
+          const a6c = $asArrayOf_O(a6.clone__O(), 6);
+          const a5 = a6c.get(i6);
+          const a5c = $asArrayOf_O(a5.clone__O(), 5);
+          const a4 = a5c.get(i5);
+          const a4c = $asArrayOf_O(a4.clone__O(), 4);
+          const a3 = a4c.get(i4);
+          const a3c = $asArrayOf_O(a3.clone__O(), 3);
+          const a2 = a3c.get(i3);
+          const a2c = $asArrayOf_O(a2.clone__O(), 2);
+          const a1 = a2c.get(i2);
+          const a1c = $asArrayOf_O(a1.clone__O(), 1);
+          a1c.set(i1, elem);
+          a2c.set(i2, a1c);
+          a3c.set(i3, a2c);
+          a4c.set(i4, a3c);
+          a5c.set(i5, a4c);
+          a6c.set(i6, a5c);
+          const x$2 = this.sci_Vector__f_prefix1;
+          const x$3 = this.sci_Vector6__f_len1;
+          const x$4 = this.sci_Vector6__f_prefix2;
+          const x$5 = this.sci_Vector6__f_len12;
+          const x$6 = this.sci_Vector6__f_prefix3;
+          const x$7 = this.sci_Vector6__f_len123;
+          const x$8 = this.sci_Vector6__f_prefix4;
+          const x$9 = this.sci_Vector6__f_len1234;
+          const x$10 = this.sci_Vector6__f_prefix5;
+          const x$11 = this.sci_Vector6__f_len12345;
+          const x$12 = this.sci_Vector6__f_suffix5;
+          const x$13 = this.sci_Vector6__f_suffix4;
+          const x$14 = this.sci_Vector6__f_suffix3;
+          const x$15 = this.sci_Vector6__f_suffix2;
+          const x$16 = this.sci_BigVector__f_suffix1;
+          const x$17 = this.sci_BigVector__f_length0;
+          return new $c_sci_Vector6(x$2, x$3, x$4, x$5, x$6, x$7, x$8, x$9, x$10, x$11, a6c, x$12, x$13, x$14, x$15, x$16, x$17)
+        } else if ((i5 < this.sci_Vector6__f_suffix5.u.length)) {
+          const a5$1 = this.sci_Vector6__f_suffix5;
+          const a5c$1 = $asArrayOf_O(a5$1.clone__O(), 5);
+          const a4$1 = a5c$1.get(i5);
+          const a4c$1 = $asArrayOf_O(a4$1.clone__O(), 4);
+          const a3$1 = a4c$1.get(i4);
+          const a3c$1 = $asArrayOf_O(a3$1.clone__O(), 3);
+          const a2$1 = a3c$1.get(i3);
+          const a2c$1 = $asArrayOf_O(a2$1.clone__O(), 2);
+          const a1$1 = a2c$1.get(i2);
+          const a1c$1 = $asArrayOf_O(a1$1.clone__O(), 1);
+          a1c$1.set(i1, elem);
+          a2c$1.set(i2, a1c$1);
+          a3c$1.set(i3, a2c$1);
+          a4c$1.set(i4, a3c$1);
+          a5c$1.set(i5, a4c$1);
+          const x$19 = this.sci_Vector__f_prefix1;
+          const x$20 = this.sci_Vector6__f_len1;
+          const x$21 = this.sci_Vector6__f_prefix2;
+          const x$22 = this.sci_Vector6__f_len12;
+          const x$23 = this.sci_Vector6__f_prefix3;
+          const x$24 = this.sci_Vector6__f_len123;
+          const x$25 = this.sci_Vector6__f_prefix4;
+          const x$26 = this.sci_Vector6__f_len1234;
+          const x$27 = this.sci_Vector6__f_prefix5;
+          const x$28 = this.sci_Vector6__f_len12345;
+          const x$29 = this.sci_Vector6__f_data6;
+          const x$30 = this.sci_Vector6__f_suffix4;
+          const x$31 = this.sci_Vector6__f_suffix3;
+          const x$32 = this.sci_Vector6__f_suffix2;
+          const x$33 = this.sci_BigVector__f_suffix1;
+          const x$34 = this.sci_BigVector__f_length0;
+          return new $c_sci_Vector6(x$19, x$20, x$21, x$22, x$23, x$24, x$25, x$26, x$27, x$28, x$29, a5c$1, x$30, x$31, x$32, x$33, x$34)
+        } else if ((i4 < this.sci_Vector6__f_suffix4.u.length)) {
+          const a4$2 = this.sci_Vector6__f_suffix4;
+          const a4c$2 = $asArrayOf_O(a4$2.clone__O(), 4);
+          const a3$2 = a4c$2.get(i4);
+          const a3c$2 = $asArrayOf_O(a3$2.clone__O(), 3);
+          const a2$2 = a3c$2.get(i3);
+          const a2c$2 = $asArrayOf_O(a2$2.clone__O(), 2);
+          const a1$2 = a2c$2.get(i2);
+          const a1c$2 = $asArrayOf_O(a1$2.clone__O(), 1);
+          a1c$2.set(i1, elem);
+          a2c$2.set(i2, a1c$2);
+          a3c$2.set(i3, a2c$2);
+          a4c$2.set(i4, a3c$2);
+          const x$36 = this.sci_Vector__f_prefix1;
+          const x$37 = this.sci_Vector6__f_len1;
+          const x$38 = this.sci_Vector6__f_prefix2;
+          const x$39 = this.sci_Vector6__f_len12;
+          const x$40 = this.sci_Vector6__f_prefix3;
+          const x$41 = this.sci_Vector6__f_len123;
+          const x$42 = this.sci_Vector6__f_prefix4;
+          const x$43 = this.sci_Vector6__f_len1234;
+          const x$44 = this.sci_Vector6__f_prefix5;
+          const x$45 = this.sci_Vector6__f_len12345;
+          const x$46 = this.sci_Vector6__f_data6;
+          const x$47 = this.sci_Vector6__f_suffix5;
+          const x$48 = this.sci_Vector6__f_suffix3;
+          const x$49 = this.sci_Vector6__f_suffix2;
+          const x$50 = this.sci_BigVector__f_suffix1;
+          const x$51 = this.sci_BigVector__f_length0;
+          return new $c_sci_Vector6(x$36, x$37, x$38, x$39, x$40, x$41, x$42, x$43, x$44, x$45, x$46, x$47, a4c$2, x$48, x$49, x$50, x$51)
+        } else if ((i3 < this.sci_Vector6__f_suffix3.u.length)) {
+          const a3$3 = this.sci_Vector6__f_suffix3;
+          const a3c$3 = $asArrayOf_O(a3$3.clone__O(), 3);
+          const a2$3 = a3c$3.get(i3);
+          const a2c$3 = $asArrayOf_O(a2$3.clone__O(), 2);
+          const a1$3 = a2c$3.get(i2);
+          const a1c$3 = $asArrayOf_O(a1$3.clone__O(), 1);
+          a1c$3.set(i1, elem);
+          a2c$3.set(i2, a1c$3);
+          a3c$3.set(i3, a2c$3);
+          const x$53 = this.sci_Vector__f_prefix1;
+          const x$54 = this.sci_Vector6__f_len1;
+          const x$55 = this.sci_Vector6__f_prefix2;
+          const x$56 = this.sci_Vector6__f_len12;
+          const x$57 = this.sci_Vector6__f_prefix3;
+          const x$58 = this.sci_Vector6__f_len123;
+          const x$59 = this.sci_Vector6__f_prefix4;
+          const x$60 = this.sci_Vector6__f_len1234;
+          const x$61 = this.sci_Vector6__f_prefix5;
+          const x$62 = this.sci_Vector6__f_len12345;
+          const x$63 = this.sci_Vector6__f_data6;
+          const x$64 = this.sci_Vector6__f_suffix5;
+          const x$65 = this.sci_Vector6__f_suffix4;
+          const x$66 = this.sci_Vector6__f_suffix2;
+          const x$67 = this.sci_BigVector__f_suffix1;
+          const x$68 = this.sci_BigVector__f_length0;
+          return new $c_sci_Vector6(x$53, x$54, x$55, x$56, x$57, x$58, x$59, x$60, x$61, x$62, x$63, x$64, x$65, a3c$3, x$66, x$67, x$68)
+        } else if ((i2 < this.sci_Vector6__f_suffix2.u.length)) {
+          const a2$4 = this.sci_Vector6__f_suffix2;
+          const a2c$4 = $asArrayOf_O(a2$4.clone__O(), 2);
+          const a1$4 = a2c$4.get(i2);
+          const a1c$4 = $asArrayOf_O(a1$4.clone__O(), 1);
+          a1c$4.set(i1, elem);
+          a2c$4.set(i2, a1c$4);
+          const x$70 = this.sci_Vector__f_prefix1;
+          const x$71 = this.sci_Vector6__f_len1;
+          const x$72 = this.sci_Vector6__f_prefix2;
+          const x$73 = this.sci_Vector6__f_len12;
+          const x$74 = this.sci_Vector6__f_prefix3;
+          const x$75 = this.sci_Vector6__f_len123;
+          const x$76 = this.sci_Vector6__f_prefix4;
+          const x$77 = this.sci_Vector6__f_len1234;
+          const x$78 = this.sci_Vector6__f_prefix5;
+          const x$79 = this.sci_Vector6__f_len12345;
+          const x$80 = this.sci_Vector6__f_data6;
+          const x$81 = this.sci_Vector6__f_suffix5;
+          const x$82 = this.sci_Vector6__f_suffix4;
+          const x$83 = this.sci_Vector6__f_suffix3;
+          const x$84 = this.sci_BigVector__f_suffix1;
+          const x$85 = this.sci_BigVector__f_length0;
+          return new $c_sci_Vector6(x$70, x$71, x$72, x$73, x$74, x$75, x$76, x$77, x$78, x$79, x$80, x$81, x$82, x$83, a2c$4, x$84, x$85)
+        } else {
+          const a1$5 = this.sci_BigVector__f_suffix1;
+          const a1c$5 = $asArrayOf_O(a1$5.clone__O(), 1);
+          a1c$5.set(i1, elem);
+          const x$87 = this.sci_Vector__f_prefix1;
+          const x$88 = this.sci_Vector6__f_len1;
+          const x$89 = this.sci_Vector6__f_prefix2;
+          const x$90 = this.sci_Vector6__f_len12;
+          const x$91 = this.sci_Vector6__f_prefix3;
+          const x$92 = this.sci_Vector6__f_len123;
+          const x$93 = this.sci_Vector6__f_prefix4;
+          const x$94 = this.sci_Vector6__f_len1234;
+          const x$95 = this.sci_Vector6__f_prefix5;
+          const x$96 = this.sci_Vector6__f_len12345;
+          const x$97 = this.sci_Vector6__f_data6;
+          const x$98 = this.sci_Vector6__f_suffix5;
+          const x$99 = this.sci_Vector6__f_suffix4;
+          const x$100 = this.sci_Vector6__f_suffix3;
+          const x$101 = this.sci_Vector6__f_suffix2;
+          const x$102 = this.sci_BigVector__f_length0;
+          return new $c_sci_Vector6(x$87, x$88, x$89, x$90, x$91, x$92, x$93, x$94, x$95, x$96, x$97, x$98, x$99, x$100, x$101, a1c$5, x$102)
+        }
+      } else if ((index >= this.sci_Vector6__f_len1234)) {
+        const io$2 = ((index - this.sci_Vector6__f_len1234) | 0);
+        const a5$2 = this.sci_Vector6__f_prefix5;
+        const idx5 = ((io$2 >>> 20) | 0);
+        const idx4 = (31 & ((io$2 >>> 15) | 0));
+        const idx3 = (31 & ((io$2 >>> 10) | 0));
+        const idx2 = (31 & ((io$2 >>> 5) | 0));
+        const idx1 = (31 & io$2);
+        const a5c$2 = $asArrayOf_O(a5$2.clone__O(), 5);
+        const a4$3 = a5c$2.get(idx5);
+        const a4c$3 = $asArrayOf_O(a4$3.clone__O(), 4);
+        const a3$4 = a4c$3.get(idx4);
+        const a3c$4 = $asArrayOf_O(a3$4.clone__O(), 3);
+        const a2$5 = a3c$4.get(idx3);
+        const a2c$5 = $asArrayOf_O(a2$5.clone__O(), 2);
+        const a1$6 = a2c$5.get(idx2);
+        const a1c$6 = $asArrayOf_O(a1$6.clone__O(), 1);
+        a1c$6.set(idx1, elem);
+        a2c$5.set(idx2, a1c$6);
+        a3c$4.set(idx3, a2c$5);
+        a4c$3.set(idx4, a3c$4);
+        a5c$2.set(idx5, a4c$3);
+        const x$104 = this.sci_Vector__f_prefix1;
+        const x$105 = this.sci_Vector6__f_len1;
+        const x$106 = this.sci_Vector6__f_prefix2;
+        const x$107 = this.sci_Vector6__f_len12;
+        const x$108 = this.sci_Vector6__f_prefix3;
+        const x$109 = this.sci_Vector6__f_len123;
+        const x$110 = this.sci_Vector6__f_prefix4;
+        const x$111 = this.sci_Vector6__f_len1234;
+        const x$112 = this.sci_Vector6__f_len12345;
+        const x$113 = this.sci_Vector6__f_data6;
+        const x$114 = this.sci_Vector6__f_suffix5;
+        const x$115 = this.sci_Vector6__f_suffix4;
+        const x$116 = this.sci_Vector6__f_suffix3;
+        const x$117 = this.sci_Vector6__f_suffix2;
+        const x$118 = this.sci_BigVector__f_suffix1;
+        const x$119 = this.sci_BigVector__f_length0;
+        return new $c_sci_Vector6(x$104, x$105, x$106, x$107, x$108, x$109, x$110, x$111, a5c$2, x$112, x$113, x$114, x$115, x$116, x$117, x$118, x$119)
+      } else if ((index >= this.sci_Vector6__f_len123)) {
+        const io$3 = ((index - this.sci_Vector6__f_len123) | 0);
+        const a4$4 = this.sci_Vector6__f_prefix4;
+        const idx4$1 = ((io$3 >>> 15) | 0);
+        const idx3$1 = (31 & ((io$3 >>> 10) | 0));
+        const idx2$1 = (31 & ((io$3 >>> 5) | 0));
+        const idx1$1 = (31 & io$3);
+        const a4c$4 = $asArrayOf_O(a4$4.clone__O(), 4);
+        const a3$5 = a4c$4.get(idx4$1);
+        const a3c$5 = $asArrayOf_O(a3$5.clone__O(), 3);
+        const a2$6 = a3c$5.get(idx3$1);
+        const a2c$6 = $asArrayOf_O(a2$6.clone__O(), 2);
+        const a1$7 = a2c$6.get(idx2$1);
+        const a1c$7 = $asArrayOf_O(a1$7.clone__O(), 1);
+        a1c$7.set(idx1$1, elem);
+        a2c$6.set(idx2$1, a1c$7);
+        a3c$5.set(idx3$1, a2c$6);
+        a4c$4.set(idx4$1, a3c$5);
+        const x$121 = this.sci_Vector__f_prefix1;
+        const x$122 = this.sci_Vector6__f_len1;
+        const x$123 = this.sci_Vector6__f_prefix2;
+        const x$124 = this.sci_Vector6__f_len12;
+        const x$125 = this.sci_Vector6__f_prefix3;
+        const x$126 = this.sci_Vector6__f_len123;
+        const x$127 = this.sci_Vector6__f_len1234;
+        const x$128 = this.sci_Vector6__f_prefix5;
+        const x$129 = this.sci_Vector6__f_len12345;
+        const x$130 = this.sci_Vector6__f_data6;
+        const x$131 = this.sci_Vector6__f_suffix5;
+        const x$132 = this.sci_Vector6__f_suffix4;
+        const x$133 = this.sci_Vector6__f_suffix3;
+        const x$134 = this.sci_Vector6__f_suffix2;
+        const x$135 = this.sci_BigVector__f_suffix1;
+        const x$136 = this.sci_BigVector__f_length0;
+        return new $c_sci_Vector6(x$121, x$122, x$123, x$124, x$125, x$126, a4c$4, x$127, x$128, x$129, x$130, x$131, x$132, x$133, x$134, x$135, x$136)
+      } else if ((index >= this.sci_Vector6__f_len12)) {
+        const io$4 = ((index - this.sci_Vector6__f_len12) | 0);
+        const a3$6 = this.sci_Vector6__f_prefix3;
+        const idx3$2 = ((io$4 >>> 10) | 0);
+        const idx2$2 = (31 & ((io$4 >>> 5) | 0));
+        const idx1$2 = (31 & io$4);
+        const a3c$6 = $asArrayOf_O(a3$6.clone__O(), 3);
+        const a2$7 = a3c$6.get(idx3$2);
+        const a2c$7 = $asArrayOf_O(a2$7.clone__O(), 2);
+        const a1$8 = a2c$7.get(idx2$2);
+        const a1c$8 = $asArrayOf_O(a1$8.clone__O(), 1);
+        a1c$8.set(idx1$2, elem);
+        a2c$7.set(idx2$2, a1c$8);
+        a3c$6.set(idx3$2, a2c$7);
+        const x$138 = this.sci_Vector__f_prefix1;
+        const x$139 = this.sci_Vector6__f_len1;
+        const x$140 = this.sci_Vector6__f_prefix2;
+        const x$141 = this.sci_Vector6__f_len12;
+        const x$142 = this.sci_Vector6__f_len123;
+        const x$143 = this.sci_Vector6__f_prefix4;
+        const x$144 = this.sci_Vector6__f_len1234;
+        const x$145 = this.sci_Vector6__f_prefix5;
+        const x$146 = this.sci_Vector6__f_len12345;
+        const x$147 = this.sci_Vector6__f_data6;
+        const x$148 = this.sci_Vector6__f_suffix5;
+        const x$149 = this.sci_Vector6__f_suffix4;
+        const x$150 = this.sci_Vector6__f_suffix3;
+        const x$151 = this.sci_Vector6__f_suffix2;
+        const x$152 = this.sci_BigVector__f_suffix1;
+        const x$153 = this.sci_BigVector__f_length0;
+        return new $c_sci_Vector6(x$138, x$139, x$140, x$141, a3c$6, x$142, x$143, x$144, x$145, x$146, x$147, x$148, x$149, x$150, x$151, x$152, x$153)
+      } else if ((index >= this.sci_Vector6__f_len1)) {
+        const io$5 = ((index - this.sci_Vector6__f_len1) | 0);
+        const a2$8 = this.sci_Vector6__f_prefix2;
+        const idx2$3 = ((io$5 >>> 5) | 0);
+        const idx1$3 = (31 & io$5);
+        const a2c$8 = $asArrayOf_O(a2$8.clone__O(), 2);
+        const a1$9 = a2c$8.get(idx2$3);
+        const a1c$9 = $asArrayOf_O(a1$9.clone__O(), 1);
+        a1c$9.set(idx1$3, elem);
+        a2c$8.set(idx2$3, a1c$9);
+        const x$155 = this.sci_Vector__f_prefix1;
+        const x$156 = this.sci_Vector6__f_len1;
+        const x$157 = this.sci_Vector6__f_len12;
+        const x$158 = this.sci_Vector6__f_prefix3;
+        const x$159 = this.sci_Vector6__f_len123;
+        const x$160 = this.sci_Vector6__f_prefix4;
+        const x$161 = this.sci_Vector6__f_len1234;
+        const x$162 = this.sci_Vector6__f_prefix5;
+        const x$163 = this.sci_Vector6__f_len12345;
+        const x$164 = this.sci_Vector6__f_data6;
+        const x$165 = this.sci_Vector6__f_suffix5;
+        const x$166 = this.sci_Vector6__f_suffix4;
+        const x$167 = this.sci_Vector6__f_suffix3;
+        const x$168 = this.sci_Vector6__f_suffix2;
+        const x$169 = this.sci_BigVector__f_suffix1;
+        const x$170 = this.sci_BigVector__f_length0;
+        return new $c_sci_Vector6(x$155, x$156, a2c$8, x$157, x$158, x$159, x$160, x$161, x$162, x$163, x$164, x$165, x$166, x$167, x$168, x$169, x$170)
+      } else {
+        const a1$10 = this.sci_Vector__f_prefix1;
+        const a1c$10 = $asArrayOf_O(a1$10.clone__O(), 1);
+        a1c$10.set(index, elem);
+        const len1 = this.sci_Vector6__f_len1;
+        const prefix2 = this.sci_Vector6__f_prefix2;
+        const len12 = this.sci_Vector6__f_len12;
+        const prefix3 = this.sci_Vector6__f_prefix3;
+        const len123 = this.sci_Vector6__f_len123;
+        const prefix4 = this.sci_Vector6__f_prefix4;
+        const len1234 = this.sci_Vector6__f_len1234;
+        const prefix5 = this.sci_Vector6__f_prefix5;
+        const len12345 = this.sci_Vector6__f_len12345;
+        const data6 = this.sci_Vector6__f_data6;
+        const suffix5 = this.sci_Vector6__f_suffix5;
+        const suffix4 = this.sci_Vector6__f_suffix4;
+        const suffix3 = this.sci_Vector6__f_suffix3;
+        const suffix2 = this.sci_Vector6__f_suffix2;
+        const suffix1 = this.sci_BigVector__f_suffix1;
+        const length0 = this.sci_BigVector__f_length0;
+        return new $c_sci_Vector6(a1c$10, len1, prefix2, len12, prefix3, len123, prefix4, len1234, prefix5, len12345, data6, suffix5, suffix4, suffix3, suffix2, suffix1, length0)
+      }
+    } else {
+      throw this.ioob__I__jl_IndexOutOfBoundsException(index)
+    }
+  };
+  appended__O__sci_Vector(elem) {
+    if ((this.sci_BigVector__f_suffix1.u.length < 32)) {
+      const x$1 = $m_sci_VectorStatics$().copyAppend1__AO__O__AO(this.sci_BigVector__f_suffix1, elem);
+      const x$2 = ((1 + this.sci_BigVector__f_length0) | 0);
+      const x$3 = this.sci_Vector__f_prefix1;
+      const x$4 = this.sci_Vector6__f_len1;
+      const x$5 = this.sci_Vector6__f_prefix2;
+      const x$6 = this.sci_Vector6__f_len12;
+      const x$7 = this.sci_Vector6__f_prefix3;
+      const x$8 = this.sci_Vector6__f_len123;
+      const x$9 = this.sci_Vector6__f_prefix4;
+      const x$10 = this.sci_Vector6__f_len1234;
+      const x$11 = this.sci_Vector6__f_prefix5;
+      const x$12 = this.sci_Vector6__f_len12345;
+      const x$13 = this.sci_Vector6__f_data6;
+      const x$14 = this.sci_Vector6__f_suffix5;
+      const x$15 = this.sci_Vector6__f_suffix4;
+      const x$16 = this.sci_Vector6__f_suffix3;
+      const x$17 = this.sci_Vector6__f_suffix2;
+      return new $c_sci_Vector6(x$3, x$4, x$5, x$6, x$7, x$8, x$9, x$10, x$11, x$12, x$13, x$14, x$15, x$16, x$17, x$1, x$2)
+    } else if ((this.sci_Vector6__f_suffix2.u.length < 31)) {
+      const x$18 = $asArrayOf_O($m_sci_VectorStatics$().copyAppend__AO__O__AO(this.sci_Vector6__f_suffix2, this.sci_BigVector__f_suffix1), 2);
+      const a = $newArrayObject($d_O.getArrayOf(), [1]);
+      a.set(0, elem);
+      const x$20 = ((1 + this.sci_BigVector__f_length0) | 0);
+      const x$21 = this.sci_Vector__f_prefix1;
+      const x$22 = this.sci_Vector6__f_len1;
+      const x$23 = this.sci_Vector6__f_prefix2;
+      const x$24 = this.sci_Vector6__f_len12;
+      const x$25 = this.sci_Vector6__f_prefix3;
+      const x$26 = this.sci_Vector6__f_len123;
+      const x$27 = this.sci_Vector6__f_prefix4;
+      const x$28 = this.sci_Vector6__f_len1234;
+      const x$29 = this.sci_Vector6__f_prefix5;
+      const x$30 = this.sci_Vector6__f_len12345;
+      const x$31 = this.sci_Vector6__f_data6;
+      const x$32 = this.sci_Vector6__f_suffix5;
+      const x$33 = this.sci_Vector6__f_suffix4;
+      const x$34 = this.sci_Vector6__f_suffix3;
+      return new $c_sci_Vector6(x$21, x$22, x$23, x$24, x$25, x$26, x$27, x$28, x$29, x$30, x$31, x$32, x$33, x$34, x$18, a, x$20)
+    } else if ((this.sci_Vector6__f_suffix3.u.length < 31)) {
+      const x$35 = $asArrayOf_O($m_sci_VectorStatics$().copyAppend__AO__O__AO(this.sci_Vector6__f_suffix3, $m_sci_VectorStatics$().copyAppend__AO__O__AO(this.sci_Vector6__f_suffix2, this.sci_BigVector__f_suffix1)), 3);
+      const x$36 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty2;
+      const a$1 = $newArrayObject($d_O.getArrayOf(), [1]);
+      a$1.set(0, elem);
+      const x$38 = ((1 + this.sci_BigVector__f_length0) | 0);
+      const x$39 = this.sci_Vector__f_prefix1;
+      const x$40 = this.sci_Vector6__f_len1;
+      const x$41 = this.sci_Vector6__f_prefix2;
+      const x$42 = this.sci_Vector6__f_len12;
+      const x$43 = this.sci_Vector6__f_prefix3;
+      const x$44 = this.sci_Vector6__f_len123;
+      const x$45 = this.sci_Vector6__f_prefix4;
+      const x$46 = this.sci_Vector6__f_len1234;
+      const x$47 = this.sci_Vector6__f_prefix5;
+      const x$48 = this.sci_Vector6__f_len12345;
+      const x$49 = this.sci_Vector6__f_data6;
+      const x$50 = this.sci_Vector6__f_suffix5;
+      const x$51 = this.sci_Vector6__f_suffix4;
+      return new $c_sci_Vector6(x$39, x$40, x$41, x$42, x$43, x$44, x$45, x$46, x$47, x$48, x$49, x$50, x$51, x$35, x$36, a$1, x$38)
+    } else if ((this.sci_Vector6__f_suffix4.u.length < 31)) {
+      const x$52 = $asArrayOf_O($m_sci_VectorStatics$().copyAppend__AO__O__AO(this.sci_Vector6__f_suffix4, $m_sci_VectorStatics$().copyAppend__AO__O__AO(this.sci_Vector6__f_suffix3, $m_sci_VectorStatics$().copyAppend__AO__O__AO(this.sci_Vector6__f_suffix2, this.sci_BigVector__f_suffix1))), 4);
+      const x$53 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty3;
+      const x$54 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty2;
+      const a$2 = $newArrayObject($d_O.getArrayOf(), [1]);
+      a$2.set(0, elem);
+      const x$56 = ((1 + this.sci_BigVector__f_length0) | 0);
+      const x$57 = this.sci_Vector__f_prefix1;
+      const x$58 = this.sci_Vector6__f_len1;
+      const x$59 = this.sci_Vector6__f_prefix2;
+      const x$60 = this.sci_Vector6__f_len12;
+      const x$61 = this.sci_Vector6__f_prefix3;
+      const x$62 = this.sci_Vector6__f_len123;
+      const x$63 = this.sci_Vector6__f_prefix4;
+      const x$64 = this.sci_Vector6__f_len1234;
+      const x$65 = this.sci_Vector6__f_prefix5;
+      const x$66 = this.sci_Vector6__f_len12345;
+      const x$67 = this.sci_Vector6__f_data6;
+      const x$68 = this.sci_Vector6__f_suffix5;
+      return new $c_sci_Vector6(x$57, x$58, x$59, x$60, x$61, x$62, x$63, x$64, x$65, x$66, x$67, x$68, x$52, x$53, x$54, a$2, x$56)
+    } else if ((this.sci_Vector6__f_suffix5.u.length < 31)) {
+      const x$69 = $asArrayOf_O($m_sci_VectorStatics$().copyAppend__AO__O__AO(this.sci_Vector6__f_suffix5, $m_sci_VectorStatics$().copyAppend__AO__O__AO(this.sci_Vector6__f_suffix4, $m_sci_VectorStatics$().copyAppend__AO__O__AO(this.sci_Vector6__f_suffix3, $m_sci_VectorStatics$().copyAppend__AO__O__AO(this.sci_Vector6__f_suffix2, this.sci_BigVector__f_suffix1)))), 5);
+      const x$70 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty4;
+      const x$71 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty3;
+      const x$72 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty2;
+      const a$3 = $newArrayObject($d_O.getArrayOf(), [1]);
+      a$3.set(0, elem);
+      const x$74 = ((1 + this.sci_BigVector__f_length0) | 0);
+      const x$75 = this.sci_Vector__f_prefix1;
+      const x$76 = this.sci_Vector6__f_len1;
+      const x$77 = this.sci_Vector6__f_prefix2;
+      const x$78 = this.sci_Vector6__f_len12;
+      const x$79 = this.sci_Vector6__f_prefix3;
+      const x$80 = this.sci_Vector6__f_len123;
+      const x$81 = this.sci_Vector6__f_prefix4;
+      const x$82 = this.sci_Vector6__f_len1234;
+      const x$83 = this.sci_Vector6__f_prefix5;
+      const x$84 = this.sci_Vector6__f_len12345;
+      const x$85 = this.sci_Vector6__f_data6;
+      return new $c_sci_Vector6(x$75, x$76, x$77, x$78, x$79, x$80, x$81, x$82, x$83, x$84, x$85, x$69, x$70, x$71, x$72, a$3, x$74)
+    } else if ((this.sci_Vector6__f_data6.u.length < 62)) {
+      const x$86 = $asArrayOf_O($m_sci_VectorStatics$().copyAppend__AO__O__AO(this.sci_Vector6__f_data6, $m_sci_VectorStatics$().copyAppend__AO__O__AO(this.sci_Vector6__f_suffix5, $m_sci_VectorStatics$().copyAppend__AO__O__AO(this.sci_Vector6__f_suffix4, $m_sci_VectorStatics$().copyAppend__AO__O__AO(this.sci_Vector6__f_suffix3, $m_sci_VectorStatics$().copyAppend__AO__O__AO(this.sci_Vector6__f_suffix2, this.sci_BigVector__f_suffix1))))), 6);
+      const x$87 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty5;
+      const x$88 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty4;
+      const x$89 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty3;
+      const x$90 = $m_sci_VectorStatics$().sci_VectorStatics$__f_empty2;
+      const a$4 = $newArrayObject($d_O.getArrayOf(), [1]);
+      a$4.set(0, elem);
+      const x$92 = ((1 + this.sci_BigVector__f_length0) | 0);
+      const x$93 = this.sci_Vector__f_prefix1;
+      const x$94 = this.sci_Vector6__f_len1;
+      const x$95 = this.sci_Vector6__f_prefix2;
+      const x$96 = this.sci_Vector6__f_len12;
+      const x$97 = this.sci_Vector6__f_prefix3;
+      const x$98 = this.sci_Vector6__f_len123;
+      const x$99 = this.sci_Vector6__f_prefix4;
+      const x$100 = this.sci_Vector6__f_len1234;
+      const x$101 = this.sci_Vector6__f_prefix5;
+      const x$102 = this.sci_Vector6__f_len12345;
+      return new $c_sci_Vector6(x$93, x$94, x$95, x$96, x$97, x$98, x$99, x$100, x$101, x$102, x$86, x$87, x$88, x$89, x$90, a$4, x$92)
+    } else {
+      throw $ct_jl_IllegalArgumentException__(new $c_jl_IllegalArgumentException())
+    }
+  };
+  map__F1__sci_Vector(f) {
+    const x$1 = $m_sci_VectorStatics$().mapElems1__AO__F1__AO(this.sci_Vector__f_prefix1, f);
+    const x$2 = $asArrayOf_O($m_sci_VectorStatics$().mapElems__I__AO__F1__AO(2, this.sci_Vector6__f_prefix2, f), 2);
+    const x$3 = $asArrayOf_O($m_sci_VectorStatics$().mapElems__I__AO__F1__AO(3, this.sci_Vector6__f_prefix3, f), 3);
+    const x$4 = $asArrayOf_O($m_sci_VectorStatics$().mapElems__I__AO__F1__AO(4, this.sci_Vector6__f_prefix4, f), 4);
+    const x$5 = $asArrayOf_O($m_sci_VectorStatics$().mapElems__I__AO__F1__AO(5, this.sci_Vector6__f_prefix5, f), 5);
+    const x$6 = $asArrayOf_O($m_sci_VectorStatics$().mapElems__I__AO__F1__AO(6, this.sci_Vector6__f_data6, f), 6);
+    const x$7 = $asArrayOf_O($m_sci_VectorStatics$().mapElems__I__AO__F1__AO(5, this.sci_Vector6__f_suffix5, f), 5);
+    const x$8 = $asArrayOf_O($m_sci_VectorStatics$().mapElems__I__AO__F1__AO(4, this.sci_Vector6__f_suffix4, f), 4);
+    const x$9 = $asArrayOf_O($m_sci_VectorStatics$().mapElems__I__AO__F1__AO(3, this.sci_Vector6__f_suffix3, f), 3);
+    const x$10 = $asArrayOf_O($m_sci_VectorStatics$().mapElems__I__AO__F1__AO(2, this.sci_Vector6__f_suffix2, f), 2);
+    const x$11 = $m_sci_VectorStatics$().mapElems1__AO__F1__AO(this.sci_BigVector__f_suffix1, f);
+    const x$12 = this.sci_Vector6__f_len1;
+    const x$13 = this.sci_Vector6__f_len12;
+    const x$14 = this.sci_Vector6__f_len123;
+    const x$15 = this.sci_Vector6__f_len1234;
+    const x$16 = this.sci_Vector6__f_len12345;
+    const x$17 = this.sci_BigVector__f_length0;
+    return new $c_sci_Vector6(x$1, x$12, x$2, x$13, x$3, x$14, x$4, x$15, x$5, x$16, x$6, x$7, x$8, x$9, x$10, x$11, x$17)
+  };
+  slice0__I__I__sci_Vector(lo, hi) {
+    const b = new $c_sci_VectorSliceBuilder(lo, hi);
+    b.consider__I__AO__V(1, this.sci_Vector__f_prefix1);
+    b.consider__I__AO__V(2, this.sci_Vector6__f_prefix2);
+    b.consider__I__AO__V(3, this.sci_Vector6__f_prefix3);
+    b.consider__I__AO__V(4, this.sci_Vector6__f_prefix4);
+    b.consider__I__AO__V(5, this.sci_Vector6__f_prefix5);
+    b.consider__I__AO__V(6, this.sci_Vector6__f_data6);
+    b.consider__I__AO__V(5, this.sci_Vector6__f_suffix5);
+    b.consider__I__AO__V(4, this.sci_Vector6__f_suffix4);
+    b.consider__I__AO__V(3, this.sci_Vector6__f_suffix3);
+    b.consider__I__AO__V(2, this.sci_Vector6__f_suffix2);
+    b.consider__I__AO__V(1, this.sci_BigVector__f_suffix1);
+    return b.result__sci_Vector()
+  };
+  tail__sci_Vector() {
+    if ((this.sci_Vector6__f_len1 > 1)) {
+      const a = this.sci_Vector__f_prefix1;
+      const to = a.u.length;
+      const x$1 = $m_ju_Arrays$().copyOfRange__AO__I__I__AO(a, 1, to);
+      const x$2 = (((-1) + this.sci_Vector6__f_len1) | 0);
+      const x$3 = (((-1) + this.sci_Vector6__f_len12) | 0);
+      const x$4 = (((-1) + this.sci_Vector6__f_len123) | 0);
+      const x$5 = (((-1) + this.sci_Vector6__f_len1234) | 0);
+      const x$6 = (((-1) + this.sci_Vector6__f_len12345) | 0);
+      const x$7 = (((-1) + this.sci_BigVector__f_length0) | 0);
+      const x$8 = this.sci_Vector6__f_prefix2;
+      const x$9 = this.sci_Vector6__f_prefix3;
+      const x$10 = this.sci_Vector6__f_prefix4;
+      const x$11 = this.sci_Vector6__f_prefix5;
+      const x$12 = this.sci_Vector6__f_data6;
+      const x$13 = this.sci_Vector6__f_suffix5;
+      const x$14 = this.sci_Vector6__f_suffix4;
+      const x$15 = this.sci_Vector6__f_suffix3;
+      const x$16 = this.sci_Vector6__f_suffix2;
+      const x$17 = this.sci_BigVector__f_suffix1;
+      return new $c_sci_Vector6(x$1, x$2, x$8, x$3, x$9, x$4, x$10, x$5, x$11, x$6, x$12, x$13, x$14, x$15, x$16, x$17, x$7)
+    } else {
+      return this.slice0__I__I__sci_Vector(1, this.sci_BigVector__f_length0)
+    }
+  };
+  vectorSliceCount__I() {
+    return 11
+  };
+  vectorSlice__I__AO(idx) {
+    switch (idx) {
+      case 0: {
+        return this.sci_Vector__f_prefix1;
+        break
+      }
+      case 1: {
+        return this.sci_Vector6__f_prefix2;
+        break
+      }
+      case 2: {
+        return this.sci_Vector6__f_prefix3;
+        break
+      }
+      case 3: {
+        return this.sci_Vector6__f_prefix4;
+        break
+      }
+      case 4: {
+        return this.sci_Vector6__f_prefix5;
+        break
+      }
+      case 5: {
+        return this.sci_Vector6__f_data6;
+        break
+      }
+      case 6: {
+        return this.sci_Vector6__f_suffix5;
+        break
+      }
+      case 7: {
+        return this.sci_Vector6__f_suffix4;
+        break
+      }
+      case 8: {
+        return this.sci_Vector6__f_suffix3;
+        break
+      }
+      case 9: {
+        return this.sci_Vector6__f_suffix2;
+        break
+      }
+      case 10: {
+        return this.sci_BigVector__f_suffix1;
+        break
+      }
+      default: {
+        throw new $c_s_MatchError(idx)
+      }
+    }
+  };
+  appendedAll0__sc_IterableOnce__I__sci_Vector(suffix, k) {
+    const suffix1b = $m_sci_VectorStatics$().append1IfSpace__AO__sc_IterableOnce__AO(this.sci_BigVector__f_suffix1, suffix);
+    if ((suffix1b !== null)) {
+      const x$2 = ((((this.sci_BigVector__f_length0 - this.sci_BigVector__f_suffix1.u.length) | 0) + suffix1b.u.length) | 0);
+      const x$3 = this.sci_Vector__f_prefix1;
+      const x$4 = this.sci_Vector6__f_len1;
+      const x$5 = this.sci_Vector6__f_prefix2;
+      const x$6 = this.sci_Vector6__f_len12;
+      const x$7 = this.sci_Vector6__f_prefix3;
+      const x$8 = this.sci_Vector6__f_len123;
+      const x$9 = this.sci_Vector6__f_prefix4;
+      const x$10 = this.sci_Vector6__f_len1234;
+      const x$11 = this.sci_Vector6__f_prefix5;
+      const x$12 = this.sci_Vector6__f_len12345;
+      const x$13 = this.sci_Vector6__f_data6;
+      const x$14 = this.sci_Vector6__f_suffix5;
+      const x$15 = this.sci_Vector6__f_suffix4;
+      const x$16 = this.sci_Vector6__f_suffix3;
+      const x$17 = this.sci_Vector6__f_suffix2;
+      return new $c_sci_Vector6(x$3, x$4, x$5, x$6, x$7, x$8, x$9, x$10, x$11, x$12, x$13, x$14, x$15, x$16, x$17, suffix1b, x$2)
+    } else {
+      return $c_sci_Vector.prototype.appendedAll0__sc_IterableOnce__I__sci_Vector.call(this, suffix, k)
+    }
+  };
+  tail__O() {
+    return this.tail__sci_Vector()
+  };
+  map__F1__O(f) {
+    return this.map__F1__sci_Vector(f)
+  };
+  apply__O__O(v1) {
+    const index = $uI(v1);
+    if (((index >= 0) && (index < this.sci_BigVector__f_length0))) {
+      const io = ((index - this.sci_Vector6__f_len12345) | 0);
+      if ((io >= 0)) {
+        const i6 = ((io >>> 25) | 0);
+        const i5 = (31 & ((io >>> 20) | 0));
+        const i4 = (31 & ((io >>> 15) | 0));
+        const i3 = (31 & ((io >>> 10) | 0));
+        const i2 = (31 & ((io >>> 5) | 0));
+        const i1 = (31 & io);
+        return ((i6 < this.sci_Vector6__f_data6.u.length) ? this.sci_Vector6__f_data6.get(i6).get(i5).get(i4).get(i3).get(i2).get(i1) : ((i5 < this.sci_Vector6__f_suffix5.u.length) ? this.sci_Vector6__f_suffix5.get(i5).get(i4).get(i3).get(i2).get(i1) : ((i4 < this.sci_Vector6__f_suffix4.u.length) ? this.sci_Vector6__f_suffix4.get(i4).get(i3).get(i2).get(i1) : ((i3 < this.sci_Vector6__f_suffix3.u.length) ? this.sci_Vector6__f_suffix3.get(i3).get(i2).get(i1) : ((i2 < this.sci_Vector6__f_suffix2.u.length) ? this.sci_Vector6__f_suffix2.get(i2).get(i1) : this.sci_BigVector__f_suffix1.get(i1))))))
+      } else if ((index >= this.sci_Vector6__f_len1234)) {
+        const io$2 = ((index - this.sci_Vector6__f_len1234) | 0);
+        return this.sci_Vector6__f_prefix5.get(((io$2 >>> 20) | 0)).get((31 & ((io$2 >>> 15) | 0))).get((31 & ((io$2 >>> 10) | 0))).get((31 & ((io$2 >>> 5) | 0))).get((31 & io$2))
+      } else if ((index >= this.sci_Vector6__f_len123)) {
+        const io$3 = ((index - this.sci_Vector6__f_len123) | 0);
+        return this.sci_Vector6__f_prefix4.get(((io$3 >>> 15) | 0)).get((31 & ((io$3 >>> 10) | 0))).get((31 & ((io$3 >>> 5) | 0))).get((31 & io$3))
+      } else if ((index >= this.sci_Vector6__f_len12)) {
+        const io$4 = ((index - this.sci_Vector6__f_len12) | 0);
+        return this.sci_Vector6__f_prefix3.get(((io$4 >>> 10) | 0)).get((31 & ((io$4 >>> 5) | 0))).get((31 & io$4))
+      } else if ((index >= this.sci_Vector6__f_len1)) {
+        const io$5 = ((index - this.sci_Vector6__f_len1) | 0);
+        return this.sci_Vector6__f_prefix2.get(((io$5 >>> 5) | 0)).get((31 & io$5))
+      } else {
+        return this.sci_Vector__f_prefix1.get(index)
+      }
+    } else {
+      throw this.ioob__I__jl_IndexOutOfBoundsException(index)
+    }
+  };
+}
+function $as_sci_Vector6(obj) {
+  return (((obj instanceof $c_sci_Vector6) || (obj === null)) ? obj : $throwClassCastException(obj, "scala.collection.immutable.Vector6"))
+}
+function $isArrayOf_sci_Vector6(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.sci_Vector6)))
+}
+function $asArrayOf_sci_Vector6(obj, depth) {
+  return (($isArrayOf_sci_Vector6(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscala.collection.immutable.Vector6;", depth))
+}
+const $d_sci_Vector6 = new $TypeData().initClass({
+  sci_Vector6: 0
+}, false, "scala.collection.immutable.Vector6", {
+  sci_Vector6: 1,
+  sci_BigVector: 1,
+  sci_VectorImpl: 1,
+  sci_Vector: 1,
+  sci_AbstractSeq: 1,
+  sc_AbstractSeq: 1,
+  sc_AbstractIterable: 1,
+  O: 1,
+  sc_Iterable: 1,
+  sc_IterableOnce: 1,
+  sc_IterableOps: 1,
+  sc_IterableOnceOps: 1,
+  sc_IterableFactoryDefaults: 1,
+  sc_Seq: 1,
+  s_PartialFunction: 1,
+  F1: 1,
+  sc_SeqOps: 1,
+  s_Equals: 1,
+  sci_Seq: 1,
+  sci_Iterable: 1,
+  sci_SeqOps: 1,
+  sci_IndexedSeq: 1,
+  sc_IndexedSeq: 1,
+  sc_IndexedSeqOps: 1,
+  sci_IndexedSeqOps: 1,
+  sci_StrictOptimizedSeqOps: 1,
+  sc_StrictOptimizedSeqOps: 1,
+  sc_StrictOptimizedIterableOps: 1,
+  scg_DefaultSerializable: 1,
+  Ljava_io_Serializable: 1
+});
+$c_sci_Vector6.prototype.$classData = $d_sci_Vector6;
 const $ct_scm_StringBuilder__jl_StringBuilder__ = (function($thiz, underlying) {
   $thiz.scm_StringBuilder__f_underlying = underlying;
   return $thiz
@@ -47596,6 +50342,9 @@ class $c_scm_StringBuilder extends $c_scm_AbstractSeq {
   };
   drop__I__O(n) {
     return $f_sc_IndexedSeqOps__drop__I__O(this, n)
+  };
+  head__O() {
+    return $bC(this.scm_StringBuilder__f_underlying.charAt__I__C(0))
   };
   lengthCompare__I__I(len) {
     const x = this.scm_StringBuilder__f_underlying.length__I();
@@ -47804,15 +50553,6 @@ class $c_scm_ListBuffer extends $c_scm_AbstractBuffer {
     this.scm_ListBuffer__f_aliased = (!this.isEmpty__Z());
     return this.scm_ListBuffer__f_first
   };
-  prependToList__sci_List__sci_List(xs) {
-    if (this.isEmpty__Z()) {
-      return xs
-    } else {
-      $p_scm_ListBuffer__ensureUnaliased__V(this);
-      this.scm_ListBuffer__f_last0.sci_$colon$colon__f_next = xs;
-      return this.toList__sci_List()
-    }
-  };
   addOne__O__scm_ListBuffer(elem) {
     $p_scm_ListBuffer__ensureUnaliased__V(this);
     const last1 = new $c_sci_$colon$colon(elem, $m_sci_Nil$());
@@ -47939,6 +50679,9 @@ class $c_scm_ArrayBuffer extends $c_scm_AbstractBuffer {
   };
   drop__I__O(n) {
     return $f_sc_IndexedSeqOps__drop__I__O(this, n)
+  };
+  head__O() {
+    return this.apply__I__O(0)
   };
   lengthCompare__I__I(len) {
     const x = this.scm_ArrayBuffer__f_size0;
@@ -48098,6 +50841,9 @@ class $c_sjs_js_WrappedArray extends $c_scm_AbstractBuffer {
   };
   drop__I__O(n) {
     return $f_sc_IndexedSeqOps__drop__I__O(this, n)
+  };
+  head__O() {
+    return this.sjs_js_WrappedArray__f_scala$scalajs$js$WrappedArray$$array[0]
   };
   lengthCompare__I__I(len) {
     const x = $uI(this.sjs_js_WrappedArray__f_scala$scalajs$js$WrappedArray$$array.length);
