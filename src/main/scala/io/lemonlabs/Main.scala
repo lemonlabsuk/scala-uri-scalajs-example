@@ -60,6 +60,8 @@ object Main {
     }
 
     url.fragment.foreach(fragment => writeListGroupText("fragment-lg", fragment))
+
+    writeListGroupText("normalized-lg", url.normalize().toString())
   }
 
   def writeException(ex: Throwable): Unit = {

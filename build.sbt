@@ -1,13 +1,13 @@
 enablePlugins(ScalaJSPlugin)
 
 name := "scala-uri Scala.js example"
-scalaVersion := "2.13.1"
+scalaVersion := "2.13.6"
 
 resolvers += "Sonatype OSS Releases" at "https://oss.sonatype.org/content/repositories/releases"
 
 libraryDependencies ++=
-  "org.scala-js" %%% "scalajs-dom" % "1.0.0" ::
-  "io.lemonlabs" %%% "scala-uri" % "2.2.3" :: Nil
+  "org.scala-js" %%% "scalajs-dom" % "1.1.0" ::
+  "io.lemonlabs" %%% "scala-uri" % "3.4.0" :: Nil
 
 scalaJSUseMainModuleInitializer := true
 
