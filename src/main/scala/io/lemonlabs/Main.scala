@@ -89,7 +89,7 @@ object Main {
     document.querySelector(s"#$id .list-group-item-text").innerHTML = text
   }
 
-  implicit class EnchancedDomList(list: NodeList) {
+  implicit class EnchancedDomList(list: NodeList[Node]) {
 
     def setAttribute(name: String, value: String): Unit =
       foreach(_.asInstanceOf[Element].setAttribute(name, value))

@@ -1,1 +1,3 @@
-addSbtPlugin("org.scala-js" % "sbt-scalajs" % "1.6.0")
+addSbtPlugin("org.scala-js" % "sbt-scalajs" % "1.8.0")
+
+addDependencyTreePlugin
