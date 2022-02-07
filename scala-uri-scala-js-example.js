@@ -3333,6 +3333,9 @@ $c_Lcats_parse_Parser0.prototype.$qmark__Lcats_parse_Parser0 = (function() {
 $c_Lcats_parse_Parser0.prototype.void__Lcats_parse_Parser0 = (function() {
   return $m_Lcats_parse_Parser$().void0__Lcats_parse_Parser0__Lcats_parse_Parser0(this)
 });
+$c_Lcats_parse_Parser0.prototype.string__Lcats_parse_Parser0 = (function() {
+  return $m_Lcats_parse_Parser$().string0__Lcats_parse_Parser0__Lcats_parse_Parser0(this)
+});
 $c_Lcats_parse_Parser0.prototype.backtrack__Lcats_parse_Parser0 = (function() {
   return $m_Lcats_parse_Parser$().backtrack0__Lcats_parse_Parser0__Lcats_parse_Parser0(this)
 });
@@ -12080,6 +12083,9 @@ function $h_sc_StringOps$() {
   /*<skip>*/
 }
 $h_sc_StringOps$.prototype = $c_sc_StringOps$.prototype;
+$c_sc_StringOps$.prototype.contains$extension__T__C__Z = (function(this$, elem) {
+  return ($f_T__indexOf__I__I(this$, elem) >= 0)
+});
 $c_sc_StringOps$.prototype.slice$extension__T__I__I__T = (function(this$, from, until) {
   var start = ((from > 0) ? from : 0);
   var that = $uI(this$.length);
@@ -16621,6 +16627,9 @@ $c_Lcats_parse_Parser.prototype.rep0__I__I__Lcats_parse_Parser0 = (function(min,
 $c_Lcats_parse_Parser.prototype.void__Lcats_parse_Parser0 = (function() {
   return $m_Lcats_parse_Parser$().void__Lcats_parse_Parser__Lcats_parse_Parser(this)
 });
+$c_Lcats_parse_Parser.prototype.string__Lcats_parse_Parser0 = (function() {
+  return $m_Lcats_parse_Parser$().string__Lcats_parse_Parser__Lcats_parse_Parser(this)
+});
 $c_Lcats_parse_Parser.prototype.backtrack__Lcats_parse_Parser0 = (function() {
   return $m_Lcats_parse_Parser$().backtrack__Lcats_parse_Parser__Lcats_parse_Parser(this)
 });
@@ -16966,26 +16975,22 @@ function $c_Lio_lemonlabs_uri_parsing_UrlParser(input, conf) {
     var pathPart$1 = $as_T(pathPart);
     return this$4$1.pathDecoder__Lio_lemonlabs_uri_decoding_UriDecoder().decode__T__T(pathPart$1)
   }))(this));
-  this.Lio_lemonlabs_uri_parsing_UrlParser__f_extractAbsOrEmptyPath = new $c_sjsr_AnonFunction1(((this$5$1, conf$10) => ((pp) => {
+  this.Lio_lemonlabs_uri_parsing_UrlParser__f_extractAbsOrEmptyPath = new $c_sjsr_AnonFunction1(((conf$10) => ((pp) => {
     var pp$1 = $as_sci_Seq(pp);
     if (pp$1.isEmpty__Z()) {
       return $m_Lio_lemonlabs_uri_EmptyPath$()
     } else {
       $m_Lio_lemonlabs_uri_AbsolutePath$();
-      var this$18 = pp$1.toVector__sci_Vector();
-      var f$7 = this$5$1.Lio_lemonlabs_uri_parsing_UrlParser__f_extractPathPart;
-      var parts = this$18.map__F1__sci_Vector(f$7);
+      var parts = pp$1.toVector__sci_Vector();
       return new $c_Lio_lemonlabs_uri_AbsolutePath(parts, conf$10)
     }
-  }))(this, conf));
-  this.Lio_lemonlabs_uri_parsing_UrlParser__f_extractRelPath = new $c_sjsr_AnonFunction2(((this$6$1, conf$11) => ((maybeSlash, pp$2) => {
-    var maybeSlash$1 = $as_T(maybeSlash);
+  }))(conf));
+  this.Lio_lemonlabs_uri_parsing_UrlParser__f_extractRelPath = new $c_sjsr_AnonFunction2(((conf$11) => ((maybeSlash, pp$2) => {
+    var maybeSlash$1 = $as_s_Option(maybeSlash);
     var pp$3 = $as_sci_Seq(pp$2);
-    if ((maybeSlash$1 !== "")) {
+    if ((!maybeSlash$1.isEmpty__Z())) {
       $m_Lio_lemonlabs_uri_AbsolutePath$();
-      var this$22 = pp$3.toVector__sci_Vector();
-      var f$8 = this$6$1.Lio_lemonlabs_uri_parsing_UrlParser__f_extractPathPart;
-      var parts$1 = this$22.map__F1__sci_Vector(f$8);
+      var parts$1 = pp$3.toVector__sci_Vector();
       return new $c_Lio_lemonlabs_uri_AbsolutePath(parts$1, conf$11)
     } else {
       var x$2 = $m_s_package$().s_package$__f_Seq.apply__sci_Seq__sc_SeqOps($m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T.getArrayOf().constr)([""])));
@@ -16994,13 +16999,11 @@ function $c_Lio_lemonlabs_uri_parsing_UrlParser(input, conf) {
         return $m_Lio_lemonlabs_uri_EmptyPath$()
       } else {
         $m_Lio_lemonlabs_uri_RootlessPath$();
-        var this$25 = pp$3.toVector__sci_Vector();
-        var f$9 = this$6$1.Lio_lemonlabs_uri_parsing_UrlParser__f_extractPathPart;
-        var parts$2 = this$25.map__F1__sci_Vector(f$9);
+        var parts$2 = pp$3.toVector__sci_Vector();
         return new $c_Lio_lemonlabs_uri_RootlessPath(parts$2, conf$11)
       }
     }
-  }))(this, conf));
+  }))(conf));
   this.Lio_lemonlabs_uri_parsing_UrlParser__f_extractMediaTypeParam = new $c_sjsr_AnonFunction2(((k, v) => {
     var k$1 = $as_T(k);
     var v$1 = $as_T(v);
@@ -17274,43 +17277,30 @@ $c_Lio_lemonlabs_uri_parsing_UrlParser.prototype._authority__Lcats_parse_Parser0
     }))(this$6, t$1)))
   }))(this)))
 });
+$c_Lio_lemonlabs_uri_parsing_UrlParser.prototype._path_segment__Lcats_parse_Parser0 = (function() {
+  return $m_Lcats_parse_Parser$().until0__Lcats_parse_Parser0__Lcats_parse_Parser0($m_Lcats_parse_Parser$().charIn__sc_Iterable__Lcats_parse_Parser($m_s_Predef$().wrapString__T__sci_WrappedString("/?#"))).string__Lcats_parse_Parser0().map__F1__Lcats_parse_Parser0(this.Lio_lemonlabs_uri_parsing_UrlParser__f_extractPathPart)
+});
 $c_Lio_lemonlabs_uri_parsing_UrlParser.prototype._path_for_authority__Lcats_parse_Parser0 = (function() {
-  var $$x2 = $m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(47);
-  var $$x1 = $m_Lcats_parse_Parser$();
-  var this$2 = $m_Lcats_parse_Parser$().charIn__sc_Iterable__Lcats_parse_Parser($m_s_Predef$().wrapString__T__sci_WrappedString("#?[]"));
+  var this$1 = $m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(47).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(this._path_segment__Lcats_parse_Parser0());
+  $m_Lcats_parse_Accumulator0$();
+  var acc = new $c_Lcats_parse_Accumulator0$$anon$5();
   $m_Lcats_parse_Parser$();
-  var that = $m_Lcats_parse_Parser$Impl$EndParser$();
-  var this$9 = $$x2.$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($$x1.until0__Lcats_parse_Parser0__Lcats_parse_Parser0(this$2.orElse__Lcats_parse_Parser0__Lcats_parse_Parser0(that)).map__F1__Lcats_parse_Parser0(new $c_sjsr_AnonFunction1(((this$3) => ((path) => {
-    var path$1 = $as_T(path);
-    var $$x3 = this$3.Lio_lemonlabs_uri_parsing_UrlParser__f_extractAbsOrEmptyPath;
-    var this$4 = $m_s_Predef$().wrapRefArray__AO__scm_ArraySeq$ofRef($f_T__split__T__I__AT(path$1, "/", (-1)));
-    $m_sci_List$();
-    return $as_Lio_lemonlabs_uri_AbsoluteOrEmptyPath($$x3.apply__O__O($m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this$4)))
-  }))(this))));
-  var this$6 = $m_Lcats_parse_Parser$().charIn__sc_Iterable__Lcats_parse_Parser($m_s_Predef$().wrapString__T__sci_WrappedString("#?"));
-  var this$8 = $m_Lcats_parse_Parser$().peek__Lcats_parse_Parser0__Lcats_parse_Parser0(this$6);
-  $m_Lcats_parse_Parser$();
-  var that$1 = $m_Lcats_parse_Parser$Impl$EndParser$();
-  var that$2 = this$8.orElse__Lcats_parse_Parser0__Lcats_parse_Parser0(that$1).as__O__Lcats_parse_Parser0($m_Lio_lemonlabs_uri_EmptyPath$());
-  return this$9.orElse__Lcats_parse_Parser0__Lcats_parse_Parser0(that$2)
+  var this$6 = new $c_Lcats_parse_Parser$Impl$Rep0(this$1, 2147483647, acc);
+  var fn = new $c_sjsr_AnonFunction1(((this$5) => ((parts) => {
+    var parts$1 = $as_sci_List(parts);
+    return $as_Lio_lemonlabs_uri_AbsoluteOrEmptyPath(this$5.Lio_lemonlabs_uri_parsing_UrlParser__f_extractAbsOrEmptyPath.apply__O__O(parts$1))
+  }))(this));
+  return $m_Lcats_parse_Parser$().map0__Lcats_parse_Parser0__F1__Lcats_parse_Parser0(this$6, fn)
 });
 $c_Lio_lemonlabs_uri_parsing_UrlParser.prototype._path__Lcats_parse_Parser0 = (function() {
-  var $$x1 = $m_Lcats_parse_Parser$();
-  var this$2 = $m_Lcats_parse_Parser$().charIn__sc_Iterable__Lcats_parse_Parser($m_s_Predef$().wrapString__T__sci_WrappedString("#?[]:"));
-  $m_Lcats_parse_Parser$();
-  var that = $m_Lcats_parse_Parser$Impl$EndParser$();
-  return $$x1.until0__Lcats_parse_Parser0__Lcats_parse_Parser0(this$2.orElse__Lcats_parse_Parser0__Lcats_parse_Parser0(that)).map__F1__Lcats_parse_Parser0(new $c_sjsr_AnonFunction1(((this$3) => ((path) => {
-    var path$1 = $as_T(path);
-    var segments = $f_T__split__T__I__AT(path$1, "/", (-1));
-    if (((path$1 !== "") && ((65535 & $uI(path$1.charCodeAt(0))) === 47))) {
-      var $$x2 = this$3.Lio_lemonlabs_uri_parsing_UrlParser__f_extractRelPath;
-      var this$7 = $m_s_Predef$().wrapRefArray__AO__scm_ArraySeq$ofRef($asArrayOf_O($m_sc_ArrayOps$().drop$extension__O__I__O(segments, 1), 1));
-      return $as_Lio_lemonlabs_uri_UrlPath($$x2.apply__O__O__O("/", $m_sci_Vector$().from__sc_IterableOnce__sci_Vector(this$7)))
-    } else {
-      var $$x3 = this$3.Lio_lemonlabs_uri_parsing_UrlParser__f_extractRelPath;
-      var this$8 = $m_s_Predef$().wrapRefArray__AO__scm_ArraySeq$ofRef(segments);
-      return $as_Lio_lemonlabs_uri_UrlPath($$x3.apply__O__O__O("", $m_sci_Vector$().from__sc_IterableOnce__sci_Vector(this$8)))
-    }
+  return $m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(47).$qmark__Lcats_parse_Parser0().$tilde__Lcats_parse_Parser0__Lcats_parse_Parser0($p_Lio_lemonlabs_uri_parsing_UrlParser__rep0sep0__Lcats_parse_Parser0__Lcats_parse_Parser__Lcats_parse_Parser0(this, this._path_segment__Lcats_parse_Parser0(), $m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(47))).map__F1__Lcats_parse_Parser0(new $c_sjsr_AnonFunction1(((this$1) => ((x$1) => {
+    var x$1$1 = $as_T2(x$1);
+    if ((x$1$1 !== null)) {
+      var maybeSlash = $as_s_Option(x$1$1._1__O());
+      var parts = $as_sci_List(x$1$1._2__O());
+      return $as_Lio_lemonlabs_uri_UrlPath(this$1.Lio_lemonlabs_uri_parsing_UrlParser__f_extractRelPath.apply__O__O__O(maybeSlash, parts))
+    };
+    throw new $c_s_MatchError(x$1$1)
   }))(this)))
 });
 $c_Lio_lemonlabs_uri_parsing_UrlParser.prototype._query_param__Lcats_parse_Parser = (function() {
@@ -17416,26 +17406,29 @@ $c_Lio_lemonlabs_uri_parsing_UrlParser.prototype._url_without_authority__Lcats_p
   return this$2.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that)
 });
 $c_Lio_lemonlabs_uri_parsing_UrlParser.prototype._simple_url_without_authority__Lcats_parse_Parser = (function() {
-  var this$7 = this._scheme__Lcats_parse_Parser();
+  var this$8 = this._scheme__Lcats_parse_Parser();
   var fn$1 = new $c_sjsr_AnonFunction1(((this$1) => ((scheme) => {
     var scheme$1 = $as_T(scheme);
-    var this$6 = $m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(58);
+    var this$7 = $m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(58);
     var fn = new $c_sjsr_AnonFunction1(((this$2, scheme$2) => ((x$1) => {
       $as_jl_Void(x$1);
-      return this$2._path__Lcats_parse_Parser0().flatMap__F1__Lcats_parse_Parser0(new $c_sjsr_AnonFunction1(((this$3, scheme$6$2) => ((path) => {
-        var path$1 = $as_Lio_lemonlabs_uri_UrlPath(path);
-        return this$3._maybe_query_string__Lcats_parse_Parser0().flatMap__F1__Lcats_parse_Parser0(new $c_sjsr_AnonFunction1(((this$4, scheme$7$2, path$2) => ((maybe_query_string) => {
-          var maybe_query_string$1 = $as_Lio_lemonlabs_uri_QueryString(maybe_query_string);
-          return this$4._fragment__Lcats_parse_Parser().$qmark__Lcats_parse_Parser0().map__F1__Lcats_parse_Parser0(new $c_sjsr_AnonFunction1(((this$5, scheme$8$2, path$1$2, maybe_query_string$2) => ((maybe_fragment) => {
-            var maybe_fragment$1 = $as_s_Option(maybe_fragment);
-            return $as_Lio_lemonlabs_uri_SimpleUrlWithoutAuthority(this$5.Lio_lemonlabs_uri_parsing_UrlParser__f_extractUrlWithoutAuthority.apply__O__O__O__O__O(scheme$8$2, path$1$2, maybe_query_string$2, maybe_fragment$1))
-          }))(this$4, scheme$7$2, path$2, maybe_query_string$1)))
-        }))(this$3, scheme$6$2, path$1)))
+      return $m_Lcats_parse_Parser$().not__Lcats_parse_Parser0__Lcats_parse_Parser0($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("//")).flatMap__F1__Lcats_parse_Parser0(new $c_sjsr_AnonFunction1(((this$3, scheme$6$2) => ((x$1$2) => {
+        $as_jl_Void(x$1$2);
+        return this$3._path__Lcats_parse_Parser0().flatMap__F1__Lcats_parse_Parser0(new $c_sjsr_AnonFunction1(((this$4, scheme$7$2) => ((path) => {
+          var path$1 = $as_Lio_lemonlabs_uri_UrlPath(path);
+          return this$4._maybe_query_string__Lcats_parse_Parser0().flatMap__F1__Lcats_parse_Parser0(new $c_sjsr_AnonFunction1(((this$5, scheme$8$2, path$2) => ((maybe_query_string) => {
+            var maybe_query_string$1 = $as_Lio_lemonlabs_uri_QueryString(maybe_query_string);
+            return this$5._fragment__Lcats_parse_Parser().$qmark__Lcats_parse_Parser0().map__F1__Lcats_parse_Parser0(new $c_sjsr_AnonFunction1(((this$6, scheme$9$2, path$1$2, maybe_query_string$2) => ((maybe_fragment) => {
+              var maybe_fragment$1 = $as_s_Option(maybe_fragment);
+              return $as_Lio_lemonlabs_uri_SimpleUrlWithoutAuthority(this$6.Lio_lemonlabs_uri_parsing_UrlParser__f_extractUrlWithoutAuthority.apply__O__O__O__O__O(scheme$9$2, path$1$2, maybe_query_string$2, maybe_fragment$1))
+            }))(this$5, scheme$8$2, path$2, maybe_query_string$1)))
+          }))(this$4, scheme$7$2, path$1)))
+        }))(this$3, scheme$6$2)))
       }))(this$2, scheme$2)))
     }))(this$1, scheme$1));
-    return $m_Lcats_parse_Parser$().flatMap10__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$6, fn)
+    return $m_Lcats_parse_Parser$().flatMap10__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$7, fn)
   }))(this));
-  return $m_Lcats_parse_Parser$().flatMap10__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$7, fn$1)
+  return $m_Lcats_parse_Parser$().flatMap10__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$8, fn$1)
 });
 $c_Lio_lemonlabs_uri_parsing_UrlParser.prototype._media_type_param__Lcats_parse_Parser = (function() {
   var this$1 = $m_Lcats_parse_Parser$().until__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().charIn__sc_Iterable__Lcats_parse_Parser($m_s_Predef$().wrapString__T__sci_WrappedString(";,=")));
@@ -17474,49 +17467,55 @@ $c_Lio_lemonlabs_uri_parsing_UrlParser.prototype._media_type__Lcats_parse_Parser
   }))(this)))
 });
 $c_Lio_lemonlabs_uri_parsing_UrlParser.prototype._data_url_base64__Lcats_parse_Parser = (function() {
-  var this$8 = $m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("data:");
-  var fn$2 = new $c_sjsr_AnonFunction1(((this$1) => ((x$1) => {
-    $as_jl_Void(x$1);
-    return this$1._media_type__Lcats_parse_Parser0().flatMap__F1__Lcats_parse_Parser0(new $c_sjsr_AnonFunction1(((this$2) => ((media_type) => {
-      var media_type$1 = $as_Lio_lemonlabs_uri_MediaType(media_type);
-      var this$7 = $m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser(";base64,");
-      var fn$1 = new $c_sjsr_AnonFunction1(((this$3, media_type$2) => ((x$1$2) => {
-        $as_jl_Void(x$1$2);
-        var this$6 = $m_Lcats_parse_Parser$().until__Lcats_parse_Parser0__Lcats_parse_Parser(($m_Lcats_parse_Parser$(), $m_Lcats_parse_Parser$Impl$EndParser$()));
-        var fn = new $c_sjsr_AnonFunction1(((this$5, media_type$1$2) => ((data) => {
-          var data$1 = $as_T(data);
-          return $as_Lio_lemonlabs_uri_DataUrl(this$5.Lio_lemonlabs_uri_parsing_UrlParser__f_extractBase64DataUrl.apply__O__O__O(media_type$1$2, data$1))
-        }))(this$3, media_type$2));
-        return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$6, fn)
-      }))(this$2, media_type$1));
-      return $m_Lcats_parse_Parser$().flatMap10__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$7, fn$1)
-    }))(this$1)))
-  }))(this));
-  return $m_Lcats_parse_Parser$().flatMap10__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$8, fn$2)
-});
-$c_Lio_lemonlabs_uri_parsing_UrlParser.prototype._data_url_percent_encoded__Lcats_parse_Parser = (function() {
   var this$9 = $m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("data:");
   var fn$2 = new $c_sjsr_AnonFunction1(((this$1) => ((x$1) => {
     $as_jl_Void(x$1);
-    return this$1._media_type__Lcats_parse_Parser0().flatMap__F1__Lcats_parse_Parser0(new $c_sjsr_AnonFunction1(((this$2) => ((media_type) => {
-      var media_type$1 = $as_Lio_lemonlabs_uri_MediaType(media_type);
-      return $m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(59).$qmark__Lcats_parse_Parser0().flatMap__F1__Lcats_parse_Parser0(new $c_sjsr_AnonFunction1(((this$3, media_type$2) => ((x$1$2) => {
-        $as_s_Option(x$1$2);
-        var this$8 = $m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(44);
-        var fn$1 = new $c_sjsr_AnonFunction1(((this$4, media_type$3$2) => ((x$1$2$1) => {
-          $as_jl_Void(x$1$2$1);
+    return $m_Lcats_parse_Parser$().not__Lcats_parse_Parser0__Lcats_parse_Parser0($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("//")).flatMap__F1__Lcats_parse_Parser0(new $c_sjsr_AnonFunction1(((this$2) => ((x$1$2) => {
+      $as_jl_Void(x$1$2);
+      return this$2._media_type__Lcats_parse_Parser0().flatMap__F1__Lcats_parse_Parser0(new $c_sjsr_AnonFunction1(((this$3) => ((media_type) => {
+        var media_type$1 = $as_Lio_lemonlabs_uri_MediaType(media_type);
+        var this$8 = $m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser(";base64,");
+        var fn$1 = new $c_sjsr_AnonFunction1(((this$4, media_type$2) => ((x$1$4) => {
+          $as_jl_Void(x$1$4);
           var this$7 = $m_Lcats_parse_Parser$().until__Lcats_parse_Parser0__Lcats_parse_Parser(($m_Lcats_parse_Parser$(), $m_Lcats_parse_Parser$Impl$EndParser$()));
-          var fn = new $c_sjsr_AnonFunction1(((this$6, media_type$4$2) => ((data) => {
+          var fn = new $c_sjsr_AnonFunction1(((this$6, media_type$1$2) => ((data) => {
             var data$1 = $as_T(data);
-            return $as_Lio_lemonlabs_uri_DataUrl(this$6.Lio_lemonlabs_uri_parsing_UrlParser__f_extractPercentEncodedDataUrl.apply__O__O__O(media_type$4$2, data$1))
-          }))(this$4, media_type$3$2));
+            return $as_Lio_lemonlabs_uri_DataUrl(this$6.Lio_lemonlabs_uri_parsing_UrlParser__f_extractBase64DataUrl.apply__O__O__O(media_type$1$2, data$1))
+          }))(this$4, media_type$2));
           return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$7, fn)
-        }))(this$3, media_type$2));
+        }))(this$3, media_type$1));
         return $m_Lcats_parse_Parser$().flatMap10__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$8, fn$1)
-      }))(this$2, media_type$1)))
+      }))(this$2)))
     }))(this$1)))
   }))(this));
   return $m_Lcats_parse_Parser$().flatMap10__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$9, fn$2)
+});
+$c_Lio_lemonlabs_uri_parsing_UrlParser.prototype._data_url_percent_encoded__Lcats_parse_Parser = (function() {
+  var this$10 = $m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("data:");
+  var fn$2 = new $c_sjsr_AnonFunction1(((this$1) => ((x$1) => {
+    $as_jl_Void(x$1);
+    return $m_Lcats_parse_Parser$().not__Lcats_parse_Parser0__Lcats_parse_Parser0($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("//")).flatMap__F1__Lcats_parse_Parser0(new $c_sjsr_AnonFunction1(((this$2) => ((x$1$2) => {
+      $as_jl_Void(x$1$2);
+      return this$2._media_type__Lcats_parse_Parser0().flatMap__F1__Lcats_parse_Parser0(new $c_sjsr_AnonFunction1(((this$3) => ((media_type) => {
+        var media_type$1 = $as_Lio_lemonlabs_uri_MediaType(media_type);
+        return $m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(59).$qmark__Lcats_parse_Parser0().flatMap__F1__Lcats_parse_Parser0(new $c_sjsr_AnonFunction1(((this$4, media_type$2) => ((x$1$4) => {
+          $as_s_Option(x$1$4);
+          var this$9 = $m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(44);
+          var fn$1 = new $c_sjsr_AnonFunction1(((this$5, media_type$3$2) => ((x$1$2$1) => {
+            $as_jl_Void(x$1$2$1);
+            var this$8 = $m_Lcats_parse_Parser$().until__Lcats_parse_Parser0__Lcats_parse_Parser(($m_Lcats_parse_Parser$(), $m_Lcats_parse_Parser$Impl$EndParser$()));
+            var fn = new $c_sjsr_AnonFunction1(((this$7, media_type$4$2) => ((data) => {
+              var data$1 = $as_T(data);
+              return $as_Lio_lemonlabs_uri_DataUrl(this$7.Lio_lemonlabs_uri_parsing_UrlParser__f_extractPercentEncodedDataUrl.apply__O__O__O(media_type$4$2, data$1))
+            }))(this$5, media_type$3$2));
+            return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$8, fn)
+          }))(this$4, media_type$2));
+          return $m_Lcats_parse_Parser$().flatMap10__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$9, fn$1)
+        }))(this$3, media_type$1)))
+      }))(this$2)))
+    }))(this$1)))
+  }))(this));
+  return $m_Lcats_parse_Parser$().flatMap10__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$10, fn$2)
 });
 $c_Lio_lemonlabs_uri_parsing_UrlParser.prototype._data_url__Lcats_parse_Parser = (function() {
   var this$1 = this._data_url_base64__Lcats_parse_Parser();
@@ -17545,15 +17544,48 @@ $c_Lio_lemonlabs_uri_parsing_UrlParser.prototype._protocol_rel_url__Lcats_parse_
   return $m_Lcats_parse_Parser$().flatMap10__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$6, fn)
 });
 $c_Lio_lemonlabs_uri_parsing_UrlParser.prototype._rel_url__Lcats_parse_Parser0 = (function() {
-  return this._path__Lcats_parse_Parser0().flatMap__F1__Lcats_parse_Parser0(new $c_sjsr_AnonFunction1(((this$1) => ((path) => {
-    var path$1 = $as_Lio_lemonlabs_uri_UrlPath(path);
-    return this$1._maybe_query_string__Lcats_parse_Parser0().flatMap__F1__Lcats_parse_Parser0(new $c_sjsr_AnonFunction1(((this$2, path$2) => ((maybe_query_string) => {
-      var maybe_query_string$1 = $as_Lio_lemonlabs_uri_QueryString(maybe_query_string);
-      return this$2._fragment__Lcats_parse_Parser().$qmark__Lcats_parse_Parser0().map__F1__Lcats_parse_Parser0(new $c_sjsr_AnonFunction1(((this$3, path$3$2, maybe_query_string$2) => ((maybe_fragment) => {
-        var maybe_fragment$1 = $as_s_Option(maybe_fragment);
-        return $as_Lio_lemonlabs_uri_RelativeUrl(this$3.Lio_lemonlabs_uri_parsing_UrlParser__f_extractRelativeUrl.apply__O__O__O__O(path$3$2, maybe_query_string$2, maybe_fragment$1))
-      }))(this$2, path$2, maybe_query_string$1)))
-    }))(this$1, path$1)))
+  return $m_Lcats_parse_Parser$().not__Lcats_parse_Parser0__Lcats_parse_Parser0($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("//")).flatMap__F1__Lcats_parse_Parser0(new $c_sjsr_AnonFunction1(((this$1) => ((x$1) => {
+    $as_jl_Void(x$1);
+    return this$1._path__Lcats_parse_Parser0().map__F1__Lcats_parse_Parser0(new $c_sjsr_AnonFunction1(((path) => {
+      var path$1 = $as_Lio_lemonlabs_uri_UrlPath(path);
+      if (path$1.nonEmptyRootless__Z()) {
+        var this$2 = path$1.parts__sci_Vector();
+        var this$3 = $f_sc_IndexedSeqOps__headOption__s_Option(this$2);
+        if ((!this$3.isEmpty__Z())) {
+          var arg1 = this$3.get__O();
+          var _$3 = $as_T(arg1);
+          var colonInFirstSegment = $m_sc_StringOps$().contains$extension__T__C__Z(_$3, 58)
+        } else {
+          var colonInFirstSegment = false
+        }
+      } else {
+        var colonInFirstSegment = false
+      };
+      return new $c_T2(path$1, colonInFirstSegment)
+    }))).flatMap__F1__Lcats_parse_Parser0(new $c_sjsr_AnonFunction1(((this$6) => ((x$1$2) => {
+      var x$1$3 = $as_T2(x$1$2);
+      if ((x$1$3 !== null)) {
+        var path$2 = $as_Lio_lemonlabs_uri_UrlPath(x$1$3._1__O());
+        var colonInFirstSegment$1 = $uZ(x$1$3._2__O());
+        if (colonInFirstSegment$1) {
+          var this$7 = $m_Lcats_parse_Parser$();
+          var $$x1 = this$7.Lcats_parse_Parser$__f_Fail
+        } else {
+          var $$x1 = $m_Lcats_parse_Parser$().Lcats_parse_Parser$__f_unit
+        };
+        return $$x1.flatMap__F1__Lcats_parse_Parser0(new $c_sjsr_AnonFunction1(((this$8, path$2$1) => ((x$1$2$1) => {
+          $as_jl_Void(x$1$2$1);
+          return this$8._maybe_query_string__Lcats_parse_Parser0().flatMap__F1__Lcats_parse_Parser0(new $c_sjsr_AnonFunction1(((this$9, path$3$2) => ((maybe_query_string) => {
+            var maybe_query_string$1 = $as_Lio_lemonlabs_uri_QueryString(maybe_query_string);
+            return this$9._fragment__Lcats_parse_Parser().$qmark__Lcats_parse_Parser0().map__F1__Lcats_parse_Parser0(new $c_sjsr_AnonFunction1(((this$10, path$4$2, maybe_query_string$2) => ((maybe_fragment) => {
+              var maybe_fragment$1 = $as_s_Option(maybe_fragment);
+              return $as_Lio_lemonlabs_uri_RelativeUrl(this$10.Lio_lemonlabs_uri_parsing_UrlParser__f_extractRelativeUrl.apply__O__O__O__O(path$4$2, maybe_query_string$2, maybe_fragment$1))
+            }))(this$9, path$3$2, maybe_query_string$1)))
+          }))(this$8, path$2$1)))
+        }))(this$6, path$2)))
+      };
+      throw new $c_s_MatchError(x$1$3)
+    }))(this$1)))
   }))(this)))
 });
 $c_Lio_lemonlabs_uri_parsing_UrlParser.prototype._url__Lcats_parse_Parser0 = (function() {
@@ -39312,6 +39344,9 @@ function $f_sc_IndexedSeqOps__map__F1__O($thiz, f) {
 function $f_sc_IndexedSeqOps__reverse__O($thiz) {
   return $thiz.fromSpecific__sc_IterableOnce__O(new $c_sc_IndexedSeqView$Reverse($thiz))
 }
+function $f_sc_IndexedSeqOps__headOption__s_Option($thiz) {
+  return ($thiz.isEmpty__Z() ? $m_s_None$() : new $c_s_Some($thiz.head__O()))
+}
 function $f_sc_IndexedSeqOps__last__O($thiz) {
   return $thiz.apply__I__O((((-1) + $thiz.length__I()) | 0))
 }
@@ -45789,6 +45824,10 @@ $c_Lio_lemonlabs_uri_RootlessPath.prototype.isEmpty__Z = (function() {
   var this$1 = this.Lio_lemonlabs_uri_RootlessPath__f_parts;
   return $f_sc_SeqOps__isEmpty__Z(this$1)
 });
+$c_Lio_lemonlabs_uri_RootlessPath.prototype.nonEmptyRootless__Z = (function() {
+  var this$1 = this.Lio_lemonlabs_uri_RootlessPath__f_parts;
+  return (!$f_sc_SeqOps__isEmpty__Z(this$1))
+});
 $c_Lio_lemonlabs_uri_RootlessPath.prototype.isSlashTerminated__Z = (function() {
   var this$1 = this.Lio_lemonlabs_uri_RootlessPath__f_parts;
   return $f_sc_IterableOps__lastOption__s_Option(this$1).contains__O__Z("")
@@ -48186,6 +48225,9 @@ $c_Lio_lemonlabs_uri_AbsolutePath.prototype.withParts__sc_Iterable__Lio_lemonlab
   return new $c_Lio_lemonlabs_uri_AbsolutePath(parts, config)
 });
 $c_Lio_lemonlabs_uri_AbsolutePath.prototype.isEmpty__Z = (function() {
+  return false
+});
+$c_Lio_lemonlabs_uri_AbsolutePath.prototype.nonEmptyRootless__Z = (function() {
   return false
 });
 $c_Lio_lemonlabs_uri_AbsolutePath.prototype.toStringWithConfig__Lio_lemonlabs_uri_config_UriConfig__T = (function(c) {
@@ -54195,6 +54237,9 @@ $c_Lio_lemonlabs_uri_EmptyPath$.prototype.productElement__I__O = (function(n) {
 });
 $c_Lio_lemonlabs_uri_EmptyPath$.prototype.isEmpty__Z = (function() {
   return true
+});
+$c_Lio_lemonlabs_uri_EmptyPath$.prototype.nonEmptyRootless__Z = (function() {
+  return false
 });
 $c_Lio_lemonlabs_uri_EmptyPath$.prototype.withParts__sc_Iterable__Lio_lemonlabs_uri_UrlPath = (function(parts) {
   return $m_Lio_lemonlabs_uri_UrlPath$().apply__sc_Iterable__Lio_lemonlabs_uri_UrlPath(parts.toVector__sci_Vector())
